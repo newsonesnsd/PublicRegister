@@ -34,7 +34,8 @@ public class ConnectionBuilder {
             String userName="regis-2";
             String userPass="regis";
             
-            Class.forName("org.apache.derby.jdbc.ClientDriver");
+            Class.forName("com.mysql.jdbc.Driver"); 
+            con = DriverManager.getConnection("jdbc:mysql://10.4.56.8:3306/PublicRegis", "public-1", "public");
             System.out.println("Driver loaded");
             
             
