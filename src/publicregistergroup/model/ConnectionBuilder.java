@@ -31,8 +31,8 @@ public class ConnectionBuilder {
         Connection con=null;
         try {
             String host="jdbc:derby://10.4.56.8/PublicRegis";
-            String userName="regis-2";
-            String userPass="regis";
+            String userName="public-2";
+            String userPass="public";
             
             Class.forName("com.mysql.jdbc.Driver"); 
             con = DriverManager.getConnection("jdbc:mysql://10.4.56.8:3306/PublicRegis", "public-1", "public");
