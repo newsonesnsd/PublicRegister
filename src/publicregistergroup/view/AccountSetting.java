@@ -45,6 +45,8 @@ public class AccountSetting extends javax.swing.JFrame {
         setResizable(false);
 
         jpnCheckAllActivity.setBackground(new java.awt.Color(255, 234, 214));
+        jpnCheckAllActivity.setMinimumSize(new java.awt.Dimension(1024, 768));
+        jpnCheckAllActivity.setPreferredSize(new java.awt.Dimension(1024, 768));
 
         jlbPublicRegis.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
         jlbPublicRegis.setText("KMUTT Public Regis");
@@ -79,7 +81,7 @@ public class AccountSetting extends javax.swing.JFrame {
                 .addGroup(jpnProfileLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jlbName, javax.swing.GroupLayout.PREFERRED_SIZE, 431, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jlbFaculty, javax.swing.GroupLayout.PREFERRED_SIZE, 431, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(228, Short.MAX_VALUE))
+                .addContainerGap(167, Short.MAX_VALUE))
         );
         jpnProfileLayout.setVerticalGroup(
             jpnProfileLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -108,14 +110,14 @@ public class AccountSetting extends javax.swing.JFrame {
             .addGroup(jpnEditProfileLayout.createSequentialGroup()
                 .addGap(394, 394, 394)
                 .addComponent(jlbEditProfile, javax.swing.GroupLayout.PREFERRED_SIZE, 214, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(394, Short.MAX_VALUE))
+                .addContainerGap(366, Short.MAX_VALUE))
         );
         jpnEditProfileLayout.setVerticalGroup(
             jpnEditProfileLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jpnEditProfileLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jlbEditProfile)
-                .addContainerGap(313, Short.MAX_VALUE))
+                .addContainerGap(308, Short.MAX_VALUE))
         );
 
         jlbEditProfile.getAccessibleContext().setAccessibleDescription("แก้ไขข้อมูลส่วนตัว");
@@ -127,36 +129,41 @@ public class AccountSetting extends javax.swing.JFrame {
         jpnCheckAllActivityLayout.setHorizontalGroup(
             jpnCheckAllActivityLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jpnCheckAllActivityLayout.createSequentialGroup()
-                .addGap(131, 131, 131)
-                .addGroup(jpnCheckAllActivityLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jpnEditProfile, javax.swing.GroupLayout.PREFERRED_SIZE, 1002, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(22, 22, 22)
+                .addGroup(jpnCheckAllActivityLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jpnCheckAllActivityLayout.createSequentialGroup()
                         .addGroup(jpnCheckAllActivityLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jlbPublicRegis)
                             .addComponent(jlbSerchLabel)
-                            .addComponent(jpnProfile, javax.swing.GroupLayout.PREFERRED_SIZE, 704, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jtfSerchField, javax.swing.GroupLayout.PREFERRED_SIZE, 283, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addComponent(jpnProfilePicture, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                .addContainerGap(131, Short.MAX_VALUE))
+                            .addComponent(jpnEditProfile, javax.swing.GroupLayout.PREFERRED_SIZE, 974, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addContainerGap(28, Short.MAX_VALUE))
+                    .addGroup(jpnCheckAllActivityLayout.createSequentialGroup()
+                        .addGroup(jpnCheckAllActivityLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jtfSerchField, javax.swing.GroupLayout.PREFERRED_SIZE, 315, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jpnProfile, javax.swing.GroupLayout.PREFERRED_SIZE, 643, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jpnProfilePicture, javax.swing.GroupLayout.PREFERRED_SIZE, 213, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(37, 37, 37))))
         );
         jpnCheckAllActivityLayout.setVerticalGroup(
             jpnCheckAllActivityLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jpnCheckAllActivityLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jpnCheckAllActivityLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addComponent(jlbPublicRegis, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jlbSerchLabel)
+                .addGroup(jpnCheckAllActivityLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jpnCheckAllActivityLayout.createSequentialGroup()
-                        .addComponent(jlbPublicRegis, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jlbSerchLabel)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jtfSerchField, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(26, 26, 26)
-                        .addComponent(jpnProfile, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jpnProfilePicture, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(44, 44, 44)
-                .addComponent(jpnEditProfile, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(30, 30, 30))
+                        .addGap(18, 18, 18)
+                        .addComponent(jpnProfile, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 46, Short.MAX_VALUE)
+                        .addComponent(jpnEditProfile, javax.swing.GroupLayout.PREFERRED_SIZE, 358, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(33, 33, 33))
+                    .addGroup(jpnCheckAllActivityLayout.createSequentialGroup()
+                        .addGap(29, 29, 29)
+                        .addComponent(jpnProfilePicture, javax.swing.GroupLayout.PREFERRED_SIZE, 213, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
 
         jtfSerchField.getAccessibleContext().setAccessibleName("Serch");
