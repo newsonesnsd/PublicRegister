@@ -37,7 +37,7 @@ public class Login extends JFrame {
         jlbPassword = new javax.swing.JLabel();
         jpfInputPassword = new javax.swing.JPasswordField();
         jbtLogin = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Login");
@@ -58,7 +58,7 @@ public class Login extends JFrame {
         );
         jpnLoginHeadLayout.setVerticalGroup(
             jpnLoginHeadLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGap(0, 768, Short.MAX_VALUE)
         );
 
         jtfInputUsername.setFont(new java.awt.Font("Kanit", 0, 14)); // NOI18N
@@ -100,8 +100,9 @@ public class Login extends JFrame {
             }
         });
 
-        jLabel1.setFont(new java.awt.Font("Kanit", 0, 36)); // NOI18N
-        jLabel1.setText("KMUTT - Public Register");
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/logo.png"))); // NOI18N
+        jLabel2.setText("jLabel2");
 
         javax.swing.GroupLayout jpnLoginLayout = new javax.swing.GroupLayout(jpnLogin);
         jpnLogin.setLayout(jpnLoginLayout);
@@ -117,18 +118,18 @@ public class Login extends JFrame {
                         .addComponent(jbtLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jpfInputPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jtfInputUsername, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jLabel1)
                     .addComponent(separator2, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(separator1, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(separator1, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 402, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(48, 48, 48))
         );
         jpnLoginLayout.setVerticalGroup(
             jpnLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jpnLoginHead, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(jpnLoginLayout.createSequentialGroup()
-                .addGap(222, 222, 222)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addGap(211, 211, 211)
+                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(32, 32, 32)
                 .addComponent(jlbUsername, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jtfInputUsername, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -226,7 +227,7 @@ public class Login extends JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JButton jbtLogin;
     private javax.swing.JLabel jlbPassword;
     private javax.swing.JLabel jlbUsername;
