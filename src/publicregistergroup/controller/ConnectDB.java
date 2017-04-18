@@ -1,4 +1,4 @@
-package publicregistergroup.model;
+package publicregistergroup.controller;
 import java.sql.*;
 public class ConnectDB {
     public void connection(){

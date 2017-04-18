@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package publicregistergroup.view;
+package publicregistergroup.model;
 
 import javax.swing.JFrame;
 /**
@@ -42,7 +42,6 @@ public class Login extends JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Login");
         setBackground(new java.awt.Color(255, 255, 255));
-        setMaximumSize(null);
         setName("jfLogin"); // NOI18N
         setResizable(false);
         setSize(new java.awt.Dimension(800, 600));
