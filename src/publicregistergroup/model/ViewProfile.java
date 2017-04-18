@@ -51,6 +51,7 @@ public class ViewProfile extends javax.swing.JFrame {
         FoodTextField = new javax.swing.JTextField();
         EmailTextField = new javax.swing.JTextField();
         SearchclubTextField = new javax.swing.JTextField();
+        ChangePage = new javax.swing.JButton();
         blackground = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -129,14 +130,19 @@ public class ViewProfile extends javax.swing.JFrame {
 
         ID.setFont(new java.awt.Font("Kanit", 0, 24)); // NOI18N
         ID.setText("ID :");
-        getContentPane().add(ID, new org.netbeans.lib.awtextra.AbsoluteConstraints(756, 20, 40, 30));
-        getContentPane().add(ShowID, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 20, 190, 30));
+        getContentPane().add(ID, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 20, 40, 30));
+        getContentPane().add(ShowID, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 30, 210, 20));
 
         Submitbotton.setBackground(new java.awt.Color(213, 186, 55));
         Submitbotton.setFont(new java.awt.Font("Kanit", 0, 24)); // NOI18N
         Submitbotton.setForeground(new java.awt.Color(255, 255, 255));
         Submitbotton.setText("Submit");
         Submitbotton.setBorder(null);
+        Submitbotton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SubmitbottonActionPerformed(evt);
+            }
+        });
         getContentPane().add(Submitbotton, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 640, 240, 40));
 
         UploadBotton.setBackground(new java.awt.Color(213, 186, 55));
@@ -144,6 +150,11 @@ public class ViewProfile extends javax.swing.JFrame {
         UploadBotton.setForeground(new java.awt.Color(255, 255, 255));
         UploadBotton.setText("Upload");
         UploadBotton.setBorder(null);
+        UploadBotton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                UploadBottonActionPerformed(evt);
+            }
+        });
         getContentPane().add(UploadBotton, new org.netbeans.lib.awtextra.AbsoluteConstraints(187, 580, 70, 40));
 
         NameTextField.setFont(new java.awt.Font("Kanit", 0, 18)); // NOI18N
@@ -202,11 +213,19 @@ public class ViewProfile extends javax.swing.JFrame {
         });
         getContentPane().add(SearchclubTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 100, 300, 30));
 
+        ChangePage.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ChangePageActionPerformed(evt);
+            }
+        });
+        getContentPane().add(ChangePage, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 20, 230, 40));
+
         blackground.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/background.png"))); // NOI18N
         blackground.setText("jLabel1");
         getContentPane().add(blackground, new org.netbeans.lib.awtextra.AbsoluteConstraints(-5, 0, 1030, 770));
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void BottonsearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BottonsearchActionPerformed
@@ -232,6 +251,22 @@ public class ViewProfile extends javax.swing.JFrame {
     private void SearchclubTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SearchclubTextFieldActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_SearchclubTextFieldActionPerformed
+
+    private void ChangePageActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ChangePageActionPerformed
+       LinkData data = new LinkData();
+       this.setVisible(false);
+       data.setVisible(true);
+    }//GEN-LAST:event_ChangePageActionPerformed
+
+    private void UploadBottonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UploadBottonActionPerformed
+
+    }//GEN-LAST:event_UploadBottonActionPerformed
+
+    private void SubmitbottonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SubmitbottonActionPerformed
+       LinkData data = new LinkData();
+       this.setVisible(false);
+       data.setVisible(true);
+    }//GEN-LAST:event_SubmitbottonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -271,6 +306,7 @@ public class ViewProfile extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Bottonsearch;
+    private javax.swing.JButton ChangePage;
     private javax.swing.JLabel Email;
     private javax.swing.JTextField EmailTextField;
     private javax.swing.JLabel Facebook;
