@@ -1,6 +1,6 @@
 package publicregistergroup.controller;
 import java.sql.*;
-public class ConnectDB {
+public class ConnectBuilder {
     public void connection(){
         String db_name = "publicRegis";
         String user = "public-2";
@@ -18,6 +18,6 @@ public class ConnectDB {
         }  
     }
     public static void main(String[] args){
-          new ConnectDB().connection();
+          new ConnectBuilder().connection();
     }
 }
