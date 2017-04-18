@@ -62,7 +62,7 @@ public class Login extends JFrame {
             .addGap(0, 0, Short.MAX_VALUE)
         );
 
-        jtfInputUsername.setFont(new java.awt.Font("Quark", 0, 14)); // NOI18N
+        jtfInputUsername.setFont(new java.awt.Font("Quark", 0, 18)); // NOI18N
         jtfInputUsername.setText("Username");
         jtfInputUsername.setToolTipText("");
         jtfInputUsername.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -80,7 +80,7 @@ public class Login extends JFrame {
 
         jlbPassword.setFont(new java.awt.Font("Quark", 0, 24)); // NOI18N
 
-        jpfInputPassword.setFont(new java.awt.Font("Kanit", 0, 14)); // NOI18N
+        jpfInputPassword.setFont(new java.awt.Font("Kanit", 0, 18)); // NOI18N
         jpfInputPassword.setToolTipText("");
         jpfInputPassword.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -138,7 +138,7 @@ public class Login extends JFrame {
                 .addComponent(separator2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(36, 36, 36)
                 .addComponent(jbtLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(284, Short.MAX_VALUE))
+                .addContainerGap(280, Short.MAX_VALUE))
         );
 
         jtfInputUsername.setBorder(null);
