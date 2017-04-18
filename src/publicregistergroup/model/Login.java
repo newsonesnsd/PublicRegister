@@ -48,7 +48,7 @@ public class Login extends JFrame {
 
         jpnLogin.setBackground(new java.awt.Color(255, 255, 255));
 
-        jpnLoginHead.setBackground(new java.awt.Color(63, 81, 181));
+        jpnLoginHead.setBackground(new java.awt.Color(255, 118, 0));
 
         javax.swing.GroupLayout jpnLoginHeadLayout = new javax.swing.GroupLayout(jpnLoginHead);
         jpnLoginHead.setLayout(jpnLoginHeadLayout);
@@ -79,7 +79,8 @@ public class Login extends JFrame {
 
         jlbPassword.setFont(new java.awt.Font("Kanit", 0, 24)); // NOI18N
 
-        jpfInputPassword.setText("jPasswordField1");
+        jpfInputPassword.setFont(new java.awt.Font("Kanit", 0, 14)); // NOI18N
+        jpfInputPassword.setToolTipText("");
         jpfInputPassword.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jpfInputPasswordMouseClicked(evt);
@@ -146,6 +147,7 @@ public class Login extends JFrame {
 
         jtfInputUsername.setBorder(null);
         jpfInputPassword.setBorder(null);
+        jpfInputPassword.setText("Password");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
