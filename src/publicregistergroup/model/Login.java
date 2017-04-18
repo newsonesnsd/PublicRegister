@@ -8,12 +8,15 @@ package publicregistergroup.model;
 import javax.swing.JFrame;
 import javax.swing.*;
 import java.awt.*;
+import publicregistergroup.controller.*;
 /**
  *
  * @author newso
  */
 public class Login extends JFrame {
-
+    
+    public String stdUsername;
+    public String stdPassword;
     /**
      * Creates new form Login
      */
@@ -80,7 +83,7 @@ public class Login extends JFrame {
 
         jlbPassword.setFont(new java.awt.Font("Quark", 0, 24)); // NOI18N
 
-        jpfInputPassword.setFont(new java.awt.Font("Kanit", 0, 18)); // NOI18N
+        jpfInputPassword.setFont(new java.awt.Font("Quark", 0, 18)); // NOI18N
         jpfInputPassword.setToolTipText("");
         jpfInputPassword.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -182,6 +185,11 @@ public class Login extends JFrame {
 
     private void jbtLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtLoginActionPerformed
         // TODO add your handling code here:
+        ConnectBuilder conn = new ConnectBuilder();
+        conn.getClass()
+        stdUsername = jtfInputUsername.getText();
+        stdPassword = String.valueOf(jpfInputPassword.getPassword()); // Password not Hash
+        System.out.println(stdUsername + "\n" + stdPassword );
     }//GEN-LAST:event_jbtLoginActionPerformed
 
     /**
