@@ -6,6 +6,8 @@
 package publicregistergroup.model;
 
 import javax.swing.JFrame;
+import javax.swing.*;
+import java.awt.*;
 /**
  *
  * @author newso
@@ -37,12 +39,11 @@ public class Login extends JFrame {
         jlbPassword = new javax.swing.JLabel();
         jpfInputPassword = new javax.swing.JPasswordField();
         jbtLogin = new javax.swing.JButton();
-        jLabel2 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Login");
         setBackground(new java.awt.Color(255, 255, 255));
-        setMaximumSize(null);
         setName("jfLogin"); // NOI18N
         setResizable(false);
         setSize(new java.awt.Dimension(800, 600));
@@ -59,10 +60,10 @@ public class Login extends JFrame {
         );
         jpnLoginHeadLayout.setVerticalGroup(
             jpnLoginHeadLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 768, Short.MAX_VALUE)
+            .addGap(0, 852, Short.MAX_VALUE)
         );
 
-        jtfInputUsername.setFont(new java.awt.Font("Kanit", 0, 14)); // NOI18N
+        jtfInputUsername.setFont(new java.awt.Font("Quark", 0, 14)); // NOI18N
         jtfInputUsername.setText("Username");
         jtfInputUsername.setToolTipText("");
         jtfInputUsername.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -76,9 +77,9 @@ public class Login extends JFrame {
             }
         });
 
-        jlbUsername.setFont(new java.awt.Font("Kanit", 0, 24)); // NOI18N
+        jlbUsername.setFont(new java.awt.Font("Quark", 0, 24)); // NOI18N
 
-        jlbPassword.setFont(new java.awt.Font("Kanit", 0, 24)); // NOI18N
+        jlbPassword.setFont(new java.awt.Font("Quark", 0, 24)); // NOI18N
 
         jpfInputPassword.setFont(new java.awt.Font("Kanit", 0, 14)); // NOI18N
         jpfInputPassword.setToolTipText("");
@@ -93,7 +94,7 @@ public class Login extends JFrame {
             }
         });
 
-        jbtLogin.setFont(new java.awt.Font("Kanit", 0, 24)); // NOI18N
+        jbtLogin.setFont(new java.awt.Font("Quark", 0, 24)); // NOI18N
         jbtLogin.setText("Login");
         jbtLogin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -101,9 +102,7 @@ public class Login extends JFrame {
             }
         });
 
-        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/logo.png"))); // NOI18N
-        jLabel2.setText("jLabel2");
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/logo.png"))); // NOI18N
 
         javax.swing.GroupLayout jpnLoginLayout = new javax.swing.GroupLayout(jpnLogin);
         jpnLogin.setLayout(jpnLoginLayout);
@@ -121,16 +120,16 @@ public class Login extends JFrame {
                         .addComponent(jtfInputUsername, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(separator2, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(separator1, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 402, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel1))
                 .addGap(48, 48, 48))
         );
         jpnLoginLayout.setVerticalGroup(
             jpnLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jpnLoginHead, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(jpnLoginLayout.createSequentialGroup()
-                .addGap(236, 236, 236)
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(283, 283, 283)
+                .addComponent(jLabel1)
+                .addGap(18, 18, 18)
                 .addComponent(jlbUsername, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jtfInputUsername, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -144,7 +143,7 @@ public class Login extends JFrame {
                 .addComponent(separator2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(36, 36, 36)
                 .addComponent(jbtLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(211, Short.MAX_VALUE))
+                .addContainerGap(218, Short.MAX_VALUE))
         );
 
         jtfInputUsername.setBorder(null);
@@ -228,7 +227,7 @@ public class Login extends JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JButton jbtLogin;
     private javax.swing.JLabel jlbPassword;
     private javax.swing.JLabel jlbUsername;

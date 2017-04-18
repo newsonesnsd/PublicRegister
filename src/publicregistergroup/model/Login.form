@@ -7,9 +7,6 @@
     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
       <Color blue="ff" green="ff" red="ff" type="rgb"/>
     </Property>
-    <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-      <Dimension value="null"/>
-    </Property>
     <Property name="name" type="java.lang.String" value="jfLogin" noResource="true"/>
     <Property name="resizable" type="boolean" value="false"/>
     <Property name="size" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
@@ -71,7 +68,7 @@
                       </Group>
                       <Component id="separator2" min="-2" pref="300" max="-2" attributes="0"/>
                       <Component id="separator1" min="-2" pref="300" max="-2" attributes="0"/>
-                      <Component id="jLabel2" min="-2" pref="402" max="-2" attributes="0"/>
+                      <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="48" max="-2" attributes="0"/>
               </Group>
@@ -81,9 +78,9 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Component id="jpnLoginHead" max="32767" attributes="0"/>
               <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace min="-2" pref="236" max="-2" attributes="0"/>
-                  <Component id="jLabel2" min="-2" pref="74" max="-2" attributes="0"/>
-                  <EmptySpace max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="283" max="-2" attributes="0"/>
+                  <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Component id="jlbUsername" min="-2" pref="22" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Component id="jtfInputUsername" min="-2" max="-2" attributes="0"/>
@@ -97,7 +94,7 @@
                   <Component id="separator2" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
                   <Component id="jbtLogin" min="-2" pref="57" max="-2" attributes="0"/>
-                  <EmptySpace pref="211" max="32767" attributes="0"/>
+                  <EmptySpace pref="218" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -118,7 +115,7 @@
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <EmptySpace min="0" pref="768" max="32767" attributes="0"/>
+                  <EmptySpace min="0" pref="852" max="32767" attributes="0"/>
               </Group>
             </DimensionLayout>
           </Layout>
@@ -128,7 +125,7 @@
         <Component class="javax.swing.JTextField" name="jtfInputUsername">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Kanit" size="14" style="0"/>
+              <Font name="Quark" size="14" style="0"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Username"/>
             <Property name="toolTipText" type="java.lang.String" value=""/>
@@ -144,7 +141,7 @@
         <Component class="javax.swing.JLabel" name="jlbUsername">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Kanit" size="24" style="0"/>
+              <Font name="Quark" size="24" style="0"/>
             </Property>
           </Properties>
         </Component>
@@ -153,7 +150,7 @@
         <Component class="javax.swing.JLabel" name="jlbPassword">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Kanit" size="24" style="0"/>
+              <Font name="Quark" size="24" style="0"/>
             </Property>
           </Properties>
         </Component>
@@ -175,7 +172,7 @@
         <Component class="javax.swing.JButton" name="jbtLogin">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Kanit" size="24" style="0"/>
+              <Font name="Quark" size="24" style="0"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Login"/>
           </Properties>
@@ -183,15 +180,11 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jbtLoginActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel2">
+        <Component class="javax.swing.JLabel" name="jLabel1">
           <Properties>
-            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ff" green="ff" red="ff" type="rgb"/>
-            </Property>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
               <Image iconType="3" name="/Images/logo.png"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="jLabel2"/>
           </Properties>
         </Component>
       </SubComponents>
