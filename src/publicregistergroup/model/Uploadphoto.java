@@ -31,10 +31,10 @@ public class Uploadphoto extends javax.swing.JFrame {
         textupload = new javax.swing.JLabel();
         textDetail1 = new javax.swing.JLabel();
         textsearchclub = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        SearchTextField = new javax.swing.JTextField();
         Bottonsearch = new javax.swing.JButton();
         savebotton = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
+        EditBotton = new javax.swing.JButton();
         Title = new javax.swing.JLabel();
         uploadbotton = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -79,7 +79,7 @@ public class Uploadphoto extends javax.swing.JFrame {
         textsearchclub.setFont(new java.awt.Font("Kanit", 0, 13)); // NOI18N
         textsearchclub.setText("serach from club or organize for you interest");
         getContentPane().add(textsearchclub, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 80, 290, 20));
-        getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 100, 300, 30));
+        getContentPane().add(SearchTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 100, 300, 30));
 
         Bottonsearch.setFont(new java.awt.Font("Kanit", 0, 13)); // NOI18N
         Bottonsearch.setText("OK");
@@ -102,17 +102,17 @@ public class Uploadphoto extends javax.swing.JFrame {
         });
         getContentPane().add(savebotton, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 670, 230, 60));
 
-        jButton1.setBackground(new java.awt.Color(213, 186, 55));
-        jButton1.setFont(new java.awt.Font("Kanit", 0, 18)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setText("Edit");
-        jButton1.setBorder(null);
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        EditBotton.setBackground(new java.awt.Color(213, 186, 55));
+        EditBotton.setFont(new java.awt.Font("Kanit", 0, 18)); // NOI18N
+        EditBotton.setForeground(new java.awt.Color(255, 255, 255));
+        EditBotton.setText("Edit");
+        EditBotton.setBorder(null);
+        EditBotton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                EditBottonActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 140, 140, 40));
+        getContentPane().add(EditBotton, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 140, 140, 40));
 
         Title.setFont(new java.awt.Font("Kailasa", 0, 36)); // NOI18N
         Title.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/logo.png"))); // NOI18N
@@ -157,9 +157,9 @@ public class Uploadphoto extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_savebottonActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void EditBottonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EditBottonActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_EditBottonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -199,12 +199,12 @@ public class Uploadphoto extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Bottonsearch;
     private javax.swing.JPanel Boxphoto;
+    private javax.swing.JButton EditBotton;
+    private javax.swing.JTextField SearchTextField;
     private javax.swing.JLabel Title;
     private javax.swing.JLabel blackground;
-    private javax.swing.JButton jButton1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextArea jTextArea1;
-    private javax.swing.JTextField jTextField1;
     private javax.swing.JButton savebotton;
     private javax.swing.JLabel textDetail1;
     private javax.swing.JLabel textsearchclub;
