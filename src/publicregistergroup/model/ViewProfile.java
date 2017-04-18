@@ -28,7 +28,6 @@ public class ViewProfile extends javax.swing.JFrame {
     private void initComponents() {
 
         textsearchclub = new javax.swing.JLabel();
-        Boxsearch = new javax.swing.JPanel();
         Bottonsearch = new javax.swing.JButton();
         Title = new javax.swing.JLabel();
         boxphoto = new javax.swing.JPanel();
@@ -44,13 +43,14 @@ public class ViewProfile extends javax.swing.JFrame {
         ShowID = new javax.swing.JLabel();
         Submitbotton = new javax.swing.JButton();
         UploadBotton = new javax.swing.JButton();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
-        jTextField4 = new javax.swing.JTextField();
-        jTextField5 = new javax.swing.JTextField();
-        jTextField6 = new javax.swing.JTextField();
-        jTextField7 = new javax.swing.JTextField();
+        NameTextField = new javax.swing.JTextField();
+        SurnameTextField = new javax.swing.JTextField();
+        TelephoneTextField = new javax.swing.JTextField();
+        FacebookTextField = new javax.swing.JTextField();
+        MedicineTextField = new javax.swing.JTextField();
+        FoodTextField = new javax.swing.JTextField();
+        EmailTextField = new javax.swing.JTextField();
+        SearchclubTextField = new javax.swing.JTextField();
         blackground = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -61,28 +61,13 @@ public class ViewProfile extends javax.swing.JFrame {
         textsearchclub.setText("serach from club or organize for you interest");
         getContentPane().add(textsearchclub, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 80, 290, 20));
 
-        Boxsearch.setBackground(new java.awt.Color(255, 255, 255));
-
-        javax.swing.GroupLayout BoxsearchLayout = new javax.swing.GroupLayout(Boxsearch);
-        Boxsearch.setLayout(BoxsearchLayout);
-        BoxsearchLayout.setHorizontalGroup(
-            BoxsearchLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 290, Short.MAX_VALUE)
-        );
-        BoxsearchLayout.setVerticalGroup(
-            BoxsearchLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 20, Short.MAX_VALUE)
-        );
-
-        getContentPane().add(Boxsearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 100, 290, 20));
-
         Bottonsearch.setText("OK");
         Bottonsearch.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BottonsearchActionPerformed(evt);
             }
         });
-        getContentPane().add(Bottonsearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 100, 80, 20));
+        getContentPane().add(Bottonsearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 100, 80, 30));
 
         Title.setFont(new java.awt.Font("Kailasa", 0, 36)); // NOI18N
         Title.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/logo.png"))); // NOI18N
@@ -147,56 +132,75 @@ public class ViewProfile extends javax.swing.JFrame {
         getContentPane().add(ID, new org.netbeans.lib.awtextra.AbsoluteConstraints(756, 20, 40, 30));
         getContentPane().add(ShowID, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 20, 190, 30));
 
-        Submitbotton.setBackground(new java.awt.Color(255, 51, 0));
+        Submitbotton.setBackground(new java.awt.Color(213, 186, 55));
         Submitbotton.setFont(new java.awt.Font("Kanit", 0, 24)); // NOI18N
+        Submitbotton.setForeground(new java.awt.Color(255, 255, 255));
         Submitbotton.setText("Submit");
+        Submitbotton.setBorder(null);
         getContentPane().add(Submitbotton, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 640, 240, 40));
 
-        UploadBotton.setBackground(new java.awt.Color(153, 255, 255));
+        UploadBotton.setBackground(new java.awt.Color(213, 186, 55));
         UploadBotton.setFont(new java.awt.Font("Kanit", 0, 18)); // NOI18N
+        UploadBotton.setForeground(new java.awt.Color(255, 255, 255));
         UploadBotton.setText("Upload");
-        getContentPane().add(UploadBotton, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 580, -1, 40));
+        UploadBotton.setBorder(null);
+        getContentPane().add(UploadBotton, new org.netbeans.lib.awtextra.AbsoluteConstraints(187, 580, 70, 40));
 
-        jTextField1.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(0, 0, 0)));
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        NameTextField.setFont(new java.awt.Font("Kanit", 0, 18)); // NOI18N
+        NameTextField.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(0, 0, 0)));
+        NameTextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                NameTextFieldActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 130, 320, 40));
+        getContentPane().add(NameTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 130, 320, 40));
 
-        jTextField2.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(0, 0, 0)));
-        jTextField2.addActionListener(new java.awt.event.ActionListener() {
+        SurnameTextField.setFont(new java.awt.Font("Kanit", 0, 18)); // NOI18N
+        SurnameTextField.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(0, 0, 0)));
+        SurnameTextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField2ActionPerformed(evt);
+                SurnameTextFieldActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 200, 320, 40));
+        getContentPane().add(SurnameTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 200, 320, 40));
 
-        jTextField3.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(0, 0, 0)));
-        getContentPane().add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 270, 320, 40));
+        TelephoneTextField.setFont(new java.awt.Font("Kanit", 0, 18)); // NOI18N
+        TelephoneTextField.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(0, 0, 0)));
+        getContentPane().add(TelephoneTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 270, 320, 40));
 
-        jTextField4.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(0, 0, 0)));
-        jTextField4.addActionListener(new java.awt.event.ActionListener() {
+        FacebookTextField.setFont(new java.awt.Font("Kanit", 0, 18)); // NOI18N
+        FacebookTextField.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(0, 0, 0)));
+        FacebookTextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField4ActionPerformed(evt);
+                FacebookTextFieldActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 340, 320, 40));
+        getContentPane().add(FacebookTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 340, 320, 40));
 
-        jTextField5.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(0, 0, 0)));
-        getContentPane().add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 410, 320, 40));
+        MedicineTextField.setFont(new java.awt.Font("Kanit", 0, 18)); // NOI18N
+        MedicineTextField.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(0, 0, 0)));
+        getContentPane().add(MedicineTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 410, 320, 40));
 
-        jTextField6.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(0, 0, 0)));
-        jTextField6.addActionListener(new java.awt.event.ActionListener() {
+        FoodTextField.setFont(new java.awt.Font("Kanit", 0, 18)); // NOI18N
+        FoodTextField.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(0, 0, 0)));
+        FoodTextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField6ActionPerformed(evt);
+                FoodTextFieldActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextField6, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 480, 320, 40));
+        getContentPane().add(FoodTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 480, 320, 40));
 
-        jTextField7.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(0, 0, 0)));
-        getContentPane().add(jTextField7, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 550, 320, 40));
+        EmailTextField.setFont(new java.awt.Font("Kanit", 0, 18)); // NOI18N
+        EmailTextField.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(0, 0, 0)));
+        getContentPane().add(EmailTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 550, 320, 40));
+
+        SearchclubTextField.setFont(new java.awt.Font("Kanit", 0, 13)); // NOI18N
+        SearchclubTextField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SearchclubTextFieldActionPerformed(evt);
+            }
+        });
+        getContentPane().add(SearchclubTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 100, 300, 30));
 
         blackground.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/background.png"))); // NOI18N
         blackground.setText("jLabel1");
@@ -209,21 +213,25 @@ public class ViewProfile extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_BottonsearchActionPerformed
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void NameTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NameTextFieldActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_NameTextFieldActionPerformed
 
-    private void jTextField4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField4ActionPerformed
+    private void FacebookTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FacebookTextFieldActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField4ActionPerformed
+    }//GEN-LAST:event_FacebookTextFieldActionPerformed
 
-    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
+    private void SurnameTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SurnameTextFieldActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField2ActionPerformed
+    }//GEN-LAST:event_SurnameTextFieldActionPerformed
 
-    private void jTextField6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField6ActionPerformed
+    private void FoodTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FoodTextFieldActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField6ActionPerformed
+    }//GEN-LAST:event_FoodTextFieldActionPerformed
+
+    private void SearchclubTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SearchclubTextFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_SearchclubTextFieldActionPerformed
 
     /**
      * @param args the command line arguments
@@ -263,27 +271,27 @@ public class ViewProfile extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Bottonsearch;
-    private javax.swing.JPanel Boxsearch;
     private javax.swing.JLabel Email;
+    private javax.swing.JTextField EmailTextField;
     private javax.swing.JLabel Facebook;
+    private javax.swing.JTextField FacebookTextField;
+    private javax.swing.JTextField FoodTextField;
     private javax.swing.JLabel ID;
+    private javax.swing.JTextField MedicineTextField;
     private javax.swing.JLabel Name;
+    private javax.swing.JTextField NameTextField;
+    private javax.swing.JTextField SearchclubTextField;
     private javax.swing.JLabel ShowID;
     private javax.swing.JButton Submitbotton;
     private javax.swing.JLabel Surname;
+    private javax.swing.JTextField SurnameTextField;
     private javax.swing.JLabel Telephone;
+    private javax.swing.JTextField TelephoneTextField;
     private javax.swing.JLabel Title;
     private javax.swing.JButton UploadBotton;
     private javax.swing.JLabel blackground;
     private javax.swing.JPanel boxphoto;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
-    private javax.swing.JTextField jTextField6;
-    private javax.swing.JTextField jTextField7;
     private javax.swing.JLabel textsearchclub;
     private javax.swing.JLabel แพ้ยาอะไร;
     private javax.swing.JLabel แพ้อาหาอะไร;
