@@ -30,6 +30,8 @@ public class Uploadphoto extends javax.swing.JFrame {
         Boxphoto = new javax.swing.JPanel();
         textupload = new javax.swing.JLabel();
         BoxDetail1 = new javax.swing.JPanel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTextArea1 = new javax.swing.JTextArea();
         textDetail1 = new javax.swing.JLabel();
         textsearchclub = new javax.swing.JLabel();
         Boxsearch = new javax.swing.JPanel();
@@ -37,7 +39,7 @@ public class Uploadphoto extends javax.swing.JFrame {
         savebotton = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
         Title = new javax.swing.JLabel();
-        jButton2 = new javax.swing.JButton();
+        uploadbotton = new javax.swing.JButton();
         blackground = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -56,37 +58,48 @@ public class Uploadphoto extends javax.swing.JFrame {
         BoxphotoLayout.setHorizontalGroup(
             BoxphotoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, BoxphotoLayout.createSequentialGroup()
-                .addContainerGap(97, Short.MAX_VALUE)
+                .addContainerGap(105, Short.MAX_VALUE)
                 .addComponent(textupload, javax.swing.GroupLayout.PREFERRED_SIZE, 255, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(94, 94, 94))
+                .addGap(86, 86, 86))
         );
         BoxphotoLayout.setVerticalGroup(
             BoxphotoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, BoxphotoLayout.createSequentialGroup()
-                .addContainerGap(181, Short.MAX_VALUE)
+                .addContainerGap(147, Short.MAX_VALUE)
                 .addComponent(textupload, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(175, 175, 175))
+                .addGap(139, 139, 139))
         );
 
-        getContentPane().add(Boxphoto, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 200, 450, 440));
+        getContentPane().add(Boxphoto, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 200, 450, 370));
 
         BoxDetail1.setBackground(new java.awt.Color(255, 255, 255));
         BoxDetail1.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 5, 0, new java.awt.Color(255, 0, 0)));
+
+        jTextArea1.setColumns(20);
+        jTextArea1.setRows(5);
+        jScrollPane1.setViewportView(jTextArea1);
 
         javax.swing.GroupLayout BoxDetail1Layout = new javax.swing.GroupLayout(BoxDetail1);
         BoxDetail1.setLayout(BoxDetail1Layout);
         BoxDetail1Layout.setHorizontalGroup(
             BoxDetail1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 450, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, BoxDetail1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 438, Short.MAX_VALUE)
+                .addContainerGap())
         );
         BoxDetail1Layout.setVerticalGroup(
             BoxDetail1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 265, Short.MAX_VALUE)
+            .addGroup(BoxDetail1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 299, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(20, Short.MAX_VALUE))
         );
 
-        getContentPane().add(BoxDetail1, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 240, 450, 270));
+        getContentPane().add(BoxDetail1, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 240, 450, 330));
 
         textDetail1.setFont(new java.awt.Font("Kanit", 0, 48)); // NOI18N
+        textDetail1.setForeground(new java.awt.Color(77, 77, 77));
         textDetail1.setText("รายละเอียด");
         getContentPane().add(textDetail1, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 180, -1, -1));
 
@@ -117,24 +130,30 @@ public class Uploadphoto extends javax.swing.JFrame {
         });
         getContentPane().add(Bottonsearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 100, 80, 20));
 
+        savebotton.setBackground(new java.awt.Color(255, 153, 0));
         savebotton.setText("save");
-        getContentPane().add(savebotton, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 530, -1, -1));
+        savebotton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                savebottonActionPerformed(evt);
+            }
+        });
+        getContentPane().add(savebotton, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 670, 230, 60));
 
         jButton1.setBackground(new java.awt.Color(255, 255, 255));
         jButton1.setText("Edit");
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(837, 150, 140, 30));
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 140, 140, 40));
 
         Title.setFont(new java.awt.Font("Kailasa", 0, 36)); // NOI18N
         Title.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/logo.png"))); // NOI18N
         getContentPane().add(Title, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 440, 50));
 
-        jButton2.setText("upload");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        uploadbotton.setText("upload");
+        uploadbotton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                uploadbottonActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 660, -1, -1));
+        getContentPane().add(uploadbotton, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 580, 130, 30));
 
         blackground.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/background.png"))); // NOI18N
         blackground.setText("jLabel1");
@@ -147,9 +166,13 @@ public class Uploadphoto extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_BottonsearchActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void uploadbottonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_uploadbottonActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_uploadbottonActionPerformed
+
+    private void savebottonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_savebottonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_savebottonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -194,10 +217,12 @@ public class Uploadphoto extends javax.swing.JFrame {
     private javax.swing.JLabel Title;
     private javax.swing.JLabel blackground;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTextArea jTextArea1;
     private javax.swing.JButton savebotton;
     private javax.swing.JLabel textDetail1;
     private javax.swing.JLabel textsearchclub;
     private javax.swing.JLabel textupload;
+    private javax.swing.JButton uploadbotton;
     // End of variables declaration//GEN-END:variables
 }
