@@ -1,7 +1,7 @@
 package publicregistergroup.controller;
 import java.sql.*;
 public class ConnectBuilder {
-    public void connection(){
+    public void getConnection(){
         String db_name = "publicRegis";
         String user = "public-2";
         String pass = "public";
