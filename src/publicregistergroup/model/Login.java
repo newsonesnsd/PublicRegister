@@ -42,13 +42,14 @@ public class Login extends JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Login");
         setBackground(new java.awt.Color(255, 255, 255));
+        setMaximumSize(null);
         setName("jfLogin"); // NOI18N
         setResizable(false);
         setSize(new java.awt.Dimension(800, 600));
 
         jpnLogin.setBackground(new java.awt.Color(255, 255, 255));
 
-        jpnLoginHead.setBackground(new java.awt.Color(255, 118, 0));
+        jpnLoginHead.setBackground(new java.awt.Color(255, 77, 40));
 
         javax.swing.GroupLayout jpnLoginHeadLayout = new javax.swing.GroupLayout(jpnLoginHead);
         jpnLoginHead.setLayout(jpnLoginHeadLayout);
@@ -127,9 +128,9 @@ public class Login extends JFrame {
             jpnLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jpnLoginHead, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(jpnLoginLayout.createSequentialGroup()
-                .addGap(211, 211, 211)
+                .addGap(236, 236, 236)
                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(32, 32, 32)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jlbUsername, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jtfInputUsername, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
