@@ -1,8 +1,10 @@
 package publicregistergroup.controller;
 import java.sql.*;
-
+import java.util.*;
+import java.io.*;
 public class ConnectBuilder {
-    public void getConnection(){
+    public static Connection getConnection(){
+        Connection con = null;
         String db_name = "publicRegis";
         String user = "public-2";
         String pass = "public";
@@ -10,15 +12,26 @@ public class ConnectBuilder {
         String driverName = "com.mysql.jdbc.Driver";
         try{
             Class.forName(driverName);
+            System.out.println("driver load");
             String url = "jdbc:mysql://"+hostName+"/"+db_name;
-            Connection con = DriverManager.getConnection(url, user, pass);
-            //System.out.println("ConnectComplete");
+            con = DriverManager.getConnection(url, user, pass);
+            System.out.println("ConnectCreate");
         }
         catch (Exception e){
             System.out.println(e);
         }  
+        
+        return con;
     }
-    public static void main(String[] args){
-          new ConnectBuilder().getConnection();
+     public static void main(String[] args)throws SQLException{
+        Connection con = ConnectBuilder.getConnection();
+        String sql = "SELECT * FROM user";
+        PreparedStatement pre = con.prepareStatement(sql);
+        ResultSet rs = pre.executeQuery();
+        
+        while(rs.next()){
+            System.out.println(rs.getString("username"));  
+        }
+        
     }
 }
