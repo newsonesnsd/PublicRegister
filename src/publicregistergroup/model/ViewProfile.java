@@ -5,6 +5,12 @@
  */
 package publicregistergroup.model;
 
+import java.awt.Image;
+import java.io.File;
+import javax.swing.ImageIcon;
+import javax.swing.JFileChooser;
+import javax.swing.filechooser.FileNameExtensionFilter;
+
 /**
  *
  * @author taloey
@@ -31,7 +37,8 @@ public class ViewProfile extends javax.swing.JFrame {
         Bottonsearch = new javax.swing.JButton();
         Title = new javax.swing.JLabel();
         boxphoto = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
+        ImageUpload = new javax.swing.JLabel();
+        ImageS = new javax.swing.JLabel();
         Name = new javax.swing.JLabel();
         Surname = new javax.swing.JLabel();
         Telephone = new javax.swing.JLabel();
@@ -77,9 +84,9 @@ public class ViewProfile extends javax.swing.JFrame {
         boxphoto.setBackground(new java.awt.Color(255, 255, 255));
         boxphoto.setBorder(javax.swing.BorderFactory.createMatteBorder(3, 3, 3, 3, new java.awt.Color(255, 51, 0)));
 
-        jLabel1.setFont(new java.awt.Font("Kanit", 0, 48)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(204, 204, 204));
-        jLabel1.setText("Uploadphoto");
+        ImageUpload.setFont(new java.awt.Font("Kanit", 0, 48)); // NOI18N
+        ImageUpload.setForeground(new java.awt.Color(204, 204, 204));
+        ImageUpload.setText("Uploadphoto");
 
         javax.swing.GroupLayout boxphotoLayout = new javax.swing.GroupLayout(boxphoto);
         boxphoto.setLayout(boxphotoLayout);
@@ -87,15 +94,17 @@ public class ViewProfile extends javax.swing.JFrame {
             boxphotoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(boxphotoLayout.createSequentialGroup()
                 .addGap(71, 71, 71)
-                .addComponent(jLabel1)
+                .addComponent(ImageUpload)
                 .addContainerGap(79, Short.MAX_VALUE))
+            .addComponent(ImageS, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         boxphotoLayout.setVerticalGroup(
             boxphotoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(boxphotoLayout.createSequentialGroup()
-                .addGap(179, 179, 179)
-                .addComponent(jLabel1)
-                .addContainerGap(183, Short.MAX_VALUE))
+                .addComponent(ImageS, javax.swing.GroupLayout.DEFAULT_SIZE, 157, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(ImageUpload)
+                .addGap(199, 199, 199))
         );
 
         getContentPane().add(boxphoto, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 140, 440, 440));
@@ -259,7 +268,18 @@ public class ViewProfile extends javax.swing.JFrame {
     }//GEN-LAST:event_ChangePageActionPerformed
 
     private void UploadBottonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UploadBottonActionPerformed
-
+        JFileChooser fileOpen = new JFileChooser();
+        fileOpen.showDialog(null , "Choose Image");
+        fileOpen.setAcceptAllFileFilterUsed(false);
+        fileOpen.addChoosableFileFilter(new FileNameExtensionFilter(".jpg","jpg"));
+        fileOpen.addChoosableFileFilter(new FileNameExtensionFilter(".gif","gif"));
+        fileOpen.addChoosableFileFilter(new FileNameExtensionFilter(".png","png"));
+        int result = fileOpen.showDialog(null, "Choose Image");
+            File selecFile = fileOpen.getSelectedFile();
+            String path = selecFile.getAbsolutePath();
+            ImageS.setIcon(new ImageIcon((new ImageIcon(path).getImage().getScaledInstance(434,434,Image.SCALE_SMOOTH))));
+            
+            
     }//GEN-LAST:event_UploadBottonActionPerformed
 
     private void SubmitbottonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SubmitbottonActionPerformed
@@ -313,6 +333,8 @@ public class ViewProfile extends javax.swing.JFrame {
     private javax.swing.JTextField FacebookTextField;
     private javax.swing.JTextField FoodTextField;
     private javax.swing.JLabel ID;
+    private javax.swing.JLabel ImageS;
+    private javax.swing.JLabel ImageUpload;
     private javax.swing.JTextField MedicineTextField;
     private javax.swing.JLabel Name;
     private javax.swing.JTextField NameTextField;
@@ -327,7 +349,6 @@ public class ViewProfile extends javax.swing.JFrame {
     private javax.swing.JButton UploadBotton;
     private javax.swing.JLabel blackground;
     private javax.swing.JPanel boxphoto;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel textsearchclub;
     private javax.swing.JLabel แพ้ยาอะไร;
     private javax.swing.JLabel แพ้อาหาอะไร;
