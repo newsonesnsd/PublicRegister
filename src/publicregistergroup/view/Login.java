@@ -190,29 +190,30 @@ public class Login extends JFrame {
     }//GEN-LAST:event_jbtLoginActionPerformed
 
     /**
-     * @param args the command line arguments
+     * @return 
+     * @throws java.sql.SQLException
      */
 
-    public static boolean getLogin() {
+    public boolean getLogin() throws SQLException {
         String stdUsername;
         String stdPassword;
-        boolean status = false;
+        boolean status;
         stdUsername = jtfInputUsername.getText();
         stdPassword = String.valueOf(jpfInputPassword.getPassword()); // Password not Hash
         Connection con = ConnectionBuilder.getConnection();
-        PreparedStatement pre = null;
+        PreparedStatement pre;
         String sql = "select username, password from user where username = ? and password = ?";
         pre = con.prepareStatement(sql);
-        pre.setString(1, username);
-        pre.setString(2, password);
+        pre.setString(1, stdUsername);
+        pre.setString(2, stdPassword);
         ResultSet rec = pre.executeQuery();
-        if (rec.next) {
+        if (rec.next()) {
             status = true;
         }
         else {
-            stasus = false;
+            status = false;
         }
-        return stasus;
+        return status;
     }
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
