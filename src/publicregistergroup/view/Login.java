@@ -15,29 +15,13 @@ import publicregistergroup.controller.*;
  * @author newso
  */
 public class Login extends JFrame {
-    
+
     /**
      * Creates new form Login
      */
     public Login() {
         initComponents();
     }
-    
-   /*public static boolean getLogin(){
-        ConnectBuilder con = new ConnectBuilder();
-                String sql = "SELECT * FROM user WHERE username = ? AND password = ? ";
-
-        PreparedStatement pre = con.preparedStatemented(sql);
-        boolean status = false;
-        //String sql = "SELECT * FROM user WHERE username = ? AND password = ? ";
-        try {
-            
-            
-            
-        } 
-        catch (Exception e) {
-        }
-    }*/
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -202,21 +186,32 @@ public class Login extends JFrame {
         // TODO add your handling code here:
         String stdUsername;
         String stdPassword;
-        Connection con = ConnectionBuilder.getConnection();
         stdUsername = jtfInputUsername.getText();
-        stdPassword = String.valueOf(jpfInputPassword.getPassword()); // Password not Hash 
+        stdPassword = String.valueOf(jpfInputPassword.getPassword()); // Password not Hash
+
         System.out.println(stdUsername);
         System.out.println(stdPassword);
-//        String sql = "select * from user where username like ? and password like ? ";
-//        PreparedStatement statment = conn.prepareStatement(sql);
-        
-        
-//        System.out.println(stdUsername + "\n" + stdPassword );
     }//GEN-LAST:event_jbtLoginActionPerformed
 
     /**
      * @param args the command line arguments
      */
+
+    public static boolean getLogin(String username, String password) {
+        Connection con = ConnectionBuilder.getConnection();
+        PreparedStatement pre = null;
+        String sql = "select username, password from user where username = ? and password = ?";
+        pre = con.prepareStatement(sql);
+        pre.setString(1, username);
+        pre.setString(2, password);
+        ResultSet rec = pre.executeQuery();
+        if (rec.next) {
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
