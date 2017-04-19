@@ -2,7 +2,7 @@ package publicregistergroup.controller;
 import java.sql.*;
 import java.util.*;
 import java.io.*;
-public class ConnectBuilder {
+public class ConnectionBuilder {
     public static Connection getConnection(){
         Connection con = null;
         String db_name = "publicRegis";
@@ -24,7 +24,7 @@ public class ConnectBuilder {
         return con;
     }
      public static void main(String[] args)throws SQLException{
-        Connection con = ConnectBuilder.getConnection();
+        Connection con = ConnectionBuilder.getConnection();
         String sql = "SELECT * FROM user";
         PreparedStatement pre = con.prepareStatement(sql);
         ResultSet rs = pre.executeQuery();

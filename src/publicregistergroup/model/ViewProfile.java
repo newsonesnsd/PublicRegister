@@ -10,7 +10,7 @@ import java.io.File;
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
 import javax.swing.filechooser.FileNameExtensionFilter;
-import publicregistergroup.controller.ConnectBuilder;
+import publicregistergroup.controller.ConnectionBuilder;
 
 /**
  *
@@ -284,7 +284,7 @@ public class ViewProfile extends javax.swing.JFrame {
     }//GEN-LAST:event_UploadBottonActionPerformed
 
     private void SubmitbottonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SubmitbottonActionPerformed
-       ConnectBuilder conn = new ConnectBuilder();
+       ConnectionBuilder conn = new ConnectionBuilder();
        conn.getConnection();
        
        
