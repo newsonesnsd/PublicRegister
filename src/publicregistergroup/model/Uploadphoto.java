@@ -5,6 +5,13 @@
  */
 package publicregistergroup.model;
 
+import java.awt.Image;
+import java.io.File;
+import javax.swing.ImageIcon;
+import javax.swing.JFileChooser;
+import javax.swing.filechooser.FileNameExtensionFilter;
+import publicregistergroup.controller.ConnectionBuilder;
+
 /**
  *
  * @author taloey
@@ -29,6 +36,7 @@ public class Uploadphoto extends javax.swing.JFrame {
 
         Boxphoto = new javax.swing.JPanel();
         textupload = new javax.swing.JLabel();
+        Uploadphotos = new javax.swing.JLabel();
         textDetail1 = new javax.swing.JLabel();
         textsearchclub = new javax.swing.JLabel();
         SearchTextField = new javax.swing.JTextField();
@@ -57,19 +65,21 @@ public class Uploadphoto extends javax.swing.JFrame {
         BoxphotoLayout.setHorizontalGroup(
             BoxphotoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, BoxphotoLayout.createSequentialGroup()
-                .addContainerGap(105, Short.MAX_VALUE)
+                .addContainerGap(95, Short.MAX_VALUE)
                 .addComponent(textupload, javax.swing.GroupLayout.PREFERRED_SIZE, 255, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(86, 86, 86))
+            .addComponent(Uploadphotos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         BoxphotoLayout.setVerticalGroup(
             BoxphotoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, BoxphotoLayout.createSequentialGroup()
-                .addContainerGap(147, Short.MAX_VALUE)
+                .addComponent(Uploadphotos, javax.swing.GroupLayout.DEFAULT_SIZE, 141, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(textupload, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(139, 139, 139))
         );
 
-        getContentPane().add(Boxphoto, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 200, 450, 370));
+        getContentPane().add(Boxphoto, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 200, 440, 370));
 
         textDetail1.setFont(new java.awt.Font("Kanit", 0, 48)); // NOI18N
         textDetail1.setForeground(new java.awt.Color(77, 77, 77));
@@ -150,11 +160,21 @@ public class Uploadphoto extends javax.swing.JFrame {
     }//GEN-LAST:event_BottonsearchActionPerformed
 
     private void uploadbottonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_uploadbottonActionPerformed
-        // TODO add your handling code here:
+    JFileChooser fileOpen = new JFileChooser();
+        fileOpen.showDialog(null , "Choose Image");
+        fileOpen.setAcceptAllFileFilterUsed(false);
+        fileOpen.addChoosableFileFilter(new FileNameExtensionFilter(".jpg","jpg"));
+        fileOpen.addChoosableFileFilter(new FileNameExtensionFilter(".gif","gif"));
+        fileOpen.addChoosableFileFilter(new FileNameExtensionFilter(".png","png"));
+        int result = fileOpen.showDialog(null, "Choose Image");
+            File selecFile = fileOpen.getSelectedFile();
+            String path = selecFile.getAbsolutePath();
+           Uploadphotos.setIcon(new ImageIcon((new ImageIcon(path).getImage().getScaledInstance(436,366,Image.SCALE_SMOOTH))));
+            
     }//GEN-LAST:event_uploadbottonActionPerformed
 
     private void savebottonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_savebottonActionPerformed
-        // TODO add your handling code here:
+ 
     }//GEN-LAST:event_savebottonActionPerformed
 
     private void EditBottonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EditBottonActionPerformed
@@ -202,6 +222,7 @@ public class Uploadphoto extends javax.swing.JFrame {
     private javax.swing.JButton EditBotton;
     private javax.swing.JTextField SearchTextField;
     private javax.swing.JLabel Title;
+    private javax.swing.JLabel Uploadphotos;
     private javax.swing.JLabel blackground;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextArea jTextArea1;

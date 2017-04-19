@@ -102,7 +102,7 @@ public class ViewProfile extends javax.swing.JFrame {
         boxphotoLayout.setVerticalGroup(
             boxphotoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(boxphotoLayout.createSequentialGroup()
-                .addComponent(ImageS, javax.swing.GroupLayout.DEFAULT_SIZE, 157, Short.MAX_VALUE)
+                .addComponent(ImageS, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(ImageUpload)
                 .addGap(199, 199, 199))
