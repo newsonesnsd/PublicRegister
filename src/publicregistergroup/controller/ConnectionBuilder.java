@@ -2,6 +2,7 @@ package publicregistergroup.controller;
 import java.sql.*;
 import java.util.*;
 import java.io.*;
+
 public class ConnectionBuilder {
     public static Connection getConnection(){
         Connection con = null;
@@ -25,13 +26,12 @@ public class ConnectionBuilder {
     }
      public static void main(String[] args)throws SQLException{
         Connection con = ConnectionBuilder.getConnection();
-        String sql = "SELECT * FROM user";
-        PreparedStatement pre = con.prepareStatement(sql);
-        ResultSet rs = pre.executeQuery();
-        
-        while(rs.next()){
-            System.out.println(rs.getString("username"));  
-        }
-        
+//        String sql = "SELECT * FROM user";
+//        PreparedStatement pre = con.prepareStatement(sql);
+//        ResultSet rs = pre.executeQuery();
+//        
+//        while(rs.next()){
+//            System.out.println(rs.getString("username"));  
+//        }    
     }
 }
