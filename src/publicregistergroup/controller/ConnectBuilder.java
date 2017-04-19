@@ -12,7 +12,7 @@ public class ConnectBuilder {
             Class.forName(driverName);
             String url = "jdbc:mysql://"+hostName+"/"+db_name;
             Connection con = DriverManager.getConnection(url, user, pass);
-            System.out.println("ConnectComplete");
+            //System.out.println("ConnectComplete");
         }
         catch (Exception e){
             System.out.println(e);
