@@ -48,9 +48,9 @@ public class LinkData extends javax.swing.JFrame {
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        textsearchclub.setFont(new java.awt.Font("Kanit", 0, 13)); // NOI18N
+        textsearchclub.setFont(new java.awt.Font("Quark", 0, 14)); // NOI18N
         textsearchclub.setText("serach from club or organize for you interest");
-        getContentPane().add(textsearchclub, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 80, 290, 20));
+        getContentPane().add(textsearchclub, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 80, 290, 20));
         getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 100, 300, 30));
 
         Bottonsearch.setFont(new java.awt.Font("Kanit", 0, 13)); // NOI18N
@@ -72,7 +72,7 @@ public class LinkData extends javax.swing.JFrame {
         Box1.setBackground(new java.awt.Color(77, 77, 77));
         Box1.setBorder(javax.swing.BorderFactory.createMatteBorder(3, 3, 3, 3, new java.awt.Color(205, 77, 40)));
 
-        changeprofilebotton.setFont(new java.awt.Font("Kanit", 0, 36)); // NOI18N
+        changeprofilebotton.setFont(new java.awt.Font("Quark", 0, 48)); // NOI18N
         changeprofilebotton.setForeground(new java.awt.Color(204, 204, 204));
         changeprofilebotton.setText("แก้ไขข้อมูลส่วนตัว");
         changeprofilebotton.setBorder(null);
@@ -91,14 +91,14 @@ public class LinkData extends javax.swing.JFrame {
             .addGroup(Box1Layout.createSequentialGroup()
                 .addGap(28, 28, 28)
                 .addComponent(changeprofilebotton)
-                .addContainerGap(34, Short.MAX_VALUE))
+                .addContainerGap(37, Short.MAX_VALUE))
         );
         Box1Layout.setVerticalGroup(
             Box1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(Box1Layout.createSequentialGroup()
                 .addGap(104, 104, 104)
                 .addComponent(changeprofilebotton)
-                .addContainerGap(105, Short.MAX_VALUE))
+                .addContainerGap(93, Short.MAX_VALUE))
         );
 
         getContentPane().add(Box1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 270, 330, 270));
@@ -106,7 +106,7 @@ public class LinkData extends javax.swing.JFrame {
         Box2.setBackground(new java.awt.Color(77, 77, 77));
         Box2.setBorder(javax.swing.BorderFactory.createMatteBorder(3, 3, 3, 3, new java.awt.Color(205, 77, 40)));
 
-        checkclubbotton.setFont(new java.awt.Font("Kanit", 0, 30)); // NOI18N
+        checkclubbotton.setFont(new java.awt.Font("Quark", 0, 36)); // NOI18N
         checkclubbotton.setForeground(new java.awt.Color(204, 204, 204));
         checkclubbotton.setText("เช็ค club activities");
         checkclubbotton.setBorder(null);
@@ -123,15 +123,16 @@ public class LinkData extends javax.swing.JFrame {
         Box2Layout.setHorizontalGroup(
             Box2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Box2Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(checkclubbotton, javax.swing.GroupLayout.PREFERRED_SIZE, 324, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addContainerGap())
         );
         Box2Layout.setVerticalGroup(
             Box2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(Box2Layout.createSequentialGroup()
-                .addGap(104, 104, 104)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Box2Layout.createSequentialGroup()
+                .addContainerGap(110, Short.MAX_VALUE)
                 .addComponent(checkclubbotton)
-                .addContainerGap(115, Short.MAX_VALUE))
+                .addGap(103, 103, 103))
         );
 
         getContentPane().add(Box2, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 270, 340, 270));
@@ -139,7 +140,7 @@ public class LinkData extends javax.swing.JFrame {
         Box3.setBackground(new java.awt.Color(77, 77, 77));
         Box3.setBorder(javax.swing.BorderFactory.createMatteBorder(3, 3, 3, 3, new java.awt.Color(205, 77, 40)));
 
-        clubbotton.setFont(new java.awt.Font("Kanit", 0, 36)); // NOI18N
+        clubbotton.setFont(new java.awt.Font("Quark", 0, 48)); // NOI18N
         clubbotton.setForeground(new java.awt.Color(204, 204, 204));
         clubbotton.setText("ดูข้อมูลชมรม");
         clubbotton.setBorder(null);
@@ -165,7 +166,7 @@ public class LinkData extends javax.swing.JFrame {
             .addGroup(Box3Layout.createSequentialGroup()
                 .addGap(105, 105, 105)
                 .addComponent(clubbotton)
-                .addContainerGap(104, Short.MAX_VALUE))
+                .addContainerGap(92, Short.MAX_VALUE))
         );
 
         getContentPane().add(Box3, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 270, 330, 270));
@@ -173,15 +174,15 @@ public class LinkData extends javax.swing.JFrame {
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/logo.png"))); // NOI18N
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 640, -1, 40));
 
-        jLabel3.setFont(new java.awt.Font("Kanit", 0, 13)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Quark", 0, 14)); // NOI18N
         jLabel3.setText("KMUTT 126 Pracha Uthit Rd, Khwaeng Bang Mot");
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 680, -1, 20));
 
-        jLabel4.setFont(new java.awt.Font("Kanit", 0, 13)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Quark", 0, 14)); // NOI18N
         jLabel4.setText("Khet Thung Khru, Krung Thep Maha Nakhon 10140");
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 700, -1, -1));
 
-        jLabel5.setFont(new java.awt.Font("Kanit", 0, 13)); // NOI18N
+        jLabel5.setFont(new java.awt.Font("Quark", 0, 14)); // NOI18N
         jLabel5.setText("© Copyright 2017 KMUTT PublicizeHUB");
         getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 720, -1, -1));
 
