@@ -188,7 +188,6 @@ public class Login extends JFrame {
         try {
             String stdUsername;
             String stdPassword;
-            boolean status;
             stdUsername = jtfInputUsername.getText();
             stdPassword = String.valueOf(jpfInputPassword.getPassword()); // Password not Hash
             Connection con = ConnectionBuilder.getConnection();
@@ -199,10 +198,10 @@ public class Login extends JFrame {
             pre.setString(2, stdPassword);
             ResultSet rec = pre.executeQuery();
             if (rec.next()) {
-                status = true;
+                JFrame jfTest = new JFrame("IF");
             }
             else {
-                status = false;
+                JFrame jfTEst = new JFrame("else");
             }
         } 
         catch (SQLException e) {
