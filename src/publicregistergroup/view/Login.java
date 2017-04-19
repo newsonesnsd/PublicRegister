@@ -184,20 +184,21 @@ public class Login extends JFrame {
 
     private void jbtLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtLoginActionPerformed
         // TODO add your handling code here:
-        String stdUsername;
-        String stdPassword;
-        stdUsername = jtfInputUsername.getText();
-        stdPassword = String.valueOf(jpfInputPassword.getPassword()); // Password not Hash
-
-        System.out.println(stdUsername);
-        System.out.println(stdPassword);
+        if (!getLogin()) {
+            System.out.println("Login Pass");
+        }
     }//GEN-LAST:event_jbtLoginActionPerformed
 
     /**
      * @param args the command line arguments
      */
 
-    public static boolean getLogin(String username, String password) {
+    public static boolean getLogin() {
+        String stdUsername;
+        String stdPassword;
+        boolean status = false;
+        stdUsername = jtfInputUsername.getText();
+        stdPassword = String.valueOf(jpfInputPassword.getPassword()); // Password not Hash
         Connection con = ConnectionBuilder.getConnection();
         PreparedStatement pre = null;
         String sql = "select username, password from user where username = ? and password = ?";
@@ -206,11 +207,12 @@ public class Login extends JFrame {
         pre.setString(2, password);
         ResultSet rec = pre.executeQuery();
         if (rec.next) {
-            return true;
+            status = true;
         }
         else {
-            return false;
+            stasus = false;
         }
+        return stasus;
     }
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
