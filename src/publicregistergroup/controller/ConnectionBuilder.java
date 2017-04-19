@@ -12,10 +12,10 @@ public class ConnectionBuilder {
         String driverName = "com.mysql.jdbc.Driver";
         try{
             Class.forName(driverName);
-            System.out.println("driver load");
+            //System.out.println("driver load");
             String url = "jdbc:mysql://"+hostName+"/"+db_name;
             con = DriverManager.getConnection(url, user, pass);
-            System.out.println("ConnectCreate");
+            //System.out.println("ConnectCreate");
         }
         catch (Exception e){
             System.out.println(e);
