@@ -77,7 +77,7 @@ public class Login extends JFrame {
         );
         jpnLoginHeadLayout.setVerticalGroup(
             jpnLoginHeadLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGap(0, 768, Short.MAX_VALUE)
         );
 
         jtfInputUsername.setFont(new java.awt.Font("Quark", 0, 18)); // NOI18N
