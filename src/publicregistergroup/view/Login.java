@@ -9,6 +9,8 @@ import javax.swing.*;
 import java.awt.*;
 import java.sql.*;
 import java.util.*;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import publicregistergroup.controller.*;
 /**
  *
@@ -183,9 +185,31 @@ public class Login extends JFrame {
     }//GEN-LAST:event_jpfInputPasswordMouseClicked
 
     private void jbtLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtLoginActionPerformed
-        // TODO add your handling code here:
-        if (!getLogin()) {
-            System.out.println("Login Pass");
+        try {
+            String stdUsername;
+            String stdPassword;
+            boolean status;
+            stdUsername = jtfInputUsername.getText();
+            stdPassword = String.valueOf(jpfInputPassword.getPassword()); // Password not Hash
+            Connection con = ConnectionBuilder.getConnection();
+            PreparedStatement pre;
+            String sql = "select username, password from user where username = ? and password = ?";
+            pre = con.prepareStatement(sql);
+            pre.setString(1, stdUsername);
+            pre.setString(2, stdPassword);
+            ResultSet rec = pre.executeQuery();
+            if (rec.next()) {
+                status = true;
+            }
+            else {
+                status = false;
+            }
+        } 
+        catch (SQLException e) {
+            System.out.println(e);
+        }
+        catch (Exception e) {
+            System.out.println(e);
         }
     }//GEN-LAST:event_jbtLoginActionPerformed
 
