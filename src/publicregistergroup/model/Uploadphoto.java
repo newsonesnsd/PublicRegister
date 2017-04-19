@@ -56,7 +56,7 @@ public class Uploadphoto extends javax.swing.JFrame {
         Boxphoto.setBackground(new java.awt.Color(255, 255, 255));
         Boxphoto.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(255, 102, 51)));
 
-        textupload.setFont(new java.awt.Font("Kanit", 0, 36)); // NOI18N
+        textupload.setFont(new java.awt.Font("Quark", 0, 48)); // NOI18N
         textupload.setForeground(new java.awt.Color(204, 204, 204));
         textupload.setText("อัพโหลดรูปภาพ");
 
@@ -81,17 +81,17 @@ public class Uploadphoto extends javax.swing.JFrame {
 
         getContentPane().add(Boxphoto, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 200, 440, 370));
 
-        textDetail1.setFont(new java.awt.Font("Kanit", 0, 48)); // NOI18N
+        textDetail1.setFont(new java.awt.Font("Quark", 0, 52)); // NOI18N
         textDetail1.setForeground(new java.awt.Color(77, 77, 77));
         textDetail1.setText("รายละเอียด");
         getContentPane().add(textDetail1, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 180, -1, -1));
 
-        textsearchclub.setFont(new java.awt.Font("Kanit", 0, 13)); // NOI18N
+        textsearchclub.setFont(new java.awt.Font("Quark", 0, 14)); // NOI18N
         textsearchclub.setText("serach from club or organize for you interest");
-        getContentPane().add(textsearchclub, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 80, 290, 20));
+        getContentPane().add(textsearchclub, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 80, 290, 20));
         getContentPane().add(SearchTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 100, 300, 30));
 
-        Bottonsearch.setFont(new java.awt.Font("Kanit", 0, 13)); // NOI18N
+        Bottonsearch.setFont(new java.awt.Font("Quark", 0, 14)); // NOI18N
         Bottonsearch.setText("OK");
         Bottonsearch.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -101,7 +101,7 @@ public class Uploadphoto extends javax.swing.JFrame {
         getContentPane().add(Bottonsearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 100, 80, 30));
 
         savebotton.setBackground(new java.awt.Color(213, 186, 55));
-        savebotton.setFont(new java.awt.Font("Kanit", 0, 36)); // NOI18N
+        savebotton.setFont(new java.awt.Font("Quark", 0, 48)); // NOI18N
         savebotton.setForeground(new java.awt.Color(255, 255, 255));
         savebotton.setText("save");
         savebotton.setBorder(null);
@@ -113,7 +113,7 @@ public class Uploadphoto extends javax.swing.JFrame {
         getContentPane().add(savebotton, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 670, 230, 60));
 
         EditBotton.setBackground(new java.awt.Color(213, 186, 55));
-        EditBotton.setFont(new java.awt.Font("Kanit", 0, 18)); // NOI18N
+        EditBotton.setFont(new java.awt.Font("Quark", 0, 24)); // NOI18N
         EditBotton.setForeground(new java.awt.Color(255, 255, 255));
         EditBotton.setText("Edit");
         EditBotton.setBorder(null);
@@ -129,7 +129,7 @@ public class Uploadphoto extends javax.swing.JFrame {
         getContentPane().add(Title, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 440, 50));
 
         uploadbotton.setBackground(new java.awt.Color(213, 186, 55));
-        uploadbotton.setFont(new java.awt.Font("Kanit", 0, 18)); // NOI18N
+        uploadbotton.setFont(new java.awt.Font("Quark", 0, 24)); // NOI18N
         uploadbotton.setForeground(new java.awt.Color(255, 255, 255));
         uploadbotton.setText("upload");
         uploadbotton.setBorder(null);
