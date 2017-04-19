@@ -187,10 +187,9 @@ public class Login extends JFrame {
         // TODO add your handling code here:
         ConnectBuilder conn = new ConnectBuilder();
         conn.getConnection();
-        
         stdUsername = jtfInputUsername.getText();
-        stdPassword = String.valueOf(jpfInputPassword.getPassword()); // Password not Hash
-        System.out.println(stdUsername + "\n" + stdPassword );
+        stdPassword = String.valueOf(jpfInputPassword.getPassword()); // Password not Hash       
+//        System.out.println(stdUsername + "\n" + stdPassword );
     }//GEN-LAST:event_jbtLoginActionPerformed
 
     /**
