@@ -12,12 +12,14 @@ import java.util.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import publicregistergroup.controller.*;
+import publicregistergroup.model.User;
 /**
  *
  * @author newso
  */
 public class Login extends JFrame {
-
+    private long stdUsername;
+    private String stdPassword;
     /**
      * Creates new form Login
      */
@@ -185,36 +187,35 @@ public class Login extends JFrame {
     }//GEN-LAST:event_jpfInputPasswordMouseClicked
 
     private void jbtLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtLoginActionPerformed
-        try {
-            String stdUsername;
-            String stdPassword;
-            stdUsername = jtfInputUsername.getText();
+            stdUsername = Long.parseLong(jtfInputUsername.getText());
             stdPassword = String.valueOf(jpfInputPassword.getPassword()); // Password not Hash
-            Connection con = ConnectionBuilder.getConnection();
-            PreparedStatement pre;
-            String sql = "select username, password from user where username = ? and password = ?";
-            pre = con.prepareStatement(sql);
-            pre.setString(1, stdUsername);
-            pre.setString(2, stdPassword);
-            ResultSet rec = pre.executeQuery();
-            if (rec.next()) {
-                JOptionPane frame = new JOptionPane();
-                JOptionPane.showMessageDialog(frame,"Login Success","Login",JOptionPane.PLAIN_MESSAGE);
-                this.setVisible(false);
-                Homepage newHome = new Homepage();
-                newHome.setVisible(true);
+            User user = User.getUser(stdUsername);
+            if (user != null) {
+                if (user.getPassword() == stdPassword) {
+                    JOptionPane frame = new JOptionPane();
+                    JOptionPane.showMessageDialog(frame,"Login Success","Login",JOptionPane.PLAIN_MESSAGE);
+                    this.setVisible(false);
+                    Homepage newHome = new Homepage();
+                    newHome.setVisible(true);
+                }
+                else {
+                    JOptionPane frame = new JOptionPane();
+                    JOptionPane.showMessageDialog(frame,"Failed to Login \n Please reenter your username or password","Login",JOptionPane.ERROR_MESSAGE);   
+                }
             }
             else {
                 JOptionPane frame = new JOptionPane();
                 JOptionPane.showMessageDialog(frame,"Failed to Login \n Please reenter your username or password","Login",JOptionPane.ERROR_MESSAGE);
-            }
+            
+            
+//            Connection con = ConnectionBuilder.getConnection();
+//            PreparedStatement pre;
+//            String sql = "select username, password from user where username = ? and password = ?";
+//            pre = con.prepareStatement(sql);
+//            pre.setLong(1, stdUsername);
+//            pre.setString(2, stdPassword);
+//            ResultSet rec = pre.executeQuery();
         } 
-        catch (SQLException e) {
-            System.out.println(e);
-        }
-        catch (Exception e) {
-            System.out.println(e);
-        }
     }//GEN-LAST:event_jbtLoginActionPerformed
 
     /**
