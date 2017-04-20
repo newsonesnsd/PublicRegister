@@ -80,7 +80,7 @@ public class ViewProfile extends javax.swing.JFrame {
         getContentPane().add(Bottonsearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 100, 80, 30));
 
         Title.setFont(new java.awt.Font("Kailasa", 0, 36)); // NOI18N
-        Title.setIcon(new javax.swing.ImageIcon(getClass().getResource("/publicregistergroup/view/logo.png"))); // NOI18N
+        Title.setIcon(new javax.swing.ImageIcon("E:\\PublicRegister\\src\\Images\\logo.png")); // NOI18N
         getContentPane().add(Title, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 440, 50));
 
         boxphoto.setBackground(new java.awt.Color(255, 255, 255));
@@ -94,19 +94,19 @@ public class ViewProfile extends javax.swing.JFrame {
         boxphoto.setLayout(boxphotoLayout);
         boxphotoLayout.setHorizontalGroup(
             boxphotoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(boxphotoLayout.createSequentialGroup()
-                .addGap(71, 71, 71)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, boxphotoLayout.createSequentialGroup()
+                .addContainerGap(79, Short.MAX_VALUE)
                 .addComponent(ImageUpload)
-                .addContainerGap(79, Short.MAX_VALUE))
+                .addGap(71, 71, 71))
             .addComponent(ImageS, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         boxphotoLayout.setVerticalGroup(
             boxphotoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(boxphotoLayout.createSequentialGroup()
-                .addComponent(ImageS, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(ImageS, javax.swing.GroupLayout.DEFAULT_SIZE, 48, Short.MAX_VALUE)
+                .addGap(121, 121, 121)
                 .addComponent(ImageUpload)
-                .addGap(199, 199, 199))
+                .addGap(193, 193, 193))
         );
 
         getContentPane().add(boxphoto, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 140, 440, 440));
@@ -231,6 +231,7 @@ public class ViewProfile extends javax.swing.JFrame {
         });
         getContentPane().add(ChangePage, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 20, 230, 40));
 
+        blackground.setIcon(new javax.swing.ImageIcon("E:\\PublicRegister\\src\\Images\\background.png")); // NOI18N
         blackground.setText("jLabel1");
         getContentPane().add(blackground, new org.netbeans.lib.awtextra.AbsoluteConstraints(-5, 0, 1030, 770));
 

@@ -66,7 +66,7 @@ public class CheckAllActivity extends javax.swing.JFrame {
         getContentPane().add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 640, -1, 40));
 
         Title.setFont(new java.awt.Font("Kailasa", 0, 36)); // NOI18N
-        Title.setIcon(new javax.swing.ImageIcon("/Users/taloey/Desktop/publicRegister/src/Images/logo.png")); // NOI18N
+        Title.setIcon(new javax.swing.ImageIcon("E:\\PublicRegister\\src\\Images\\logo.png")); // NOI18N
         getContentPane().add(Title, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 440, 50));
 
         textsearchclub.setFont(new java.awt.Font("Quark", 0, 14)); // NOI18N
@@ -278,7 +278,7 @@ public class CheckAllActivity extends javax.swing.JFrame {
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 150, 960, 450));
 
-        blackground.setIcon(new javax.swing.ImageIcon("/Users/taloey/Desktop/publicRegister/src/Images/background.png")); // NOI18N
+        blackground.setIcon(new javax.swing.ImageIcon("E:\\PublicRegister\\src\\Images\\background.png")); // NOI18N
         blackground.setText("jLabel1");
         getContentPane().add(blackground, new org.netbeans.lib.awtextra.AbsoluteConstraints(-5, 0, 1030, 770));
 
