@@ -189,6 +189,7 @@ public class Login extends JFrame {
     private void jbtLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtLoginActionPerformed
             stdUsername = Long.parseLong(jtfInputUsername.getText());
             stdPassword = String.valueOf(jpfInputPassword.getPassword()); // Password not Hash
+<<<<<<< HEAD
             User user = User.getUser(stdUsername);
             if (user != null) {
                 if (user.getPassword() == stdPassword) {
@@ -215,6 +216,23 @@ public class Login extends JFrame {
 //            pre.setLong(1, stdUsername);
 //            pre.setString(2, stdPassword);
 //            ResultSet rec = pre.executeQuery();
+=======
+            Connection con = ConnectionBuilder.getConnection();
+            PreparedStatement pre;
+            String sql = "select username, password from user where username = ? and password = ?";
+            pre = con.prepareStatement(sql);
+            pre.setString(1, stdUsername);
+            pre.setString(2, stdPassword);
+            ResultSet rec = pre.executeQuery();
+            if (rec.next()) {
+                this.setVisible(false);
+                Homepage newHome = new Homepage();
+                newHome.setVisible(true);
+            }
+            else {
+                System.out.println("False");
+            }
+>>>>>>> parent of f9c2198... add Dialog when login
         } 
     }//GEN-LAST:event_jbtLoginActionPerformed
 
