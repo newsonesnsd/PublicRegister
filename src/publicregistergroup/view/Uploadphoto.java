@@ -141,7 +141,7 @@ public class Uploadphoto extends javax.swing.JFrame {
         getContentPane().add(uploadbotton, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 580, 130, 40));
 
         jTextArea1.setColumns(20);
-        jTextArea1.setFont(new java.awt.Font("Kanit", 0, 13)); // NOI18N
+        jTextArea1.setFont(new java.awt.Font("Quark", 0, 14)); // NOI18N
         jTextArea1.setRows(5);
         jTextArea1.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 5, 0, new java.awt.Color(255, 51, 0)));
         jScrollPane1.setViewportView(jTextArea1);

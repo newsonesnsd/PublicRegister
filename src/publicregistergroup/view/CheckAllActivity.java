@@ -63,12 +63,10 @@ public class CheckAllActivity extends javax.swing.JFrame {
         setIconImages(getIconImages());
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel25.setIcon(new javax.swing.ImageIcon("C:\\Users\\ART\\Desktop\\ProjectPublicRegister\\src\\Images\\logo.png")); // NOI18N
         getContentPane().add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 640, -1, 40));
 
         Title.setFont(new java.awt.Font("Kailasa", 0, 36)); // NOI18N
-        Title.setIcon(new javax.swing.ImageIcon("C:\\Users\\ART\\Desktop\\ProjectPublicRegister\\src\\Images\\logo.png")); // NOI18N
+        Title.setIcon(new javax.swing.ImageIcon("/Users/taloey/Desktop/publicRegister/src/Images/logo.png")); // NOI18N
         getContentPane().add(Title, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 440, 50));
 
         textsearchclub.setFont(new java.awt.Font("Quark", 0, 14)); // NOI18N
@@ -280,7 +278,7 @@ public class CheckAllActivity extends javax.swing.JFrame {
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 150, 960, 450));
 
-        blackground.setIcon(new javax.swing.ImageIcon("C:\\Users\\ART\\Desktop\\ProjectPublicRegister\\src\\Images\\background.png")); // NOI18N
+        blackground.setIcon(new javax.swing.ImageIcon("/Users/taloey/Desktop/publicRegister/src/Images/background.png")); // NOI18N
         blackground.setText("jLabel1");
         getContentPane().add(blackground, new org.netbeans.lib.awtextra.AbsoluteConstraints(-5, 0, 1030, 770));
 
@@ -337,19 +335,13 @@ public class CheckAllActivity extends javax.swing.JFrame {
     private javax.swing.JLabel Title;
     private javax.swing.JLabel blackground;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel14;
-    private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel20;
-    private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel24;
@@ -358,25 +350,13 @@ public class CheckAllActivity extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private static javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
-    private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JTextField jTextField1;
-    private javax.swing.JToggleButton jToggleButton1;
     private javax.swing.JToggleButton jToggleButton10;
-    private javax.swing.JToggleButton jToggleButton2;
-    private javax.swing.JToggleButton jToggleButton3;
     private javax.swing.JToggleButton jToggleButton4;
     private javax.swing.JToggleButton jToggleButton5;
-    private javax.swing.JToggleButton jToggleButton6;
-    private javax.swing.JToggleButton jToggleButton7;
-    private javax.swing.JToggleButton jToggleButton8;
     private javax.swing.JToggleButton jToggleButton9;
     private javax.swing.JLabel textsearchclub;
     // End of variables declaration//GEN-END:variables
