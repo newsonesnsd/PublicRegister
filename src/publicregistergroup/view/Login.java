@@ -198,10 +198,12 @@ public class Login extends JFrame {
             pre.setString(2, stdPassword);
             ResultSet rec = pre.executeQuery();
             if (rec.next()) {
-                JFrame jfTest = new JFrame("IF");
+                this.setVisible(false);
+                Homepage newHome = new Homepage();
+                newHome.setVisible(true);
             }
             else {
-                JFrame jfTEst = new JFrame("else");
+                System.out.println("False");
             }
         } 
         catch (SQLException e) {
@@ -217,27 +219,27 @@ public class Login extends JFrame {
      * @throws java.sql.SQLException
      */
 
-    public boolean getLogin() throws SQLException {
-        String stdUsername;
-        String stdPassword;
-        boolean status;
-        stdUsername = jtfInputUsername.getText();
-        stdPassword = String.valueOf(jpfInputPassword.getPassword()); // Password not Hash
-        Connection con = ConnectionBuilder.getConnection();
-        PreparedStatement pre;
-        String sql = "select username, password from user where username = ? and password = ?";
-        pre = con.prepareStatement(sql);
-        pre.setString(1, stdUsername);
-        pre.setString(2, stdPassword);
-        ResultSet rec = pre.executeQuery();
-        if (rec.next()) {
-            status = true;
-        }
-        else {
-            status = false;
-        }
-        return status;
-    }
+//    public boolean getLogin() throws SQLException {
+//        String stdUsername;
+//        String stdPassword;
+//        boolean status;
+//        stdUsername = jtfInputUsername.getText();
+//        stdPassword = String.valueOf(jpfInputPassword.getPassword()); // Password not Hash
+//        Connection con = ConnectionBuilder.getConnection();
+//        PreparedStatement pre;
+//        String sql = "select username, password from user where username = ? and password = ?";
+//        pre = con.prepareStatement(sql);
+//        pre.setString(1, stdUsername);
+//        pre.setString(2, stdPassword);
+//        ResultSet rec = pre.executeQuery();
+//        if (rec.next()) {
+//            status = true;
+//        }
+//        else {
+//            status = false;
+//        }
+//        return status;
+//    }
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
