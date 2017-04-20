@@ -198,14 +198,16 @@ public class Login extends JFrame {
             pre.setString(2, stdPassword);
             ResultSet rec = pre.executeQuery();
             if (rec.next()) {
+                JOptionPane frame = new JOptionPane();
+                JOptionPane.showMessageDialog(frame,"Login Success","Login",JOptionPane.PLAIN_MESSAGE);
                 this.setVisible(false);
-                //Homepage newHome = new Homepage();
-                //newHome.setVisible(true);
-                ViewProfile newPro = new ViewProfile();
-                newPro.setVisible(true);
+                ViewProfile viewPro = new ViewProfile();
+                viewPro.setVisible(true);
+                
             }
             else {
-                System.out.println("False");
+                JOptionPane frame = new JOptionPane();
+                JOptionPane.showMessageDialog(frame,"Failed to Login \n Please reenter your username or password","Login",JOptionPane.ERROR_MESSAGE);
             }
         } 
         catch (SQLException e) {
@@ -285,4 +287,25 @@ public class Login extends JFrame {
     private javax.swing.JSeparator separator1;
     private javax.swing.JSeparator separator2;
     // End of variables declaration//GEN-END:variables
+    
+//    public static void addSuperstition() {
+//                        _ooOoo_
+//                       o8888888o
+//                       88" . "88
+//                       (| -_- |)
+//                       O\  =  /O
+//                    ____/`---'\____
+//                  .'  \\|     |//  `.
+//                 /  \\|||  :  |||//  \
+//                /  _||||| -:- |||||_  \
+//                |   | \\\  -  /'| |   |
+//                | \_|  `\`---'//  |_/ |
+//                \  .-\__ `-. -'__/-.  /
+//              ___`. .'  /--.--\  `. .'___
+//           ."" '<  `.___\_<|>_/___.' _> \"".
+//          | | :  `- \`. ;`. _/; .'/ /  .' ; |
+//          \  \ `-.   \_\_`. _.'_/_/  -' _.' /
+//===========`-.`___`-.__\ \___  /__.-'_.'_.-'================
+//                        `=--=-'                    
+//    }
 }
