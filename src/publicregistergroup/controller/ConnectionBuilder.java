@@ -32,6 +32,27 @@ public class ConnectionBuilder {
 //        
 //        while(rs.next()){
 //            System.out.println(rs.getString("username"));  
-//        }    
+//        }
+//        try {
+//            Scanner input = new Scanner(System.in);
+//            String stdUsername = input.next();
+//            String stdPassword = input.next();
+//            PreparedStatement pre;
+//            String sql = "select username, password from user where username = ? and password = ?";
+//            pre = con.prepareStatement(sql);
+//            pre.setString(1, stdUsername);
+//            pre.setString(2, stdPassword);
+//            ResultSet rec = pre.executeQuery();
+//            if (rec.next()) {
+//                System.out.println("IF");
+//            }
+//            else {
+//                System.out.println("False");
+//            }
+//         } 
+//        catch (Exception e) {
+//            System.out.println(e);
+//        }
+           
     }
 }
