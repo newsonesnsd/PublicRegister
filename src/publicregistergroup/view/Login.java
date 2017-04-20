@@ -198,12 +198,15 @@ public class Login extends JFrame {
             pre.setString(2, stdPassword);
             ResultSet rec = pre.executeQuery();
             if (rec.next()) {
+                JOptionPane frame = new JOptionPane();
+                JOptionPane.showMessageDialog(frame,"Login Success","Login",JOptionPane.PLAIN_MESSAGE);
                 this.setVisible(false);
                 Homepage newHome = new Homepage();
                 newHome.setVisible(true);
             }
             else {
-                System.out.println("False");
+                JOptionPane frame = new JOptionPane();
+                JOptionPane.showMessageDialog(frame,"Failed to Login \n Please reenter your username or password","Login",JOptionPane.ERROR_MESSAGE);
             }
         } 
         catch (SQLException e) {
