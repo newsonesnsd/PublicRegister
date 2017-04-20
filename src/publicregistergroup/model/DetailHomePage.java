@@ -5,8 +5,6 @@
  */
 package publicregistergroup.model;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
 import publicregistergroup.controller.ConnectionBuilder;
 import java.sql.*;
 import java.util.*;
