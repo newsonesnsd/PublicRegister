@@ -199,8 +199,10 @@ public class Login extends JFrame {
             ResultSet rec = pre.executeQuery();
             if (rec.next()) {
                 this.setVisible(false);
-                Homepage newHome = new Homepage();
-                newHome.setVisible(true);
+                //Homepage newHome = new Homepage();
+                //newHome.setVisible(true);
+                ViewProfile newPro = new ViewProfile();
+                newPro.setVisible(true);
             }
             else {
                 System.out.println("False");
