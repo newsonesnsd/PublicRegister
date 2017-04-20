@@ -58,7 +58,7 @@
           <Font name="Kailasa" size="36" style="0"/>
         </Property>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/publicregistergroup/view/logo.png"/>
+          <Image iconType="3" name="/Images/logo.png"/>
         </Property>
       </Properties>
       <Constraints>
@@ -443,6 +443,9 @@
     </Component>
     <Component class="javax.swing.JLabel" name="blackground">
       <Properties>
+        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="3" name="/Images/background.png"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="jLabel1"/>
       </Properties>
       <Constraints>

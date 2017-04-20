@@ -11,7 +11,6 @@ import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
 import javax.swing.filechooser.FileNameExtensionFilter;
 import publicregistergroup.controller.ConnectionBuilder;
-import publicregistergroup.model.User;
 
 /**
  *
@@ -24,6 +23,8 @@ public class ViewProfile extends javax.swing.JFrame {
      */
     public ViewProfile() {
         initComponents();
+        Title.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/logo.png"))); // NOI18N
+        getContentPane().add(Title, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 440, 50));
     }
 
     /**
@@ -80,7 +81,7 @@ public class ViewProfile extends javax.swing.JFrame {
         getContentPane().add(Bottonsearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 100, 80, 30));
 
         Title.setFont(new java.awt.Font("Kailasa", 0, 36)); // NOI18N
-        Title.setIcon(new javax.swing.ImageIcon(getClass().getResource("/publicregistergroup/view/logo.png"))); // NOI18N
+        Title.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/logo.png"))); // NOI18N
         getContentPane().add(Title, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 440, 50));
 
         boxphoto.setBackground(new java.awt.Color(255, 255, 255));
@@ -231,6 +232,7 @@ public class ViewProfile extends javax.swing.JFrame {
         });
         getContentPane().add(ChangePage, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 20, 230, 40));
 
+        blackground.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/background.png"))); // NOI18N
         blackground.setText("jLabel1");
         getContentPane().add(blackground, new org.netbeans.lib.awtextra.AbsoluteConstraints(-5, 0, 1030, 770));
 
@@ -244,8 +246,6 @@ public class ViewProfile extends javax.swing.JFrame {
 
     private void NameTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NameTextFieldActionPerformed
         // TODO add your handling code here:
-        
-        
     }//GEN-LAST:event_NameTextFieldActionPerformed
 
     private void FacebookTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FacebookTextFieldActionPerformed
