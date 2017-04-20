@@ -58,11 +58,7 @@
           <Font name="Kailasa" size="36" style="0"/>
         </Property>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-<<<<<<< HEAD
-          <Image iconType="2" name="E:\PublicRegister\src\Images\logo.png"/>
-=======
           <Image iconType="3" name="/Images/logo.png"/>
->>>>>>> 3478576098477af0dd873959f892aa6fdea33424
         </Property>
       </Properties>
       <Constraints>
@@ -448,11 +444,7 @@
     <Component class="javax.swing.JLabel" name="blackground">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-<<<<<<< HEAD
-          <Image iconType="2" name="E:\PublicRegister\src\Images\background.png"/>
-=======
           <Image iconType="3" name="/Images/background.png"/>
->>>>>>> 3478576098477af0dd873959f892aa6fdea33424
         </Property>
         <Property name="text" type="java.lang.String" value="jLabel1"/>
       </Properties>

@@ -23,8 +23,7 @@ public class ViewProfile extends javax.swing.JFrame {
      */
     public ViewProfile() {
         initComponents();
-        Title.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/logo.png"))); // NOI18N
-        getContentPane().add(Title, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 440, 50));
+        
     }
 
     /**
