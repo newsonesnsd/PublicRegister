@@ -68,15 +68,23 @@ public class User {
     
     public static User getUser(long username) {
         User user = new User();
-        String query = "SELECT a.std_id as username, a.std_name, b.password "
+        long std = 0;
+        /*String query = "SELECT a.std_id as username, a.std_name, b.password "
                 + "FROM students AS a LEFT OUTER JOIN user as b ON a.std_id = b.username "
-                + "WHERE a.username = ?";
-        try (PreparedStatement statement = con.prepareStatement(query)) {
-            statement.setLong(1, username);
+                + "WHERE a.username = ?";*/
+        String sql = "select std_id from user where std_id == 57130500121 ";
+        try (PreparedStatement statement = con.prepareStatement(sql)) {
+           
+            // statement.setLong(1, username);
             ResultSet res = statement.executeQuery();
-            res.next();
-            user.username = res.getLong("username");
-            user.password = res.getString("password");
+            while(res.next()){
+                System.out.println();
+            };
+            //std = user.username = res.getLong("username");
+            //if(std==){
+            //    std == 
+            //}
+            //user.password = res.getString("password");
         } 
         catch (Exception e) {
             System.out.println(e);

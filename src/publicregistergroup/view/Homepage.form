@@ -754,7 +754,7 @@
           <Font name="Kailasa" size="36" style="0"/>
         </Property>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="2" name="/Users/taloey/Desktop/publicRegister/src/Images/logo.png"/>
+          <Image iconType="2" name="E:\PublicRegister\src\Images\logo.png"/>
         </Property>
       </Properties>
       <Constraints>
@@ -773,7 +773,7 @@
     <Component class="javax.swing.JLabel" name="blackground">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="2" name="/Users/taloey/Desktop/publicRegister/src/Images/background.png"/>
+          <Image iconType="2" name="E:\PublicRegister\src\Images\background.png"/>
         </Property>
       </Properties>
       <Constraints>

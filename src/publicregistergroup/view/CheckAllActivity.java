@@ -53,6 +53,7 @@ public class CheckAllActivity extends javax.swing.JFrame {
         jLabel19 = new javax.swing.JLabel();
         jToggleButton4 = new javax.swing.JToggleButton();
         jToggleButton5 = new javax.swing.JToggleButton();
+        backbotton = new javax.swing.JButton();
         blackground = new javax.swing.JLabel();
 
         jLabel1.setText("jLabel1");
@@ -278,7 +279,19 @@ public class CheckAllActivity extends javax.swing.JFrame {
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 150, 960, 450));
 
+<<<<<<< HEAD
         blackground.setIcon(new javax.swing.ImageIcon("E:\\PublicRegister\\src\\Images\\background.png")); // NOI18N
+=======
+        backbotton.setText("Back");
+        backbotton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                backbottonActionPerformed(evt);
+            }
+        });
+        getContentPane().add(backbotton, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 600, -1, -1));
+
+        blackground.setIcon(new javax.swing.ImageIcon("/Users/taloey/Desktop/publicRegister/src/Images/background.png")); // NOI18N
+>>>>>>> 3478576098477af0dd873959f892aa6fdea33424
         blackground.setText("jLabel1");
         getContentPane().add(blackground, new org.netbeans.lib.awtextra.AbsoluteConstraints(-5, 0, 1030, 770));
 
@@ -292,6 +305,14 @@ public class CheckAllActivity extends javax.swing.JFrame {
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField1ActionPerformed
+
+    private void backbottonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backbottonActionPerformed
+        
+       LinkData data = new LinkData();
+       this.setVisible(false);
+       data.setVisible(true);
+                              
+    }//GEN-LAST:event_backbottonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -333,6 +354,7 @@ public class CheckAllActivity extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Bottonsearch;
     private javax.swing.JLabel Title;
+    private javax.swing.JButton backbotton;
     private javax.swing.JLabel blackground;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel11;

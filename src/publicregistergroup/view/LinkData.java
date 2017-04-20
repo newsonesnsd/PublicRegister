@@ -63,7 +63,7 @@ public class LinkData extends javax.swing.JFrame {
         getContentPane().add(Bottonsearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 100, 80, 30));
 
         Title.setFont(new java.awt.Font("Kailasa", 0, 36)); // NOI18N
-        Title.setIcon(new javax.swing.ImageIcon("/Users/taloey/Desktop/publicRegister/src/Images/logo.png")); // NOI18N
+        Title.setIcon(new javax.swing.ImageIcon("E:\\PublicRegister\\src\\Images\\logo.png")); // NOI18N
         getContentPane().add(Title, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 400, 50));
 
         UsernameID.setFont(new java.awt.Font("Kanit", 0, 24)); // NOI18N
@@ -171,7 +171,7 @@ public class LinkData extends javax.swing.JFrame {
 
         getContentPane().add(Box3, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 270, 330, 270));
 
-        jLabel2.setIcon(new javax.swing.ImageIcon("/Users/taloey/Desktop/publicRegister/src/Images/logo.png")); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon("E:\\PublicRegister\\src\\Images\\logo.png")); // NOI18N
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 640, 400, 40));
 
         jLabel3.setFont(new java.awt.Font("Quark", 0, 14)); // NOI18N
@@ -186,7 +186,7 @@ public class LinkData extends javax.swing.JFrame {
         jLabel5.setText("© Copyright 2017 KMUTT PublicizeHUB");
         getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 720, -1, -1));
 
-        blackground.setIcon(new javax.swing.ImageIcon("/Users/taloey/Desktop/publicRegister/src/Images/background.png")); // NOI18N
+        blackground.setIcon(new javax.swing.ImageIcon("E:\\PublicRegister\\src\\Images\\background.png")); // NOI18N
         blackground.setText("jLabel1");
         getContentPane().add(blackground, new org.netbeans.lib.awtextra.AbsoluteConstraints(-5, 0, 1030, 770));
 
