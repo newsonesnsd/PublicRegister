@@ -416,16 +416,17 @@ public class Homepage extends javax.swing.JFrame {
 
         jButton2.setFont(new java.awt.Font("Quark", 0, 18)); // NOI18N
         jButton2.setText("Login");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
         getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 90, 90, -1));
 
         Title.setFont(new java.awt.Font("Kailasa", 0, 36)); // NOI18N
-        Title.setIcon(new javax.swing.ImageIcon("C:\\Users\\ART\\Desktop\\ProjectPublicRegister\\src\\Images\\logo.png")); // NOI18N
         getContentPane().add(Title, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 440, 50));
-
-        jLabel10.setIcon(new javax.swing.ImageIcon("C:\\Users\\ART\\Desktop\\ProjectPublicRegister\\src\\Images\\logo.png")); // NOI18N
         getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 640, -1, 40));
 
-        blackground.setIcon(new javax.swing.ImageIcon("C:\\Users\\ART\\Desktop\\ProjectPublicRegister\\src\\Images\\background.png")); // NOI18N
         blackground.setText("jLabel1");
         getContentPane().add(blackground, new org.netbeans.lib.awtextra.AbsoluteConstraints(-5, 0, 1030, 770));
 
@@ -443,6 +444,13 @@ public class Homepage extends javax.swing.JFrame {
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+        Login log = new Login();
+        this.setVisible(false);
+        log.setVisible(true);
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments
