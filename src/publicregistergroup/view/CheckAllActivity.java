@@ -279,9 +279,6 @@ public class CheckAllActivity extends javax.swing.JFrame {
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 150, 960, 450));
 
-<<<<<<< HEAD
-        blackground.setIcon(new javax.swing.ImageIcon("E:\\PublicRegister\\src\\Images\\background.png")); // NOI18N
-=======
         backbotton.setText("Back");
         backbotton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -290,8 +287,7 @@ public class CheckAllActivity extends javax.swing.JFrame {
         });
         getContentPane().add(backbotton, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 600, -1, -1));
 
-        blackground.setIcon(new javax.swing.ImageIcon("/Users/taloey/Desktop/publicRegister/src/Images/background.png")); // NOI18N
->>>>>>> 3478576098477af0dd873959f892aa6fdea33424
+        blackground.setIcon(new javax.swing.ImageIcon("E:\\PublicRegister\\src\\Images\\background.png")); // NOI18N
         blackground.setText("jLabel1");
         getContentPane().add(blackground, new org.netbeans.lib.awtextra.AbsoluteConstraints(-5, 0, 1030, 770));
 
@@ -307,11 +303,11 @@ public class CheckAllActivity extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextField1ActionPerformed
 
     private void backbottonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backbottonActionPerformed
-        
+
        LinkData data = new LinkData();
        this.setVisible(false);
        data.setVisible(true);
-                              
+
     }//GEN-LAST:event_backbottonActionPerformed
 
     /**
@@ -321,7 +317,7 @@ public class CheckAllActivity extends javax.swing.JFrame {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html
          */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {

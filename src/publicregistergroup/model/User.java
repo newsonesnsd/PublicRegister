@@ -79,7 +79,7 @@ public class User {
             ResultSet res = statement.executeQuery();
             while(res.next()){
                 System.out.println();
-            };
+            }
             //std = user.username = res.getLong("username");
             //if(std==){
             //    std == 

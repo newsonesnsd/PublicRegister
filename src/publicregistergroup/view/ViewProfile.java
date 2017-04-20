@@ -81,11 +81,6 @@ public class ViewProfile extends javax.swing.JFrame {
         getContentPane().add(Bottonsearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 100, 80, 30));
 
         Title.setFont(new java.awt.Font("Kailasa", 0, 36)); // NOI18N
-<<<<<<< HEAD
-        Title.setIcon(new javax.swing.ImageIcon("E:\\PublicRegister\\src\\Images\\logo.png")); // NOI18N
-=======
-        Title.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/logo.png"))); // NOI18N
->>>>>>> 3478576098477af0dd873959f892aa6fdea33424
         getContentPane().add(Title, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 440, 50));
 
         boxphoto.setBackground(new java.awt.Color(255, 255, 255));
@@ -236,11 +231,6 @@ public class ViewProfile extends javax.swing.JFrame {
         });
         getContentPane().add(ChangePage, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 20, 230, 40));
 
-<<<<<<< HEAD
-        blackground.setIcon(new javax.swing.ImageIcon("E:\\PublicRegister\\src\\Images\\background.png")); // NOI18N
-=======
-        blackground.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/background.png"))); // NOI18N
->>>>>>> 3478576098477af0dd873959f892aa6fdea33424
         blackground.setText("jLabel1");
         getContentPane().add(blackground, new org.netbeans.lib.awtextra.AbsoluteConstraints(-5, 0, 1030, 770));
 
@@ -289,16 +279,16 @@ public class ViewProfile extends javax.swing.JFrame {
             File selecFile = fileOpen.getSelectedFile();
             String path = selecFile.getAbsolutePath();
             ImageS.setIcon(new ImageIcon((new ImageIcon(path).getImage().getScaledInstance(434,434,Image.SCALE_SMOOTH))));
-            
-            
+
+
     }//GEN-LAST:event_UploadBottonActionPerformed
 
     private void SubmitbottonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SubmitbottonActionPerformed
        ConnectionBuilder conn = new ConnectionBuilder();
        conn.getConnection();
-       
-       
-        
+
+
+
        LinkData data = new LinkData();
        this.setVisible(false);
        data.setVisible(true);
@@ -311,7 +301,7 @@ public class ViewProfile extends javax.swing.JFrame {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html
          */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
