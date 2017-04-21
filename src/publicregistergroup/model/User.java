@@ -72,7 +72,7 @@ public class User {
         /*String query = "SELECT a.std_id as username, a.std_name, b.password "
                 + "FROM students AS a LEFT OUTER JOIN user as b ON a.std_id = b.username "
                 + "WHERE a.username = ?";*/
-        String sql = "select std_id from user where std_id == 57130500121 ";
+        String sql = "select std_id from user where std_id == ?";
         try (PreparedStatement statement = con.prepareStatement(sql)) {
            
             // statement.setLong(1, username);
