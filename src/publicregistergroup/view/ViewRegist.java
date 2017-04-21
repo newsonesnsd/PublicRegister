@@ -118,6 +118,11 @@ public class ViewRegist extends javax.swing.JFrame {
 
         Edit.setFont(new java.awt.Font("Quark", 0, 10)); // NOI18N
         Edit.setText("EDIT");
+        Edit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                EditActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -295,6 +300,12 @@ public class ViewRegist extends javax.swing.JFrame {
     private void Bottonsearch1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Bottonsearch1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_Bottonsearch1ActionPerformed
+
+    private void EditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EditActionPerformed
+       ViewProfile view = new ViewProfile();
+       this.setVisible(false);
+       view.setVisible(true);
+    }//GEN-LAST:event_EditActionPerformed
 
     /**
      * @param args the command line arguments

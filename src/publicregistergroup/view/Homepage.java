@@ -189,6 +189,11 @@ public class Homepage extends javax.swing.JFrame {
 
         jButton5.setFont(new java.awt.Font("Quark", 0, 14)); // NOI18N
         jButton5.setText("สมัครเข้าร่วมชมรม");
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
@@ -246,6 +251,11 @@ public class Homepage extends javax.swing.JFrame {
 
         jButton6.setFont(new java.awt.Font("Quark", 0, 14)); // NOI18N
         jButton6.setText("สมัครเข้าร่วมชมรม");
+        jButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton6ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
         jPanel7.setLayout(jPanel7Layout);
@@ -304,6 +314,11 @@ public class Homepage extends javax.swing.JFrame {
 
         jButton7.setFont(new java.awt.Font("Quark", 0, 14)); // NOI18N
         jButton7.setText("สมัครเข้าร่วมชมรม");
+        jButton7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton7ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
         jPanel8.setLayout(jPanel8Layout);
@@ -423,11 +438,8 @@ public class Homepage extends javax.swing.JFrame {
         getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 90, 90, -1));
 
         Title.setFont(new java.awt.Font("Kailasa", 0, 36)); // NOI18N
-        Title.setIcon(new javax.swing.ImageIcon("/Images/logo.png")); // NOI18N
         getContentPane().add(Title, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 440, 50));
         getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 640, -1, 40));
-
-        blackground.setIcon(new javax.swing.ImageIcon("E:\\PublicRegister\\src\\Images\\background.png")); // NOI18N
         getContentPane().add(blackground, new org.netbeans.lib.awtextra.AbsoluteConstraints(-5, 0, 1030, 770));
 
         pack();
@@ -442,7 +454,9 @@ public class Homepage extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextField1ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        // TODO add your handling code here:
+       ViewRegist view = new ViewRegist();
+       this.setVisible(false);
+       view.setVisible(true);
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
@@ -451,6 +465,24 @@ public class Homepage extends javax.swing.JFrame {
         this.setVisible(false);
         log.setVisible(true);
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+       ViewRegist view = new ViewRegist();
+       this.setVisible(false);
+       view.setVisible(true);
+    }//GEN-LAST:event_jButton5ActionPerformed
+
+    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+       ViewRegist view = new ViewRegist();
+       this.setVisible(false);
+       view.setVisible(true);
+    }//GEN-LAST:event_jButton6ActionPerformed
+
+    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+       ViewRegist view = new ViewRegist();
+       this.setVisible(false);
+       view.setVisible(true);
+    }//GEN-LAST:event_jButton7ActionPerformed
 
     /**
      * @param args the command line arguments
