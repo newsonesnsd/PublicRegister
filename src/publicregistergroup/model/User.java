@@ -6,6 +6,7 @@
 package publicregistergroup.model;
 import publicregistergroup.controller.ConnectionBuilder;
 import java.sql.*;
+import java.util.Scanner;
 /**
  *
  * @author newso
@@ -72,13 +73,18 @@ public class User {
         /*String query = "SELECT a.std_id as username, a.std_name, b.password "
                 + "FROM students AS a LEFT OUTER JOIN user as b ON a.std_id = b.username "
                 + "WHERE a.username = ?";*/
-        String sql = "select std_id from user where std_id == ?";
-        try (PreparedStatement statement = con.prepareStatement(sql)) {
-           
-            // statement.setLong(1, username);
+        try {
+            String sql = "SELECT * FROM publicRegis.students s join publicRegis.user u on s.std_id = u.username where u.username = ?";
+            PreparedStatement statement = con.prepareStatement(sql);
+            statement.setLong(1, username);
             ResultSet res = statement.executeQuery();
             while(res.next()){
-                System.out.println();
+                //System.out.println(username);
+                System.out.println("ID: "+res.getLong("std_id"));
+                System.out.println("NAME: "+res.getString("std_name"));
+                System.out.println("FACULTY: "+res.getString("std_faculty"));
+                System.out.println("DEPARTMENT: "+res.getString("std_department"));
+                System.out.print("MAJOR: "+res.getString("std_major"));
             }
             //std = user.username = res.getLong("username");
             //if(std==){
@@ -86,9 +92,16 @@ public class User {
             //}
             //user.password = res.getString("password");
         } 
-        catch (Exception e) {
+        catch (SQLException e) {
             System.out.println(e);
         }
         return user;
+    }
+    
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        System.out.println("ENTER");
+        long inputUsername = input.nextLong();
+        getUser(inputUsername);
     }
 }
