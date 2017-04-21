@@ -101,6 +101,11 @@ public class Login extends javax.swing.JFrame {
                 loginButtonMouseClicked(evt);
             }
         });
+        loginButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                loginButtonActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jpnLoginLayout = new javax.swing.GroupLayout(jpnLogin);
         jpnLogin.setLayout(jpnLoginLayout);
@@ -177,36 +182,43 @@ public class Login extends javax.swing.JFrame {
 
     private void loginButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_loginButtonMouseClicked
         // TODO add your handling code here:
-        try {
-            String stdUsername;
-            String stdPassword;
-            stdUsername = jtfInputUsername.getText();
-            stdPassword = String.valueOf(jpfInputPassword.getPassword()); // Password not Hash
-            Connection con = ConnectionBuilder.getConnection();
-            PreparedStatement pre;
-            String sql;
-            sql = "select username, password from user where username = ? and password = ?";
-            pre = con.prepareStatement(sql);
-            pre.setString(1, stdUsername);
-            pre.setString(2, stdPassword);
-            ResultSet rec = pre.executeQuery();
-            if (rec.next()) {
-                this.setVisible(false);
-                Homepage newHome = new Homepage();
-                newHome.setVisible(true);
-            }
-            else {
-                System.out.println("False");
-            }
-        } 
-        catch (SQLException e) {
-            System.out.println(e);
-        }
-        catch (Exception e) {
-            System.out.println(e);
-        }
     }//GEN-LAST:event_loginButtonMouseClicked
 
+    private void loginButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_loginButtonActionPerformed
+
+    public void getLogin() {
+        try {
+         String stdUsername;
+         String stdPassword;
+         stdUsername = jtfInputUsername.getText();
+         stdPassword = String.valueOf(jpfInputPassword.getPassword()); // Password not Hash
+         Connection con = ConnectionBuilder.getConnection();
+         PreparedStatement pre;
+         String sql;
+         sql = "select username, password from user where username = ? and password = ?";
+         pre = con.prepareStatement(sql);
+         pre.setString(1, stdUsername);
+         pre.setString(2, stdPassword);
+         ResultSet rec = pre.executeQuery();
+         if (rec.next()) {
+             this.setVisible(false);
+             Homepage newHome = new Homepage();
+             newHome.setVisible(true);
+         }
+         else {
+             System.out.println("False");
+         }
+     } 
+     catch (SQLException e) {
+         System.out.println(e);
+     }
+     catch (Exception e) {
+         System.out.println(e);
+     }
+    }
+    
     /**
      * @param args the command line arguments
      */
