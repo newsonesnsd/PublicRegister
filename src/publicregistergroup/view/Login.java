@@ -182,41 +182,55 @@ public class Login extends javax.swing.JFrame {
 
     private void loginButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_loginButtonMouseClicked
         // TODO add your handling code here:
+        if (getLogin() == true) {
+            JOptionPane frame = new JOptionPane();
+            JOptionPane.showMessageDialog(frame,"Login Success","Login",JOptionPane.PLAIN_MESSAGE);
+            this.setVisible(false);
+            Homepage newHome = new Homepage();
+            newHome.setVisible(true);
+        }
+        else {
+            JOptionPane frame = new JOptionPane();
+            JOptionPane.showMessageDialog(frame,"Failed to Login \n Please reenter your username or password","Login",JOptionPane.ERROR_MESSAGE);
+        }
     }//GEN-LAST:event_loginButtonMouseClicked
 
     private void loginButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginButtonActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_loginButtonActionPerformed
 
-    public void getLogin() {
+    public boolean getLogin() {
+        boolean status = false;
         try {
-         String stdUsername;
-         String stdPassword;
-         stdUsername = jtfInputUsername.getText();
-         stdPassword = String.valueOf(jpfInputPassword.getPassword()); // Password not Hash
-         Connection con = ConnectionBuilder.getConnection();
-         PreparedStatement pre;
-         String sql;
-         sql = "select username, password from user where username = ? and password = ?";
-         pre = con.prepareStatement(sql);
-         pre.setString(1, stdUsername);
-         pre.setString(2, stdPassword);
-         ResultSet rec = pre.executeQuery();
-         if (rec.next()) {
-             this.setVisible(false);
-             Homepage newHome = new Homepage();
-             newHome.setVisible(true);
-         }
-         else {
-             System.out.println("False");
-         }
-     } 
-     catch (SQLException e) {
-         System.out.println(e);
-     }
-     catch (Exception e) {
-         System.out.println(e);
-     }
+            String stdUsername;
+            String stdPassword;
+            stdUsername = jtfInputUsername.getText();
+            stdPassword = String.valueOf(jpfInputPassword.getPassword()); // Password not Hash
+            Connection con = ConnectionBuilder.getConnection();
+            PreparedStatement pre;
+            String sql;
+            sql = "select username, password from user where username = ? and password = ?";
+            pre = con.prepareStatement(sql);
+            pre.setString(1, stdUsername);
+            pre.setString(2, stdPassword);
+            ResultSet rec = pre.executeQuery();
+            if (rec.next()) {
+                //this.setVisible(false);
+                //Homepage newHome = new Homepage();
+                //newHome.setVisible(true);
+                status = true;
+            }
+            else {
+                status = false;
+            }
+        } 
+        catch (SQLException e) {
+            System.out.println(e);
+        }
+        catch (Exception e) {
+            System.out.println(e);
+        }
+        return status;
     }
     
     /**
