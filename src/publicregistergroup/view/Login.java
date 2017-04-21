@@ -5,7 +5,7 @@
  */
 package publicregistergroup.view;
 
-import java.*;
+import java.sql.*;
 import javax.swing.*;
 import publicregistergroup.controller.*;
 import publicregistergroup.model.*;
@@ -35,7 +35,11 @@ public class Login extends javax.swing.JFrame {
         jpnLoginLeft = new javax.swing.JPanel();
         jlbUsername = new javax.swing.JLabel();
         jtfInputUsername = new javax.swing.JTextField();
-        jSeparator1 = new javax.swing.JSeparator();
+        usernameSeparator = new javax.swing.JSeparator();
+        jlbPassword = new javax.swing.JLabel();
+        jpfInputPassword = new javax.swing.JPasswordField();
+        passwordSeparator = new javax.swing.JSeparator();
+        loginButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setFont(new java.awt.Font("Quark", 0, 18)); // NOI18N
@@ -59,11 +63,44 @@ public class Login extends javax.swing.JFrame {
         );
 
         jlbUsername.setFont(new java.awt.Font("Quark", 0, 24)); // NOI18N
-        jlbUsername.setText("Username");
 
         jtfInputUsername.setFont(new java.awt.Font("Quark", 0, 18)); // NOI18N
         jtfInputUsername.setText("Username");
         jtfInputUsername.setBorder(null);
+        jtfInputUsername.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jtfInputUsernameMouseClicked(evt);
+            }
+        });
+        jtfInputUsername.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jtfInputUsernameActionPerformed(evt);
+            }
+        });
+
+        jlbPassword.setFont(new java.awt.Font("Quark", 0, 24)); // NOI18N
+        jlbPassword.setText(" ");
+
+        jpfInputPassword.setFont(new java.awt.Font("Quark", 0, 18)); // NOI18N
+        jpfInputPassword.setBorder(null);
+        jpfInputPassword.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jpfInputPasswordMouseClicked(evt);
+            }
+        });
+        jpfInputPassword.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jpfInputPasswordActionPerformed(evt);
+            }
+        });
+
+        loginButton.setFont(new java.awt.Font("Quark", 0, 24)); // NOI18N
+        loginButton.setText("Login");
+        loginButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                loginButtonMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jpnLoginLayout = new javax.swing.GroupLayout(jpnLogin);
         jpnLogin.setLayout(jpnLoginLayout);
@@ -72,23 +109,35 @@ public class Login extends javax.swing.JFrame {
             .addGroup(jpnLoginLayout.createSequentialGroup()
                 .addComponent(jpnLoginLeft, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(96, 96, 96)
-                .addGroup(jpnLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jlbUsername, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jtfInputUsername, javax.swing.GroupLayout.PREFERRED_SIZE, 232, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 232, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(0, 184, Short.MAX_VALUE))
+                .addGroup(jpnLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jtfInputUsername, javax.swing.GroupLayout.DEFAULT_SIZE, 232, Short.MAX_VALUE)
+                    .addComponent(usernameSeparator, javax.swing.GroupLayout.DEFAULT_SIZE, 232, Short.MAX_VALUE)
+                    .addComponent(jpfInputPassword)
+                    .addComponent(passwordSeparator)
+                    .addComponent(jlbPassword, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jlbUsername, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(loginButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(184, 184, 184))
         );
         jpnLoginLayout.setVerticalGroup(
             jpnLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jpnLoginLeft, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(jpnLoginLayout.createSequentialGroup()
-                .addGap(207, 207, 207)
-                .addComponent(jlbUsername, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(33, 33, 33)
-                .addComponent(jtfInputUsername, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(445, Short.MAX_VALUE))
+                .addGap(210, 210, 210)
+                .addComponent(jlbUsername, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jtfInputUsername, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(usernameSeparator, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(49, 49, 49)
+                .addComponent(jlbPassword)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jpfInputPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(passwordSeparator, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(50, 50, 50)
+                .addComponent(loginButton, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(263, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -104,6 +153,59 @@ public class Login extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jpfInputPasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jpfInputPasswordActionPerformed
+        // TODO add your handling code here:
+        jpfInputPassword.setText("Password");
+    }//GEN-LAST:event_jpfInputPasswordActionPerformed
+
+    private void jtfInputUsernameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtfInputUsernameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jtfInputUsernameActionPerformed
+
+    private void jtfInputUsernameMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jtfInputUsernameMouseClicked
+        // TODO add your handling code here:
+        jtfInputUsername.setText("");
+        jlbUsername.setText("Username");
+    }//GEN-LAST:event_jtfInputUsernameMouseClicked
+
+    private void jpfInputPasswordMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jpfInputPasswordMouseClicked
+        // TODO add your handling code here:
+        jpfInputPassword.setText("");
+        jlbPassword.setText("Password");
+    }//GEN-LAST:event_jpfInputPasswordMouseClicked
+
+    private void loginButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_loginButtonMouseClicked
+        // TODO add your handling code here:
+        try {
+            String stdUsername;
+            String stdPassword;
+            stdUsername = jtfInputUsername.getText();
+            stdPassword = String.valueOf(jpfInputPassword.getPassword()); // Password not Hash
+            Connection con = ConnectionBuilder.getConnection();
+            PreparedStatement pre;
+            String sql;
+            sql = "select username, password from user where username = ? and password = ?";
+            pre = con.prepareStatement(sql);
+            pre.setString(1, stdUsername);
+            pre.setString(2, stdPassword);
+            ResultSet rec = pre.executeQuery();
+            if (rec.next()) {
+                this.setVisible(false);
+                Homepage newHome = new Homepage();
+                newHome.setVisible(true);
+            }
+            else {
+                System.out.println("False");
+            }
+        } 
+        catch (SQLException e) {
+            System.out.println(e);
+        }
+        catch (Exception e) {
+            System.out.println(e);
+        }
+    }//GEN-LAST:event_loginButtonMouseClicked
 
     /**
      * @param args the command line arguments
@@ -141,10 +243,14 @@ public class Login extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JLabel jlbPassword;
     private javax.swing.JLabel jlbUsername;
+    private javax.swing.JPasswordField jpfInputPassword;
     private javax.swing.JPanel jpnLogin;
     private javax.swing.JPanel jpnLoginLeft;
     private javax.swing.JTextField jtfInputUsername;
+    private javax.swing.JButton loginButton;
+    private javax.swing.JSeparator passwordSeparator;
+    private javax.swing.JSeparator usernameSeparator;
     // End of variables declaration//GEN-END:variables
 }
