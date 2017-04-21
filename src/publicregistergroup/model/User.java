@@ -84,7 +84,7 @@ public class User {
                 System.out.println("NAME: "+res.getString("std_name"));
                 System.out.println("FACULTY: "+res.getString("std_faculty"));
                 System.out.println("DEPARTMENT: "+res.getString("std_department"));
-                System.out.print("MAJOR: "+res.getString("std_major"));
+                System.out.println("MAJOR: "+res.getString("std_major"));
             }
             //std = user.username = res.getLong("username");
             //if(std==){
