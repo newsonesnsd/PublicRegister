@@ -5,10 +5,13 @@
  */
 package publicregistergroup.model;
 
+import java.sql.Connection;
+import publicregistergroup.controller.*;
 /**
  *
- * @author newso
+ * @author newsone
+ * This is Class for student in databse 
  */
 public class Students {
-    
+    static Connection con = ConnectionBuilder.getConnection();
 }
