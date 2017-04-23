@@ -83,6 +83,7 @@ public class User {
             //    std == 
             //}
             //user.password = res.getString("password");
+            con.close();
         } 
         catch (SQLException e) {
             System.out.println(e);
