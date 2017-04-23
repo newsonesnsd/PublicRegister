@@ -27,14 +27,6 @@ public class Students {
     private Date created_at;
     private Date updated_at;
 
-    public static Connection getCon() {
-        return con;
-    }
-
-    public static void setCon(Connection con) {
-        Students.con = con;
-    }
-
     public long getStd_id() {
         return std_id;
     }
@@ -106,7 +98,5 @@ public class Students {
     public void setUpdated_at(Date updated_at) {
         this.updated_at = updated_at;
     }
-    
-    
     
 }
