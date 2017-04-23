@@ -19,14 +19,6 @@ public class User {
     private Date create_at;
     private Date update_at;
 
-    public Connection getCon() {
-        return con;
-    }
-
-    public void setCon(Connection con) {
-        this.con = con;
-    }
-
     public int getUser_id() {
         return user_id;
     }
