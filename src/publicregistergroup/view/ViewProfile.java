@@ -7,6 +7,9 @@ package publicregistergroup.view;
 
 import java.awt.Image;
 import java.io.File;
+import java.sql.*;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
 import javax.swing.filechooser.FileNameExtensionFilter;
@@ -18,6 +21,8 @@ import publicregistergroup.controller.ConnectionBuilder;
  */
 public class ViewProfile extends javax.swing.JFrame {
 
+    static Connection con = ConnectionBuilder.getConnection();
+    private String name,faculty,telephone,facebook,medicineloss,foodloss,email;
     /**
      * Creates new form Uploadphoto
      */
@@ -94,7 +99,7 @@ public class ViewProfile extends javax.swing.JFrame {
         boxphoto.setLayout(boxphotoLayout);
         boxphotoLayout.setHorizontalGroup(
             boxphotoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(ImageS, javax.swing.GroupLayout.DEFAULT_SIZE, 434, Short.MAX_VALUE)
+            .addComponent(ImageS, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(boxphotoLayout.createSequentialGroup()
                 .addGap(96, 96, 96)
                 .addComponent(ImageUpload)
@@ -116,7 +121,7 @@ public class ViewProfile extends javax.swing.JFrame {
         getContentPane().add(Name, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 140, -1, -1));
 
         Surname.setFont(new java.awt.Font("Quark", 0, 24)); // NOI18N
-        Surname.setText("Surname :");
+        Surname.setText("Faculty :");
         getContentPane().add(Surname, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 210, -1, -1));
 
         Telephone.setFont(new java.awt.Font("Quark", 0, 24)); // NOI18N
@@ -151,12 +156,17 @@ public class ViewProfile extends javax.swing.JFrame {
         Submitbotton.setForeground(new java.awt.Color(255, 255, 255));
         Submitbotton.setText("Submit");
         Submitbotton.setBorder(null);
+        Submitbotton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                SubmitbottonMouseClicked(evt);
+            }
+        });
         Submitbotton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 SubmitbottonActionPerformed(evt);
             }
         });
-        getContentPane().add(Submitbotton, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 640, 240, 40));
+        getContentPane().add(Submitbotton, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 630, 240, 50));
 
         UploadBotton.setBackground(new java.awt.Color(213, 186, 55));
         UploadBotton.setFont(new java.awt.Font("Quark", 0, 24)); // NOI18N
@@ -168,7 +178,7 @@ public class ViewProfile extends javax.swing.JFrame {
                 UploadBottonActionPerformed(evt);
             }
         });
-        getContentPane().add(UploadBotton, new org.netbeans.lib.awtextra.AbsoluteConstraints(187, 580, 70, 40));
+        getContentPane().add(UploadBotton, new org.netbeans.lib.awtextra.AbsoluteConstraints(187, 580, 100, 40));
 
         NameTextField.setFont(new java.awt.Font("Quark", 0, 24)); // NOI18N
         NameTextField.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(0, 0, 0)));
@@ -178,6 +188,23 @@ public class ViewProfile extends javax.swing.JFrame {
             }
         });
         getContentPane().add(NameTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 130, 320, 40));
+        String name=null;
+        try {
+
+            Statement st = con.createStatement();
+            String sql = "SELECT * FROM students WHERE std_id = 59130500011";
+            ResultSet res = st.executeQuery(sql);
+            while (res.next()) {
+                name = res.getString("std_name");
+                //System.out.println(res.getString("std_name"));
+                NameTextField.setText(name);
+            }
+            //string sql = "INSERT INTO students VALUES
+            //NameTextField.setText(name);
+
+        } catch (SQLException ex) {
+            Logger.getLogger(ViewProfile.class.getName()).log(Level.SEVERE, null, ex);
+        }
 
         SurnameTextField.setFont(new java.awt.Font("Quark", 0, 24)); // NOI18N
         SurnameTextField.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(0, 0, 0)));
@@ -187,6 +214,22 @@ public class ViewProfile extends javax.swing.JFrame {
             }
         });
         getContentPane().add(SurnameTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 200, 320, 40));
+        String fac=null;
+        try {
+            Statement st = con.createStatement();
+            String sql = "SELECT * FROM students WHERE std_id = 59130500011";
+            ResultSet res = st.executeQuery(sql);
+            while (res.next()) {
+                fac = res.getString("std_faculty");
+                //System.out.println(res.getString("std_name"));
+                SurnameTextField.setText(fac);
+            }
+            //string sql = "INSERT INTO students VALUES
+            //NameTextField.setText(name);
+
+        } catch (SQLException ex) {
+            Logger.getLogger(ViewProfile.class.getName()).log(Level.SEVERE, null, ex);
+        }
 
         TelephoneTextField.setFont(new java.awt.Font("Quark", 0, 24)); // NOI18N
         TelephoneTextField.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(0, 0, 0)));
@@ -245,13 +288,13 @@ public class ViewProfile extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void BottonsearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BottonsearchActionPerformed
-        // TODO add your handling code here:
+      
     }//GEN-LAST:event_BottonsearchActionPerformed
 
     private void NameTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NameTextFieldActionPerformed
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_NameTextFieldActionPerformed
-
+   
     private void FacebookTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FacebookTextFieldActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_FacebookTextFieldActionPerformed
@@ -290,15 +333,33 @@ public class ViewProfile extends javax.swing.JFrame {
     }//GEN-LAST:event_UploadBottonActionPerformed
 
     private void SubmitbottonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SubmitbottonActionPerformed
-       ConnectionBuilder conn = new ConnectionBuilder();
-       conn.getConnection();
 
+            LinkData data = new LinkData();
+            this.setVisible(false);
+            data.setVisible(true);
 
-
-       LinkData data = new LinkData();
-       this.setVisible(false);
-       data.setVisible(true);
     }//GEN-LAST:event_SubmitbottonActionPerformed
+
+    private void SubmitbottonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SubmitbottonMouseClicked
+        try {
+            // TODO add your handling code here:
+            name = NameTextField.getText();
+            faculty = SurnameTextField.getText();
+            telephone = TelephoneTextField.getText();
+            facebook = FacebookTextField.getText();
+            medicineloss = MedicineTextField.getText();
+            foodloss = FoodTextField.getText();
+            email = EmailTextField.getText();
+            String sql = "UPDATE students SET std_name=?, std_faculty=?, std_tel=?";
+            PreparedStatement pre = con.prepareStatement(sql);
+            
+            //ResultSet res = st.executeQuery(sql);
+            
+        } catch (SQLException ex) {
+            Logger.getLogger(ViewProfile.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+    }//GEN-LAST:event_SubmitbottonMouseClicked
 
     /**
      * @param args the command line arguments
