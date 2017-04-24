@@ -67,7 +67,7 @@ public class ViewProfile extends javax.swing.JFrame {
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        textsearchclub.setFont(new java.awt.Font("Kanit", 0, 13)); // NOI18N
+        textsearchclub.setFont(new java.awt.Font("Quark", 0, 14)); // NOI18N
         textsearchclub.setText("serach from club or organize for you interest");
         getContentPane().add(textsearchclub, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 80, 290, 20));
 
@@ -80,12 +80,13 @@ public class ViewProfile extends javax.swing.JFrame {
         getContentPane().add(Bottonsearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 100, 80, 30));
 
         Title.setFont(new java.awt.Font("Kailasa", 0, 36)); // NOI18N
+        Title.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/logo.png"))); // NOI18N
         getContentPane().add(Title, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 440, 50));
 
         boxphoto.setBackground(new java.awt.Color(255, 255, 255));
         boxphoto.setBorder(javax.swing.BorderFactory.createMatteBorder(3, 3, 3, 3, new java.awt.Color(255, 51, 0)));
 
-        ImageUpload.setFont(new java.awt.Font("Kanit", 0, 48)); // NOI18N
+        ImageUpload.setFont(new java.awt.Font("Quark", 0, 48)); // NOI18N
         ImageUpload.setForeground(new java.awt.Color(204, 204, 204));
         ImageUpload.setText("Uploadphoto");
 
@@ -93,16 +94,16 @@ public class ViewProfile extends javax.swing.JFrame {
         boxphoto.setLayout(boxphotoLayout);
         boxphotoLayout.setHorizontalGroup(
             boxphotoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, boxphotoLayout.createSequentialGroup()
-                .addContainerGap(79, Short.MAX_VALUE)
+            .addComponent(ImageS, javax.swing.GroupLayout.DEFAULT_SIZE, 434, Short.MAX_VALUE)
+            .addGroup(boxphotoLayout.createSequentialGroup()
+                .addGap(96, 96, 96)
                 .addComponent(ImageUpload)
-                .addGap(71, 71, 71))
-            .addComponent(ImageS, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         boxphotoLayout.setVerticalGroup(
             boxphotoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(boxphotoLayout.createSequentialGroup()
-                .addComponent(ImageS, javax.swing.GroupLayout.DEFAULT_SIZE, 48, Short.MAX_VALUE)
+                .addComponent(ImageS, javax.swing.GroupLayout.DEFAULT_SIZE, 53, Short.MAX_VALUE)
                 .addGap(121, 121, 121)
                 .addComponent(ImageUpload)
                 .addGap(193, 193, 193))
@@ -110,41 +111,43 @@ public class ViewProfile extends javax.swing.JFrame {
 
         getContentPane().add(boxphoto, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 140, 440, 440));
 
-        Name.setFont(new java.awt.Font("Kanit", 0, 18)); // NOI18N
+        Name.setFont(new java.awt.Font("Quark", 0, 24)); // NOI18N
         Name.setText("Name :");
         getContentPane().add(Name, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 140, -1, -1));
 
-        Surname.setFont(new java.awt.Font("Kanit", 0, 18)); // NOI18N
+        Surname.setFont(new java.awt.Font("Quark", 0, 24)); // NOI18N
         Surname.setText("Surname :");
         getContentPane().add(Surname, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 210, -1, -1));
 
-        Telephone.setFont(new java.awt.Font("Kanit", 0, 18)); // NOI18N
+        Telephone.setFont(new java.awt.Font("Quark", 0, 24)); // NOI18N
         Telephone.setText("Telephone :");
         getContentPane().add(Telephone, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 280, -1, -1));
 
-        Facebook.setFont(new java.awt.Font("Kanit", 0, 18)); // NOI18N
+        Facebook.setFont(new java.awt.Font("Quark", 0, 24)); // NOI18N
         Facebook.setText("Facebook :");
         getContentPane().add(Facebook, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 350, -1, -1));
 
-        Email.setFont(new java.awt.Font("Kanit", 0, 18)); // NOI18N
+        Email.setFont(new java.awt.Font("Quark", 0, 24)); // NOI18N
         Email.setText("E-mail :");
         getContentPane().add(Email, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 560, -1, -1));
 
-        แพ้ยาอะไร.setFont(new java.awt.Font("Kanit", 0, 18)); // NOI18N
+        แพ้ยาอะไร.setFont(new java.awt.Font("Quark", 0, 24)); // NOI18N
         แพ้ยาอะไร.setText("แพ้ยาอะไร :");
         getContentPane().add(แพ้ยาอะไร, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 420, -1, -1));
 
-        แพ้อาหาอะไร.setFont(new java.awt.Font("Kanit", 0, 18)); // NOI18N
+        แพ้อาหาอะไร.setFont(new java.awt.Font("Quark", 0, 24)); // NOI18N
         แพ้อาหาอะไร.setText("แพ้อาหารอะไร :");
         getContentPane().add(แพ้อาหาอะไร, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 490, -1, -1));
 
-        ID.setFont(new java.awt.Font("Kanit", 0, 24)); // NOI18N
+        ID.setFont(new java.awt.Font("Quark", 0, 24)); // NOI18N
         ID.setText("ID :");
-        getContentPane().add(ID, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 20, 40, 30));
+        getContentPane().add(ID, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 30, 40, 30));
+
+        ShowID.setFont(new java.awt.Font("Quark", 0, 14)); // NOI18N
         getContentPane().add(ShowID, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 30, 210, 20));
 
         Submitbotton.setBackground(new java.awt.Color(213, 186, 55));
-        Submitbotton.setFont(new java.awt.Font("Kanit", 0, 24)); // NOI18N
+        Submitbotton.setFont(new java.awt.Font("Quark", 0, 36)); // NOI18N
         Submitbotton.setForeground(new java.awt.Color(255, 255, 255));
         Submitbotton.setText("Submit");
         Submitbotton.setBorder(null);
@@ -156,7 +159,7 @@ public class ViewProfile extends javax.swing.JFrame {
         getContentPane().add(Submitbotton, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 640, 240, 40));
 
         UploadBotton.setBackground(new java.awt.Color(213, 186, 55));
-        UploadBotton.setFont(new java.awt.Font("Kanit", 0, 18)); // NOI18N
+        UploadBotton.setFont(new java.awt.Font("Quark", 0, 24)); // NOI18N
         UploadBotton.setForeground(new java.awt.Color(255, 255, 255));
         UploadBotton.setText("Upload");
         UploadBotton.setBorder(null);
@@ -167,7 +170,7 @@ public class ViewProfile extends javax.swing.JFrame {
         });
         getContentPane().add(UploadBotton, new org.netbeans.lib.awtextra.AbsoluteConstraints(187, 580, 70, 40));
 
-        NameTextField.setFont(new java.awt.Font("Kanit", 0, 18)); // NOI18N
+        NameTextField.setFont(new java.awt.Font("Quark", 0, 24)); // NOI18N
         NameTextField.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(0, 0, 0)));
         NameTextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -176,7 +179,7 @@ public class ViewProfile extends javax.swing.JFrame {
         });
         getContentPane().add(NameTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 130, 320, 40));
 
-        SurnameTextField.setFont(new java.awt.Font("Kanit", 0, 18)); // NOI18N
+        SurnameTextField.setFont(new java.awt.Font("Quark", 0, 24)); // NOI18N
         SurnameTextField.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(0, 0, 0)));
         SurnameTextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -185,11 +188,11 @@ public class ViewProfile extends javax.swing.JFrame {
         });
         getContentPane().add(SurnameTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 200, 320, 40));
 
-        TelephoneTextField.setFont(new java.awt.Font("Kanit", 0, 18)); // NOI18N
+        TelephoneTextField.setFont(new java.awt.Font("Quark", 0, 24)); // NOI18N
         TelephoneTextField.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(0, 0, 0)));
         getContentPane().add(TelephoneTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 270, 320, 40));
 
-        FacebookTextField.setFont(new java.awt.Font("Kanit", 0, 18)); // NOI18N
+        FacebookTextField.setFont(new java.awt.Font("Quark", 0, 24)); // NOI18N
         FacebookTextField.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(0, 0, 0)));
         FacebookTextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -198,11 +201,11 @@ public class ViewProfile extends javax.swing.JFrame {
         });
         getContentPane().add(FacebookTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 340, 320, 40));
 
-        MedicineTextField.setFont(new java.awt.Font("Kanit", 0, 18)); // NOI18N
+        MedicineTextField.setFont(new java.awt.Font("Quark", 0, 24)); // NOI18N
         MedicineTextField.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(0, 0, 0)));
         getContentPane().add(MedicineTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 410, 320, 40));
 
-        FoodTextField.setFont(new java.awt.Font("Kanit", 0, 18)); // NOI18N
+        FoodTextField.setFont(new java.awt.Font("Quark", 0, 24)); // NOI18N
         FoodTextField.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(0, 0, 0)));
         FoodTextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -211,7 +214,7 @@ public class ViewProfile extends javax.swing.JFrame {
         });
         getContentPane().add(FoodTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 480, 320, 40));
 
-        EmailTextField.setFont(new java.awt.Font("Kanit", 0, 18)); // NOI18N
+        EmailTextField.setFont(new java.awt.Font("Quark", 0, 24)); // NOI18N
         EmailTextField.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(0, 0, 0)));
         getContentPane().add(EmailTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 550, 320, 40));
 
@@ -223,6 +226,9 @@ public class ViewProfile extends javax.swing.JFrame {
         });
         getContentPane().add(SearchclubTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 100, 300, 30));
 
+        ChangePage.setBorder(null);
+        ChangePage.setContentAreaFilled(false);
+        ChangePage.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         ChangePage.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ChangePageActionPerformed(evt);
@@ -230,6 +236,7 @@ public class ViewProfile extends javax.swing.JFrame {
         });
         getContentPane().add(ChangePage, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 20, 230, 40));
 
+        blackground.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/background.png"))); // NOI18N
         blackground.setText("jLabel1");
         getContentPane().add(blackground, new org.netbeans.lib.awtextra.AbsoluteConstraints(-5, 0, 1030, 770));
 
