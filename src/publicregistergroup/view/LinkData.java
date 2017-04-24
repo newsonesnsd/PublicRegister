@@ -184,6 +184,7 @@ public class LinkData extends javax.swing.JFrame {
         jLabel5.setText("© Copyright 2017 KMUTT PublicizeHUB");
         getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 720, -1, -1));
 
+        blackground.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/background.png"))); // NOI18N
         blackground.setText("jLabel1");
         getContentPane().add(blackground, new org.netbeans.lib.awtextra.AbsoluteConstraints(-5, 0, 1030, 770));
 
