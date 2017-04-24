@@ -53,7 +53,7 @@ public class Clubs {
         //String allClub;
         try {
             Statement st = con.createStatement();
-            String sql = "SELECT * FROM clubs";
+            String sql = "SELECT * FROM clubs order by club_id ASC";
             ResultSet res = st.executeQuery(sql);
             while (res.next()) {
                 System.out.println("Club ID: " + res.getInt("club_id") + " Club Name: " + res.getString("club_name"));
