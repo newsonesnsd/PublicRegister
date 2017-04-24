@@ -49,14 +49,14 @@ public class Clubs {
      *
      * @throws SQLException
      */
-    public static void getAllClubs(){
+    public static void getAllClubs() throws SQLException{
         //String allClub;
         try {
             Statement st = con.createStatement();
             String sql = "SELECT * FROM clubs";
             ResultSet res = st.executeQuery(sql);
             while (res.next()) {
-                System.out.println("Club ID: " + res.getInt("club_id") + "Club Name: " + res.getString("club_name"));
+                System.out.println("Club ID: " + res.getInt("club_id") + " Club Name: " + res.getString("club_name"));
             }
         } 
         catch (SQLException ex) {
