@@ -261,7 +261,7 @@
       </Events>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="720" y="640" width="240" height="40"/>
+          <AbsoluteConstraints x="720" y="630" width="240" height="50"/>
         </Constraint>
       </Constraints>
     </Component>
@@ -304,6 +304,9 @@
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="NameTextFieldActionPerformed"/>
       </Events>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="String name=null;    &#xa;        try {&#xa;            &#xa;            Statement st = con.createStatement();&#xa;            String sql = &quot;SELECT * FROM students WHERE std_id = 59130500011&quot;;&#xa;            ResultSet res = st.executeQuery(sql);&#xa;            while (res.next()) {&#xa;                name = res.getString(&quot;std_name&quot;);&#xa;                //System.out.println(res.getString(&quot;std_name&quot;));&#xa;                NameTextField.setText(name);&#xa;            }&#xa;            //string sql = &quot;INSERT INTO students VALUES&#xa;            //NameTextField.setText(name);&#xa;            &#xa;           &#xa;        } catch (SQLException ex) {&#xa;            Logger.getLogger(ViewProfile.class.getName()).log(Level.SEVERE, null, ex);&#xa;        }"/>
+      </AuxValues>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
           <AbsoluteConstraints x="640" y="130" width="320" height="40"/>
@@ -324,6 +327,9 @@
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="SurnameTextFieldActionPerformed"/>
       </Events>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="String fac=null;    &#xa;        try {&#xa;            Statement st = con.createStatement();&#xa;            String sql = &quot;SELECT * FROM students WHERE std_id = 59130500011&quot;;&#xa;            ResultSet res = st.executeQuery(sql);&#xa;            while (res.next()) {&#xa;                fac = res.getString(&quot;std_faculty&quot;);&#xa;                //System.out.println(res.getString(&quot;std_name&quot;));&#xa;                SurnameTextField.setText(fac);&#xa;            }&#xa;            //string sql = &quot;INSERT INTO students VALUES&#xa;            //NameTextField.setText(name);&#xa;            &#xa;           &#xa;        } catch (SQLException ex) {&#xa;            Logger.getLogger(ViewProfile.class.getName()).log(Level.SEVERE, null, ex);&#xa;        }"/>
+      </AuxValues>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
           <AbsoluteConstraints x="640" y="200" width="320" height="40"/>

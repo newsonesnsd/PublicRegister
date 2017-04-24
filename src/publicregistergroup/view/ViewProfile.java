@@ -7,7 +7,9 @@ package publicregistergroup.view;
 
 import java.awt.Image;
 import java.io.File;
-import java.sql.Connection;
+import java.sql.*;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
 import javax.swing.filechooser.FileNameExtensionFilter;
@@ -158,7 +160,7 @@ public class ViewProfile extends javax.swing.JFrame {
                 SubmitbottonActionPerformed(evt);
             }
         });
-        getContentPane().add(Submitbotton, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 640, 240, 40));
+        getContentPane().add(Submitbotton, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 630, 240, 50));
 
         UploadBotton.setBackground(new java.awt.Color(213, 186, 55));
         UploadBotton.setFont(new java.awt.Font("Quark", 0, 24)); // NOI18N
@@ -180,6 +182,23 @@ public class ViewProfile extends javax.swing.JFrame {
             }
         });
         getContentPane().add(NameTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 130, 320, 40));
+        String name=null;
+        try {
+
+            Statement st = con.createStatement();
+            String sql = "SELECT * FROM students WHERE std_id = 59130500011";
+            ResultSet res = st.executeQuery(sql);
+            while (res.next()) {
+                name = res.getString("std_name");
+                //System.out.println(res.getString("std_name"));
+                NameTextField.setText(name);
+            }
+            //string sql = "INSERT INTO students VALUES
+            //NameTextField.setText(name);
+
+        } catch (SQLException ex) {
+            Logger.getLogger(ViewProfile.class.getName()).log(Level.SEVERE, null, ex);
+        }
 
         SurnameTextField.setFont(new java.awt.Font("Quark", 0, 24)); // NOI18N
         SurnameTextField.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(0, 0, 0)));
@@ -189,6 +208,22 @@ public class ViewProfile extends javax.swing.JFrame {
             }
         });
         getContentPane().add(SurnameTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 200, 320, 40));
+        String fac=null;
+        try {
+            Statement st = con.createStatement();
+            String sql = "SELECT * FROM students WHERE std_id = 59130500011";
+            ResultSet res = st.executeQuery(sql);
+            while (res.next()) {
+                fac = res.getString("std_faculty");
+                //System.out.println(res.getString("std_name"));
+                SurnameTextField.setText(fac);
+            }
+            //string sql = "INSERT INTO students VALUES
+            //NameTextField.setText(name);
+
+        } catch (SQLException ex) {
+            Logger.getLogger(ViewProfile.class.getName()).log(Level.SEVERE, null, ex);
+        }
 
         TelephoneTextField.setFont(new java.awt.Font("Quark", 0, 24)); // NOI18N
         TelephoneTextField.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(0, 0, 0)));
@@ -247,13 +282,13 @@ public class ViewProfile extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void BottonsearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BottonsearchActionPerformed
-        // TODO add your handling code here:
+      
     }//GEN-LAST:event_BottonsearchActionPerformed
 
     private void NameTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NameTextFieldActionPerformed
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_NameTextFieldActionPerformed
-
+   
     private void FacebookTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FacebookTextFieldActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_FacebookTextFieldActionPerformed
@@ -292,12 +327,22 @@ public class ViewProfile extends javax.swing.JFrame {
     }//GEN-LAST:event_UploadBottonActionPerformed
 
     private void SubmitbottonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SubmitbottonActionPerformed
-       string sql = "INSERT INTO students VALUES 
-       
-
-       LinkData data = new LinkData();
-       this.setVisible(false);
-       data.setVisible(true);
+       /* try {
+            Statement st = con.createStatement();
+            String sql = "SELECT * FROM students where id = 59130500011";
+            ResultSet res = st.executeQuery(sql);
+            while (res.next()) {
+                System.out.println("");
+            }
+            //string sql = "INSERT INTO students VALUES
+            
+            */
+            LinkData data = new LinkData();
+            this.setVisible(false);
+            data.setVisible(true);
+        //} catch (SQLException ex) {
+            //Logger.getLogger(ViewProfile.class.getName()).log(Level.SEVERE, null, ex);
+        //}
     }//GEN-LAST:event_SubmitbottonActionPerformed
 
     /**
