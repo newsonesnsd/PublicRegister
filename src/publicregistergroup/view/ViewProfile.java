@@ -22,6 +22,7 @@ import publicregistergroup.controller.ConnectionBuilder;
 public class ViewProfile extends javax.swing.JFrame {
 
     static Connection con = ConnectionBuilder.getConnection();
+    private String name,faculty,telephone,facebook,medicineloss,foodloss,email;
     /**
      * Creates new form Uploadphoto
      */
@@ -155,6 +156,11 @@ public class ViewProfile extends javax.swing.JFrame {
         Submitbotton.setForeground(new java.awt.Color(255, 255, 255));
         Submitbotton.setText("Submit");
         Submitbotton.setBorder(null);
+        Submitbotton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                SubmitbottonMouseClicked(evt);
+            }
+        });
         Submitbotton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 SubmitbottonActionPerformed(evt);
@@ -327,23 +333,33 @@ public class ViewProfile extends javax.swing.JFrame {
     }//GEN-LAST:event_UploadBottonActionPerformed
 
     private void SubmitbottonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SubmitbottonActionPerformed
-       /* try {
-            Statement st = con.createStatement();
-            String sql = "SELECT * FROM students where id = 59130500011";
-            ResultSet res = st.executeQuery(sql);
-            while (res.next()) {
-                System.out.println("");
-            }
-            //string sql = "INSERT INTO students VALUES
-            
-            */
+
             LinkData data = new LinkData();
             this.setVisible(false);
             data.setVisible(true);
-        //} catch (SQLException ex) {
-            //Logger.getLogger(ViewProfile.class.getName()).log(Level.SEVERE, null, ex);
-        //}
+
     }//GEN-LAST:event_SubmitbottonActionPerformed
+
+    private void SubmitbottonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SubmitbottonMouseClicked
+        try {
+            // TODO add your handling code here:
+            name = NameTextField.getText();
+            faculty = SurnameTextField.getText();
+            telephone = TelephoneTextField.getText();
+            facebook = FacebookTextField.getText();
+            medicineloss = MedicineTextField.getText();
+            foodloss = FoodTextField.getText();
+            email = EmailTextField.getText();
+            String sql = "UPDATE students SET std_name=?, std_faculty=?, std_tel=?";
+            PreparedStatement pre = con.prepareStatement(sql);
+            
+            //ResultSet res = st.executeQuery(sql);
+            
+        } catch (SQLException ex) {
+            Logger.getLogger(ViewProfile.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+    }//GEN-LAST:event_SubmitbottonMouseClicked
 
     /**
      * @param args the command line arguments
