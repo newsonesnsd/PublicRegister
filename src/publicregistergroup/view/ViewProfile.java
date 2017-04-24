@@ -7,6 +7,7 @@ package publicregistergroup.view;
 
 import java.awt.Image;
 import java.io.File;
+import java.sql.Connection;
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
 import javax.swing.filechooser.FileNameExtensionFilter;
@@ -18,6 +19,7 @@ import publicregistergroup.controller.ConnectionBuilder;
  */
 public class ViewProfile extends javax.swing.JFrame {
 
+    static Connection con = ConnectionBuilder.getConnection();
     /**
      * Creates new form Uploadphoto
      */
@@ -94,7 +96,7 @@ public class ViewProfile extends javax.swing.JFrame {
         boxphoto.setLayout(boxphotoLayout);
         boxphotoLayout.setHorizontalGroup(
             boxphotoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(ImageS, javax.swing.GroupLayout.DEFAULT_SIZE, 434, Short.MAX_VALUE)
+            .addComponent(ImageS, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(boxphotoLayout.createSequentialGroup()
                 .addGap(96, 96, 96)
                 .addComponent(ImageUpload)
@@ -116,7 +118,7 @@ public class ViewProfile extends javax.swing.JFrame {
         getContentPane().add(Name, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 140, -1, -1));
 
         Surname.setFont(new java.awt.Font("Quark", 0, 24)); // NOI18N
-        Surname.setText("Surname :");
+        Surname.setText("Faculty :");
         getContentPane().add(Surname, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 210, -1, -1));
 
         Telephone.setFont(new java.awt.Font("Quark", 0, 24)); // NOI18N
@@ -168,7 +170,7 @@ public class ViewProfile extends javax.swing.JFrame {
                 UploadBottonActionPerformed(evt);
             }
         });
-        getContentPane().add(UploadBotton, new org.netbeans.lib.awtextra.AbsoluteConstraints(187, 580, 70, 40));
+        getContentPane().add(UploadBotton, new org.netbeans.lib.awtextra.AbsoluteConstraints(187, 580, 100, 40));
 
         NameTextField.setFont(new java.awt.Font("Quark", 0, 24)); // NOI18N
         NameTextField.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(0, 0, 0)));
@@ -290,10 +292,8 @@ public class ViewProfile extends javax.swing.JFrame {
     }//GEN-LAST:event_UploadBottonActionPerformed
 
     private void SubmitbottonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SubmitbottonActionPerformed
-       ConnectionBuilder conn = new ConnectionBuilder();
-       conn.getConnection();
-
-
+       string sql = "INSERT INTO students VALUES 
+       
 
        LinkData data = new LinkData();
        this.setVisible(false);
