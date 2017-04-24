@@ -9,6 +9,8 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.Arrays;
 import publicregistergroup.controller.ConnectionBuilder;
 
 /**
@@ -47,31 +49,32 @@ public class Clubs {
     
     /**
      *
+     * @return 
      * @throws SQLException
      */
     public static void getAllClubs() throws SQLException{
-        //String allClub;
+        int i =0;
         try {
             Statement st = con.createStatement();
             String sql = "SELECT * FROM clubs order by club_id ASC";
             ResultSet res = st.executeQuery(sql);
             while (res.next()) {
                 System.out.println("Club ID: " + res.getInt("club_id") + " Club Name: " + res.getString("club_name"));
+                //allClub[i] = res.getString("club_name");
+                //i++;
             }
         } 
         catch (SQLException ex) {
             System.out.println(ex);
         }
         catch (Exception ex) {
-            System.out.println(ex);
+            System.out.println(ex.getMessage());
         }
         finally {
             con.close();
         }
-        
     }
     
-    public static void main(String[] args) throws SQLException {
-        getAllClubs();
+    public static void main(String[] args) {
     }
 }
