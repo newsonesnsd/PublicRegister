@@ -346,13 +346,16 @@ public class ViewProfile extends javax.swing.JFrame {
             name = NameTextField.getText();
             faculty = SurnameTextField.getText();
             telephone = TelephoneTextField.getText();
-            facebook = FacebookTextField.getText();
-            medicineloss = MedicineTextField.getText();
-            foodloss = FoodTextField.getText();
-            email = EmailTextField.getText();
-            String sql = "UPDATE students SET std_name=?, std_faculty=?, std_tel=?";
+//            facebook = FacebookTextField.getText();
+//            medicineloss = MedicineTextField.getText();
+//            foodloss = FoodTextField.getText();
+//            email = EmailTextField.getText();
+            String sql = "UPDATE students SET std_name=?, std_faculty=?, std_tel=? where std_id=59130500011";
             PreparedStatement pre = con.prepareStatement(sql);
-            
+            pre.setString(1, name);
+            pre.setString(2, faculty);
+            pre.setString(3, telephone);
+            //ResultSet rec = pre.executeQuery();
             //ResultSet res = st.executeQuery(sql);
             
         } catch (SQLException ex) {
