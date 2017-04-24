@@ -6,6 +6,11 @@
 package publicregistergroup.model;
 
 import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import publicregistergroup.controller.ConnectionBuilder;
 
 /**
@@ -42,4 +47,25 @@ public class Clubs {
         this.club_description = club_description;
     }
     
+    public static String getAllClubs() throws SQLException {
+        String allClub;
+        try {
+            Statement st = con.createStatement();
+            String sql = "SELECT * FROM clubs";
+            ResultSet res = st.executeQuery(sql);
+            if(res.next()) {
+                System.out.println("");
+            }
+        } 
+        catch (SQLException ex) {
+            System.out.println(ex);
+        }
+        catch (Exception ex) {
+            System.out.println(ex);
+        }
+        finally {
+            con.close();
+        }
+        return null;
+    }
 }
