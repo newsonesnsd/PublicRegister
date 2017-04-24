@@ -13,6 +13,11 @@ import publicregistergroup.controller.ConnectionBuilder;
  * @author newso
  */
 public class Clubs {
+    static Connection con = ConnectionBuilder.getConnection();
+    private int club_id;
+    private String club_name;
+    private String club_description;
+
 
     
     
