@@ -11,7 +11,7 @@ import java.util.Scanner;
  *
  * @author newso
  */
-public class User {
+public class Users {
     static Connection con = ConnectionBuilder.getConnection();
     private int user_id;
     private long username;
@@ -59,14 +59,14 @@ public class User {
         this.update_at = update_at;
     }
     
-    public static User getUser(long username) {
-        User user = new User();
+    public static Users getUsers(long username) {
+        Users user = new Users();
         long std = 0;
         /*String query = "SELECT a.std_id as username, a.std_name, b.password "
                 + "FROM students AS a LEFT OUTER JOIN user as b ON a.std_id = b.username "
                 + "WHERE a.username = ?";*/
         try {
-            String sql = "SELECT * FROM publicRegis.students s join publicRegis.user u on s.std_id = u.username where u.username = ?";
+            String sql = "SELECT * FROM publicRegis.students s join publicRegis.users u on s.std_id = u.username where u.username = ?";
             PreparedStatement statement = con.prepareStatement(sql);
             statement.setLong(1, username);
             ResultSet res = statement.executeQuery();
@@ -87,6 +87,7 @@ public class User {
         } 
         catch (SQLException e) {
             System.out.println(e);
+            System.out.println(e.getMessage());
         }
         return user;
     }
@@ -95,6 +96,6 @@ public class User {
         Scanner input = new Scanner(System.in);
         System.out.println("ENTER");
         long inputUsername = input.nextLong();
-        getUser(inputUsername);
+        getUsers(inputUsername);
     }
 }
