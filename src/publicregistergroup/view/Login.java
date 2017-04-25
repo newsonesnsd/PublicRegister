@@ -48,6 +48,7 @@ public class Login extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setFont(new java.awt.Font("Quark", 0, 18)); // NOI18N
         setMinimumSize(new java.awt.Dimension(1024, 768));
+        setPreferredSize(new java.awt.Dimension(1024, 768));
         setResizable(false);
 
         jpnLogin.setBackground(new java.awt.Color(255, 255, 255));
@@ -163,6 +164,7 @@ public class Login extends javax.swing.JFrame {
 
         background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/background.png"))); // NOI18N
         jpnLogin.add(background, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 0, 950, 810));
+        background.getAccessibleContext().setAccessibleName("Login");
 
         sidebar.setBackground(new java.awt.Color(205, 77, 40));
 
