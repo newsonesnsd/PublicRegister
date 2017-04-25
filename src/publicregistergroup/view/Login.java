@@ -47,7 +47,6 @@ public class Login extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setFont(new java.awt.Font("Quark", 0, 18)); // NOI18N
-        setMaximumSize(new java.awt.Dimension(1024, 768));
         setMinimumSize(new java.awt.Dimension(1024, 768));
         setResizable(false);
 
@@ -89,7 +88,9 @@ public class Login extends javax.swing.JFrame {
         backgroundInside.setBackground(new java.awt.Color(77, 77, 77));
         backgroundInside.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 51, 0)));
 
+        jpfInputPassword.setBackground(new java.awt.Color(77, 77, 77));
         jpfInputPassword.setFont(new java.awt.Font("Quark", 0, 18)); // NOI18N
+        jpfInputPassword.setForeground(new java.awt.Color(255, 255, 255));
         jpfInputPassword.setBorder(null);
         jpfInputPassword.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -106,7 +107,9 @@ public class Login extends javax.swing.JFrame {
         jlbPassword.setForeground(new java.awt.Color(255, 255, 255));
         jlbPassword.setText(" ");
 
+        jtfInputUsername.setBackground(new java.awt.Color(77, 77, 77));
         jtfInputUsername.setFont(new java.awt.Font("Quark", 0, 18)); // NOI18N
+        jtfInputUsername.setForeground(new java.awt.Color(255, 255, 255));
         jtfInputUsername.setText("Username");
         jtfInputUsername.setBorder(null);
         jtfInputUsername.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -141,17 +144,17 @@ public class Login extends javax.swing.JFrame {
         backgroundInsideLayout.setVerticalGroup(
             backgroundInsideLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, backgroundInsideLayout.createSequentialGroup()
-                .addGap(26, 26, 26)
+                .addContainerGap(166, Short.MAX_VALUE)
                 .addComponent(jlbUsername, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jtfInputUsername, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 37, Short.MAX_VALUE)
+                .addComponent(jtfInputUsername, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
                 .addComponent(usernameSeparator, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(27, 27, 27)
+                .addGap(0, 0, 0)
                 .addComponent(jlbPassword)
-                .addGap(36, 36, 36)
-                .addComponent(jpfInputPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(43, 43, 43)
+                .addGap(27, 27, 27)
+                .addComponent(jpfInputPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
                 .addComponent(passwordSeparator, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(58, 58, 58))
         );
@@ -209,6 +212,16 @@ public class Login extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_loginButtonMouseClicked
 
+    private void jtfInputUsernameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtfInputUsernameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jtfInputUsernameActionPerformed
+
+    private void jtfInputUsernameMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jtfInputUsernameMouseClicked
+        // TODO add your handling code here:
+        jtfInputUsername.setText("");
+        jlbUsername.setText("Username");
+    }//GEN-LAST:event_jtfInputUsernameMouseClicked
+
     private void jpfInputPasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jpfInputPasswordActionPerformed
         // TODO add your handling code here:
         jpfInputPassword.setText("Password");
@@ -219,16 +232,6 @@ public class Login extends javax.swing.JFrame {
         jpfInputPassword.setText("");
         jlbPassword.setText("Password");
     }//GEN-LAST:event_jpfInputPasswordMouseClicked
-
-    private void jtfInputUsernameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtfInputUsernameActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jtfInputUsernameActionPerformed
-
-    private void jtfInputUsernameMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jtfInputUsernameMouseClicked
-        // TODO add your handling code here:
-        jtfInputUsername.setText("");
-        jlbUsername.setText("Username");
-    }//GEN-LAST:event_jtfInputUsernameMouseClicked
 
     public boolean getLogin() {
         boolean status = false;
