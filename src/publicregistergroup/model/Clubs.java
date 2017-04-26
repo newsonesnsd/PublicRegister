@@ -11,6 +11,8 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import publicregistergroup.controller.ConnectionBuilder;
 
 /**
@@ -76,5 +78,17 @@ public class Clubs {
     }
     
     public static void main(String[] args) {
+        try {
+            try {
+                getAllClubs();
+            }
+            catch (SQLException ex) {
+                Logger.getLogger(Clubs.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            con.close();
+        } 
+        catch (SQLException ex) {
+            Logger.getLogger(Clubs.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 }
