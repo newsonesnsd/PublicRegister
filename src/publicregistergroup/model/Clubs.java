@@ -48,12 +48,7 @@ public class Clubs {
     public void setClub_description(String club_description) {
         this.club_description = club_description;
     }
-    
-    /**
-     *
-     * @return 
-     * @throws SQLException
-     */
+ 
     public static void getAllClubs() {
         try {
             Statement st = con.createStatement();
@@ -66,6 +61,7 @@ public class Clubs {
         } 
         catch (SQLException ex) {
             System.out.println(ex);
+            System.out.println(ex.getMessage());
         }
         catch (Exception ex) {
             System.out.println(ex.getMessage());
