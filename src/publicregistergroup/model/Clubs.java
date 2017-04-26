@@ -54,17 +54,15 @@ public class Clubs {
      * @return 
      * @throws SQLException
      */
-    public static void getAllClubs() throws SQLException{
-        int i =0;
+    public static void getAllClubs() {
         try {
             Statement st = con.createStatement();
             String sql = "SELECT * FROM clubs order by club_id ASC";
             ResultSet res = st.executeQuery(sql);
             while (res.next()) {
                 System.out.println("Club ID: " + res.getInt("club_id") + " Club Name: " + res.getString("club_name"));
-                //allClub[i] = res.getString("club_name");
-                //i++;
             }
+            con.close();
         } 
         catch (SQLException ex) {
             System.out.println(ex);
@@ -72,23 +70,10 @@ public class Clubs {
         catch (Exception ex) {
             System.out.println(ex.getMessage());
         }
-        finally {
-            con.close();
-        }
+        //return allClub;
     }
     
     public static void main(String[] args) {
-        try {
-            try {
-                getAllClubs();
-            }
-            catch (SQLException ex) {
-                Logger.getLogger(Clubs.class.getName()).log(Level.SEVERE, null, ex);
-            }
-            con.close();
-        } 
-        catch (SQLException ex) {
-            Logger.getLogger(Clubs.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        getAllClubs();
     }
 }
