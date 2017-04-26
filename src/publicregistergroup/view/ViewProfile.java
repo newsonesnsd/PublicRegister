@@ -206,6 +206,7 @@ public class ViewProfile extends javax.swing.JFrame {
             Logger.getLogger(ViewProfile.class.getName()).log(Level.SEVERE, null, ex);
         }
 
+        SurnameTextField.setEditable(false);
         SurnameTextField.setFont(new java.awt.Font("Quark", 0, 24)); // NOI18N
         SurnameTextField.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(0, 0, 0)));
         SurnameTextField.addActionListener(new java.awt.event.ActionListener() {
