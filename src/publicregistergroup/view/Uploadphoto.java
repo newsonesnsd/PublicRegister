@@ -23,6 +23,7 @@ public class Uploadphoto extends javax.swing.JFrame {
      */
     public Uploadphoto() {
         initComponents();
+        setLocationRelativeTo(null);
     }
 
     /**

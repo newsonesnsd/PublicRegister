@@ -16,6 +16,7 @@ public class ViewRegist extends javax.swing.JFrame {
      */
     public ViewRegist() {
         initComponents();
+        setLocationRelativeTo(null);
     }
 
     /**

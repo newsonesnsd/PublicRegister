@@ -28,7 +28,7 @@ public class ViewProfile extends javax.swing.JFrame {
      */
     public ViewProfile() {
         initComponents();
-        
+        setLocationRelativeTo(null);
     }
 
     /**

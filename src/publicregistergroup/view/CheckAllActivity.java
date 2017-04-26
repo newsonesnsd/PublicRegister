@@ -15,6 +15,7 @@ public class CheckAllActivity extends javax.swing.JFrame {
      */
     public CheckAllActivity() {
         initComponents();
+        setLocationRelativeTo(null);
     }
 
     /**
