@@ -12,6 +12,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import javax.swing.DefaultListModel;
 import javax.swing.JList;
+import javax.swing.JOptionPane;
 import publicregistergroup.controller.ConnectionBuilder;
 
 /**
@@ -73,7 +74,7 @@ public class Homepage extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         allClubs = new javax.swing.JList<>();
-        jButton1 = new javax.swing.JButton();
+        chooseClub = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         jButton2 = new javax.swing.JButton();
         Title = new javax.swing.JLabel();
@@ -405,6 +406,15 @@ public class Homepage extends javax.swing.JFrame {
             public int getSize() { return strings.length; }
             public String getElementAt(int i) { return strings[i]; }
         });
+        allClubs.addAncestorListener(new javax.swing.event.AncestorListener() {
+            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
+            }
+            public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
+                allClubsAncestorAdded(evt);
+            }
+            public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
+            }
+        });
         allClubs.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 allClubsMouseClicked(evt);
@@ -412,8 +422,18 @@ public class Homepage extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(allClubs);
 
-        jButton1.setFont(new java.awt.Font("Quark", 0, 13)); // NOI18N
-        jButton1.setText(" Click");
+        chooseClub.setFont(new java.awt.Font("Quark", 0, 13)); // NOI18N
+        chooseClub.setText(" Click");
+        chooseClub.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                chooseClubMouseClicked(evt);
+            }
+        });
+        chooseClub.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                chooseClubActionPerformed(evt);
+            }
+        });
 
         jLabel2.setFont(new java.awt.Font("Quark", 1, 18)); // NOI18N
         jLabel2.setText("ชมรมทั้งหมด");
@@ -427,7 +447,7 @@ public class Homepage extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(26, 26, 26)
-                        .addComponent(jButton1))
+                        .addComponent(chooseClub))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(jLabel2)))
@@ -441,7 +461,7 @@ public class Homepage extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 366, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton1))
+                .addComponent(chooseClub))
         );
 
         getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 150, 440, -1));
@@ -535,11 +555,28 @@ public class Homepage extends javax.swing.JFrame {
             System.out.println(ex.getMessage());
         }
         */
-        ViewClub view = new ViewClub();
+        /*ViewClub view = new ViewClub();
         this.setVisible(false);
-        view.setVisible(true);
+        view.setVisible(true);*/
        
     }//GEN-LAST:event_allClubsMouseClicked
+
+    private void allClubsAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_allClubsAncestorAdded
+       
+       
+        
+    }//GEN-LAST:event_allClubsAncestorAdded
+
+    private void chooseClubMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_chooseClubMouseClicked
+     
+    }//GEN-LAST:event_chooseClubMouseClicked
+
+    private void chooseClubActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chooseClubActionPerformed
+        //JOptionPane.showMessageDialog(null,"You selected : " + allClubs.getSelectedValue());
+         ViewClub view = new ViewClub();
+        this.setVisible(false);
+        view.setVisible(true);
+    }//GEN-LAST:event_chooseClubActionPerformed
 
     /**
      * @param args the command line arguments
@@ -584,7 +621,7 @@ public class Homepage extends javax.swing.JFrame {
     private javax.swing.JLabel Title;
     private javax.swing.JList<String> allClubs;
     private javax.swing.JLabel blackground;
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton chooseClub;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton5;
