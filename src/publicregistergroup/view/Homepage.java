@@ -4,12 +4,24 @@
  * and open the template in the editor.
  */
 package publicregistergroup.view;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import javax.swing.DefaultListModel;
+import javax.swing.JList;
+import publicregistergroup.controller.ConnectionBuilder;
+
 /**
  *
  * @author ART
  */
 public class Homepage extends javax.swing.JFrame {
-
+    static Connection con = ConnectionBuilder.getConnection();
+    private String listClubs;
+    DefaultListModel model = new DefaultListModel();
     /**
      * Creates new form Homepage
      */
@@ -60,7 +72,7 @@ public class Homepage extends javax.swing.JFrame {
         jLabel11 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jList1 = new javax.swing.JList<>();
+        allClubs = new javax.swing.JList<>();
         jButton1 = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         jButton2 = new javax.swing.JButton();
@@ -387,13 +399,18 @@ public class Homepage extends javax.swing.JFrame {
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 150, 490, 430));
 
-        jList1.setFont(new java.awt.Font("Quark", 0, 16)); // NOI18N
-        jList1.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "ชมรมอาสาพัฒนาชนบท", "KMUTT - Entreprecnur Club", "ชมรมศิลปวัฒนธรรมอีสาน", "ชมรมพัฒนาศักยภาพฯ", "ชมรมศิลปะและการถ่ายภาพ", "ชมรมดนตรีไทยและนาฎศิลป์", "ชมรมนักศึกษามุสลิม", "ชมรมบันเทิงและดนตรีสากล", "ชมรมศิลปะฯล้านนา", "ชมรมพุทธศาสตร์", "ชมรมศิลปะฯทักษิณ", "ชมรมอนุรักษ์ทรัพยากรฯ", "ชมรมแลกเปลี่ยนฯ", "ชมรมสื่อสารมวลชนฯ", "ชมรมศิลปะการ์ตูนฯ", "ชมรม Cover dance", "ชมรม ดาบสากล", "ชมรมเทนนิส", "ชมรมเปตอง", "ชมรมรักบี้ฟุตบอล", "ชมรมบาสเกตบอล", "ชมรมเทเบิลเทนนิส", "ชมรมไฟฟ้าวิชาการ", "ชมรมเพาะกาย", "ชมรมฟุตซอล", " ", " " };
+        allClubs.setFont(new java.awt.Font("Quark", 0, 16)); // NOI18N
+        allClubs.setModel(new javax.swing.AbstractListModel<String>() {
+            String[] strings = { "ชมรมอาสาพัฒนาชนบท", "KMUTT - Entreprecnur Club", "ชมรมศิลปวัฒนธรรมอีสาน", "ชมรมพัฒนาศักยภาพฯ", "ชมรมศิลปะและการถ่ายภาพ", "ชมรมดนตรีไทยและนาฎศิลป์", "ชมรมนักศึกษามุสลิม", "ชมรมบันเทิงและดนตรีสากล", "ชมรมศิลปะฯล้านนา", "ชมรมพุทธศาสตร์", "ชมรมศิลปะฯทักษิณ", "ชมรมอนุรักษ์ทรัพยากรฯ", "ชมรมแลกเปลี่ยนฯ", "ชมรมสื่อสารมวลชนฯ", "ชมรมศิลปะการ์ตูนฯ", "ชมรม Cover dance", "ชมรม ดาบสากล", "ชมรมเทนนิส", "ชมรมเปตอง", "ชมรมรักบี้ฟุตบอล", "ชมรมบาสเกตบอล", "ชมรมเทเบิลเทนนิส", "ชมรมไฟฟ้าวิชาการ", "ชมรมเพาะกาย", "ชมรมฟุตซอล" };
             public int getSize() { return strings.length; }
             public String getElementAt(int i) { return strings[i]; }
         });
-        jScrollPane1.setViewportView(jList1);
+        allClubs.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                allClubsMouseClicked(evt);
+            }
+        });
+        jScrollPane1.setViewportView(allClubs);
 
         jButton1.setFont(new java.awt.Font("Quark", 0, 13)); // NOI18N
         jButton1.setText(" Click");
@@ -484,6 +501,45 @@ public class Homepage extends javax.swing.JFrame {
        this.setVisible(false);
        view.setVisible(true);
     }//GEN-LAST:event_jButton7ActionPerformed
+    
+    private void allClubsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_allClubsMouseClicked
+        /*try {
+            // TODO add your handling code here:
+            //allClubs.getModel();
+            //name = NameTextField.getText();
+            //faculty = SurnameTextField.getText();
+            //telephone = TelephoneTextField.getText();
+            //facebook = FacebookTextField.getText();
+            //medicineloss = MedicineTextField.getText();
+            //foodloss = FoodTextField.getText();
+            //email = EmailTextField.getText();
+            Statement st = con.createStatement();
+            String sql = "SELECT * FROM clubs order by club_id ASC";
+            PreparedStatement pre = con.prepareStatement(sql);
+            //pre.setString(1, name);
+            //pre.setString(2, faculty);
+            //pre.setString(3, telephone);
+            ResultSet res = pre.executeQuery();
+            //ResultSet res = st.executeQuery(sql);
+            int row = 0;
+            while((res!=null) && (res.next())){
+                model.addElement(res.getInt("club_id") + "  " + res.getString("club_name"));
+            }
+            res.close();
+            con.close();
+        } catch (SQLException ex) {
+            System.out.println(ex);
+            System.out.println(ex.getMessage());
+        }
+        catch (Exception ex) {
+            System.out.println(ex.getMessage());
+        }
+        */
+        ViewClub view = new ViewClub();
+        this.setVisible(false);
+        view.setVisible(true);
+       
+    }//GEN-LAST:event_allClubsMouseClicked
 
     /**
      * @param args the command line arguments
@@ -526,6 +582,7 @@ public class Homepage extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Bottonsearch;
     private javax.swing.JLabel Title;
+    private javax.swing.JList<String> allClubs;
     private javax.swing.JLabel blackground;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
@@ -553,7 +610,6 @@ public class Homepage extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JList<String> jList1;
     private static javax.swing.JPanel jPanel1;
     private static javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
