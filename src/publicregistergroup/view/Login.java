@@ -20,6 +20,7 @@ public class Login extends javax.swing.JFrame {
      */
     public Login() {
         initComponents();
+        setLocationRelativeTo(null);
     }
 
     /**
@@ -46,6 +47,7 @@ public class Login extends javax.swing.JFrame {
         sidebar = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         setFont(new java.awt.Font("Quark", 0, 18)); // NOI18N
         setMinimumSize(new java.awt.Dimension(1024, 768));
         setPreferredSize(new java.awt.Dimension(1024, 768));
@@ -193,6 +195,7 @@ public class Login extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void loginButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginButtonActionPerformed
