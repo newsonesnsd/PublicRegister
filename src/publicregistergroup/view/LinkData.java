@@ -16,6 +16,7 @@ public class LinkData extends javax.swing.JFrame {
      */
     public LinkData() {
         initComponents();
+        setLocationRelativeTo(null);
     }
 
     /**
