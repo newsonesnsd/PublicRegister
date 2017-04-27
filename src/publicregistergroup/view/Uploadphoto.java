@@ -9,6 +9,7 @@ import java.awt.Image;
 import java.io.File;
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
+import javax.swing.JFrame
 import javax.swing.filechooser.FileNameExtensionFilter;
 import publicregistergroup.controller.ConnectionBuilder;
 
@@ -16,7 +17,7 @@ import publicregistergroup.controller.ConnectionBuilder;
  *
  * @author taloey
  */
-public class Uploadphoto extends javax.swing.JFrame {
+public class Uploadphoto extends JFrame {
 
     /**
      * Creates new form Uploadphoto
