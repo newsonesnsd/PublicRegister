@@ -685,35 +685,6 @@
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Quark" size="16" style="0"/>
                 </Property>
-                <Property name="model" type="javax.swing.ListModel" editor="org.netbeans.modules.form.editors2.ListModelEditor">
-                  <StringArray count="25">
-                    <StringItem index="0" value="&#xe0a;&#xe21;&#xe23;&#xe21;&#xe2d;&#xe32;&#xe2a;&#xe32;&#xe1e;&#xe31;&#xe12;&#xe19;&#xe32;&#xe0a;&#xe19;&#xe1a;&#xe17;"/>
-                    <StringItem index="1" value="KMUTT - Entreprecnur Club"/>
-                    <StringItem index="2" value="&#xe0a;&#xe21;&#xe23;&#xe21;&#xe28;&#xe34;&#xe25;&#xe1b;&#xe27;&#xe31;&#xe12;&#xe19;&#xe18;&#xe23;&#xe23;&#xe21;&#xe2d;&#xe35;&#xe2a;&#xe32;&#xe19;"/>
-                    <StringItem index="3" value="&#xe0a;&#xe21;&#xe23;&#xe21;&#xe1e;&#xe31;&#xe12;&#xe19;&#xe32;&#xe28;&#xe31;&#xe01;&#xe22;&#xe20;&#xe32;&#xe1e;&#xe2f;"/>
-                    <StringItem index="4" value="&#xe0a;&#xe21;&#xe23;&#xe21;&#xe28;&#xe34;&#xe25;&#xe1b;&#xe30;&#xe41;&#xe25;&#xe30;&#xe01;&#xe32;&#xe23;&#xe16;&#xe48;&#xe32;&#xe22;&#xe20;&#xe32;&#xe1e;"/>
-                    <StringItem index="5" value="&#xe0a;&#xe21;&#xe23;&#xe21;&#xe14;&#xe19;&#xe15;&#xe23;&#xe35;&#xe44;&#xe17;&#xe22;&#xe41;&#xe25;&#xe30;&#xe19;&#xe32;&#xe0e;&#xe28;&#xe34;&#xe25;&#xe1b;&#xe4c;"/>
-                    <StringItem index="6" value="&#xe0a;&#xe21;&#xe23;&#xe21;&#xe19;&#xe31;&#xe01;&#xe28;&#xe36;&#xe01;&#xe29;&#xe32;&#xe21;&#xe38;&#xe2a;&#xe25;&#xe34;&#xe21;"/>
-                    <StringItem index="7" value="&#xe0a;&#xe21;&#xe23;&#xe21;&#xe1a;&#xe31;&#xe19;&#xe40;&#xe17;&#xe34;&#xe07;&#xe41;&#xe25;&#xe30;&#xe14;&#xe19;&#xe15;&#xe23;&#xe35;&#xe2a;&#xe32;&#xe01;&#xe25;"/>
-                    <StringItem index="8" value="&#xe0a;&#xe21;&#xe23;&#xe21;&#xe28;&#xe34;&#xe25;&#xe1b;&#xe30;&#xe2f;&#xe25;&#xe49;&#xe32;&#xe19;&#xe19;&#xe32;"/>
-                    <StringItem index="9" value="&#xe0a;&#xe21;&#xe23;&#xe21;&#xe1e;&#xe38;&#xe17;&#xe18;&#xe28;&#xe32;&#xe2a;&#xe15;&#xe23;&#xe4c;"/>
-                    <StringItem index="10" value="&#xe0a;&#xe21;&#xe23;&#xe21;&#xe28;&#xe34;&#xe25;&#xe1b;&#xe30;&#xe2f;&#xe17;&#xe31;&#xe01;&#xe29;&#xe34;&#xe13;"/>
-                    <StringItem index="11" value="&#xe0a;&#xe21;&#xe23;&#xe21;&#xe2d;&#xe19;&#xe38;&#xe23;&#xe31;&#xe01;&#xe29;&#xe4c;&#xe17;&#xe23;&#xe31;&#xe1e;&#xe22;&#xe32;&#xe01;&#xe23;&#xe2f;"/>
-                    <StringItem index="12" value="&#xe0a;&#xe21;&#xe23;&#xe21;&#xe41;&#xe25;&#xe01;&#xe40;&#xe1b;&#xe25;&#xe35;&#xe48;&#xe22;&#xe19;&#xe2f;"/>
-                    <StringItem index="13" value="&#xe0a;&#xe21;&#xe23;&#xe21;&#xe2a;&#xe37;&#xe48;&#xe2d;&#xe2a;&#xe32;&#xe23;&#xe21;&#xe27;&#xe25;&#xe0a;&#xe19;&#xe2f;"/>
-                    <StringItem index="14" value="&#xe0a;&#xe21;&#xe23;&#xe21;&#xe28;&#xe34;&#xe25;&#xe1b;&#xe30;&#xe01;&#xe32;&#xe23;&#xe4c;&#xe15;&#xe39;&#xe19;&#xe2f;"/>
-                    <StringItem index="15" value="&#xe0a;&#xe21;&#xe23;&#xe21; Cover dance"/>
-                    <StringItem index="16" value="&#xe0a;&#xe21;&#xe23;&#xe21; &#xe14;&#xe32;&#xe1a;&#xe2a;&#xe32;&#xe01;&#xe25;"/>
-                    <StringItem index="17" value="&#xe0a;&#xe21;&#xe23;&#xe21;&#xe40;&#xe17;&#xe19;&#xe19;&#xe34;&#xe2a;"/>
-                    <StringItem index="18" value="&#xe0a;&#xe21;&#xe23;&#xe21;&#xe40;&#xe1b;&#xe15;&#xe2d;&#xe07;"/>
-                    <StringItem index="19" value="&#xe0a;&#xe21;&#xe23;&#xe21;&#xe23;&#xe31;&#xe01;&#xe1a;&#xe35;&#xe49;&#xe1f;&#xe38;&#xe15;&#xe1a;&#xe2d;&#xe25;"/>
-                    <StringItem index="20" value="&#xe0a;&#xe21;&#xe23;&#xe21;&#xe1a;&#xe32;&#xe2a;&#xe40;&#xe01;&#xe15;&#xe1a;&#xe2d;&#xe25;"/>
-                    <StringItem index="21" value="&#xe0a;&#xe21;&#xe23;&#xe21;&#xe40;&#xe17;&#xe40;&#xe1a;&#xe34;&#xe25;&#xe40;&#xe17;&#xe19;&#xe19;&#xe34;&#xe2a;"/>
-                    <StringItem index="22" value="&#xe0a;&#xe21;&#xe23;&#xe21;&#xe44;&#xe1f;&#xe1f;&#xe49;&#xe32;&#xe27;&#xe34;&#xe0a;&#xe32;&#xe01;&#xe32;&#xe23;"/>
-                    <StringItem index="23" value="&#xe0a;&#xe21;&#xe23;&#xe21;&#xe40;&#xe1e;&#xe32;&#xe30;&#xe01;&#xe32;&#xe22;"/>
-                    <StringItem index="24" value="&#xe0a;&#xe21;&#xe23;&#xe21;&#xe1f;&#xe38;&#xe15;&#xe0b;&#xe2d;&#xe25;"/>
-                  </StringArray>
-                </Property>
               </Properties>
               <Events>
                 <EventHandler event="ancestorAdded" listener="javax.swing.event.AncestorListener" parameters="javax.swing.event.AncestorEvent" handler="allClubsAncestorAdded"/>

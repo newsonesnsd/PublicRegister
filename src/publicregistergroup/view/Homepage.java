@@ -10,10 +10,12 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
 import javax.swing.DefaultListModel;
 import javax.swing.JList;
 import javax.swing.JOptionPane;
 import publicregistergroup.controller.ConnectionBuilder;
+import publicregistergroup.model.*;
 
 /**
  *
@@ -29,6 +31,15 @@ public class Homepage extends javax.swing.JFrame {
     public Homepage() {
         initComponents();
         setLocationRelativeTo(null);
+        allClubs.setModel(new javax.swing.AbstractListModel<String>() {
+            ArrayList<String> strings = Clubs.getAllClubs();
+            public int getSize() { 
+                return strings.size(); 
+            }
+            public String getElementAt(int i) { 
+                return strings.get(i); 
+            }
+        });
     }
 
     /**
@@ -401,11 +412,6 @@ public class Homepage extends javax.swing.JFrame {
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 150, 490, 430));
 
         allClubs.setFont(new java.awt.Font("Quark", 0, 16)); // NOI18N
-        allClubs.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "ชมรมอาสาพัฒนาชนบท", "KMUTT - Entreprecnur Club", "ชมรมศิลปวัฒนธรรมอีสาน", "ชมรมพัฒนาศักยภาพฯ", "ชมรมศิลปะและการถ่ายภาพ", "ชมรมดนตรีไทยและนาฎศิลป์", "ชมรมนักศึกษามุสลิม", "ชมรมบันเทิงและดนตรีสากล", "ชมรมศิลปะฯล้านนา", "ชมรมพุทธศาสตร์", "ชมรมศิลปะฯทักษิณ", "ชมรมอนุรักษ์ทรัพยากรฯ", "ชมรมแลกเปลี่ยนฯ", "ชมรมสื่อสารมวลชนฯ", "ชมรมศิลปะการ์ตูนฯ", "ชมรม Cover dance", "ชมรม ดาบสากล", "ชมรมเทนนิส", "ชมรมเปตอง", "ชมรมรักบี้ฟุตบอล", "ชมรมบาสเกตบอล", "ชมรมเทเบิลเทนนิส", "ชมรมไฟฟ้าวิชาการ", "ชมรมเพาะกาย", "ชมรมฟุตซอล" };
-            public int getSize() { return strings.length; }
-            public String getElementAt(int i) { return strings[i]; }
-        });
         allClubs.addAncestorListener(new javax.swing.event.AncestorListener() {
             public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
             }
