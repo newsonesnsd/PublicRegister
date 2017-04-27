@@ -111,8 +111,14 @@ public class JavaLDAP {
         }
         }
 
-        public static void main(String[] args) {
-                
+        public static void main(String[] args) throws Exception {
+            //Scanner input = new Scanner(System.in);
+            //String user = input.nextLine();
+            //String pws = input.nextLine();
+            //JavaLDAP jvld = new JavaLDAP();
+            JLabel welcome = new JLabel("Login");
+            welcome.setVisible(true);
+            //jvld.login(pws, pws, welcome);
         }
     
 }
