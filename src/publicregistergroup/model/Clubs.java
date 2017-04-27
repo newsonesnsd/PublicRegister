@@ -47,16 +47,18 @@ public class Clubs {
         this.club_description = club_description;
     }
  
-    public static void getAllClubs() {
+    public static ArrayList<String> getAllClubs() {
+        ArrayList<String> str = new ArrayList<>();
         try {
             Statement st = con.createStatement();
             String sql = "SELECT * FROM clubs order by club_id ASC";
             ResultSet res = st.executeQuery(sql);
             while (res.next()) {
-                System.out.println("Club ID: " + res.getInt("club_id") + " Club Name: " + res.getString("club_name"));
+                //System.out.println("Club ID: " + res.getInt("club_id") + " Club Name: " + res.getString("club_name"));
+                str.add(res.getString("club_name"));
             }
             con.close();
-        } 
+        }
         catch (SQLException ex) {
             System.out.println(ex);
             System.out.println(ex.getMessage());
@@ -64,10 +66,10 @@ public class Clubs {
         catch (Exception ex) {
             System.out.println(ex.getMessage());
         }
-        //return allClub;
+        return str;
     }
     
     public static void main(String[] args) {
-        getAllClubs();
+        System.out.println(getAllClubs());
     }
 }
