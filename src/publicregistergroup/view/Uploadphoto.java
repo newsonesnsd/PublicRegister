@@ -176,12 +176,10 @@ public class Uploadphoto extends JFrame {
     }//GEN-LAST:event_uploadbottonActionPerformed
 
     private void savebottonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_savebottonActionPerformed
-
-       
-        
-       LinkData data = new LinkData();
-       this.setVisible(false);
-       data.setVisible(true);
+        // TODO add your handling code here:
+        LinkData data = new LinkData();
+        this.setVisible(false);
+        data.setVisible(true);
     }//GEN-LAST:event_savebottonActionPerformed
 
     private void EditBottonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EditBottonActionPerformed
