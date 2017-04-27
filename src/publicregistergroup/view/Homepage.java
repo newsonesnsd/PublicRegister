@@ -578,8 +578,9 @@ public class Homepage extends javax.swing.JFrame {
     }//GEN-LAST:event_chooseClubMouseClicked
 
     private void chooseClubActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chooseClubActionPerformed
-        //JOptionPane.showMessageDialog(null,"You selected : " + allClubs.getSelectedValue());
-         ViewClub view = new ViewClub();
+        JOptionPane.showMessageDialog(null,"You selected : " + allClubs.getSelectedValue());
+        
+        ViewClub view = new ViewClub();
         this.setVisible(false);
         view.setVisible(true);
     }//GEN-LAST:event_chooseClubActionPerformed
