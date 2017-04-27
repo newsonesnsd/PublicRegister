@@ -248,7 +248,7 @@ public class Login extends javax.swing.JFrame {
             Connection con = ConnectionBuilder.getConnection();
             PreparedStatement pre;
             String sql;
-            sql = "select username, password from user where username = ? and password = ?";
+            sql = "select username, password from users where username = ? and password = ?";
             pre = con.prepareStatement(sql);
             pre.setString(1, stdUsername);
             pre.setString(2, stdPassword);
