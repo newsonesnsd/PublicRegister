@@ -147,43 +147,43 @@ public class ViewClub extends javax.swing.JFrame {
     }//GEN-LAST:event_BottonsearchActionPerformed
 
     private void jButton3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton3MouseClicked
-       try {
-            // TODO add your handling code here:
-            //name = NameTextField.getText();
-            //faculty = SurnameTextField.getText();
-            //telephone = TelephoneTextField.getText();
-            //facebook = FacebookTextField.getText();
-            //medicineloss = MedicineTextField.getText();
-            //foodloss = FoodTextField.getText();
-            //email = EmailTextField.getText();
-            clubID =  Integer.parseInt(AddID.getText()); 
-            clubName = AddName.getText();
-            clubDescription = AddDescription.getText();
-            Statement st = con.createStatement();
-            String sql = "SELECT * FROM clubs SET club_name=?, club_description=? where club_id=1";
-            PreparedStatement pre = con.prepareStatement(sql);
-            pre.setString(1, clubName);
-            pre.setString(2, clubDescription);
-            //pre.setString(3, telephone);
-            ResultSet res = pre.executeQuery();
-            //ResultSet res = st.executeQuery(sql);
-            
-        } catch (SQLException ex) {
-            Logger.getLogger(ViewProfile.class.getName()).log(Level.SEVERE, null, ex);
-        }
+//       try {
+//            // TODO add your handling code here:
+//            //name = NameTextField.getText();
+//            //faculty = SurnameTextField.getText();
+//            //telephone = TelephoneTextField.getText();
+//            //facebook = FacebookTextField.getText();
+//            //medicineloss = MedicineTextField.getText();
+//            //foodloss = FoodTextField.getText();
+//            //email = EmailTextField.getText();
+////            clubID =  Integer.parseInt(AddID.getText()); 
+////            clubName = AddName.getText();
+////            clubDescription = AddDescription.getText();
+////            Statement st = con.createStatement();
+////            String sql = "SELECT * FROM clubs SET club_name=?, club_description=? where club_id=1";
+////            PreparedStatement pre = con.prepareStatement(sql);
+////            pre.setString(1, clubName);
+////            pre.setString(2, clubDescription);
+////            //pre.setString(3, telephone);
+////            ResultSet res = pre.executeQuery();
+////            //ResultSet res = st.executeQuery(sql);
+//            
+//        } catch (SQLException ex) {
+//            Logger.getLogger(ViewProfile.class.getName()).log(Level.SEVERE, null, ex);
+//        }
     }//GEN-LAST:event_jButton3MouseClicked
 
-    public String getClubName() {
-        try {
-            String sql = "SELECT club_id from clubs where club_id = ?";
-            PreparedStatement statement = con.prepareStatement(sql);
-            statement.setInt(1, WIDTH);
-        } 
-        catch (SQLException ex) {
-            Logger.getLogger(ViewClub.class.getName()).log(Level.SEVERE, null, ex);
-            System.out.println(ex + "\n" + ex.getMessage());
-        }
-    }
+//    public void getClubName() {
+//        try {
+//            String sql = "SELECT club_id from clubs where club_id = ?";
+//            PreparedStatement statement = con.prepareStatement(sql);
+//            statement.setInt(1, WIDTH);
+//        } 
+//        catch (SQLException ex) {
+//            Logger.getLogger(ViewClub.class.getName()).log(Level.SEVERE, null, ex);
+//            System.out.println(ex + "\n" + ex.getMessage());
+//        }
+//    }
     /**
      * @param args the command line arguments
      */
