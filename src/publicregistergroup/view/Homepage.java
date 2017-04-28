@@ -34,8 +34,7 @@ public class Homepage extends javax.swing.JFrame {
     }
 
     /**
-     * Creates new form Homepage
-     * @return 
+     * Creates new form Homepage 
      */
     public void setClubIndex(int clubIndex) {
         this.clubIndex = clubIndex;
