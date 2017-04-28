@@ -66,7 +66,6 @@ public class ViewClub extends javax.swing.JFrame {
         getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 250, 360, 360));
 
         jLabel8.setFont(new java.awt.Font("Quark", 1, 45)); // NOI18N
-        jLabel8.setText("ชมรมอาสาพัฒนาชุมชน");
         getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 150, 370, 80));
 
         jLabel9.setFont(new java.awt.Font("Quark", 0, 19)); // NOI18N
@@ -173,6 +172,9 @@ public class ViewClub extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jButton3MouseClicked
 
+    public String getClubName() {
+        
+    }
     /**
      * @param args the command line arguments
      */

@@ -54,7 +54,6 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Quark" size="45" style="1"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="&#xe0a;&#xe21;&#xe23;&#xe21;&#xe2d;&#xe32;&#xe2a;&#xe32;&#xe1e;&#xe31;&#xe12;&#xe19;&#xe32;&#xe0a;&#xe38;&#xe21;&#xe0a;&#xe19;"/>
       </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
