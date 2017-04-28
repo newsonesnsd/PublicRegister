@@ -23,20 +23,35 @@ import publicregistergroup.model.*;
  */
 public class Homepage extends javax.swing.JFrame {
     static Connection con = ConnectionBuilder.getConnection();
+    private int clubIndex;
     private String listClubs;
     DefaultListModel model = new DefaultListModel();
+
+    
+    
+    public int getClubIndex() {
+        return clubIndex;
+    }
+
     /**
      * Creates new form Homepage
+     * @return 
      */
+    public void setClubIndex(int clubIndex) {
+        this.clubIndex = clubIndex;
+    }
+
     public Homepage() {
         initComponents();
         setLocationRelativeTo(null);
         allClubs.setModel(new javax.swing.AbstractListModel<String>() {
             ArrayList<String> strings = Clubs.getAllClubs();
-            public int getSize() { 
+            @Override
+            public int getSize() {
                 return strings.size(); 
             }
-            public String getElementAt(int i) { 
+            @Override
+            public String getElementAt(int i) {
                 return strings.get(i); 
             }
         });
