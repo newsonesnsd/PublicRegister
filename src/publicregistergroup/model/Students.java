@@ -26,6 +26,7 @@ public class Students {
     private String std_role;
     private Date created_at;
     private Date updated_at;
+    private int clubIndex;
 
     public long getStd_id() {
         return std_id;
