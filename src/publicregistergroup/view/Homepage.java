@@ -594,7 +594,7 @@ public class Homepage extends javax.swing.JFrame {
 
     private void chooseClubActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chooseClubActionPerformed
         //JOptionPane.showMessageDialog(null,"You selected : " + allClubs.getSelectedValue());
-        System.out.println(allClubs.getSelectedIndex());
+        clubIndex = allClubs.getSelectedIndex();
         ViewClub view = new ViewClub();
         this.setVisible(false);
         view.setVisible(true);
