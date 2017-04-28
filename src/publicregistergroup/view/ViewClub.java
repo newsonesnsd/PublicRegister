@@ -110,7 +110,7 @@ public class ViewClub extends javax.swing.JFrame {
         getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 250, 360, 360));
 
         jLabel8.setFont(new java.awt.Font("Quark", 1, 45)); // NOI18N
-        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 150, 660, 80));
+        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 150, 660, 80));
         jLabel8.setText(getClubName());
 
         jLabel9.setFont(new java.awt.Font("Quark", 0, 19)); // NOI18N
