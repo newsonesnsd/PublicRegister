@@ -58,7 +58,9 @@ public class ViewClub extends javax.swing.JFrame {
         return clubId;        
     }
     
-    public abstract String getClubName();
+    public String getClubName() {
+        return null;
+    }
     
     /**
      * This method is called from within the constructor to initialize the form.
