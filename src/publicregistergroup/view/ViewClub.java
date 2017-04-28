@@ -24,7 +24,7 @@ public class ViewClub extends javax.swing.JFrame {
     private String clubName;
     private String clubDescription;
     Homepage hp = new Homepage();
-    private int clubIndex = 10;
+    private int clubIndex = 5;
     private int clubId;
 
     /**
@@ -59,7 +59,21 @@ public class ViewClub extends javax.swing.JFrame {
     }
     
     public String getClubName() {
-        return null;
+        clubId = clubIndex+1;        
+        try {
+            String sql = "SELECT * FROM clubs WHERE club_id = ?";
+            PreparedStatement pre = con.prepareStatement(sql);
+            pre.setInt(1, clubId);
+            ResultSet rs = pre.executeQuery();
+            if(rs.next()) {
+                clubName = rs.getString("club_name");
+                System.out.println(clubName);
+            }
+        } 
+        catch (SQLException e) {
+            System.out.println(e + "\n" + e.getMessage());
+        }
+        return clubName;      
     }
     
     /**
@@ -96,8 +110,8 @@ public class ViewClub extends javax.swing.JFrame {
         getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 250, 360, 360));
 
         jLabel8.setFont(new java.awt.Font("Quark", 1, 45)); // NOI18N
-        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 150, 370, 80));
-        jLabel8.setText(getClubID()+"");
+        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 150, 660, 80));
+        jLabel8.setText(getClubName());
 
         jLabel9.setFont(new java.awt.Font("Quark", 0, 19)); // NOI18N
         jLabel9.setText("<html> CLUB ID:  <br> <br>CLUB NAME:  <br> <br>DESCRIPTION:  </html>");
