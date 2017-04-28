@@ -22,7 +22,7 @@ import publicregistergroup.model.*;
 public class ViewClub extends javax.swing.JFrame {
     static Connection con = ConnectionBuilder.getConnection();
     private String clubName,clubDescription;
-    private int clubID;
+    private int clubIndex = new Homepage().getClubIndex();
     //private int clubID;
 
     /**
@@ -32,7 +32,29 @@ public class ViewClub extends javax.swing.JFrame {
         initComponents();
         setLocationRelativeTo(null);
     }
-
+    /**
+     * This is the part of my method 
+     * This zone is about getMethod to call Club: name, id, description
+     */
+    
+    public int getClubID() {
+        int clubId = clubIndex+1;
+        try {
+            String sql = "SELECT * FROM clubs WHERE club_id = ?";
+            PreparedStatement pre = con.prepareStatement(sql);
+            pre.setString(1, ""+clubIndex);
+            ResultSet rs = pre.executeQuery();
+            if(rs.next()) {
+                return clubId;
+            }
+        } 
+        catch (SQLException e) {
+            System.out.println(e + "\n" + e.getMessage());
+        }
+        return clubId;
+        
+    }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -68,6 +90,7 @@ public class ViewClub extends javax.swing.JFrame {
 
         jLabel8.setFont(new java.awt.Font("Quark", 1, 45)); // NOI18N
         getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 150, 370, 80));
+        jLabel8.setText(getClubID()+"");
 
         jLabel9.setFont(new java.awt.Font("Quark", 0, 19)); // NOI18N
         jLabel9.setText("<html> CLUB ID:  <br> <br>CLUB NAME:  <br> <br>DESCRIPTION:  </html>");
