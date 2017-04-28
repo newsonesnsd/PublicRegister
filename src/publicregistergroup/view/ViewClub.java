@@ -21,9 +21,11 @@ import publicregistergroup.model.*;
  */
 public class ViewClub extends javax.swing.JFrame {
     static Connection con = ConnectionBuilder.getConnection();
-    private String clubName,clubDescription;
-    private int clubIndex = new Homepage().getClubIndex();
-    //private int clubID;
+    private String clubName;
+    private String clubDescription;
+    Homepage hp = new Homepage();
+    private int clubIndex = 10;
+    private int clubId;
 
     /**
      * Creates new form ViewClub
@@ -35,24 +37,25 @@ public class ViewClub extends javax.swing.JFrame {
     /**
      * This is the part of my method 
      * This zone is about getMethod to call Club: name, id, description
+     * @return 
      */
     
     public int getClubID() {
-        int clubId = clubIndex+1;
+        clubId = clubIndex+1;        
         try {
             String sql = "SELECT * FROM clubs WHERE club_id = ?";
             PreparedStatement pre = con.prepareStatement(sql);
             pre.setString(1, ""+clubIndex);
             ResultSet rs = pre.executeQuery();
             if(rs.next()) {
-                return clubId;
+                clubId = rs.getInt("club_id");
+                System.out.println(clubId);
             }
         } 
         catch (SQLException e) {
             System.out.println(e + "\n" + e.getMessage());
         }
-        return clubId;
-        
+        return clubId;        
     }
     
     /**
