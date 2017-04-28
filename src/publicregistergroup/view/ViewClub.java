@@ -76,6 +76,23 @@ public class ViewClub extends javax.swing.JFrame {
         return clubName;      
     }
     
+    public String getClubDescription() {
+        clubId = clubIndex+1;        
+        try {
+            String sql = "SELECT * FROM clubs WHERE club_id = ?";
+            PreparedStatement pre = con.prepareStatement(sql);
+            pre.setInt(1, clubId);
+            ResultSet rs = pre.executeQuery();
+            if(rs.next()) {
+                clubName = rs.getString("club_description");
+            }
+        } 
+        catch (SQLException e) {
+            System.out.println(e + "\n" + e.getMessage());
+        }
+        return clubName;  
+    }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -158,14 +175,8 @@ public class ViewClub extends javax.swing.JFrame {
 
         jLabel2.setText("____________________________________________________________________________________________________________________");
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 210, -1, -1));
-
-        AddDescription.setText("jLabel1");
         getContentPane().add(AddDescription, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 360, 230, 30));
-
-        AddID.setText("jLabel1");
         getContentPane().add(AddID, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 280, 230, 30));
-
-        AddName.setText("jLabel1");
         getContentPane().add(AddName, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 320, 230, 30));
 
         blackground.setFont(new java.awt.Font("Quark", 0, 19)); // NOI18N
