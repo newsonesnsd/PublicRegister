@@ -349,6 +349,9 @@
           </Border>
         </Property>
       </Properties>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="String tel=null;    &#xa;        try {&#xa;            Statement st = con.createStatement();&#xa;            String sql = &quot;SELECT * FROM students WHERE std_id = 59130500011&quot;;&#xa;            ResultSet res = st.executeQuery(sql);&#xa;            while (res.next()) {&#xa;                fac = res.getString(&quot;std_tel&quot;);&#xa;                &#xa;                TelephoneTextField.setText(tel);&#xa;            }&#xa;       &#xa;           &#xa;        } catch (SQLException ex) {&#xa;            Logger.getLogger(ViewProfile.class.getName()).log(Level.SEVERE, null, ex);&#xa;        }"/>
+      </AuxValues>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
           <AbsoluteConstraints x="640" y="270" width="320" height="40"/>
@@ -369,6 +372,9 @@
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="FacebookTextFieldActionPerformed"/>
       </Events>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="/*String face=null;    &#xa;        try {&#xa;            Statement st = con.createStatement();&#xa;            String sql = &quot;SELECT * FROM students WHERE std_id = 59130500011&quot;;&#xa;            ResultSet res = st.executeQuery(sql);&#xa;            while (res.next()) {&#xa;                face = res.getString(&quot;std_facebook&quot;);&#xa;                &#xa;               FacebookTextField.setText(face);&#xa;            }&#xa;       &#xa;           &#xa;        } catch (SQLException ex) {&#xa;            Logger.getLogger(ViewProfile.class.getName()).log(Level.SEVERE, null, ex);&#xa;        }*/"/>
+      </AuxValues>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
           <AbsoluteConstraints x="640" y="340" width="320" height="40"/>
@@ -386,6 +392,9 @@
           </Border>
         </Property>
       </Properties>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="/*String med=null;    &#xa;        try {&#xa;            Statement st = con.createStatement();&#xa;            String sql = &quot;SELECT * FROM students WHERE std_id = 59130500011&quot;;&#xa;            ResultSet res = st.executeQuery(sql);&#xa;            while (res.next()) {&#xa;                med = res.getString(&quot;std_medicine&quot;);&#xa;                &#xa;                MedicineTextField.setText(med);&#xa;            }&#xa;       &#xa;           &#xa;        } catch (SQLException ex) {&#xa;            Logger.getLogger(ViewProfile.class.getName()).log(Level.SEVERE, null, ex);&#xa;        }*/"/>
+      </AuxValues>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
           <AbsoluteConstraints x="640" y="410" width="320" height="40"/>
@@ -406,6 +415,9 @@
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="FoodTextFieldActionPerformed"/>
       </Events>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="/*String food=null;    &#xa;        try {&#xa;            Statement st = con.createStatement();&#xa;            String sql = &quot;SELECT * FROM students WHERE std_id = 59130500011&quot;;&#xa;            ResultSet res = st.executeQuery(sql);&#xa;            while (res.next()) {&#xa;                fac = res.getString(&quot;std_food&quot;);&#xa;                &#xa;                FoodTextField.setText(food);&#xa;            }&#xa;       &#xa;           &#xa;        } catch (SQLException ex) {&#xa;            Logger.getLogger(ViewProfile.class.getName()).log(Level.SEVERE, null, ex);&#xa;        }*/"/>
+      </AuxValues>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
           <AbsoluteConstraints x="640" y="480" width="320" height="40"/>
@@ -423,6 +435,9 @@
           </Border>
         </Property>
       </Properties>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="String mail=null;    &#xa;        try {&#xa;            Statement st = con.createStatement();&#xa;            String sql = &quot;SELECT * FROM students WHERE std_id = 59130500011&quot;;&#xa;            ResultSet res = st.executeQuery(sql);&#xa;            while (res.next()) {&#xa;                fac = res.getString(&quot;std_email&quot;);&#xa;                &#xa;                EmailTextField.setText(mail);&#xa;            }&#xa;       &#xa;           &#xa;        } catch (SQLException ex) {&#xa;            Logger.getLogger(ViewProfile.class.getName()).log(Level.SEVERE, null, ex);&#xa;        }"/>
+      </AuxValues>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
           <AbsoluteConstraints x="640" y="550" width="320" height="40"/>

@@ -395,7 +395,7 @@ public class Homepage extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("", jPanel8);
 
-        jLabel11.setFont(new java.awt.Font("Quark", 1, 18)); // NOI18N
+        jLabel11.setFont(new java.awt.Font("Quark", 1, 24)); // NOI18N
         jLabel11.setText("ชมรมแนะนำ");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -414,7 +414,7 @@ public class Homepage extends javax.swing.JFrame {
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGap(0, 13, Short.MAX_VALUE)
+                .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(jLabel11)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 387, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -493,8 +493,11 @@ public class Homepage extends javax.swing.JFrame {
         getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 90, 90, -1));
 
         Title.setFont(new java.awt.Font("Kailasa", 0, 36)); // NOI18N
+        Title.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/logo.png"))); // NOI18N
         getContentPane().add(Title, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 440, 50));
         getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 640, -1, 40));
+
+        blackground.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/background.png"))); // NOI18N
         getContentPane().add(blackground, new org.netbeans.lib.awtextra.AbsoluteConstraints(-5, 0, 1030, 770));
 
         pack();

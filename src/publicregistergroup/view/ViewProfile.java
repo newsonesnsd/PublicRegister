@@ -235,6 +235,20 @@ public class ViewProfile extends javax.swing.JFrame {
         TelephoneTextField.setFont(new java.awt.Font("Quark", 0, 24)); // NOI18N
         TelephoneTextField.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(0, 0, 0)));
         getContentPane().add(TelephoneTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 270, 320, 40));
+        String tel=null;
+        try {
+            Statement st = con.createStatement();
+            String sql = "SELECT * FROM students WHERE std_id = 59130500011";
+            ResultSet res = st.executeQuery(sql);
+            while (res.next()) {
+                fac = res.getString("std_tel");
+
+                TelephoneTextField.setText(tel);
+            }
+
+        } catch (SQLException ex) {
+            Logger.getLogger(ViewProfile.class.getName()).log(Level.SEVERE, null, ex);
+        }
 
         FacebookTextField.setFont(new java.awt.Font("Quark", 0, 24)); // NOI18N
         FacebookTextField.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(0, 0, 0)));
@@ -244,10 +258,38 @@ public class ViewProfile extends javax.swing.JFrame {
             }
         });
         getContentPane().add(FacebookTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 340, 320, 40));
+        /*String face=null;
+        try {
+            Statement st = con.createStatement();
+            String sql = "SELECT * FROM students WHERE std_id = 59130500011";
+            ResultSet res = st.executeQuery(sql);
+            while (res.next()) {
+                face = res.getString("std_facebook");
+
+                FacebookTextField.setText(face);
+            }
+
+        } catch (SQLException ex) {
+            Logger.getLogger(ViewProfile.class.getName()).log(Level.SEVERE, null, ex);
+        }*/
 
         MedicineTextField.setFont(new java.awt.Font("Quark", 0, 24)); // NOI18N
         MedicineTextField.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(0, 0, 0)));
         getContentPane().add(MedicineTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 410, 320, 40));
+        /*String med=null;
+        try {
+            Statement st = con.createStatement();
+            String sql = "SELECT * FROM students WHERE std_id = 59130500011";
+            ResultSet res = st.executeQuery(sql);
+            while (res.next()) {
+                med = res.getString("std_medicine");
+
+                MedicineTextField.setText(med);
+            }
+
+        } catch (SQLException ex) {
+            Logger.getLogger(ViewProfile.class.getName()).log(Level.SEVERE, null, ex);
+        }*/
 
         FoodTextField.setFont(new java.awt.Font("Quark", 0, 24)); // NOI18N
         FoodTextField.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(0, 0, 0)));
@@ -257,10 +299,38 @@ public class ViewProfile extends javax.swing.JFrame {
             }
         });
         getContentPane().add(FoodTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 480, 320, 40));
+        /*String food=null;
+        try {
+            Statement st = con.createStatement();
+            String sql = "SELECT * FROM students WHERE std_id = 59130500011";
+            ResultSet res = st.executeQuery(sql);
+            while (res.next()) {
+                fac = res.getString("std_food");
+
+                FoodTextField.setText(food);
+            }
+
+        } catch (SQLException ex) {
+            Logger.getLogger(ViewProfile.class.getName()).log(Level.SEVERE, null, ex);
+        }*/
 
         EmailTextField.setFont(new java.awt.Font("Quark", 0, 24)); // NOI18N
         EmailTextField.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(0, 0, 0)));
         getContentPane().add(EmailTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 550, 320, 40));
+        String mail=null;
+        try {
+            Statement st = con.createStatement();
+            String sql = "SELECT * FROM students WHERE std_id = 59130500011";
+            ResultSet res = st.executeQuery(sql);
+            while (res.next()) {
+                fac = res.getString("std_email");
+
+                EmailTextField.setText(mail);
+            }
+
+        } catch (SQLException ex) {
+            Logger.getLogger(ViewProfile.class.getName()).log(Level.SEVERE, null, ex);
+        }
 
         SearchclubTextField.setFont(new java.awt.Font("Kanit", 0, 13)); // NOI18N
         SearchclubTextField.addActionListener(new java.awt.event.ActionListener() {
@@ -350,14 +420,16 @@ public class ViewProfile extends javax.swing.JFrame {
 //            facebook = FacebookTextField.getText();
 //            medicineloss = MedicineTextField.getText();
 //            foodloss = FoodTextField.getText();
-//            email = EmailTextField.getText();
-            String sql = "UPDATE students SET std_name=?, std_faculty=?, std_tel=? where std_id=59130500011";
+            email = EmailTextField.getText();
+            String sql = "UPDATE students SET std_name=?, std_faculty=?, std_tel=? , std_email ,where std_id=59130500011";
             PreparedStatement pre = con.prepareStatement(sql);
             pre.setString(1, name);
             pre.setString(2, faculty);
             pre.setString(3, telephone);
-            //ResultSet rec = pre.executeQuery();
+            pre.setString(7, email);
+            ResultSet rec = pre.executeQuery(sql);
             //ResultSet res = st.executeQuery(sql);
+ 
             
         } catch (SQLException ex) {
             Logger.getLogger(ViewProfile.class.getName()).log(Level.SEVERE, null, ex);
