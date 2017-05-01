@@ -84,32 +84,32 @@ public class JavaLDAP {
         return true;
     }
         
-        public void login (String name , String password,JLabel welcome) throws Exception{
-            Scanner sc = new Scanner(System.in);
-            String username = "";
-            if(name!=null){
-                username = name;
-            }
-            String dn = getUid( username , welcome );
+    public void login (String name , String password,JLabel welcome) throws Exception{
+        Scanner sc = new Scanner(System.in);
+        String username = "";
+        if(name!=null){
+            username = name;
+        }
+        String dn = getUid( username , welcome );
 
         if (dn != null) {
             /* Found user - test password */
             if ( testBind( dn, password ) ) {
-//              welcome.setText( "user '" + username + "' authentication succeeded" );
-//              System.exit(0);
+                welcome.setText( "user '" + username + "' authentication succeeded" );
+                System.exit(0);
             }
             else {
-//              welcome.setText( "user '" + username + "' authentication failed" );
+                welcome.setText( "user '" + username + "' authentication failed" );
                 welcome.setText( "invalid username or password" );
-//              System.exit(1);
+                System.exit(1);
             }
         }
         else {
             welcome.setText( "invalid username or password" );
-//          welcome.setText( "user '" + username + "' not found" );
-//          System.exit(1);
+    //          welcome.setText( "user '" + username + "' not found" );
+    //          System.exit(1);
         }
-        }
+    }
 
         public static void main(String[] args) throws Exception {
             //Scanner input = new Scanner(System.in);
