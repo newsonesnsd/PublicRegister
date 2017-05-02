@@ -15,6 +15,7 @@ import javax.swing.JFileChooser;
 import javax.swing.JFrame;
 import javax.swing.filechooser.FileNameExtensionFilter;
 import publicregistergroup.controller.ConnectionBuilder;
+import static publicregistergroup.view.ViewProfile.con;
 
 /**
  *
@@ -22,6 +23,7 @@ import publicregistergroup.controller.ConnectionBuilder;
  */
 public class EditClub extends JFrame {
      static Connection con = ConnectionBuilder.getConnection();
+     private String nameclub,detailclub;
     /**
      * Creates new form Uploadphoto
      */
@@ -110,6 +112,11 @@ public class EditClub extends JFrame {
         savebotton.setForeground(new java.awt.Color(255, 255, 255));
         savebotton.setText("Save");
         savebotton.setBorder(null);
+        savebotton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                savebottonMouseClicked(evt);
+            }
+        });
         savebotton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 savebottonActionPerformed(evt);
@@ -167,7 +174,7 @@ public class EditClub extends JFrame {
 
         getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 240, 450, 330));
 
-        clubname.setFont(new java.awt.Font("Quark", 0, 14)); // NOI18N
+        clubname.setFont(new java.awt.Font("Quark", 0, 24)); // NOI18N
         clubname.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(0, 0, 0)));
         clubname.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -228,15 +235,30 @@ public class EditClub extends JFrame {
     }//GEN-LAST:event_uploadbottonActionPerformed
 
     private void savebottonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_savebottonActionPerformed
-        // TODO add your handling code here:
+        
         LinkData data = new LinkData();
         this.setVisible(false);
         data.setVisible(true);
     }//GEN-LAST:event_savebottonActionPerformed
 
     private void clubnameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clubnameActionPerformed
-        // TODO add your handling code here:
+ 
     }//GEN-LAST:event_clubnameActionPerformed
+
+    private void savebottonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_savebottonMouseClicked
+
+         try {
+              nameclub = clubname.getText();
+            detailclub = detailArea.getText();
+             String sql = "UPDATE clubs SET club_name=?, club_description=? WHERE std_role=?";
+             PreparedStatement pre = con.prepareStatement(sql);
+             pre.setString(1, nameclub);
+             pre.setString(2, detailclub);
+             pre.executeUpdate(sql);
+         } catch (SQLException ex) {
+             Logger.getLogger(EditClub.class.getName()).log(Level.SEVERE, null, ex);
+         }
+    }//GEN-LAST:event_savebottonMouseClicked
 
     /**
      * @param args the command line arguments
