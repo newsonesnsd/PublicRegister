@@ -50,7 +50,7 @@ public class Uploadphoto extends JFrame {
         EditBotton = new javax.swing.JButton();
         Title = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
+        detailArea = new javax.swing.JTextArea();
         NameClub = new javax.swing.JLabel();
         blackground = new javax.swing.JLabel();
 
@@ -133,11 +133,38 @@ public class Uploadphoto extends JFrame {
         Title.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/logo.png"))); // NOI18N
         getContentPane().add(Title, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 440, 50));
 
-        jTextArea1.setColumns(20);
-        jTextArea1.setFont(new java.awt.Font("Quark", 0, 14)); // NOI18N
-        jTextArea1.setRows(5);
-        jTextArea1.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 5, 0, new java.awt.Color(255, 51, 0)));
-        jScrollPane1.setViewportView(jTextArea1);
+        detailArea.setEditable(false);
+        detailArea.setColumns(20);
+        detailArea.setFont(new java.awt.Font("Quark", 0, 14)); // NOI18N
+        detailArea.setRows(5);
+        detailArea.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 5, 0, new java.awt.Color(255, 51, 0)));
+        jScrollPane1.setViewportView(detailArea);
+        String club_description=null;
+        try {
+            Statement st = con.createStatement();
+            String sql = "SELECT std_role FROM students WHERE std_id = 59130500004";
+            ResultSet res = st.executeQuery(sql);
+            int club_id =0;
+            String std_role=null;
+            while (res.next()) {
+                std_role = res.getString("std_role");
+                club_id = Integer.parseInt(std_role);
+                sql = "SELECT club_description FROM clubs WHERE club_id = ?";
+                PreparedStatement pre = con.prepareStatement(sql);
+                pre.setInt(1, club_id);
+                ResultSet rs = pre.executeQuery();
+                if(rs.next()) {
+                    club_description =rs.getString("club_description");
+                }
+
+                if(std_role!=null){
+                    detailArea.setText(club_description);
+                }
+            }
+
+        } catch (SQLException ex) {
+            Logger.getLogger(ViewProfile.class.getName()).log(Level.SEVERE, null, ex);
+        }
 
         getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 240, 450, 330));
 
@@ -238,8 +265,8 @@ public class Uploadphoto extends JFrame {
     private javax.swing.JLabel Title;
     private javax.swing.JLabel Uploadphotos;
     private javax.swing.JLabel blackground;
+    private javax.swing.JTextArea detailArea;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextArea jTextArea1;
     private javax.swing.JButton savebotton;
     private javax.swing.JLabel textDetail1;
     private javax.swing.JLabel textsearchclub;
