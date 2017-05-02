@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
-<Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
+<Form version="1.5" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="3"/>
     <Property name="resizable" type="boolean" value="false"/>
@@ -212,11 +212,11 @@
 
       <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
       <SubComponents>
-        <Component class="javax.swing.JTextArea" name="jTextArea1">
+        <Component class="javax.swing.JTextArea" name="detailArea">
           <Properties>
             <Property name="columns" type="int" value="20"/>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Quark" size="14" style="0"/>
+              <Font name="Quark" size="24" style="0"/>
             </Property>
             <Property name="rows" type="int" value="5"/>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
@@ -227,9 +227,35 @@
               </Border>
             </Property>
           </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="String club_description=null;    &#xa;        try {&#xa;            Statement st = con.createStatement();&#xa;            String sql = &quot;SELECT std_role FROM students WHERE std_id = 59130500004&quot;;&#xa;            ResultSet res = st.executeQuery(sql);&#xa;            int club_id =0;&#xa;            String std_role=null;&#xa;            while (res.next()) {&#xa;                std_role = res.getString(&quot;std_role&quot;);&#xa;                club_id = Integer.parseInt(std_role);&#xa;                sql = &quot;SELECT club_description FROM clubs WHERE club_id = ?&quot;;&#xa;                PreparedStatement pre = con.prepareStatement(sql);&#xa;                pre.setInt(1, club_id);&#xa;                ResultSet rs = pre.executeQuery();&#xa;                if(rs.next()) {&#xa;                    club_description =rs.getString(&quot;club_description&quot;);&#xa;                }&#xa;&#xa;                if(std_role!=null){&#xa;                    detailArea.setText(club_description);&#xa;                }&#xa;            }&#xa;           &#xa;        } catch (SQLException ex) {&#xa;            Logger.getLogger(ViewProfile.class.getName()).log(Level.SEVERE, null, ex);&#xa;        }"/>
+          </AuxValues>
         </Component>
       </SubComponents>
     </Container>
+    <Component class="javax.swing.JTextField" name="clubname">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Quark" size="14" style="0"/>
+        </Property>
+        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+          <Border info="org.netbeans.modules.form.compat2.border.MatteColorBorderInfo">
+            <MatteColorBorder bottom="2" left="2" right="2" top="2"/>
+          </Border>
+        </Property>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="clubnameActionPerformed"/>
+      </Events>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="String club_name=null;    &#xa;        try {&#xa;            Statement st = con.createStatement();&#xa;            String sql = &quot;SELECT std_role FROM students WHERE std_id = 59130500004&quot;;&#xa;            ResultSet res = st.executeQuery(sql);&#xa;            int club_id =0;&#xa;            String std_role=null;&#xa;            while (res.next()) {&#xa;                std_role = res.getString(&quot;std_role&quot;);&#xa;                club_id = Integer.parseInt(std_role);&#xa;                sql = &quot;SELECT club_name FROM clubs WHERE club_id = ?&quot;;&#xa;                PreparedStatement pre = con.prepareStatement(sql);&#xa;                pre.setInt(1, club_id);&#xa;                ResultSet rs = pre.executeQuery();&#xa;                if(rs.next()) {&#xa;                    club_name =rs.getString(&quot;club_name&quot;);&#xa;                }&#xa;&#xa;                if(std_role!=null){&#xa;                    clubname.setText(club_name);&#xa;                }&#xa;            }&#xa;           &#xa;        } catch (SQLException ex) {&#xa;            Logger.getLogger(ViewProfile.class.getName()).log(Level.SEVERE, null, ex);&#xa;        }"/>
+      </AuxValues>
+      <Constraints>
+        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+          <AbsoluteConstraints x="30" y="150" width="220" height="30"/>
+        </Constraint>
+      </Constraints>
+    </Component>
     <Component class="javax.swing.JLabel" name="blackground">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
