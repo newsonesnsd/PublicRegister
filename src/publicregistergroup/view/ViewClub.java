@@ -107,8 +107,6 @@ public class ViewClub extends javax.swing.JFrame {
         jLabel9 = new javax.swing.JLabel();
         jButton3 = new javax.swing.JButton();
         SearchclubTextField = new javax.swing.JTextField();
-        Title = new javax.swing.JLabel();
-        textsearchclub = new javax.swing.JLabel();
         Bottonsearch = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         AddDescription = new javax.swing.JLabel();
@@ -124,16 +122,16 @@ public class ViewClub extends javax.swing.JFrame {
         jLabel7.setForeground(new java.awt.Color(153, 153, 153));
         jLabel7.setText("      PIC");
         jLabel7.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 250, 360, 360));
+        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 320, 360, 320));
 
         jLabel8.setFont(new java.awt.Font("Quark", 1, 45)); // NOI18N
-        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 150, 660, 80));
+        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 200, 660, 80));
         jLabel8.setText(getClubName());
 
         jLabel9.setFont(new java.awt.Font("Quark", 0, 19)); // NOI18N
         jLabel9.setText("<html> CLUB ID:  <br> <br>CLUB NAME:  <br> <br>DESCRIPTION:  </html>");
         jLabel9.setVerticalAlignment(javax.swing.SwingConstants.TOP);
-        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 290, -1, 170));
+        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 340, -1, 170));
 
         jButton3.setFont(new java.awt.Font("Quark", 0, 14)); // NOI18N
         jButton3.setText("สมัครเข้าร่วมชมรม");
@@ -147,7 +145,7 @@ public class ViewClub extends javax.swing.JFrame {
                 jButton3ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 630, -1, -1));
+        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 630, 130, 30));
 
         SearchclubTextField.setFont(new java.awt.Font("Kanit", 0, 13)); // NOI18N
         SearchclubTextField.addActionListener(new java.awt.event.ActionListener() {
@@ -155,15 +153,8 @@ public class ViewClub extends javax.swing.JFrame {
                 SearchclubTextFieldActionPerformed(evt);
             }
         });
-        getContentPane().add(SearchclubTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 100, 300, 30));
-
-        Title.setFont(new java.awt.Font("Kailasa", 0, 36)); // NOI18N
-        Title.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/logo.png"))); // NOI18N
-        getContentPane().add(Title, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 440, 50));
-
-        textsearchclub.setFont(new java.awt.Font("Quark", 0, 14)); // NOI18N
-        textsearchclub.setText("serach from club or organize for you interest");
-        getContentPane().add(textsearchclub, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 80, 290, 20));
+        getContentPane().add(SearchclubTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(13, 91, 261, 22));
+        SearchclubTextField.getAccessibleContext().setAccessibleDescription("");
 
         Bottonsearch.setText("OK");
         Bottonsearch.addActionListener(new java.awt.event.ActionListener() {
@@ -171,16 +162,16 @@ public class ViewClub extends javax.swing.JFrame {
                 BottonsearchActionPerformed(evt);
             }
         });
-        getContentPane().add(Bottonsearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 100, 80, 30));
+        getContentPane().add(Bottonsearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 90, 80, 25));
 
         jLabel2.setText("____________________________________________________________________________________________________________________");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 210, -1, -1));
-        getContentPane().add(AddDescription, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 360, 230, 30));
-        getContentPane().add(AddID, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 280, 230, 30));
-        getContentPane().add(AddName, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 320, 230, 30));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 280, -1, -1));
+        getContentPane().add(AddDescription, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 410, 230, 30));
+        getContentPane().add(AddID, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 330, 230, 30));
+        getContentPane().add(AddName, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 370, 230, 30));
 
         blackground.setFont(new java.awt.Font("Quark", 0, 19)); // NOI18N
-        blackground.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/background.png"))); // NOI18N
+        blackground.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/page.jpg"))); // NOI18N
         blackground.setText("jLabel1");
         getContentPane().add(blackground, new org.netbeans.lib.awtextra.AbsoluteConstraints(-5, 0, 1030, 770));
 
@@ -280,13 +271,11 @@ public class ViewClub extends javax.swing.JFrame {
     private javax.swing.JLabel AddName;
     private javax.swing.JButton Bottonsearch;
     private javax.swing.JTextField SearchclubTextField;
-    private javax.swing.JLabel Title;
     private javax.swing.JLabel blackground;
     private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JLabel textsearchclub;
     // End of variables declaration//GEN-END:variables
 }
