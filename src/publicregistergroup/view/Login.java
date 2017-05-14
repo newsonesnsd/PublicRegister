@@ -33,18 +33,12 @@ public class Login extends javax.swing.JFrame {
     private void initComponents() {
 
         jpnLogin = new javax.swing.JPanel();
-        jpnLoginLeft = new javax.swing.JPanel();
         loginButton = new javax.swing.JButton();
-        logo = new javax.swing.JLabel();
-        backgroundInside = new javax.swing.JPanel();
-        passwordSeparator = new javax.swing.JSeparator();
-        jpfInputPassword = new javax.swing.JPasswordField();
-        jlbPassword = new javax.swing.JLabel();
-        usernameSeparator = new javax.swing.JSeparator();
-        jtfInputUsername = new javax.swing.JTextField();
         jlbUsername = new javax.swing.JLabel();
+        jtfInputUsername = new javax.swing.JTextField();
+        jlbPassword = new javax.swing.JLabel();
+        jpfInputPassword = new javax.swing.JPasswordField();
         background = new javax.swing.JLabel();
-        sidebar = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -54,22 +48,10 @@ public class Login extends javax.swing.JFrame {
         setResizable(false);
 
         jpnLogin.setBackground(new java.awt.Color(255, 255, 255));
+        jpnLogin.setMaximumSize(new java.awt.Dimension(1024, 768));
+        jpnLogin.setMinimumSize(new java.awt.Dimension(1024, 768));
+        jpnLogin.setPreferredSize(new java.awt.Dimension(1024, 768));
         jpnLogin.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jpnLoginLeft.setBackground(new java.awt.Color(205, 77, 40));
-
-        javax.swing.GroupLayout jpnLoginLeftLayout = new javax.swing.GroupLayout(jpnLoginLeft);
-        jpnLoginLeft.setLayout(jpnLoginLeftLayout);
-        jpnLoginLeftLayout.setHorizontalGroup(
-            jpnLoginLeftLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 44, Short.MAX_VALUE)
-        );
-        jpnLoginLeftLayout.setVerticalGroup(
-            jpnLoginLeftLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
-        );
-
-        jpnLogin.add(jpnLoginLeft, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 807));
 
         loginButton.setFont(new java.awt.Font("Quark", 0, 24)); // NOI18N
         loginButton.setText("Login");
@@ -83,13 +65,33 @@ public class Login extends javax.swing.JFrame {
                 loginButtonActionPerformed(evt);
             }
         });
-        jpnLogin.add(loginButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 620, 232, 52));
+        jpnLogin.add(loginButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 460, 432, 60));
 
-        logo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/logo.png"))); // NOI18N
-        jpnLogin.add(logo, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 60, 410, -1));
+        jlbUsername.setFont(new java.awt.Font("Quark", 0, 24)); // NOI18N
+        jlbUsername.setForeground(new java.awt.Color(255, 255, 255));
+        jpnLogin.add(jlbUsername, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 330, 430, 60));
 
-        backgroundInside.setBackground(new java.awt.Color(77, 77, 77));
-        backgroundInside.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 51, 0)));
+        jtfInputUsername.setBackground(new java.awt.Color(77, 77, 77));
+        jtfInputUsername.setFont(new java.awt.Font("Quark", 0, 18)); // NOI18N
+        jtfInputUsername.setForeground(new java.awt.Color(255, 255, 255));
+        jtfInputUsername.setText("  Username");
+        jtfInputUsername.setBorder(null);
+        jtfInputUsername.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jtfInputUsernameMouseClicked(evt);
+            }
+        });
+        jtfInputUsername.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jtfInputUsernameActionPerformed(evt);
+            }
+        });
+        jpnLogin.add(jtfInputUsername, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 330, 430, 60));
+
+        jlbPassword.setFont(new java.awt.Font("Quark", 0, 24)); // NOI18N
+        jlbPassword.setForeground(new java.awt.Color(255, 255, 255));
+        jlbPassword.setText(" ");
+        jpnLogin.add(jlbPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 400, 430, 50));
 
         jpfInputPassword.setBackground(new java.awt.Color(77, 77, 77));
         jpfInputPassword.setFont(new java.awt.Font("Quark", 0, 18)); // NOI18N
@@ -105,93 +107,23 @@ public class Login extends javax.swing.JFrame {
                 jpfInputPasswordActionPerformed(evt);
             }
         });
+        jpnLogin.add(jpfInputPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 390, 430, 60));
 
-        jlbPassword.setFont(new java.awt.Font("Quark", 0, 24)); // NOI18N
-        jlbPassword.setForeground(new java.awt.Color(255, 255, 255));
-        jlbPassword.setText(" ");
-
-        jtfInputUsername.setBackground(new java.awt.Color(77, 77, 77));
-        jtfInputUsername.setFont(new java.awt.Font("Quark", 0, 18)); // NOI18N
-        jtfInputUsername.setForeground(new java.awt.Color(255, 255, 255));
-        jtfInputUsername.setText("Username");
-        jtfInputUsername.setBorder(null);
-        jtfInputUsername.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jtfInputUsernameMouseClicked(evt);
-            }
-        });
-        jtfInputUsername.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jtfInputUsernameActionPerformed(evt);
-            }
-        });
-
-        jlbUsername.setFont(new java.awt.Font("Quark", 0, 24)); // NOI18N
-        jlbUsername.setForeground(new java.awt.Color(255, 255, 255));
-
-        javax.swing.GroupLayout backgroundInsideLayout = new javax.swing.GroupLayout(backgroundInside);
-        backgroundInside.setLayout(backgroundInsideLayout);
-        backgroundInsideLayout.setHorizontalGroup(
-            backgroundInsideLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, backgroundInsideLayout.createSequentialGroup()
-                .addContainerGap(86, Short.MAX_VALUE)
-                .addGroup(backgroundInsideLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jlbUsername, javax.swing.GroupLayout.PREFERRED_SIZE, 232, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(passwordSeparator, javax.swing.GroupLayout.PREFERRED_SIZE, 232, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jpfInputPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 232, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jlbPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 232, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(usernameSeparator, javax.swing.GroupLayout.PREFERRED_SIZE, 232, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jtfInputUsername, javax.swing.GroupLayout.PREFERRED_SIZE, 232, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(80, 80, 80))
-        );
-        backgroundInsideLayout.setVerticalGroup(
-            backgroundInsideLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, backgroundInsideLayout.createSequentialGroup()
-                .addContainerGap(166, Short.MAX_VALUE)
-                .addComponent(jlbUsername, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jtfInputUsername, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, 0)
-                .addComponent(usernameSeparator, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, 0)
-                .addComponent(jlbPassword)
-                .addGap(27, 27, 27)
-                .addComponent(jpfInputPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, 0)
-                .addComponent(passwordSeparator, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(58, 58, 58))
-        );
-
-        jpnLogin.add(backgroundInside, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 190, 400, 400));
-
-        background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/background.png"))); // NOI18N
-        jpnLogin.add(background, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 0, 950, 810));
+        background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Login2.jpg"))); // NOI18N
+        jpnLogin.add(background, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1024, 768));
         background.getAccessibleContext().setAccessibleName("Login");
-
-        sidebar.setBackground(new java.awt.Color(205, 77, 40));
-
-        javax.swing.GroupLayout sidebarLayout = new javax.swing.GroupLayout(sidebar);
-        sidebar.setLayout(sidebarLayout);
-        sidebarLayout.setHorizontalGroup(
-            sidebarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 40, Short.MAX_VALUE)
-        );
-        sidebarLayout.setVerticalGroup(
-            sidebarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 810, Short.MAX_VALUE)
-        );
-
-        jpnLogin.add(sidebar, new org.netbeans.lib.awtextra.AbsoluteConstraints(990, 0, 40, 810));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jpnLogin, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jpnLogin, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jpnLogin, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jpnLogin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
@@ -309,17 +241,11 @@ public class Login extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel background;
-    private javax.swing.JPanel backgroundInside;
     private javax.swing.JLabel jlbPassword;
     private javax.swing.JLabel jlbUsername;
     private javax.swing.JPasswordField jpfInputPassword;
     private javax.swing.JPanel jpnLogin;
-    private javax.swing.JPanel jpnLoginLeft;
     private javax.swing.JTextField jtfInputUsername;
     private javax.swing.JButton loginButton;
-    private javax.swing.JLabel logo;
-    private javax.swing.JSeparator passwordSeparator;
-    private javax.swing.JPanel sidebar;
-    private javax.swing.JSeparator usernameSeparator;
     // End of variables declaration//GEN-END:variables
 }
