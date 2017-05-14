@@ -64,12 +64,8 @@ public class Homepage extends javax.swing.JFrame {
 
         jLabel1 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        textsearchclub = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
         Bottonsearch = new javax.swing.JButton();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jPanel3 = new javax.swing.JPanel();
@@ -99,7 +95,6 @@ public class Homepage extends javax.swing.JFrame {
         chooseClub = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         jButton2 = new javax.swing.JButton();
-        Title = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         blackground = new javax.swing.JLabel();
 
@@ -112,16 +107,13 @@ public class Homepage extends javax.swing.JFrame {
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        textsearchclub.setFont(new java.awt.Font("Quark", 0, 14)); // NOI18N
-        textsearchclub.setText("serach from club or organize for you interest");
-        getContentPane().add(textsearchclub, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 80, 290, 20));
-
         jTextField1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 100, 300, 30));
+        getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(13, 91, 261, 22));
+        jTextField1.getAccessibleContext().setAccessibleDescription("");
 
         Bottonsearch.setFont(new java.awt.Font("Kanit", 0, 13)); // NOI18N
         Bottonsearch.setText("OK");
@@ -130,19 +122,7 @@ public class Homepage extends javax.swing.JFrame {
                 BottonsearchActionPerformed(evt);
             }
         });
-        getContentPane().add(Bottonsearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 100, 80, 30));
-
-        jLabel3.setFont(new java.awt.Font("Quark", 0, 14)); // NOI18N
-        jLabel3.setText("KMUTT 126 Pracha Uthit Rd, Khwaeng Bang Mot");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 680, -1, 20));
-
-        jLabel4.setFont(new java.awt.Font("Quark", 0, 14)); // NOI18N
-        jLabel4.setText("Khet Thung Khru, Krung Thep Maha Nakhon 10140");
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 700, -1, -1));
-
-        jLabel5.setFont(new java.awt.Font("Quark", 0, 14)); // NOI18N
-        jLabel5.setText("© Copyright 2017 KMUTT PublicizeHUB");
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 720, -1, -1));
+        getContentPane().add(Bottonsearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 90, 80, 25));
 
         jTabbedPane1.setTabPlacement(javax.swing.JTabbedPane.LEFT);
 
@@ -416,11 +396,11 @@ public class Homepage extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(jLabel11)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 387, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 150, 490, 430));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 210, 490, 430));
 
         allClubs.setFont(new java.awt.Font("Quark", 0, 16)); // NOI18N
         allClubs.addAncestorListener(new javax.swing.event.AncestorListener() {
@@ -481,7 +461,7 @@ public class Homepage extends javax.swing.JFrame {
                 .addComponent(chooseClub))
         );
 
-        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 150, 440, -1));
+        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 210, 440, -1));
 
         jButton2.setFont(new java.awt.Font("Quark", 0, 18)); // NOI18N
         jButton2.setText("Login");
@@ -490,14 +470,10 @@ public class Homepage extends javax.swing.JFrame {
                 jButton2ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 90, 90, -1));
-
-        Title.setFont(new java.awt.Font("Kailasa", 0, 36)); // NOI18N
-        Title.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/logo.png"))); // NOI18N
-        getContentPane().add(Title, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 440, 50));
+        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 30, 90, -1));
         getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 640, -1, 40));
 
-        blackground.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/background.png"))); // NOI18N
+        blackground.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/page.jpg"))); // NOI18N
         getContentPane().add(blackground, new org.netbeans.lib.awtextra.AbsoluteConstraints(-5, 0, 1030, 770));
 
         pack();
@@ -640,7 +616,6 @@ public class Homepage extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Bottonsearch;
-    private javax.swing.JLabel Title;
     private javax.swing.JList<String> allClubs;
     private javax.swing.JLabel blackground;
     private javax.swing.JButton chooseClub;
@@ -662,9 +637,6 @@ public class Homepage extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
@@ -678,6 +650,5 @@ public class Homepage extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTextField jTextField1;
-    private javax.swing.JLabel textsearchclub;
     // End of variables declaration//GEN-END:variables
 }
