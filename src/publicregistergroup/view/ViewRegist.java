@@ -51,13 +51,32 @@ public class ViewRegist extends javax.swing.JFrame {
         Edit = new javax.swing.JButton();
         jTextField2 = new javax.swing.JTextField();
         Bottonsearch1 = new javax.swing.JButton();
-        textsearchclub1 = new javax.swing.JLabel();
         blackground = new javax.swing.JLabel();
+        jPanel2 = new javax.swing.JPanel();
+        NameClub1 = new javax.swing.JLabel();
+        ClubID1 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        pic1 = new javax.swing.JLabel();
+        Name1 = new javax.swing.JLabel();
+        Surname1 = new javax.swing.JLabel();
+        Telephone1 = new javax.swing.JLabel();
+        Facebook1 = new javax.swing.JLabel();
+        Email1 = new javax.swing.JLabel();
+        แพ้ยาอะไร1 = new javax.swing.JLabel();
+        แพ้อาหาอะไร1 = new javax.swing.JLabel();
+        AnsName1 = new javax.swing.JLabel();
+        AnsSurname1 = new javax.swing.JLabel();
+        AnsTelephone1 = new javax.swing.JLabel();
+        AnsFacebook1 = new javax.swing.JLabel();
+        Ansแพ้ยาอะไร1 = new javax.swing.JLabel();
+        Ansแพ้อาหารอะไร1 = new javax.swing.JLabel();
+        AnsEmail1 = new javax.swing.JLabel();
+        Confirm1 = new javax.swing.JButton();
+        Edit1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setPreferredSize(new java.awt.Dimension(1024, 768));
-
-        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         NameClub.setFont(new java.awt.Font("Quark", 1, 32)); // NOI18N
         NameClub.setText("ชมรมอาสาพัฒนาชุมชน");
@@ -232,11 +251,14 @@ public class ViewRegist extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 210, -1, -1));
+
         jTextField2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField2ActionPerformed(evt);
             }
         });
+        getContentPane().add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(18, 90, 261, 22));
 
         Bottonsearch1.setFont(new java.awt.Font("Kanit", 0, 13)); // NOI18N
         Bottonsearch1.setText("OK");
@@ -245,51 +267,188 @@ public class ViewRegist extends javax.swing.JFrame {
                 Bottonsearch1ActionPerformed(evt);
             }
         });
+        getContentPane().add(Bottonsearch1, new org.netbeans.lib.awtextra.AbsoluteConstraints(285, 88, 80, 25));
 
-        textsearchclub1.setFont(new java.awt.Font("Quark", 0, 14)); // NOI18N
-        textsearchclub1.setText("serach from club or organize for you interest");
-
+        blackground.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/page.jpg"))); // NOI18N
         blackground.setText("jLabel1");
+        getContentPane().add(blackground, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1030, 770));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(39, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(10, 10, 10)
-                        .addComponent(textsearchclub1, javax.swing.GroupLayout.PREFERRED_SIZE, 290, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, 0)
-                        .addComponent(Bottonsearch1, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(31, 31, 31))
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(blackground, javax.swing.GroupLayout.PREFERRED_SIZE, 1030, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
+        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
+
+        NameClub1.setFont(new java.awt.Font("Quark", 1, 32)); // NOI18N
+        NameClub1.setText("ชมรมอาสาพัฒนาชุมชน");
+
+        ClubID1.setFont(new java.awt.Font("Quark", 0, 14)); // NOI18N
+        ClubID1.setText("CLUB ID : ");
+
+        jLabel3.setText("____________________________________________________________________________________________________________________");
+
+        pic1.setFont(new java.awt.Font("Quark", 1, 72)); // NOI18N
+        pic1.setForeground(new java.awt.Color(153, 153, 153));
+        pic1.setText("    PIC");
+        pic1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+
+        Name1.setFont(new java.awt.Font("Quark", 1, 18)); // NOI18N
+        Name1.setText("Name :");
+
+        Surname1.setFont(new java.awt.Font("Quark", 1, 18)); // NOI18N
+        Surname1.setText("Surname :");
+
+        Telephone1.setFont(new java.awt.Font("Quark", 1, 18)); // NOI18N
+        Telephone1.setText("Telephone :");
+
+        Facebook1.setFont(new java.awt.Font("Quark", 1, 18)); // NOI18N
+        Facebook1.setText("Facebook :");
+
+        Email1.setFont(new java.awt.Font("Quark", 1, 18)); // NOI18N
+        Email1.setText("E-mail :");
+
+        แพ้ยาอะไร1.setFont(new java.awt.Font("Quark", 1, 18)); // NOI18N
+        แพ้ยาอะไร1.setText("แพ้ยาอะไร :");
+
+        แพ้อาหาอะไร1.setFont(new java.awt.Font("Quark", 1, 18)); // NOI18N
+        แพ้อาหาอะไร1.setText("แพ้อาหารอะไร :");
+
+        AnsName1.setFont(new java.awt.Font("Quark", 0, 18)); // NOI18N
+        AnsName1.setText("Kittiya ");
+
+        AnsSurname1.setFont(new java.awt.Font("Quark", 0, 18)); // NOI18N
+        AnsSurname1.setText("Yuthasastrkosol");
+
+        AnsTelephone1.setFont(new java.awt.Font("Quark", 0, 18)); // NOI18N
+        AnsTelephone1.setText("090-7700443");
+
+        AnsFacebook1.setFont(new java.awt.Font("Quark", 0, 18)); // NOI18N
+        AnsFacebook1.setText("Noey Kittiya");
+
+        Ansแพ้ยาอะไร1.setFont(new java.awt.Font("Quark", 0, 18)); // NOI18N
+        Ansแพ้ยาอะไร1.setText("-");
+
+        Ansแพ้อาหารอะไร1.setFont(new java.awt.Font("Quark", 0, 18)); // NOI18N
+        Ansแพ้อาหารอะไร1.setText("-");
+
+        AnsEmail1.setFont(new java.awt.Font("Quark", 0, 18)); // NOI18N
+        AnsEmail1.setText("kz_noey@hotmail.com");
+
+        Confirm1.setFont(new java.awt.Font("Quark", 0, 14)); // NOI18N
+        Confirm1.setText("CONFIRM");
+
+        Edit1.setFont(new java.awt.Font("Quark", 0, 10)); // NOI18N
+        Edit1.setText("EDIT");
+        Edit1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Edit1ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(186, 186, 186)
+                        .addComponent(pic1, javax.swing.GroupLayout.PREFERRED_SIZE, 274, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(39, 39, 39)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addGap(10, 10, 10)
+                                .addComponent(Edit1))
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addComponent(Name1)
+                                .addGap(18, 18, 18)
+                                .addComponent(AnsName1))
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addComponent(Surname1)
+                                .addGap(18, 18, 18)
+                                .addComponent(AnsSurname1))
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addComponent(Telephone1)
+                                .addGap(18, 18, 18)
+                                .addComponent(AnsTelephone1))
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addComponent(Facebook1)
+                                .addGap(18, 18, 18)
+                                .addComponent(AnsFacebook1))
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addComponent(แพ้ยาอะไร1)
+                                .addGap(18, 18, 18)
+                                .addComponent(Ansแพ้ยาอะไร1))
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addComponent(แพ้อาหาอะไร1)
+                                .addGap(18, 18, 18)
+                                .addComponent(Ansแพ้อาหารอะไร1))
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addComponent(Email1)
+                                .addGap(18, 18, 18)
+                                .addComponent(AnsEmail1))))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(219, 219, 219)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(ClubID1)
+                            .addComponent(NameClub1))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addGap(0, 136, Short.MAX_VALUE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                        .addComponent(jLabel3)
+                        .addGap(128, 128, 128))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                        .addComponent(Confirm1, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(153, 153, 153))))
         );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(82, 82, 82)
-                .addComponent(textsearchclub1, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Bottonsearch1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(165, Short.MAX_VALUE))
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(blackground, javax.swing.GroupLayout.PREFERRED_SIZE, 770, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(26, 26, 26)
+                .addComponent(NameClub1)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(7, 7, 7)
+                        .addComponent(ClubID1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jLabel3)
+                        .addGap(18, 18, 18)
+                        .addComponent(pic1, javax.swing.GroupLayout.PREFERRED_SIZE, 277, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(80, 80, 80)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(Name1)
+                            .addComponent(AnsName1))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(Surname1)
+                            .addComponent(AnsSurname1))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(Telephone1)
+                            .addComponent(AnsTelephone1))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(Facebook1)
+                            .addComponent(AnsFacebook1))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(แพ้ยาอะไร1)
+                            .addComponent(Ansแพ้ยาอะไร1))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(แพ้อาหาอะไร1)
+                            .addComponent(Ansแพ้อาหารอะไร1))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(Email1)
+                            .addComponent(AnsEmail1))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(Edit1)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(Confirm1, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
+
+        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 190, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -307,6 +466,10 @@ public class ViewRegist extends javax.swing.JFrame {
        this.setVisible(false);
        view.setVisible(true);
     }//GEN-LAST:event_EditActionPerformed
+
+    private void Edit1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Edit1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Edit1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -339,35 +502,56 @@ public class ViewRegist extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new ViewRegist().setVisible(true);
+                jPanel1.setOpaque(false);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel AnsEmail;
+    private javax.swing.JLabel AnsEmail1;
     private javax.swing.JLabel AnsFacebook;
+    private javax.swing.JLabel AnsFacebook1;
     private javax.swing.JLabel AnsName;
+    private javax.swing.JLabel AnsName1;
     private javax.swing.JLabel AnsSurname;
+    private javax.swing.JLabel AnsSurname1;
     private javax.swing.JLabel AnsTelephone;
+    private javax.swing.JLabel AnsTelephone1;
     private javax.swing.JLabel Ansแพ้ยาอะไร;
+    private javax.swing.JLabel Ansแพ้ยาอะไร1;
     private javax.swing.JLabel Ansแพ้อาหารอะไร;
+    private javax.swing.JLabel Ansแพ้อาหารอะไร1;
     private javax.swing.JButton Bottonsearch1;
     private javax.swing.JLabel ClubID;
+    private javax.swing.JLabel ClubID1;
     private javax.swing.JButton Confirm;
+    private javax.swing.JButton Confirm1;
     private javax.swing.JButton Edit;
+    private javax.swing.JButton Edit1;
     private javax.swing.JLabel Email;
+    private javax.swing.JLabel Email1;
     private javax.swing.JLabel Facebook;
+    private javax.swing.JLabel Facebook1;
     private javax.swing.JLabel Name;
+    private javax.swing.JLabel Name1;
     private javax.swing.JLabel NameClub;
+    private javax.swing.JLabel NameClub1;
     private javax.swing.JLabel Surname;
+    private javax.swing.JLabel Surname1;
     private javax.swing.JLabel Telephone;
+    private javax.swing.JLabel Telephone1;
     private javax.swing.JLabel blackground;
     private javax.swing.JLabel jLabel2;
-    private static javax.swing.JPanel jPanel1;
+    private javax.swing.JLabel jLabel3;
+    protected static javax.swing.JPanel jPanel1;
+    private static javax.swing.JPanel jPanel2;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JLabel pic;
-    private javax.swing.JLabel textsearchclub1;
+    private javax.swing.JLabel pic1;
     private javax.swing.JLabel แพ้ยาอะไร;
+    private javax.swing.JLabel แพ้ยาอะไร1;
     private javax.swing.JLabel แพ้อาหาอะไร;
+    private javax.swing.JLabel แพ้อาหาอะไร1;
     // End of variables declaration//GEN-END:variables
 }
