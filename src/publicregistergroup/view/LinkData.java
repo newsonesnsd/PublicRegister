@@ -28,10 +28,8 @@ public class LinkData extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        textsearchclub = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
         Bottonsearch = new javax.swing.JButton();
-        Title = new javax.swing.JLabel();
         UsernameID = new javax.swing.JLabel();
         Box1 = new javax.swing.JPanel();
         changeprofilebotton = new javax.swing.JButton();
@@ -40,32 +38,27 @@ public class LinkData extends javax.swing.JFrame {
         Box3 = new javax.swing.JPanel();
         clubbotton = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
         blackground = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        textsearchclub.setFont(new java.awt.Font("Quark", 0, 14)); // NOI18N
-        textsearchclub.setText("serach from club or organize for you interest");
-        getContentPane().add(textsearchclub, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 80, 290, 20));
-        getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 100, 300, 30));
+        jTextField1.setMinimumSize(new java.awt.Dimension(8, 22));
+        jTextField1.setPreferredSize(new java.awt.Dimension(8, 22));
+        getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(13, 91, 261, 22));
 
         Bottonsearch.setFont(new java.awt.Font("Kanit", 0, 13)); // NOI18N
         Bottonsearch.setText("OK");
+        Bottonsearch.setMaximumSize(new java.awt.Dimension(55, 30));
+        Bottonsearch.setMinimumSize(new java.awt.Dimension(55, 30));
+        Bottonsearch.setPreferredSize(new java.awt.Dimension(55, 30));
         Bottonsearch.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BottonsearchActionPerformed(evt);
             }
         });
-        getContentPane().add(Bottonsearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 100, 80, 30));
-
-        Title.setFont(new java.awt.Font("Kailasa", 0, 36)); // NOI18N
-        Title.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/logo.png"))); // NOI18N
-        getContentPane().add(Title, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 400, 50));
+        getContentPane().add(Bottonsearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 90, 80, 25));
 
         UsernameID.setFont(new java.awt.Font("Kanit", 0, 24)); // NOI18N
         getContentPane().add(UsernameID, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 40, 220, 30));
@@ -79,6 +72,7 @@ public class LinkData extends javax.swing.JFrame {
         changeprofilebotton.setBorder(null);
         changeprofilebotton.setContentAreaFilled(false);
         changeprofilebotton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        changeprofilebotton.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         changeprofilebotton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 changeprofilebottonActionPerformed(evt);
@@ -89,25 +83,25 @@ public class LinkData extends javax.swing.JFrame {
         Box1.setLayout(Box1Layout);
         Box1Layout.setHorizontalGroup(
             Box1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(Box1Layout.createSequentialGroup()
-                .addGap(28, 28, 28)
-                .addComponent(changeprofilebotton)
-                .addContainerGap(37, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Box1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(changeprofilebotton, javax.swing.GroupLayout.PREFERRED_SIZE, 455, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
         Box1Layout.setVerticalGroup(
             Box1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(Box1Layout.createSequentialGroup()
-                .addGap(104, 104, 104)
-                .addComponent(changeprofilebotton)
-                .addContainerGap(93, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Box1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(changeprofilebotton, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
 
-        getContentPane().add(Box1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 270, 330, 270));
+        getContentPane().add(Box1, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 290, 480, 90));
 
         Box2.setBackground(new java.awt.Color(77, 77, 77));
         Box2.setBorder(javax.swing.BorderFactory.createMatteBorder(3, 3, 3, 3, new java.awt.Color(205, 77, 40)));
 
-        checkclubbotton.setFont(new java.awt.Font("Quark", 0, 36)); // NOI18N
+        checkclubbotton.setFont(new java.awt.Font("Quark", 0, 48)); // NOI18N
         checkclubbotton.setForeground(new java.awt.Color(204, 204, 204));
         checkclubbotton.setText("เช็ค club activities");
         checkclubbotton.setBorder(null);
@@ -125,18 +119,18 @@ public class LinkData extends javax.swing.JFrame {
             Box2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Box2Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(checkclubbotton, javax.swing.GroupLayout.PREFERRED_SIZE, 324, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(checkclubbotton, javax.swing.GroupLayout.PREFERRED_SIZE, 453, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
         Box2Layout.setVerticalGroup(
             Box2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Box2Layout.createSequentialGroup()
-                .addContainerGap(110, Short.MAX_VALUE)
-                .addComponent(checkclubbotton)
-                .addGap(103, 103, 103))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(checkclubbotton, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
 
-        getContentPane().add(Box2, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 270, 340, 270));
+        getContentPane().add(Box2, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 390, 480, 90));
 
         Box3.setBackground(new java.awt.Color(77, 77, 77));
         Box3.setBorder(javax.swing.BorderFactory.createMatteBorder(3, 3, 3, 3, new java.awt.Color(205, 77, 40)));
@@ -158,34 +152,22 @@ public class LinkData extends javax.swing.JFrame {
         Box3Layout.setHorizontalGroup(
             Box3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Box3Layout.createSequentialGroup()
-                .addContainerGap(79, Short.MAX_VALUE)
-                .addComponent(clubbotton)
-                .addGap(54, 54, 54))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(clubbotton, javax.swing.GroupLayout.PREFERRED_SIZE, 456, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
         Box3Layout.setVerticalGroup(
             Box3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(Box3Layout.createSequentialGroup()
-                .addGap(105, 105, 105)
-                .addComponent(clubbotton)
-                .addContainerGap(92, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Box3Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(clubbotton, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
 
-        getContentPane().add(Box3, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 270, 330, 270));
+        getContentPane().add(Box3, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 490, 480, 90));
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 640, 400, 40));
 
-        jLabel3.setFont(new java.awt.Font("Quark", 0, 14)); // NOI18N
-        jLabel3.setText("KMUTT 126 Pracha Uthit Rd, Khwaeng Bang Mot");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 680, -1, 20));
-
-        jLabel4.setFont(new java.awt.Font("Quark", 0, 14)); // NOI18N
-        jLabel4.setText("Khet Thung Khru, Krung Thep Maha Nakhon 10140");
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 700, -1, -1));
-
-        jLabel5.setFont(new java.awt.Font("Quark", 0, 14)); // NOI18N
-        jLabel5.setText("© Copyright 2017 KMUTT PublicizeHUB");
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 720, -1, -1));
-
-        blackground.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/background.png"))); // NOI18N
+        blackground.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/page.jpg"))); // NOI18N
         blackground.setText("jLabel1");
         getContentPane().add(blackground, new org.netbeans.lib.awtextra.AbsoluteConstraints(-5, 0, 1030, 770));
 
@@ -255,17 +237,12 @@ public class LinkData extends javax.swing.JFrame {
     private javax.swing.JPanel Box1;
     private javax.swing.JPanel Box2;
     private javax.swing.JPanel Box3;
-    private javax.swing.JLabel Title;
     private javax.swing.JLabel UsernameID;
     private javax.swing.JLabel blackground;
     private javax.swing.JButton changeprofilebotton;
     private javax.swing.JButton checkclubbotton;
     private javax.swing.JButton clubbotton;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JTextField jTextField1;
-    private javax.swing.JLabel textsearchclub;
     // End of variables declaration//GEN-END:variables
 }
