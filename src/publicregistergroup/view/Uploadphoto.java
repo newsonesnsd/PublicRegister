@@ -43,12 +43,10 @@ public class Uploadphoto extends JFrame {
         textupload = new javax.swing.JLabel();
         Uploadphotos = new javax.swing.JLabel();
         textDetail1 = new javax.swing.JLabel();
-        textsearchclub = new javax.swing.JLabel();
         SearchTextField = new javax.swing.JTextField();
         Bottonsearch = new javax.swing.JButton();
         savebotton = new javax.swing.JButton();
         EditBotton = new javax.swing.JButton();
-        Title = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         detailArea = new javax.swing.JTextArea();
         NameClub = new javax.swing.JLabel();
@@ -84,17 +82,13 @@ public class Uploadphoto extends JFrame {
                 .addGap(139, 139, 139))
         );
 
-        getContentPane().add(Boxphoto, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 200, 440, 370));
+        getContentPane().add(Boxphoto, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 260, 440, 370));
 
-        textDetail1.setFont(new java.awt.Font("Quark", 0, 52)); // NOI18N
+        textDetail1.setFont(new java.awt.Font("Quark", 0, 40)); // NOI18N
         textDetail1.setForeground(new java.awt.Color(77, 77, 77));
         textDetail1.setText("รายละเอียด");
-        getContentPane().add(textDetail1, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 180, -1, -1));
-
-        textsearchclub.setFont(new java.awt.Font("Quark", 0, 14)); // NOI18N
-        textsearchclub.setText("serach from club or organize for you interest");
-        getContentPane().add(textsearchclub, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 80, 290, 20));
-        getContentPane().add(SearchTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 100, 300, 30));
+        getContentPane().add(textDetail1, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 260, -1, -1));
+        getContentPane().add(SearchTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(13, 91, 261, 25));
 
         Bottonsearch.setFont(new java.awt.Font("Quark", 0, 14)); // NOI18N
         Bottonsearch.setText("OK");
@@ -103,10 +97,10 @@ public class Uploadphoto extends JFrame {
                 BottonsearchActionPerformed(evt);
             }
         });
-        getContentPane().add(Bottonsearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 100, 80, 30));
+        getContentPane().add(Bottonsearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 90, 80, 25));
 
         savebotton.setBackground(new java.awt.Color(213, 186, 55));
-        savebotton.setFont(new java.awt.Font("Quark", 0, 48)); // NOI18N
+        savebotton.setFont(new java.awt.Font("Quark", 0, 30)); // NOI18N
         savebotton.setForeground(new java.awt.Color(255, 255, 255));
         savebotton.setText("Back");
         savebotton.setBorder(null);
@@ -115,7 +109,7 @@ public class Uploadphoto extends JFrame {
                 savebottonActionPerformed(evt);
             }
         });
-        getContentPane().add(savebotton, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 670, 230, 60));
+        getContentPane().add(savebotton, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 640, 230, 40));
 
         EditBotton.setBackground(new java.awt.Color(213, 186, 55));
         EditBotton.setFont(new java.awt.Font("Quark", 0, 24)); // NOI18N
@@ -127,11 +121,7 @@ public class Uploadphoto extends JFrame {
                 EditBottonActionPerformed(evt);
             }
         });
-        getContentPane().add(EditBotton, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 140, 140, 40));
-
-        Title.setFont(new java.awt.Font("Kailasa", 0, 36)); // NOI18N
-        Title.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/logo.png"))); // NOI18N
-        getContentPane().add(Title, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 440, 50));
+        getContentPane().add(EditBotton, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 150, 140, 30));
 
         detailArea.setEditable(false);
         detailArea.setColumns(20);
@@ -166,7 +156,7 @@ public class Uploadphoto extends JFrame {
             Logger.getLogger(ViewProfile.class.getName()).log(Level.SEVERE, null, ex);
         }
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 240, 450, 330));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 300, 450, 330));
 
         NameClub.setFont(new java.awt.Font("Quark", 0, 24)); // NOI18N
         getContentPane().add(NameClub, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 160, 260, 30));
@@ -197,7 +187,7 @@ public class Uploadphoto extends JFrame {
             Logger.getLogger(ViewProfile.class.getName()).log(Level.SEVERE, null, ex);
         }
 
-        blackground.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/background.png"))); // NOI18N
+        blackground.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/page.jpg"))); // NOI18N
         blackground.setText("jLabel1");
         getContentPane().add(blackground, new org.netbeans.lib.awtextra.AbsoluteConstraints(-5, 0, 1030, 770));
 
@@ -262,14 +252,12 @@ public class Uploadphoto extends JFrame {
     private javax.swing.JButton EditBotton;
     private javax.swing.JLabel NameClub;
     private javax.swing.JTextField SearchTextField;
-    private javax.swing.JLabel Title;
     private javax.swing.JLabel Uploadphotos;
     private javax.swing.JLabel blackground;
     private javax.swing.JTextArea detailArea;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JButton savebotton;
     private javax.swing.JLabel textDetail1;
-    private javax.swing.JLabel textsearchclub;
     private javax.swing.JLabel textupload;
     // End of variables declaration//GEN-END:variables
 }
