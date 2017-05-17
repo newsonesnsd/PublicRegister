@@ -65,16 +65,17 @@ public class Login extends javax.swing.JFrame {
                 loginButtonActionPerformed(evt);
             }
         });
-        jpnLogin.add(loginButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 460, 432, 60));
+        jpnLogin.add(loginButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(295, 510, 440, 60));
 
         jlbUsername.setFont(new java.awt.Font("Quark", 0, 24)); // NOI18N
-        jlbUsername.setForeground(new java.awt.Color(255, 255, 255));
-        jpnLogin.add(jlbUsername, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 330, 430, 60));
+        jlbUsername.setForeground(new java.awt.Color(255, 102, 51));
+        jlbUsername.setFocusTraversalPolicyProvider(true);
+        jpnLogin.add(jlbUsername, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 283, 430, 60));
 
         jtfInputUsername.setBackground(new java.awt.Color(77, 77, 77));
         jtfInputUsername.setFont(new java.awt.Font("Quark", 0, 18)); // NOI18N
-        jtfInputUsername.setForeground(new java.awt.Color(255, 255, 255));
-        jtfInputUsername.setText("  Username");
+        jtfInputUsername.setForeground(new java.awt.Color(248, 155, 124));
+        jtfInputUsername.setText(" Username");
         jtfInputUsername.setBorder(null);
         jtfInputUsername.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -86,10 +87,10 @@ public class Login extends javax.swing.JFrame {
                 jtfInputUsernameActionPerformed(evt);
             }
         });
-        jpnLogin.add(jtfInputUsername, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 330, 430, 60));
+        jpnLogin.add(jtfInputUsername, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 333, 430, 60));
 
         jlbPassword.setFont(new java.awt.Font("Quark", 0, 24)); // NOI18N
-        jlbPassword.setForeground(new java.awt.Color(255, 255, 255));
+        jlbPassword.setForeground(new java.awt.Color(255, 102, 51));
         jlbPassword.setText(" ");
         jpnLogin.add(jlbPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 400, 430, 50));
 
@@ -107,9 +108,9 @@ public class Login extends javax.swing.JFrame {
                 jpfInputPasswordActionPerformed(evt);
             }
         });
-        jpnLogin.add(jpfInputPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 390, 430, 60));
+        jpnLogin.add(jpfInputPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 440, 430, 60));
 
-        background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Login2.jpg"))); // NOI18N
+        background.setIcon(new javax.swing.ImageIcon("C:\\Users\\kz_no\\Desktop\\ProjectPublicRegister\\src\\Images\\EditLogin2.jpg")); // NOI18N
         jpnLogin.add(background, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1024, 768));
         background.getAccessibleContext().setAccessibleName("Login");
 
@@ -150,12 +151,12 @@ public class Login extends javax.swing.JFrame {
     }//GEN-LAST:event_loginButtonMouseClicked
 
     private void jtfInputUsernameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtfInputUsernameActionPerformed
-        // TODO add your handling code here:
+       // jpfInputPassword.setText("Username");
     }//GEN-LAST:event_jtfInputUsernameActionPerformed
 
     private void jtfInputUsernameMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jtfInputUsernameMouseClicked
         // TODO add your handling code here:
-        jtfInputUsername.setText("");
+        jtfInputUsername.setText("  ");
         jlbUsername.setText("Username");
     }//GEN-LAST:event_jtfInputUsernameMouseClicked
 
