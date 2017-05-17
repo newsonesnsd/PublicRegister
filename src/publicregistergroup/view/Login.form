@@ -170,11 +170,6 @@
           </Constraints>
         </Component>
         <Component class="javax.swing.JLabel" name="background">
-          <Properties>
-            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\kz_no\Desktop\ProjectPublicRegister\src\Images\EditLogin2.jpg"/>
-            </Property>
-          </Properties>
           <AccessibilityProperties>
             <Property name="AccessibleContext.accessibleName" type="java.lang.String" value="Login"/>
           </AccessibilityProperties>
