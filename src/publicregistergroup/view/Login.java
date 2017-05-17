@@ -109,8 +109,6 @@ public class Login extends javax.swing.JFrame {
             }
         });
         jpnLogin.add(jpfInputPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 440, 430, 60));
-
-        background.setIcon(new javax.swing.ImageIcon("C:\\Users\\kz_no\\Desktop\\ProjectPublicRegister\\src\\Images\\EditLogin2.jpg")); // NOI18N
         jpnLogin.add(background, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1024, 768));
         background.getAccessibleContext().setAccessibleName("Login");
 
@@ -170,40 +168,6 @@ public class Login extends javax.swing.JFrame {
         jpfInputPassword.setText("");
         jlbPassword.setText("Password");
     }//GEN-LAST:event_jpfInputPasswordMouseClicked
-
-    public boolean getLogin() {
-        boolean status = false;
-        try {
-            String stdUsername;
-            String stdPassword;
-            stdUsername = jtfInputUsername.getText();
-            stdPassword = String.valueOf(jpfInputPassword.getPassword()); // Password not Hash
-            Connection con = ConnectionBuilder.getConnection();
-            PreparedStatement pre;
-            String sql;
-            sql = "select username, password from users where username = ? and password = ?";
-            pre = con.prepareStatement(sql);
-            pre.setString(1, stdUsername);
-            pre.setString(2, stdPassword);
-            ResultSet rec = pre.executeQuery();
-            if (rec.next()) {
-                //this.setVisible(false);
-                //Homepage newHome = new Homepage();
-                //newHome.setVisible(true);
-                status = true;
-            }
-            else {
-                status = false;
-            }
-        } 
-        catch (SQLException e) {
-            System.out.println(e);
-        }
-        catch (Exception e) {
-            System.out.println(e);
-        }
-        return status;
-    }
     
     /**
      * @param args the command line arguments
