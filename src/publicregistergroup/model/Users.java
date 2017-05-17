@@ -7,6 +7,8 @@ package publicregistergroup.model;
 import publicregistergroup.controller.ConnectionBuilder;
 import java.sql.*;
 import java.util.Scanner;
+import javax.swing.JPasswordField;
+import javax.swing.JTextField;
 /**
  *
  * @author newso
@@ -90,6 +92,41 @@ public class Users {
             System.out.println(e.getMessage());
         }
         return user;
+    }
+    
+    public static boolean getLogin(JTextField jtfUsername, JPasswordField jpfPassword) {
+        boolean status = false;
+        try {
+            String stdUsername;
+            String stdPassword;
+            stdUsername = jtfUsername.getText();
+            stdPassword = String.valueOf(jpfPassword.getPassword()); // Password not Hash
+            //Connection con = ConnectionBuilder.getConnection();
+            PreparedStatement pre;
+            String sql;
+            sql = "select username, password from users where username = ? and password = ?";
+            pre = con.prepareStatement(sql);
+            pre.setString(1, stdUsername);
+            pre.setString(2, stdPassword);
+            ResultSet rec = pre.executeQuery();
+            if (rec.next()) {
+                //this.setVisible(false);
+                //Homepage newHome = new Homepage();
+                //newHome.setVisible(true);
+                status = true;
+            }
+            else {
+                status = false;
+            }
+        } 
+        catch (SQLException e) {
+            System.out.println(e);
+        }
+        catch (Exception e) {
+            System.out.println(e);
+        }
+        return status;
+        
     }
     
     public static void main(String[] args) {
