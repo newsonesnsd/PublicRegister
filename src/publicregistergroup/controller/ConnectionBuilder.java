@@ -1,4 +1,6 @@
 package publicregistergroup.controller;
+//import java.sql.*;
+
 import java.sql.*;
 
 public class ConnectionBuilder {
@@ -7,7 +9,7 @@ public class ConnectionBuilder {
         String db_name = "publicRegis";
         String user = "public-2";
         String pass = "public";
-        String hostName = "10.4.56.8:3306";
+        String hostName = "10.4.56.11:3306";
         String driverName = "com.mysql.jdbc.Driver";
         try{
             Class.forName(driverName);
@@ -16,9 +18,12 @@ public class ConnectionBuilder {
             con = DriverManager.getConnection(url, user, pass);
             //System.out.println("ConnectCreate");
         }
-        catch (Exception e){
+        catch (ClassNotFoundException | SQLException e){
             System.out.println(e.getMessage());
         }  
+        catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
         
         return con;
     }
