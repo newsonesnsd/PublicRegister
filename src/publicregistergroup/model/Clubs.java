@@ -40,7 +40,7 @@ public class Clubs {
         return club_id;   
     }
     
-    public String getClub_name(int club_id) {
+    public static String getClub_name(int club_id) {
         try {
             String sql = "SELECT * FROM clubs WHERE club_id = ?";
             PreparedStatement pre = con.prepareStatement(sql);
