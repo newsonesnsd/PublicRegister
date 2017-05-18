@@ -17,9 +17,7 @@ public class ViewClub extends javax.swing.JFrame {
     static Connection con = ConnectionBuilder.getConnection();
     private String clubName;
     private String clubDescription;
-    Homepage hp = new Homepage();
-    private int clubIndex;
-    private static int club_id;
+    private static int club_id = Homepage.getClubIndex()+1;
     
     /**
      * Creates new form ViewClub
