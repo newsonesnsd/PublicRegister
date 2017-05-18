@@ -8,7 +8,6 @@ package publicregistergroup.controller;
 import publicregistergroup.view.*;
 import java.sql.*;
 import javax.swing.*;
-import publicregistergroup.controller.*;
 import publicregistergroup.model.*;
 /**
  *
