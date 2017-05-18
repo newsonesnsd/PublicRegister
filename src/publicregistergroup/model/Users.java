@@ -25,10 +25,6 @@ public class Users {
         return user_id;
     }
 
-    public void setUser_id(int user_id) {
-        this.user_id = user_id;
-    }
-
     public long getUsername() {
         return username;
     }
@@ -90,6 +86,9 @@ public class Users {
         catch (SQLException e) {
             System.out.println(e);
             System.out.println(e.getMessage());
+        }
+        catch (Exception e) {
+            System.out.println(e + "\n" + e.getMessage());
         }
         return user;
     }
