@@ -27,14 +27,14 @@ public class Homepage extends javax.swing.JFrame {
     private String listClubs;
     DefaultListModel model = new DefaultListModel();
 
-    
-    
+
+
     public int getClubIndex() {
         return clubIndex;
     }
 
     /**
-     * Creates new form Homepage 
+     * Creates new form Homepage
      */
 
     public Homepage() {
@@ -44,11 +44,11 @@ public class Homepage extends javax.swing.JFrame {
             ArrayList<String> strings = Clubs.getAllClubs();
             @Override
             public int getSize() {
-                return strings.size(); 
+                return strings.size();
             }
             @Override
             public String getElementAt(int i) {
-                return strings.get(i); 
+                return strings.get(i);
             }
         });
     }
@@ -518,7 +518,7 @@ public class Homepage extends javax.swing.JFrame {
        this.setVisible(false);
        view.setVisible(true);
     }//GEN-LAST:event_jButton7ActionPerformed
-    
+
     private void allClubsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_allClubsMouseClicked
         /*try {
             // TODO add your handling code here:
@@ -555,23 +555,23 @@ public class Homepage extends javax.swing.JFrame {
         /*ViewClub view = new ViewClub();
         this.setVisible(false);
         view.setVisible(true);*/
-       
+
     }//GEN-LAST:event_allClubsMouseClicked
 
     private void allClubsAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_allClubsAncestorAdded
-       
-       
-        
+
+
+
     }//GEN-LAST:event_allClubsAncestorAdded
 
     private void chooseClubMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_chooseClubMouseClicked
-     
+
     }//GEN-LAST:event_chooseClubMouseClicked
 
     private void chooseClubActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chooseClubActionPerformed
         //JOptionPane.showMessageDialog(null,"You selected : " + allClubs.getSelectedValue());
         clubIndex = allClubs.getSelectedIndex();
-        //System.out.println(clubIndex);
+        System.out.println(clubIndex);
         ViewClub view = new ViewClub();
         this.setVisible(false);
         view.setVisible(true);
@@ -584,7 +584,7 @@ public class Homepage extends javax.swing.JFrame {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html
          */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
