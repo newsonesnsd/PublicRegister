@@ -94,7 +94,7 @@
         </Component>
         <Component class="javax.swing.JLabel" name="ImageS">
           <AuxValues>
-            <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="String pic=null;    &#xa;        try {&#xa;            Statement st = con.createStatement();&#xa;            String sql = &quot;SELECT * FROM students WHERE std_id = 59130500004&quot;;&#xa;            ResultSet res = st.executeQuery(sql);&#xa;            while (res.next()) {&#xa;                pic = res.getString(&quot;std_picture&quot;);&#xa;                &#xa;                ImageS.setText(pic);&#xa;            }&#xa;       &#xa;           &#xa;        } catch (SQLException ex) {&#xa;            Logger.getLogger(ViewProfile.class.getName()).log(Level.SEVERE, null, ex);&#xa;        }"/>
+            <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="String pic=null;    &#xa;        try {&#xa;            Statement st = con.createStatement();&#xa;            String sql = &quot;SELECT * FROM students WHERE std_id = 59130500004&quot;;&#xa;            ResultSet res = st.executeQuery(sql);&#xa;            while (res.next()) {&#xa;                pic = res.getString(&quot;std_picture&quot;);&#xa;                ImageS.setIcon(new ImageIcon((new ImageIcon(&quot;src/Images/&quot;+pic).getImage().getScaledInstance(395,335,Image.SCALE_SMOOTH))));&#xa;            }&#xa;       &#xa;           &#xa;        } catch (SQLException ex) {&#xa;            Logger.getLogger(ViewProfile.class.getName()).log(Level.SEVERE, null, ex);&#xa;        }"/>
           </AuxValues>
         </Component>
       </SubComponents>

@@ -109,7 +109,7 @@ public class Uploadphoto extends JFrame {
                 savebottonActionPerformed(evt);
             }
         });
-        getContentPane().add(savebotton, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 640, 230, 40));
+        getContentPane().add(savebotton, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 650, 230, 40));
 
         EditBotton.setBackground(new java.awt.Color(213, 186, 55));
         EditBotton.setFont(new java.awt.Font("Quark", 0, 24)); // NOI18N

@@ -251,13 +251,13 @@ public class EditClub extends JFrame {
             
             nameclub = clubname.getText();
             detailclub = detailArea.getText();
-            String sql = "UPDATE clubs SET club_name=?, club_description=? WHERE club_id=6";
+            String sql = "UPDATE clubs SET club_description=? WHERE club_id=6";
             PreparedStatement pre = con.prepareStatement(sql);
             System.out.println("0");
-            pre.setString(1, nameclub);
+            pre.setString(1, detailclub);
             System.out.println("1");
-            pre.setString(2, detailclub);
-            System.out.println("2");
+            //pre.setString(2, nameclub);
+            //System.out.println("2");
             pre.executeUpdate();
             System.out.println("Yes");
             
