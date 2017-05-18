@@ -135,6 +135,11 @@ public class ViewRegist extends javax.swing.JFrame {
 
         Confirm.setFont(new java.awt.Font("Quark", 0, 14)); // NOI18N
         Confirm.setText("CONFIRM");
+        Confirm.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ConfirmActionPerformed(evt);
+            }
+        });
 
         Edit.setFont(new java.awt.Font("Quark", 0, 10)); // NOI18N
         Edit.setText("EDIT");
@@ -470,6 +475,12 @@ public class ViewRegist extends javax.swing.JFrame {
     private void Edit1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Edit1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_Edit1ActionPerformed
+
+    private void ConfirmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ConfirmActionPerformed
+       Done d = new Done();
+       this.setVisible(false);
+       d.setVisible(true);
+    }//GEN-LAST:event_ConfirmActionPerformed
 
     /**
      * @param args the command line arguments
