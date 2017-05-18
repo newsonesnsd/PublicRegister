@@ -421,33 +421,6 @@ public class ViewProfile extends javax.swing.JFrame{
     }//GEN-LAST:event_UploadBottonActionPerformed
 
     private void SubmitbottonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SubmitbottonActionPerformed
-        String role=null;    
-        try {
-            
-            Statement st = con.createStatement();
-            String sql = "SELECT * FROM students WHERE std_id = 59130500004";
-            ResultSet res = st.executeQuery(sql);
-            while (res.next()) {
-                role = res.getString("std_role");
-            }   
-        } catch (SQLException ex) {
-            System.out.println(ex);
-        }
-        if(role.isEmpty()){
-            LinkDataforUser user = new LinkDataforUser();
-            this.setVisible(false);
-            user.setVisible(true);
-        }else{
-             LinkData admin = new LinkData();
-            this.setVisible(false);
-            admin.setVisible(true);
-        }/*
-        LinkData data = new LinkData();
-        this.setVisible(false);
-        data.setVisible(true);*/
-    }//GEN-LAST:event_SubmitbottonActionPerformed
-
-    private void SubmitbottonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SubmitbottonMouseClicked
         System.out.println("437");
         
         InputStream filepic = null;
@@ -476,7 +449,7 @@ public class ViewProfile extends javax.swing.JFrame{
                 //ResultSet res = st.executeQuery(sql);
 
             } catch (SQLException ex) {
-                System.out.println(ex);
+                ex.printStackTrace();
             }
 
             System.out.println("บบรรดทัด 466");
@@ -510,11 +483,105 @@ public class ViewProfile extends javax.swing.JFrame{
                 System.out.println(ex);
             } 
         } catch (FileNotFoundException ex) {
-            Logger.getLogger(ViewProfile.class.getName()).log(Level.SEVERE, null, ex);
+            ex.printStackTrace();
         }catch (SQLException ex) {
-                    Logger.getLogger(ViewProfile.class.getName()).log(Level.SEVERE, null, ex);
+                    ex.printStackTrace();
                 }
          }
+        String role=null;    
+        try {
+            
+            Statement st = con.createStatement();
+            String sql = "SELECT * FROM students WHERE std_id = 59130500004";
+            ResultSet res = st.executeQuery(sql);
+            while (res.next()) {
+                role = res.getString("std_role");
+            }   
+        } catch (SQLException ex) {
+            System.out.println(ex);
+        }
+        if(role.isEmpty()){
+            LinkDataforUser user = new LinkDataforUser();
+            this.setVisible(false);
+            user.setVisible(true);
+        }else{
+             LinkData admin = new LinkData();
+            this.setVisible(false);
+            admin.setVisible(true);
+        }/*
+        LinkData data = new LinkData();
+        this.setVisible(false);
+        data.setVisible(true);*/
+    }//GEN-LAST:event_SubmitbottonActionPerformed
+
+    private void SubmitbottonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SubmitbottonMouseClicked
+        /*System.out.println("437");
+        
+        InputStream filepic = null;
+ 
+            try {
+                //System.out.println("mk,nksds");
+                // TODO add your handling code here:
+                name = NameTextField.getText();
+                faculty = SurnameTextField.getText();
+                telephone = TelephoneTextField.getText();
+                facebook = FacebookTextField.getText();
+                medicine = MedicineTextField.getText();
+                food = FoodTextField.getText();
+                email = EmailTextField.getText();
+
+                String sql = "UPDATE students SET std_name=?, std_tel=?, std_facebook=?, std_medicine=?, std_food=?, std_email=? WHERE std_id=59130500004";
+                PreparedStatement pre = con.prepareStatement(sql);
+                pre.setString(1, name);
+                pre.setString(2, telephone);
+                pre.setString(3, facebook);
+                pre.setString(4, medicine);
+                pre.setString(5, food);
+                pre.setString(6, email);
+                //pre.setString(7, path);
+                pre.executeUpdate();
+                //ResultSet res = st.executeQuery(sql);
+
+            } catch (SQLException ex) {
+                ex.printStackTrace();
+            }
+
+            System.out.println("บบรรดทัด 466");
+
+         if(abPath == null){
+            System.out.println("");
+        }else{
+              
+        try {
+    
+            filepic = new FileInputStream(abPath);
+            String sql = "UPDATE students SET std_picture=? WHERE std_id=59130500004";
+                PreparedStatement pre = con.prepareStatement(sql);
+                pre.setString(1, path);
+                pre.executeUpdate();
+            OutputStream ops = null;
+            try {
+                
+                //System.out.println("asdada");
+                System.out.println("Path :" + "/Users/taloey/Desktop/PublicRegister/src/Images/" + path);
+                ops = new FileOutputStream(new File("src/Images/" + path));
+                int read = 0;
+                byte[] b = new byte[1024];
+                while ((read = filepic.read(b)) != -1) {
+                    ops.write(b, 0, read);
+                }
+                filepic.close();
+            } catch (FileNotFoundException e) {
+                System.out.println(e);
+            } catch (IOException ex) {
+                System.out.println(ex);
+            } 
+        } catch (FileNotFoundException ex) {
+            ex.printStackTrace();
+        }catch (SQLException ex) {
+                    ex.printStackTrace();
+                }
+         }*/
 
     }//GEN-LAST:event_SubmitbottonMouseClicked
 
