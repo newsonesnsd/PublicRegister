@@ -25,8 +25,9 @@ public class Clubs {
     public static int getClub_id(int clubIndex) {
         club_id = clubIndex;        
         try {
-            String sql = "SELECT * FROM clubs WHERE club_id = ?";
+            String sql = "SELECT club_id FROM clubs WHERE club_id = ?";
             PreparedStatement pre = con.prepareStatement(sql);
+            pre.setInt(1, clubIndex);
             ResultSet rs = pre.executeQuery();
             if(rs.next()) {
                 club_id = rs.getInt("club_id");
