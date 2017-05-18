@@ -42,6 +42,7 @@ public class Login extends JFrame {
         background = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Login");
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         setFont(new java.awt.Font("Quark", 0, 18)); // NOI18N
         setMinimumSize(new java.awt.Dimension(1024, 768));
@@ -141,7 +142,6 @@ public class Login extends JFrame {
         jpnLogin.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 190, 520, 430));
 
         background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/page.jpg"))); // NOI18N
-        background.setMaximumSize(new java.awt.Dimension(1024, 768));
         jpnLogin.add(background, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1024, 768));
         background.getAccessibleContext().setAccessibleName("Login");
 
