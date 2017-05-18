@@ -49,7 +49,7 @@ public class ViewClub extends javax.swing.JFrame {
             ResultSet rs = pre.executeQuery();
             if(rs.next()) {
                 clubId = rs.getInt("club_id");
-                System.out.println(clubId);
+                //System.out.println(clubId);
             }
         } 
         catch (SQLException e) {
@@ -67,7 +67,7 @@ public class ViewClub extends javax.swing.JFrame {
             ResultSet rs = pre.executeQuery();
             if(rs.next()) {
                 clubName = rs.getString("club_name");
-                System.out.println(clubName);
+                //System.out.println(clubName);
             }
         } 
         catch (SQLException e) {
