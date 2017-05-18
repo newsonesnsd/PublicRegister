@@ -481,7 +481,10 @@ public class ViewProfile extends javax.swing.JFrame{
 
             System.out.println("บบรรดทัด 466");
 
-           
+         if(abPath == null){
+            System.out.println("");
+        }else{
+              
         try {
     
             filepic = new FileInputStream(abPath);
@@ -511,6 +514,7 @@ public class ViewProfile extends javax.swing.JFrame{
         }catch (SQLException ex) {
                     Logger.getLogger(ViewProfile.class.getName()).log(Level.SEVERE, null, ex);
                 }
+         }
 
     }//GEN-LAST:event_SubmitbottonMouseClicked
 
