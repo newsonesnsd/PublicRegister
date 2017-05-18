@@ -33,11 +33,12 @@ public class Login extends JFrame {
     private void initComponents() {
 
         jpnLogin = new javax.swing.JPanel();
+        jPanel1 = new javax.swing.JPanel();
         loginButton = new javax.swing.JButton();
+        jpfInputPassword = new javax.swing.JPasswordField();
         jlbUsername = new javax.swing.JLabel();
         jtfInputUsername = new javax.swing.JTextField();
         jlbPassword = new javax.swing.JLabel();
-        jpfInputPassword = new javax.swing.JPasswordField();
         background = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -52,6 +53,9 @@ public class Login extends JFrame {
         jpnLogin.setPreferredSize(new java.awt.Dimension(1024, 768));
         jpnLogin.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jPanel1.setBackground(new java.awt.Color(77, 77, 77));
+        jPanel1.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 0, 51)));
+
         loginButton.setFont(new java.awt.Font("Quark", 0, 24)); // NOI18N
         loginButton.setText("Login");
         loginButton.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -64,14 +68,27 @@ public class Login extends JFrame {
                 loginButtonActionPerformed(evt);
             }
         });
-        jpnLogin.add(loginButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(295, 510, 440, 60));
+
+        jpfInputPassword.setBackground(new java.awt.Color(204, 204, 204));
+        jpfInputPassword.setFont(new java.awt.Font("Quark", 0, 18)); // NOI18N
+        jpfInputPassword.setForeground(new java.awt.Color(255, 255, 255));
+        jpfInputPassword.setBorder(null);
+        jpfInputPassword.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jpfInputPasswordMouseClicked(evt);
+            }
+        });
+        jpfInputPassword.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jpfInputPasswordActionPerformed(evt);
+            }
+        });
 
         jlbUsername.setFont(new java.awt.Font("Quark", 0, 24)); // NOI18N
         jlbUsername.setForeground(new java.awt.Color(255, 102, 51));
         jlbUsername.setFocusTraversalPolicyProvider(true);
-        jpnLogin.add(jlbUsername, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 283, 430, 60));
 
-        jtfInputUsername.setBackground(new java.awt.Color(77, 77, 77));
+        jtfInputUsername.setBackground(new java.awt.Color(204, 204, 204));
         jtfInputUsername.setFont(new java.awt.Font("Quark", 0, 18)); // NOI18N
         jtfInputUsername.setForeground(new java.awt.Color(248, 155, 124));
         jtfInputUsername.setText(" Username");
@@ -86,28 +103,42 @@ public class Login extends JFrame {
                 jtfInputUsernameActionPerformed(evt);
             }
         });
-        jpnLogin.add(jtfInputUsername, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 333, 430, 60));
 
         jlbPassword.setFont(new java.awt.Font("Quark", 0, 24)); // NOI18N
         jlbPassword.setForeground(new java.awt.Color(255, 102, 51));
         jlbPassword.setText(" ");
-        jpnLogin.add(jlbPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 400, 430, 50));
 
-        jpfInputPassword.setBackground(new java.awt.Color(77, 77, 77));
-        jpfInputPassword.setFont(new java.awt.Font("Quark", 0, 18)); // NOI18N
-        jpfInputPassword.setForeground(new java.awt.Color(255, 255, 255));
-        jpfInputPassword.setBorder(null);
-        jpfInputPassword.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jpfInputPasswordMouseClicked(evt);
-            }
-        });
-        jpfInputPassword.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jpfInputPasswordActionPerformed(evt);
-            }
-        });
-        jpnLogin.add(jpfInputPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 440, 430, 60));
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(43, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jlbPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 430, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jtfInputUsername, javax.swing.GroupLayout.PREFERRED_SIZE, 430, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jlbUsername, javax.swing.GroupLayout.PREFERRED_SIZE, 430, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jpfInputPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 430, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(loginButton, javax.swing.GroupLayout.PREFERRED_SIZE, 440, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(35, 35, 35))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addGap(27, 27, 27)
+                .addComponent(jlbUsername, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(26, 26, 26)
+                .addComponent(jtfInputUsername, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
+                .addComponent(jlbPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jpfInputPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(loginButton, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(31, 31, 31))
+        );
+
+        jpnLogin.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 190, 520, 430));
 
         background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/page.jpg"))); // NOI18N
         background.setMaximumSize(new java.awt.Dimension(1024, 768));
@@ -206,6 +237,7 @@ public class Login extends JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel background;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel jlbPassword;
     private javax.swing.JLabel jlbUsername;
     private javax.swing.JPasswordField jpfInputPassword;

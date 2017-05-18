@@ -132,7 +132,7 @@ public class EditClub extends JFrame {
                 BottonsearchActionPerformed(evt);
             }
         });
-        getContentPane().add(Bottonsearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 100, 80, 30));
+        getContentPane().add(Bottonsearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 90, 80, 30));
 
         savebotton.setBackground(new java.awt.Color(213, 186, 55));
         savebotton.setFont(new java.awt.Font("Quark", 0, 48)); // NOI18N
