@@ -24,7 +24,7 @@ public class ViewClub extends javax.swing.JFrame {
     private String clubName;
     private String clubDescription;
     Homepage hp = new Homepage();
-    private int clubIndex = 5;
+    private int clubIndex;
     private int clubId;
 
     /**
