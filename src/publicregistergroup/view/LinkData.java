@@ -167,7 +167,7 @@ public class LinkData extends javax.swing.JFrame {
         getContentPane().add(Box3, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 490, 480, 90));
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 640, 400, 40));
 
-        blackground.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/page.jpg"))); // NOI18N
+        blackground.setIcon(new javax.swing.ImageIcon("/Users/taloey/Desktop/PublicRegister/src/Images/page.jpg")); // NOI18N
         blackground.setText("jLabel1");
         getContentPane().add(blackground, new org.netbeans.lib.awtextra.AbsoluteConstraints(-5, 0, 1030, 770));
 

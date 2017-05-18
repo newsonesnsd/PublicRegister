@@ -247,17 +247,24 @@ public class EditClub extends JFrame {
 
     private void savebottonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_savebottonMouseClicked
 
-         try {
-              nameclub = clubname.getText();
+        try {
+            
+            nameclub = clubname.getText();
             detailclub = detailArea.getText();
-             String sql = "UPDATE clubs SET club_name=?, club_description=? WHERE std_role=?";
-             PreparedStatement pre = con.prepareStatement(sql);
-             pre.setString(1, nameclub);
-             pre.setString(2, detailclub);
-             pre.executeUpdate(sql);
-         } catch (SQLException ex) {
-             Logger.getLogger(EditClub.class.getName()).log(Level.SEVERE, null, ex);
-         }
+            String sql = "UPDATE clubs SET club_name=?, club_description=? WHERE club_id=6";
+            PreparedStatement pre = con.prepareStatement(sql);
+            System.out.println("0");
+            pre.setString(1, nameclub);
+            System.out.println("1");
+            pre.setString(2, detailclub);
+            System.out.println("2");
+            pre.executeUpdate();
+            System.out.println("Yes");
+            
+        } catch (SQLException ex) {
+            Logger.getLogger(EditClub.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    
     }//GEN-LAST:event_savebottonMouseClicked
 
     /**

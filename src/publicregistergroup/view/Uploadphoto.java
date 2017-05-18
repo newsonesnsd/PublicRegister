@@ -159,7 +159,7 @@ public class Uploadphoto extends JFrame {
         getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 300, 450, 330));
 
         NameClub.setFont(new java.awt.Font("Quark", 0, 24)); // NOI18N
-        getContentPane().add(NameClub, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 160, 260, 30));
+        getContentPane().add(NameClub, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 210, 290, 30));
         String club_name=null;
         try {
             Statement st = con.createStatement();
@@ -187,7 +187,7 @@ public class Uploadphoto extends JFrame {
             Logger.getLogger(ViewProfile.class.getName()).log(Level.SEVERE, null, ex);
         }
 
-        blackground.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/page.jpg"))); // NOI18N
+        blackground.setIcon(new javax.swing.ImageIcon("/Users/taloey/Desktop/PublicRegister/src/Images/page.jpg")); // NOI18N
         blackground.setText("jLabel1");
         getContentPane().add(blackground, new org.netbeans.lib.awtextra.AbsoluteConstraints(-5, 0, 1030, 770));
 

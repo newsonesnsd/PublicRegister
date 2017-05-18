@@ -22,7 +22,7 @@ import publicregistergroup.controller.ConnectionBuilder;
 public class ViewProfile extends javax.swing.JFrame {
 
     static Connection con = ConnectionBuilder.getConnection();
-    private String name,faculty,telephone,facebook,medicine,food,email,picture;
+    private String name,faculty,telephone,facebook,medicine,food,email,picture,image;
     /**
      * Creates new form Uploadphoto
      */
@@ -183,7 +183,7 @@ public class ViewProfile extends javax.swing.JFrame {
                 UploadBottonActionPerformed(evt);
             }
         });
-        getContentPane().add(UploadBotton, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 590, 160, 40));
+        getContentPane().add(UploadBotton, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 590, 160, 40));
 
         NameTextField.setFont(new java.awt.Font("Quark", 0, 24)); // NOI18N
         NameTextField.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(0, 0, 0)));
@@ -365,7 +365,7 @@ public class ViewProfile extends javax.swing.JFrame {
         });
         getContentPane().add(ChangePage, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 20, 230, 40));
 
-        blackground.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/page.jpg"))); // NOI18N
+        blackground.setIcon(new javax.swing.ImageIcon("/Users/taloey/Desktop/PublicRegister/src/Images/page.jpg")); // NOI18N
         blackground.setText("jLabel1");
         getContentPane().add(blackground, new org.netbeans.lib.awtextra.AbsoluteConstraints(-5, 0, 1030, 770));
 
@@ -412,9 +412,10 @@ public class ViewProfile extends javax.swing.JFrame {
         fileOpen.addChoosableFileFilter(new FileNameExtensionFilter(".png","png"));
         int result = fileOpen.showDialog(null, "Choose Image");
             File selecFile = fileOpen.getSelectedFile();
-            String path = selecFile.getAbsolutePath();
-            ImageS.setIcon(new ImageIcon((new ImageIcon(path).getImage().getScaledInstance(434,434,Image.SCALE_SMOOTH))));
-
+            String abPath = selecFile.getAbsolutePath();
+            String path = selecFile.getName();
+            ImageS.setIcon(new ImageIcon((new ImageIcon(abPath).getImage().getScaledInstance(395,335,Image.SCALE_SMOOTH))));
+            System.out.println(path);
 
     }//GEN-LAST:event_UploadBottonActionPerformed
 
@@ -436,7 +437,8 @@ public class ViewProfile extends javax.swing.JFrame {
            medicine = MedicineTextField.getText();
             food = FoodTextField.getText();
             email = EmailTextField.getText();
-            String sql = "UPDATE students SET std_name=?, std_tel=?, std_facebook=?, std_medicine=?, std_food=?, std_email=? WHERE std_id=59130500004";
+          
+            String sql = "UPDATE students SET std_name=?, std_tel=?, std_facebook=?, std_medicine=?, std_food=?, std_email=? , std_pic=? WHERE std_id=59130500004";
             PreparedStatement pre = con.prepareStatement(sql);
             pre.setString(1, name);
             pre.setString(2, telephone);
@@ -444,6 +446,7 @@ public class ViewProfile extends javax.swing.JFrame {
             pre.setString(4, medicine);
             pre.setString(5, food);
             pre.setString(6, email);
+      
             pre.executeUpdate();
             //ResultSet res = st.executeQuery(sql);
  
