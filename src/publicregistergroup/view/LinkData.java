@@ -5,12 +5,18 @@
  */
 package publicregistergroup.view;
 
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import javax.swing.JOptionPane;
+import static publicregistergroup.view.ViewProfile.con;
+
 /**
  *
  * @author taloey
  */
 public class LinkData extends javax.swing.JFrame {
-
+private String search;
     /**
      * Creates new form Uploadphoto
      */
@@ -28,7 +34,7 @@ public class LinkData extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jTextField1 = new javax.swing.JTextField();
+        searchTextField = new javax.swing.JTextField();
         Bottonsearch = new javax.swing.JButton();
         UsernameID = new javax.swing.JLabel();
         Box1 = new javax.swing.JPanel();
@@ -44,9 +50,9 @@ public class LinkData extends javax.swing.JFrame {
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jTextField1.setMinimumSize(new java.awt.Dimension(8, 22));
-        jTextField1.setPreferredSize(new java.awt.Dimension(8, 22));
-        getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(13, 91, 261, 22));
+        searchTextField.setMinimumSize(new java.awt.Dimension(8, 22));
+        searchTextField.setPreferredSize(new java.awt.Dimension(8, 22));
+        getContentPane().add(searchTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(13, 91, 261, 22));
 
         Bottonsearch.setFont(new java.awt.Font("Kanit", 0, 13)); // NOI18N
         Bottonsearch.setText("OK");
@@ -175,7 +181,36 @@ public class LinkData extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void BottonsearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BottonsearchActionPerformed
-        // TODO add your handling code here:
+        search = searchTextField.getText();
+        String club="";    
+        try {
+            
+           
+            String sql = "SELECT * FROM clubs where club_name LIKE '%"+search+"%'";
+            PreparedStatement pre = con.prepareStatement(sql);
+//            pre.setString(1, "%"+search+"%");
+            System.out.println(search+" search la");
+             ResultSet res = pre.executeQuery();
+             System.out.println("EXE LAEW");
+                if(res.next()) {
+                    club =res.getString("club_name");
+                    System.out.println(club+" clubname");
+                }
+                
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }if (search .equals(club)) {
+            JOptionPane frame = new JOptionPane();
+            JOptionPane.showMessageDialog(frame,"Search success","Search club",JOptionPane.PLAIN_MESSAGE);
+             // = allClubs.getSelectedIndex();
+             ViewClub view = new ViewClub();
+            this.setVisible(false);
+             view.setVisible(true);
+        }
+        else {
+            JOptionPane frame = new JOptionPane();
+            JOptionPane.showMessageDialog(frame,"Failed club name","Search club",JOptionPane.ERROR_MESSAGE);
+        }
     }//GEN-LAST:event_BottonsearchActionPerformed
 
     private void checkclubbottonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkclubbottonActionPerformed
@@ -243,6 +278,6 @@ public class LinkData extends javax.swing.JFrame {
     private javax.swing.JButton checkclubbotton;
     private javax.swing.JButton clubbotton;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField searchTextField;
     // End of variables declaration//GEN-END:variables
 }

@@ -13,8 +13,10 @@ import java.util.logging.*;
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 import javax.swing.filechooser.FileNameExtensionFilter;
 import publicregistergroup.controller.ConnectionBuilder;
+import static publicregistergroup.view.ViewProfile.con;
 
 /**
  *
@@ -22,6 +24,7 @@ import publicregistergroup.controller.ConnectionBuilder;
  */
 public class Uploadphoto extends JFrame {
     static Connection con = ConnectionBuilder.getConnection();
+    private String search;
     /**
      * Creates new form Uploadphoto
      */
@@ -222,7 +225,36 @@ public class Uploadphoto extends JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void BottonsearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BottonsearchActionPerformed
-        // TODO add your handling code here:
+        search = SearchTextField.getText();
+        String club="";    
+        try {
+            
+           
+            String sql = "SELECT * FROM clubs where club_name LIKE '%"+search+"%'";
+            PreparedStatement pre = con.prepareStatement(sql);
+//            pre.setString(1, "%"+search+"%");
+            System.out.println(search+" search la");
+             ResultSet res = pre.executeQuery();
+             System.out.println("EXE LAEW");
+                if(res.next()) {
+                    club =res.getString("club_name");
+                    System.out.println(club+" clubname");
+                }
+                
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }if (search .equals(club)) {
+            JOptionPane frame = new JOptionPane();
+            JOptionPane.showMessageDialog(frame,"Search success","Search club",JOptionPane.PLAIN_MESSAGE);
+             // = allClubs.getSelectedIndex();
+             ViewClub view = new ViewClub();
+            this.setVisible(false);
+             view.setVisible(true);
+        }
+        else {
+            JOptionPane frame = new JOptionPane();
+            JOptionPane.showMessageDialog(frame,"Failed club name","Search club",JOptionPane.ERROR_MESSAGE);
+        }
     }//GEN-LAST:event_BottonsearchActionPerformed
 
     private void savebottonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_savebottonActionPerformed
