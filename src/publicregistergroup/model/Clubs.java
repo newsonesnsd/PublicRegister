@@ -57,7 +57,6 @@ public class Clubs {
                 //System.out.println("Club ID: " + res.getInt("club_id") + " Club Name: " + res.getString("club_name"));
                 str.add(res.getString("club_name"));
             }
-            con.close();
         }
         catch (SQLException ex) {
             System.out.println(ex);
