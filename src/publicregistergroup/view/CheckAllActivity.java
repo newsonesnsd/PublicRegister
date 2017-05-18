@@ -4,12 +4,19 @@
  * and open the template in the editor.
  */
 package publicregistergroup.view;
+
+import java.sql.Connection;
+import publicregistergroup.controller.ConnectionBuilder;
+import publicregistergroup.model.Students;
+
 /**
  *
  * @author ART
  */
 public class CheckAllActivity extends javax.swing.JFrame {
-
+    static Connection con = ConnectionBuilder.getConnection();
+    private String stdName = Students.getStd_name(Login.getStdIndex());
+    private String stdFaculty = Students.getStd_faculty(Login.getStdIndex());
     /**
      * Creates new form Homepage
      */
@@ -31,23 +38,15 @@ public class CheckAllActivity extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         jLabel25 = new javax.swing.JLabel();
         Title = new javax.swing.JLabel();
-        textsearchclub = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
         Bottonsearch = new javax.swing.JButton();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
-        jLabel11 = new javax.swing.JLabel();
-        jLabel12 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
         jPanel6 = new javax.swing.JPanel();
         jLabel22 = new javax.swing.JLabel();
         jLabel23 = new javax.swing.JLabel();
         jLabel24 = new javax.swing.JLabel();
         jToggleButton9 = new javax.swing.JToggleButton();
         jToggleButton10 = new javax.swing.JToggleButton();
-        jLabel16 = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
         jLabel17 = new javax.swing.JLabel();
         jLabel18 = new javax.swing.JLabel();
@@ -55,6 +54,10 @@ public class CheckAllActivity extends javax.swing.JFrame {
         jToggleButton4 = new javax.swing.JToggleButton();
         jToggleButton5 = new javax.swing.JToggleButton();
         backbotton = new javax.swing.JButton();
+        showName = new javax.swing.JLabel();
+        showFaculty = new javax.swing.JLabel();
+        เส้นขีดเฉยๆ = new javax.swing.JLabel();
+        ลงทะเบียนชมรมแล้ว = new javax.swing.JLabel();
         blackground = new javax.swing.JLabel();
 
         jLabel1.setText("jLabel1");
@@ -68,19 +71,14 @@ public class CheckAllActivity extends javax.swing.JFrame {
         getContentPane().add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 640, -1, 40));
 
         Title.setFont(new java.awt.Font("Kailasa", 0, 36)); // NOI18N
-        Title.setIcon(new javax.swing.ImageIcon("/Images/logo.png")); // NOI18N
         getContentPane().add(Title, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 440, 50));
-
-        textsearchclub.setFont(new java.awt.Font("Quark", 0, 14)); // NOI18N
-        textsearchclub.setText("serach from club or organize for you interest");
-        getContentPane().add(textsearchclub, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 80, 290, 20));
 
         jTextField1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 100, 300, 30));
+        getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(13, 91, 261, 22));
 
         Bottonsearch.setFont(new java.awt.Font("Kanit", 0, 13)); // NOI18N
         Bottonsearch.setText("OK");
@@ -89,29 +87,9 @@ public class CheckAllActivity extends javax.swing.JFrame {
                 BottonsearchActionPerformed(evt);
             }
         });
-        getContentPane().add(Bottonsearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 100, 80, 30));
-
-        jLabel3.setFont(new java.awt.Font("Quark", 0, 14)); // NOI18N
-        jLabel3.setText("KMUTT 126 Pracha Uthit Rd, Khwaeng Bang Mot");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 680, -1, 20));
-
-        jLabel4.setFont(new java.awt.Font("Quark", 0, 14)); // NOI18N
-        jLabel4.setText("Khet Thung Khru, Krung Thep Maha Nakhon 10140");
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 700, -1, -1));
-
-        jLabel5.setFont(new java.awt.Font("Quark", 0, 14)); // NOI18N
-        jLabel5.setText("© Copyright 2017 KMUTT PublicizeHUB");
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 720, -1, -1));
+        getContentPane().add(Bottonsearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 90, 80, 25));
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
-
-        jLabel11.setFont(new java.awt.Font("Quark", 1, 30)); // NOI18N
-        jLabel11.setText("KITTIYA YUTHASASTRKOSOL");
-
-        jLabel12.setFont(new java.awt.Font("Quark", 1, 18)); // NOI18N
-        jLabel12.setText("INFORMATION TECHNOLOGY");
-
-        jLabel2.setText("____________________________________________________________________________________________________________________");
 
         jPanel6.setBackground(new java.awt.Color(241, 232, 239));
         jPanel6.setBorder(javax.swing.BorderFactory.createEtchedBorder());
@@ -170,9 +148,6 @@ public class CheckAllActivity extends javax.swing.JFrame {
                     .addComponent(jLabel22, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
-
-        jLabel16.setFont(new java.awt.Font("Quark", 1, 20)); // NOI18N
-        jLabel16.setText("ลงทะเบียนชมรมแล้ว");
 
         jPanel4.setBackground(new java.awt.Color(241, 232, 239));
         jPanel4.setBorder(javax.swing.BorderFactory.createEtchedBorder());
@@ -236,49 +211,24 @@ public class CheckAllActivity extends javax.swing.JFrame {
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(281, 281, 281)
-                        .addComponent(jLabel11))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(359, 359, 359)
-                        .addComponent(jLabel12))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(237, 237, 237)
-                        .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGap(0, 136, Short.MAX_VALUE)
+                .addGap(0, 172, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel2)
-                        .addGap(128, 128, 128))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(160, 160, 160))))
+                    .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(160, 160, 160))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(27, 27, 27)
-                .addComponent(jLabel11)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel12)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel2)
-                .addGap(18, 18, 18)
-                .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(3, 3, 3)
                 .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(65, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 150, 960, 450));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 340, 960, 250));
 
         backbotton.setText("Back");
         backbotton.addActionListener(new java.awt.event.ActionListener() {
@@ -288,7 +238,24 @@ public class CheckAllActivity extends javax.swing.JFrame {
         });
         getContentPane().add(backbotton, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 600, -1, -1));
 
-        blackground.setIcon(new javax.swing.ImageIcon("E:\\PublicRegister\\src\\Images\\background.png")); // NOI18N
+        showName.setFont(new java.awt.Font("Quark", 1, 30)); // NOI18N
+        showName.setText(" ");
+        getContentPane().add(showName, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 220, 380, -1));
+        showName.setText(stdName);
+
+        showFaculty.setFont(new java.awt.Font("Quark", 1, 18)); // NOI18N
+        showFaculty.setText("  ");
+        getContentPane().add(showFaculty, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 250, 220, -1));
+        showFaculty.setText(stdFaculty);
+
+        เส้นขีดเฉยๆ.setText("____________________________________________________________________________________________________________________");
+        getContentPane().add(เส้นขีดเฉยๆ, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 280, -1, -1));
+
+        ลงทะเบียนชมรมแล้ว.setFont(new java.awt.Font("Quark", 1, 20)); // NOI18N
+        ลงทะเบียนชมรมแล้ว.setText("ลงทะเบียนชมรมแล้ว");
+        getContentPane().add(ลงทะเบียนชมรมแล้ว, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 310, 148, -1));
+
+        blackground.setIcon(new javax.swing.ImageIcon("C:\\Users\\kz_no\\Desktop\\ProjectPublicRegister\\src\\Images\\page.jpg")); // NOI18N
         blackground.setText("jLabel1");
         getContentPane().add(blackground, new org.netbeans.lib.awtextra.AbsoluteConstraints(-5, 0, 1030, 770));
 
@@ -354,20 +321,13 @@ public class CheckAllActivity extends javax.swing.JFrame {
     private javax.swing.JButton backbotton;
     private javax.swing.JLabel blackground;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel24;
     private javax.swing.JLabel jLabel25;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private static javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel4;
@@ -377,6 +337,9 @@ public class CheckAllActivity extends javax.swing.JFrame {
     private javax.swing.JToggleButton jToggleButton4;
     private javax.swing.JToggleButton jToggleButton5;
     private javax.swing.JToggleButton jToggleButton9;
-    private javax.swing.JLabel textsearchclub;
+    private javax.swing.JLabel showFaculty;
+    private javax.swing.JLabel showName;
+    private javax.swing.JLabel ลงทะเบียนชมรมแล้ว;
+    private javax.swing.JLabel เส้นขีดเฉยๆ;
     // End of variables declaration//GEN-END:variables
 }
