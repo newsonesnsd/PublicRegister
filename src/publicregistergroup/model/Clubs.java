@@ -23,11 +23,10 @@ public class Clubs {
     private static String club_description;
 
     public static int getClub_id(int clubIndex) {
-        club_id = clubIndex+1;        
+        club_id = clubIndex;        
         try {
             String sql = "SELECT * FROM clubs WHERE club_id = ?";
             PreparedStatement pre = con.prepareStatement(sql);
-            pre.setString(1, ""+clubIndex);
             ResultSet rs = pre.executeQuery();
             if(rs.next()) {
                 club_id = rs.getInt("club_id");
