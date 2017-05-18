@@ -23,11 +23,11 @@ import publicregistergroup.model.*;
  */
 public class Homepage extends javax.swing.JFrame {
     static Connection con = ConnectionBuilder.getConnection();
-    private int clubIndex;
+    private static int clubIndex;
     private String listClubs;
     DefaultListModel model = new DefaultListModel();
 
-    public int getClubIndex() {
+    public static int getClubIndex() {
         return clubIndex;
     }
 
