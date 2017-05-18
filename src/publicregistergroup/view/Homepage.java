@@ -27,8 +27,6 @@ public class Homepage extends javax.swing.JFrame {
     private String listClubs;
     DefaultListModel model = new DefaultListModel();
 
-
-
     public int getClubIndex() {
         return clubIndex;
     }
