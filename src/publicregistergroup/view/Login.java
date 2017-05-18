@@ -16,7 +16,8 @@ import publicregistergroup.model.*;
 public class Login extends JFrame {
     private static long stdIndex;
     public static long getStdIndex() {
-        return stdIndex;
+        long id = Long.parseLong(jtfInputUsername.getText());
+        return id;
     }
     /**
      * Creates new form Login
@@ -245,7 +246,7 @@ public class Login extends JFrame {
     private javax.swing.JLabel jlbUsername;
     private javax.swing.JPasswordField jpfInputPassword;
     private javax.swing.JPanel jpnLogin;
-    private javax.swing.JTextField jtfInputUsername;
+    private static javax.swing.JTextField jtfInputUsername;
     private javax.swing.JButton loginButton;
     // End of variables declaration//GEN-END:variables
 }
