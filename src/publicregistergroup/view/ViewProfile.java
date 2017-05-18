@@ -385,19 +385,25 @@ public class ViewProfile extends javax.swing.JFrame{
     }// </editor-fold>//GEN-END:initComponents
 
     private void BottonsearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BottonsearchActionPerformed
-      
-        String club=null;    
+       search = SearchclubTextField.getText();
+        String club="";    
         try {
             
            
-            String sql = "SELECT * FROM clubs WHERE club_name = ?";
+            String sql = "SELECT * FROM clubs where club_name LIKE '%"+search+"%'";
             PreparedStatement pre = con.prepareStatement(sql);
-            pre.setString(1, club);
-             ResultSet rs = pre.executeQuery();
-                if(rs.next()) {
-                    club =rs.getString("club_name");
+//            pre.setString(1, "%"+search+"%");
+            System.out.println(search+" search la");
+             ResultSet res = pre.executeQuery();
+             System.out.println("EXE LAEW");
+                if(res.next()) {
+                    club =res.getString("club_name");
+                    System.out.println(club+" clubname");
                 }
-                if (search == club) {
+                
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }if (search .equals(club)) {
             JOptionPane frame = new JOptionPane();
             JOptionPane.showMessageDialog(frame,"Search success","Search club",JOptionPane.PLAIN_MESSAGE);
              // = allClubs.getSelectedIndex();
@@ -408,9 +414,6 @@ public class ViewProfile extends javax.swing.JFrame{
         else {
             JOptionPane frame = new JOptionPane();
             JOptionPane.showMessageDialog(frame,"Failed club name","Search club",JOptionPane.ERROR_MESSAGE);
-        }
-        } catch (SQLException ex) {
-            ex.printStackTrace();
         }
         /*if (search == club) {
             JOptionPane frame = new JOptionPane();
@@ -448,7 +451,7 @@ public class ViewProfile extends javax.swing.JFrame{
     }//GEN-LAST:event_FoodTextFieldActionPerformed
 
     private void SearchclubTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SearchclubTextFieldActionPerformed
-       search = SearchclubTextField.getText();
+      
     }//GEN-LAST:event_SearchclubTextFieldActionPerformed
 
     private void ChangePageActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ChangePageActionPerformed
