@@ -120,11 +120,14 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Quark" size="18" style="0"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Kittiya "/>
+        <Property name="text" type="java.lang.String" value=" "/>
       </Properties>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="AnsName.setText(Students.getStd_name(stdID));"/>
+      </AuxValues>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="560" y="330" width="-1" height="-1"/>
+          <AbsoluteConstraints x="560" y="330" width="220" height="-1"/>
         </Constraint>
       </Constraints>
     </Component>
@@ -146,11 +149,14 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Quark" size="18" style="0"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="090-7700443"/>
+        <Property name="text" type="java.lang.String" value=" "/>
       </Properties>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="AnsTelephone.setText(Students.getStd_tel(stdID));&#xd;&#xa;"/>
+      </AuxValues>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="590" y="360" width="-1" height="-1"/>
+          <AbsoluteConstraints x="590" y="360" width="210" height="-1"/>
         </Constraint>
       </Constraints>
     </Component>
@@ -172,11 +178,14 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Quark" size="18" style="0"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Noey Kittiya"/>
+        <Property name="text" type="java.lang.String" value=" "/>
       </Properties>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="AnsFacebook.setText(Students.getStd_facebook(stdID));&#xd;&#xa;"/>
+      </AuxValues>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="580" y="390" width="-1" height="-1"/>
+          <AbsoluteConstraints x="580" y="390" width="220" height="-1"/>
         </Constraint>
       </Constraints>
     </Component>
@@ -193,16 +202,19 @@
         </Constraint>
       </Constraints>
     </Component>
-    <Component class="javax.swing.JLabel" name="Ans&#xe41;&#xe1e;&#xe49;&#xe22;&#xe32;&#xe2d;&#xe30;&#xe44;&#xe23;">
+    <Component class="javax.swing.JLabel" name="AnsMedicine">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Quark" size="18" style="0"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="-"/>
+        <Property name="text" type="java.lang.String" value=" "/>
       </Properties>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="AnsMedicine.setText(Students.getStd_medicine(stdID));&#xd;&#xa;"/>
+      </AuxValues>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="570" y="420" width="-1" height="-1"/>
+          <AbsoluteConstraints x="570" y="420" width="80" height="-1"/>
         </Constraint>
       </Constraints>
     </Component>
@@ -219,16 +231,19 @@
         </Constraint>
       </Constraints>
     </Component>
-    <Component class="javax.swing.JLabel" name="Ans&#xe41;&#xe1e;&#xe49;&#xe2d;&#xe32;&#xe2b;&#xe32;&#xe23;&#xe2d;&#xe30;&#xe44;&#xe23;">
+    <Component class="javax.swing.JLabel" name="AnsFood">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Quark" size="18" style="0"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="-"/>
+        <Property name="text" type="java.lang.String" value=" "/>
       </Properties>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="AnsFood.setText(Students.getStd_food(stdID));"/>
+      </AuxValues>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="600" y="450" width="-1" height="-1"/>
+          <AbsoluteConstraints x="600" y="450" width="170" height="-1"/>
         </Constraint>
       </Constraints>
     </Component>
@@ -250,11 +265,14 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Quark" size="18" style="0"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="kz_noey@hotmail.com"/>
+        <Property name="text" type="java.lang.String" value=" "/>
       </Properties>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="AnsEmail.setText(Students.getStd_email(stdID));"/>
+      </AuxValues>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="560" y="480" width="-1" height="-1"/>
+          <AbsoluteConstraints x="560" y="480" width="240" height="-1"/>
         </Constraint>
       </Constraints>
     </Component>
@@ -274,7 +292,7 @@
     <Component class="javax.swing.JLabel" name="ShowID">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Quark" size="14" style="0"/>
+          <Font name="Quark" size="24" style="0"/>
         </Property>
       </Properties>
       <AuxValues>

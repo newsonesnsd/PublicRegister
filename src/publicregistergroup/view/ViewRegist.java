@@ -60,9 +60,9 @@ public class ViewRegist extends javax.swing.JFrame {
         Facebook = new javax.swing.JLabel();
         AnsFacebook = new javax.swing.JLabel();
         แพ้ยาอะไร = new javax.swing.JLabel();
-        Ansแพ้ยาอะไร = new javax.swing.JLabel();
+        AnsMedicine = new javax.swing.JLabel();
         แพ้อาหาอะไร = new javax.swing.JLabel();
-        Ansแพ้อาหารอะไร = new javax.swing.JLabel();
+        AnsFood = new javax.swing.JLabel();
         Email = new javax.swing.JLabel();
         AnsEmail = new javax.swing.JLabel();
         ID = new javax.swing.JLabel();
@@ -103,54 +103,60 @@ public class ViewRegist extends javax.swing.JFrame {
         getContentPane().add(Name, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 330, -1, -1));
 
         AnsName.setFont(new java.awt.Font("Quark", 0, 18)); // NOI18N
-        AnsName.setText("Kittiya ");
-        getContentPane().add(AnsName, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 330, -1, -1));
+        AnsName.setText(" ");
+        getContentPane().add(AnsName, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 330, 220, -1));
+        AnsName.setText(Students.getStd_name(stdID));
 
         Telephone.setFont(new java.awt.Font("Quark", 1, 18)); // NOI18N
         Telephone.setText("Telephone :");
         getContentPane().add(Telephone, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 360, -1, -1));
 
         AnsTelephone.setFont(new java.awt.Font("Quark", 0, 18)); // NOI18N
-        AnsTelephone.setText("090-7700443");
-        getContentPane().add(AnsTelephone, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 360, -1, -1));
+        AnsTelephone.setText(" ");
+        getContentPane().add(AnsTelephone, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 360, 210, -1));
+        AnsTelephone.setText(Students.getStd_tel(stdID));
 
         Facebook.setFont(new java.awt.Font("Quark", 1, 18)); // NOI18N
         Facebook.setText("Facebook :");
         getContentPane().add(Facebook, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 390, -1, -1));
 
         AnsFacebook.setFont(new java.awt.Font("Quark", 0, 18)); // NOI18N
-        AnsFacebook.setText("Noey Kittiya");
-        getContentPane().add(AnsFacebook, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 390, -1, -1));
+        AnsFacebook.setText(" ");
+        getContentPane().add(AnsFacebook, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 390, 220, -1));
+        AnsFacebook.setText(Students.getStd_facebook(stdID));
 
         แพ้ยาอะไร.setFont(new java.awt.Font("Quark", 1, 18)); // NOI18N
         แพ้ยาอะไร.setText("แพ้ยาอะไร :");
         getContentPane().add(แพ้ยาอะไร, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 420, -1, -1));
 
-        Ansแพ้ยาอะไร.setFont(new java.awt.Font("Quark", 0, 18)); // NOI18N
-        Ansแพ้ยาอะไร.setText("-");
-        getContentPane().add(Ansแพ้ยาอะไร, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 420, -1, -1));
+        AnsMedicine.setFont(new java.awt.Font("Quark", 0, 18)); // NOI18N
+        AnsMedicine.setText(" ");
+        getContentPane().add(AnsMedicine, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 420, 80, -1));
+        AnsMedicine.setText(Students.getStd_medicine(stdID));
 
         แพ้อาหาอะไร.setFont(new java.awt.Font("Quark", 1, 18)); // NOI18N
         แพ้อาหาอะไร.setText("แพ้อาหารอะไร :");
         getContentPane().add(แพ้อาหาอะไร, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 450, -1, -1));
 
-        Ansแพ้อาหารอะไร.setFont(new java.awt.Font("Quark", 0, 18)); // NOI18N
-        Ansแพ้อาหารอะไร.setText("-");
-        getContentPane().add(Ansแพ้อาหารอะไร, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 450, -1, -1));
+        AnsFood.setFont(new java.awt.Font("Quark", 0, 18)); // NOI18N
+        AnsFood.setText(" ");
+        getContentPane().add(AnsFood, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 450, 170, -1));
+        AnsFood.setText(Students.getStd_food(stdID));
 
         Email.setFont(new java.awt.Font("Quark", 1, 18)); // NOI18N
         Email.setText("E-mail :");
         getContentPane().add(Email, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 480, -1, -1));
 
         AnsEmail.setFont(new java.awt.Font("Quark", 0, 18)); // NOI18N
-        AnsEmail.setText("kz_noey@hotmail.com");
-        getContentPane().add(AnsEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 480, -1, -1));
+        AnsEmail.setText(" ");
+        getContentPane().add(AnsEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 480, 240, -1));
+        AnsEmail.setText(Students.getStd_email(stdID));
 
         ID.setFont(new java.awt.Font("Quark", 0, 24)); // NOI18N
         ID.setText("ID :");
         getContentPane().add(ID, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 30, 40, 30));
 
-        ShowID.setFont(new java.awt.Font("Quark", 0, 14)); // NOI18N
+        ShowID.setFont(new java.awt.Font("Quark", 0, 24)); // NOI18N
         getContentPane().add(ShowID, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 30, 220, 30));
         ShowID.setText(stdID+"");
 
@@ -254,10 +260,10 @@ public class ViewRegist extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel AnsEmail;
     private javax.swing.JLabel AnsFacebook;
+    private javax.swing.JLabel AnsFood;
+    private javax.swing.JLabel AnsMedicine;
     private javax.swing.JLabel AnsName;
     private javax.swing.JLabel AnsTelephone;
-    private javax.swing.JLabel Ansแพ้ยาอะไร;
-    private javax.swing.JLabel Ansแพ้อาหารอะไร;
     private javax.swing.JButton Bottonsearch1;
     private javax.swing.JLabel ClubID;
     private javax.swing.JButton Confirm;
