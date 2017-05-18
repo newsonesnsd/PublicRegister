@@ -20,11 +20,11 @@ public class ConnectionBuilder {
         }
         catch (ClassNotFoundException | SQLException e){
             System.out.println(e.getMessage());
-        }  
+        }
         catch (Exception e) {
             System.out.println(e.getMessage());
         }
-        
+
         return con;
     }
      public static void main(String[] args)throws SQLException{
@@ -32,9 +32,9 @@ public class ConnectionBuilder {
 //        String sql = "SELECT * FROM user";
 //        PreparedStatement pre = con.prepareStatement(sql);
 //        ResultSet rs = pre.executeQuery();
-//        
+//
 //        while(rs.next()){
-//            System.out.println(rs.getString("username"));  
+//            System.out.println(rs.getString("username"));
 //        }
 //        try {
 //            Scanner input = new Scanner(System.in);
@@ -52,10 +52,10 @@ public class ConnectionBuilder {
 //            else {
 //                System.out.println("False");
 //            }
-//         } 
+//         }
 //        catch (Exception e) {
 //            System.out.println(e);
 //        }
-           
+
     }
 }
