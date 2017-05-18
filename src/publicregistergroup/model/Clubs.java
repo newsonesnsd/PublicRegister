@@ -10,7 +10,7 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.Arrays;
 import publicregistergroup.controller.ConnectionBuilder;
-import publicregistergroup.view.ViewClub;
+//import publicregistergroup.view.ViewClub;
 
 /**
  *
@@ -22,7 +22,7 @@ public class Clubs {
     private static String club_name;
     private static String club_description;
 
-    public int getClub_id(int clubIndex) {
+    public static int getClub_id(int clubIndex) {
         club_id = clubIndex+1;        
         try {
             String sql = "SELECT * FROM clubs WHERE club_id = ?";
