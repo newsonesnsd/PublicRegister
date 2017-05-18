@@ -19,6 +19,7 @@ public class ViewClub extends javax.swing.JFrame {
     private String clubDescription = Clubs.getClub_description(Homepage.getClubIndex());
     private int club_id = Clubs.getClub_id(Homepage.getClubIndex());
     
+    
     /**
      * Creates new form ViewClub
      */
