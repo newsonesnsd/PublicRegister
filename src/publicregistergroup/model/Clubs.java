@@ -10,6 +10,7 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.Arrays;
 import publicregistergroup.controller.ConnectionBuilder;
+import publicregistergroup.view.ViewClub;
 
 /**
  *
@@ -17,9 +18,9 @@ import publicregistergroup.controller.ConnectionBuilder;
  */
 public class Clubs {
     static Connection con = ConnectionBuilder.getConnection();
-    private int club_id;
-    private String club_name;
-    private String club_description;
+    private static int club_id;
+    private static String club_name;
+    private static String club_description;
 
     public int getClub_id(int clubIndex) {
         club_id = clubIndex+1;        
@@ -38,11 +39,7 @@ public class Clubs {
         }
         return club_id;   
     }
-
-    public void setClub_id(int club_id) {
-        this.club_id = club_id;
-    }
-
+    
     public String getClub_name(int club_id) {
         try {
             String sql = "SELECT * FROM clubs WHERE club_id = ?";
@@ -60,10 +57,6 @@ public class Clubs {
         return club_name;      
     }
 
-    public void setClub_name(String club_name) {
-        this.club_name = club_name;
-    }
-
     public String getClub_description(int club_id) {       
         try {
             String sql = "SELECT * FROM clubs WHERE club_id = ?";
@@ -78,10 +71,6 @@ public class Clubs {
             System.out.println(e + "\n" + e.getMessage());
         }
         return club_name;  
-    }
-
-    public void setClub_description(String club_description) {
-        this.club_description = club_description;
     }
  
     public static ArrayList<String> getAllClubs() {
