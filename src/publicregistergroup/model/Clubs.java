@@ -35,6 +35,7 @@ public class Clubs {
         } 
         catch (SQLException e) {
             System.out.println(e + "\n" + e.getMessage());
+            e.printStackTrace();
         }
         return club_id;   
     }
@@ -52,6 +53,7 @@ public class Clubs {
         } 
         catch (SQLException e) {
             System.out.println(e + "\n" + e.getMessage());
+            e.printStackTrace();
         }
         return club_name;      
     }
@@ -68,6 +70,7 @@ public class Clubs {
         } 
         catch (SQLException e) {
             System.out.println(e + "\n" + e.getMessage());
+            e.printStackTrace();
         }
         return club_name;  
     }
@@ -86,9 +89,11 @@ public class Clubs {
         catch (SQLException ex) {
             System.out.println(ex);
             System.out.println(ex.getMessage());
+            ex.printStackTrace();
         }
         catch (Exception ex) {
             System.out.println(ex.getMessage());
+            ex.printStackTrace();
         }
         return str;
     }
