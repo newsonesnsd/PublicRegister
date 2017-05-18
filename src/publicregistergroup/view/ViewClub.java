@@ -126,9 +126,11 @@ public class ViewClub extends javax.swing.JFrame {
         jLabel2.setText("____________________________________________________________________________________________________________________");
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 280, -1, -1));
         getContentPane().add(AddDescription, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 410, 230, 30));
+        AddDescription.setText(clubDescription);
         getContentPane().add(jlbClubId, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 330, 230, 30));
         jlbClubId.setText(club_id+"");
         getContentPane().add(AddName, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 370, 230, 30));
+        AddName.setText(clubName);
 
         blackground.setFont(new java.awt.Font("Quark", 0, 19)); // NOI18N
         blackground.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/page.jpg"))); // NOI18N
