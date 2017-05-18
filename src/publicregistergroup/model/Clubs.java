@@ -5,9 +5,7 @@
  */
 package publicregistergroup.model;
 
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -23,16 +21,43 @@ public class Clubs {
     private String club_name;
     private String club_description;
 
-    public int getClub_id() {
-        return club_id;
+    public int getClub_id(int clubIndex) {
+        club_id = clubIndex+1;        
+        try {
+            String sql = "SELECT * FROM clubs WHERE club_id = ?";
+            PreparedStatement pre = con.prepareStatement(sql);
+            pre.setString(1, ""+clubIndex);
+            ResultSet rs = pre.executeQuery();
+            if(rs.next()) {
+                club_id = rs.getInt("club_id");
+                //System.out.println(clubId);
+            }
+        } 
+        catch (SQLException e) {
+            System.out.println(e + "\n" + e.getMessage());
+        }
+        return club_id;   
     }
 
     public void setClub_id(int club_id) {
         this.club_id = club_id;
     }
 
-    public String getClub_name() {
-        return club_name;
+    public String getClub_name(int club_id) {
+        try {
+            String sql = "SELECT * FROM clubs WHERE club_id = ?";
+            PreparedStatement pre = con.prepareStatement(sql);
+            pre.setInt(1, club_id);
+            ResultSet rs = pre.executeQuery();
+            if(rs.next()) {
+                club_name = rs.getString("club_name");
+                //System.out.println(clubName);
+            }
+        } 
+        catch (SQLException e) {
+            System.out.println(e + "\n" + e.getMessage());
+        }
+        return club_name;      
     }
 
     public void setClub_name(String club_name) {
