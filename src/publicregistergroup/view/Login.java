@@ -135,7 +135,7 @@ public class Login extends javax.swing.JFrame {
 
     private void loginButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_loginButtonMouseClicked
         // TODO add your handling code here:
-        if (getLogin() == true) {
+        if (Users.getLogin() == true) {
             JOptionPane frame = new JOptionPane();
             JOptionPane.showMessageDialog(frame,"Login Success","Login",JOptionPane.PLAIN_MESSAGE);
             this.setVisible(false);
