@@ -13,7 +13,7 @@ import publicregistergroup.model.*;
  *
  * @author newso
  */
-public class Login extends javax.swing.JFrame {
+public class Login extends JFrame {
 
     /**
      * Creates new form Login
