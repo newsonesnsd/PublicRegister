@@ -141,10 +141,12 @@ public class Login extends JFrame {
 //            this.setVisible(false);
 //            Homepage newHome = new Homepage();
 //            newHome.setVisible(true);
+            System.out.println("True");
         }
         else {
 //            JOptionPane frame = new JOptionPane();
 //            JOptionPane.showMessageDialog(frame,"Failed to Login \n Please reenter your username or password","Login",JOptionPane.ERROR_MESSAGE);
+            System.out.println("False");
         }
     }//GEN-LAST:event_loginButtonMouseClicked
 
