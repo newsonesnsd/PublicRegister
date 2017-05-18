@@ -5,13 +5,8 @@
  */
 package publicregistergroup.view;
 
-import java.awt.Image;
+import java.awt.*;
 import java.io.*;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
 import java.sql.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -27,8 +22,9 @@ import publicregistergroup.controller.ConnectionBuilder;
 public class ViewProfile extends javax.swing.JFrame{
 
     static Connection con = ConnectionBuilder.getConnection();
-    private String name,faculty,telephone,facebook,medicine,food,email,picture,image;
-    private String path,abPath;
+    private String name, faculty, telephone, facebook, medicine, food, email, picture, image;
+    private String path, abPath;
+
     /**
      * Creates new form Uploadphoto
      */
@@ -379,13 +375,13 @@ public class ViewProfile extends javax.swing.JFrame{
     }// </editor-fold>//GEN-END:initComponents
 
     private void BottonsearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BottonsearchActionPerformed
-      
+
     }//GEN-LAST:event_BottonsearchActionPerformed
 
     private void NameTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NameTextFieldActionPerformed
-        
+
     }//GEN-LAST:event_NameTextFieldActionPerformed
-   
+
     private void FacebookTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FacebookTextFieldActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_FacebookTextFieldActionPerformed
@@ -403,39 +399,59 @@ public class ViewProfile extends javax.swing.JFrame{
     }//GEN-LAST:event_SearchclubTextFieldActionPerformed
 
     private void ChangePageActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ChangePageActionPerformed
-       LinkData data = new LinkData();
-       this.setVisible(false);
-       data.setVisible(true);
+        LinkData data = new LinkData();
+        this.setVisible(false);
+        data.setVisible(true);
     }//GEN-LAST:event_ChangePageActionPerformed
 
     private void UploadBottonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UploadBottonActionPerformed
         JFileChooser fileOpen = new JFileChooser();
-        fileOpen.showDialog(null , "Choose Image");
+        fileOpen.showDialog(null, "Choose Image");
         fileOpen.setAcceptAllFileFilterUsed(false);
-        fileOpen.addChoosableFileFilter(new FileNameExtensionFilter(".jpg","jpg"));
-        fileOpen.addChoosableFileFilter(new FileNameExtensionFilter(".gif","gif"));
-        fileOpen.addChoosableFileFilter(new FileNameExtensionFilter(".png","png"));
+        fileOpen.addChoosableFileFilter(new FileNameExtensionFilter(".jpg", "jpg"));
+        fileOpen.addChoosableFileFilter(new FileNameExtensionFilter(".gif", "gif"));
+        fileOpen.addChoosableFileFilter(new FileNameExtensionFilter(".png", "png"));
         int result = fileOpen.showDialog(null, "Choose Image");
-            File selecFile = fileOpen.getSelectedFile();
-            abPath = selecFile.getAbsolutePath();
-            path = selecFile.getName();
-            ImageS.setIcon(new ImageIcon((new ImageIcon(abPath).getImage().getScaledInstance(395,335,Image.SCALE_SMOOTH))));
-            System.out.println(path);
-            
+        File selecFile = fileOpen.getSelectedFile();
+        abPath = selecFile.getAbsolutePath();
+        path = selecFile.getName();
+        ImageS.setIcon(new ImageIcon((new ImageIcon(abPath).getImage().getScaledInstance(395, 335, Image.SCALE_SMOOTH))));
+        System.out.println(path);
+
     }//GEN-LAST:event_UploadBottonActionPerformed
 
     private void SubmitbottonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SubmitbottonActionPerformed
-
-            LinkData data = new LinkData();
+        String role=null;    
+        try {
+            
+            Statement st = con.createStatement();
+            String sql = "SELECT * FROM students WHERE std_id = 59130500004";
+            ResultSet res = st.executeQuery(sql);
+            while (res.next()) {
+                role = res.getString("std_role");
+            }   
+        } catch (SQLException ex) {
+            System.out.println(ex);
+        }
+        if(role.isEmpty()){
+            LinkDataforUser user = new LinkDataforUser();
             this.setVisible(false);
-            data.setVisible(true);
-
+            user.setVisible(true);
+        }else{
+             LinkData admin = new LinkData();
+            this.setVisible(false);
+            admin.setVisible(true);
+        }/*
+        LinkData data = new LinkData();
+        this.setVisible(false);
+        data.setVisible(true);*/
     }//GEN-LAST:event_SubmitbottonActionPerformed
 
     private void SubmitbottonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SubmitbottonMouseClicked
         System.out.println("437");
+        
         InputStream filepic = null;
-        try {
+ 
             try {
                 //System.out.println("mk,nksds");
                 // TODO add your handling code here:
@@ -446,8 +462,8 @@ public class ViewProfile extends javax.swing.JFrame{
                 medicine = MedicineTextField.getText();
                 food = FoodTextField.getText();
                 email = EmailTextField.getText();
-                
-                String sql = "UPDATE students SET std_name=?, std_tel=?, std_facebook=?, std_medicine=?, std_food=?, std_email=? , std_picture=? WHERE std_id=59130500004";
+
+                String sql = "UPDATE students SET std_name=?, std_tel=?, std_facebook=?, std_medicine=?, std_food=?, std_email=? WHERE std_id=59130500004";
                 PreparedStatement pre = con.prepareStatement(sql);
                 pre.setString(1, name);
                 pre.setString(2, telephone);
@@ -455,48 +471,47 @@ public class ViewProfile extends javax.swing.JFrame{
                 pre.setString(4, medicine);
                 pre.setString(5, food);
                 pre.setString(6, email);
-                pre.setString(7, path);
+                //pre.setString(7, path);
                 pre.executeUpdate();
                 //ResultSet res = st.executeQuery(sql);
-                
-                
+
             } catch (SQLException ex) {
                 System.out.println(ex);
             }
-            
+
             System.out.println("บบรรดทัด 466");
-            
+
+           
+        try {
+    
             filepic = new FileInputStream(abPath);
+            String sql = "UPDATE students SET std_picture=? WHERE std_id=59130500004";
+                PreparedStatement pre = con.prepareStatement(sql);
+                pre.setString(1, path);
+                pre.executeUpdate();
             OutputStream ops = null;
-            try{
+            try {
+                
                 //System.out.println("asdada");
-                System.out.println("Path :"+"/Users/taloey/Desktop/PublicRegister/src/Images/" + path);
+                System.out.println("Path :" + "/Users/taloey/Desktop/PublicRegister/src/Images/" + path);
                 ops = new FileOutputStream(new File("src/Images/" + path));
                 int read = 0;
                 byte[] b = new byte[1024];
-                while((read = filepic.read(b)) != -1){
-                    ops.write(b,0,read);
+                while ((read = filepic.read(b)) != -1) {
+                    ops.write(b, 0, read);
                 }
-            }catch (FileNotFoundException e){
+                filepic.close();
+            } catch (FileNotFoundException e) {
                 System.out.println(e);
             } catch (IOException ex) {
                 System.out.println(ex);
-            }
-            
-            
+            } 
         } catch (FileNotFoundException ex) {
-            System.out.println(ex);
-        } finally {
-            try {
-                filepic.close();
-            } catch (IOException ex) {
-                System.out.println(ex);
-            }
-        }
-       
-       
-        
-        
+            Logger.getLogger(ViewProfile.class.getName()).log(Level.SEVERE, null, ex);
+        }catch (SQLException ex) {
+                    Logger.getLogger(ViewProfile.class.getName()).log(Level.SEVERE, null, ex);
+                }
+
     }//GEN-LAST:event_SubmitbottonMouseClicked
 
     private void TelephoneTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TelephoneTextFieldActionPerformed
