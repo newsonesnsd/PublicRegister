@@ -6,12 +6,6 @@
 package publicregistergroup.view;
 
 import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import publicregistergroup.controller.ConnectionBuilder;
 import publicregistergroup.model.*;
 
@@ -26,7 +20,7 @@ public class ViewClub extends javax.swing.JFrame {
     Homepage hp = new Homepage();
     private int clubIndex;
     private static int club_id;
-
+    
     /**
      * Creates new form ViewClub
      */
@@ -41,23 +35,23 @@ public class ViewClub extends javax.swing.JFrame {
      */
     
     
-    public String getClubName() {
-        club_id = clubIndex+1;        
-        try {
-            String sql = "SELECT * FROM clubs WHERE club_id = ?";
-            PreparedStatement pre = con.prepareStatement(sql);
-            pre.setInt(1, club_id);
-            ResultSet rs = pre.executeQuery();
-            if(rs.next()) {
-                clubName = rs.getString("club_name");
-                //System.out.println(clubName);
-            }
-        } 
-        catch (SQLException e) {
-            System.out.println(e + "\n" + e.getMessage());
-        }
-        return clubName;      
-    }
+//    public String getClubName() {
+//        club_id = clubIndex+1;        
+//        try {
+//            String sql = "SELECT * FROM clubs WHERE club_id = ?";
+//            PreparedStatement pre = con.prepareStatement(sql);
+//            pre.setInt(1, club_id);
+//            ResultSet rs = pre.executeQuery();
+//            if(rs.next()) {
+//                clubName = rs.getString("club_name");
+//                //System.out.println(clubName);
+//            }
+//        } 
+//        catch (SQLException e) {
+//            System.out.println(e + "\n" + e.getMessage());
+//        }
+//        return clubName;      
+//    }
     
     
     /**
@@ -93,7 +87,7 @@ public class ViewClub extends javax.swing.JFrame {
 
         jLabel8.setFont(new java.awt.Font("Quark", 1, 45)); // NOI18N
         getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 200, 660, 80));
-        jLabel8.setText(getClubName());
+        jLabel8.setText(Clubs.getClub_name(club_id));
 
         jLabel9.setFont(new java.awt.Font("Quark", 0, 19)); // NOI18N
         jLabel9.setText("<html> CLUB ID:  <br> <br>CLUB NAME:  <br> <br>DESCRIPTION:  </html>");
