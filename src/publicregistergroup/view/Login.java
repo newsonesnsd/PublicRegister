@@ -109,6 +109,9 @@ public class Login extends JFrame {
             }
         });
         jpnLogin.add(jpfInputPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 440, 430, 60));
+
+        background.setIcon(new javax.swing.ImageIcon("E:\\PublicRegister\\src\\Images\\EditLogin2.jpg")); // NOI18N
+        background.setMaximumSize(new java.awt.Dimension(1024, 768));
         jpnLogin.add(background, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1024, 768));
         background.getAccessibleContext().setAccessibleName("Login");
 
@@ -116,9 +119,7 @@ public class Login extends JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jpnLogin, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+            .addComponent(jpnLogin, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
