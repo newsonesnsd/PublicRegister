@@ -80,6 +80,9 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="Uploadphotos">
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="String clubpicture=null;    &#xa;        try {&#xa;            Statement st = con.createStatement();&#xa;            String sql = &quot;SELECT std_role FROM students WHERE std_id = 59130500004&quot;;&#xa;            ResultSet res = st.executeQuery(sql);&#xa;            int club_id =0;&#xa;            String std_role=null;&#xa;            while (res.next()) {&#xa;                std_role = res.getString(&quot;std_role&quot;);&#xa;                club_id = Integer.parseInt(std_role);&#xa;                sql = &quot;SELECT club_picture FROM clubs WHERE club_id = ?&quot;;&#xa;                PreparedStatement pre = con.prepareStatement(sql);&#xa;                pre.setInt(1, club_id);&#xa;                ResultSet rs = pre.executeQuery();&#xa;                if(rs.next()) {&#xa;                    clubpicture =rs.getString(&quot;club_picture&quot;);&#xa;                }&#xa;&#xa;                if(std_role!=null){&#xa;                    Uploadphotos.setIcon(new ImageIcon((new ImageIcon(&quot;src/Images/&quot;+clubpicture).getImage().getScaledInstance(436,366,Image.SCALE_SMOOTH))));&#xa;                }&#xa;            }&#xa;           &#xa;        } catch (SQLException ex) {&#xa;            System.out.println(ex);&#xa;        }"/>
+          </AuxValues>
         </Component>
       </SubComponents>
     </Container>
@@ -99,23 +102,10 @@
         </Constraint>
       </Constraints>
     </Component>
-    <Component class="javax.swing.JLabel" name="textsearchclub">
-      <Properties>
-        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Quark" size="14" style="0"/>
-        </Property>
-        <Property name="text" type="java.lang.String" value="serach from club or organize for you interest"/>
-      </Properties>
-      <Constraints>
-        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="40" y="80" width="290" height="20"/>
-        </Constraint>
-      </Constraints>
-    </Component>
     <Component class="javax.swing.JTextField" name="SearchTextField">
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="30" y="100" width="300" height="30"/>
+          <AbsoluteConstraints x="20" y="90" width="260" height="30"/>
         </Constraint>
       </Constraints>
     </Component>
@@ -158,21 +148,6 @@
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
           <AbsoluteConstraints x="390" y="670" width="230" height="60"/>
-        </Constraint>
-      </Constraints>
-    </Component>
-    <Component class="javax.swing.JLabel" name="Title">
-      <Properties>
-        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Kailasa" size="36" style="0"/>
-        </Property>
-        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/Images/logo.png"/>
-        </Property>
-      </Properties>
-      <Constraints>
-        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="20" y="20" width="440" height="50"/>
         </Constraint>
       </Constraints>
     </Component>
@@ -234,33 +209,10 @@
         </Component>
       </SubComponents>
     </Container>
-    <Component class="javax.swing.JTextField" name="clubname">
-      <Properties>
-        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Quark" size="24" style="0"/>
-        </Property>
-        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-          <Border info="org.netbeans.modules.form.compat2.border.MatteColorBorderInfo">
-            <MatteColorBorder bottom="2" left="2" right="2" top="2"/>
-          </Border>
-        </Property>
-      </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="clubnameActionPerformed"/>
-      </Events>
-      <AuxValues>
-        <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="String club_name=null;    &#xa;        try {&#xa;            Statement st = con.createStatement();&#xa;            String sql = &quot;SELECT std_role FROM students WHERE std_id = 59130500004&quot;;&#xa;            ResultSet res = st.executeQuery(sql);&#xa;            int club_id =0;&#xa;            String std_role=null;&#xa;            while (res.next()) {&#xa;                std_role = res.getString(&quot;std_role&quot;);&#xa;                club_id = Integer.parseInt(std_role);&#xa;                sql = &quot;SELECT club_name FROM clubs WHERE club_id = ?&quot;;&#xa;                PreparedStatement pre = con.prepareStatement(sql);&#xa;                pre.setInt(1, club_id);&#xa;                ResultSet rs = pre.executeQuery();&#xa;                if(rs.next()) {&#xa;                    club_name =rs.getString(&quot;club_name&quot;);&#xa;                }&#xa;&#xa;                if(std_role!=null){&#xa;                    clubname.setText(club_name);&#xa;                }&#xa;            }&#xa;           &#xa;        } catch (SQLException ex) {&#xa;            Logger.getLogger(ViewProfile.class.getName()).log(Level.SEVERE, null, ex);&#xa;        }"/>
-      </AuxValues>
-      <Constraints>
-        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="30" y="150" width="220" height="30"/>
-        </Constraint>
-      </Constraints>
-    </Component>
     <Component class="javax.swing.JLabel" name="blackground">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/Images/background.png"/>
+          <Image iconType="3" name="/Images/page.jpg"/>
         </Property>
         <Property name="text" type="java.lang.String" value="jLabel1"/>
       </Properties>

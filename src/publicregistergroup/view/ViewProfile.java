@@ -433,10 +433,11 @@ public class ViewProfile extends javax.swing.JFrame{
     }//GEN-LAST:event_SubmitbottonActionPerformed
 
     private void SubmitbottonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SubmitbottonMouseClicked
-        //System.out.println("437");
+        System.out.println("437");
         InputStream filepic = null;
         try {
             try {
+                //System.out.println("mk,nksds");
                 // TODO add your handling code here:
                 name = NameTextField.getText();
                 faculty = SurnameTextField.getText();
@@ -460,17 +461,17 @@ public class ViewProfile extends javax.swing.JFrame{
                 
                 
             } catch (SQLException ex) {
-                Logger.getLogger(ViewProfile.class.getName()).log(Level.SEVERE, null, ex);
+                System.out.println(ex);
             }
             
-           // System.out.println("บบรรดทัด 466");
+            System.out.println("บบรรดทัด 466");
             
             filepic = new FileInputStream(abPath);
             OutputStream ops = null;
             try{
                 //System.out.println("asdada");
                 System.out.println("Path :"+"/Users/taloey/Desktop/PublicRegister/src/Images/" + path);
-                ops = new FileOutputStream(new File("/Users/taloey/Desktop/PublicRegister/src/Images/" + path));
+                ops = new FileOutputStream(new File("src/Images/" + path));
                 int read = 0;
                 byte[] b = new byte[1024];
                 while((read = filepic.read(b)) != -1){
@@ -484,12 +485,12 @@ public class ViewProfile extends javax.swing.JFrame{
             
             
         } catch (FileNotFoundException ex) {
-            Logger.getLogger(ViewProfile.class.getName()).log(Level.SEVERE, null, ex);
+            System.out.println(ex);
         } finally {
             try {
                 filepic.close();
             } catch (IOException ex) {
-                Logger.getLogger(ViewProfile.class.getName()).log(Level.SEVERE, null, ex);
+                System.out.println(ex);
             }
         }
        

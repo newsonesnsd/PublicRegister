@@ -80,6 +80,9 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="Uploadphotos">
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="String clubpicture=null;    &#xa;        try {&#xa;            Statement st = con.createStatement();&#xa;            String sql = &quot;SELECT std_role FROM students WHERE std_id = 59130500004&quot;;&#xa;            ResultSet res = st.executeQuery(sql);&#xa;            int club_id =0;&#xa;            String std_role=null;&#xa;            while (res.next()) {&#xa;                std_role = res.getString(&quot;std_role&quot;);&#xa;                club_id = Integer.parseInt(std_role);&#xa;                sql = &quot;SELECT club_picture FROM clubs WHERE club_id = ?&quot;;&#xa;                PreparedStatement pre = con.prepareStatement(sql);&#xa;                pre.setInt(1, club_id);&#xa;                ResultSet rs = pre.executeQuery();&#xa;                if(rs.next()) {&#xa;                    clubpicture =rs.getString(&quot;club_picture&quot;);&#xa;                }&#xa;&#xa;                if(std_role!=null){&#xa;                    Uploadphotos.setIcon(new ImageIcon((new ImageIcon(&quot;src/Images/&quot;+clubpicture).getImage().getScaledInstance(436,366,Image.SCALE_SMOOTH))));&#xa;                }&#xa;            }&#xa;           &#xa;        } catch (SQLException ex) {&#xa;            System.out.println(ex);&#xa;        }"/>
+          </AuxValues>
         </Component>
       </SubComponents>
     </Container>
@@ -189,7 +192,7 @@
             <Property name="editable" type="boolean" value="false"/>
             <Property name="columns" type="int" value="20"/>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Quark" size="14" style="0"/>
+              <Font name="Quark" size="36" style="0"/>
             </Property>
             <Property name="rows" type="int" value="5"/>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">

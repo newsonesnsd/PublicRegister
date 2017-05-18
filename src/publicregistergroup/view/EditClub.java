@@ -7,6 +7,12 @@ package publicregistergroup.view;
 
 import java.awt.Image;
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
 import java.sql.*;
 import java.util.*;
 import java.util.logging.*;
@@ -24,6 +30,7 @@ import static publicregistergroup.view.ViewProfile.con;
 public class EditClub extends JFrame {
      static Connection con = ConnectionBuilder.getConnection();
      private String nameclub,detailclub;
+     private String path,abPath;
     /**
      * Creates new form Uploadphoto
      */
@@ -45,15 +52,12 @@ public class EditClub extends JFrame {
         textupload = new javax.swing.JLabel();
         Uploadphotos = new javax.swing.JLabel();
         textDetail1 = new javax.swing.JLabel();
-        textsearchclub = new javax.swing.JLabel();
         SearchTextField = new javax.swing.JTextField();
         Bottonsearch = new javax.swing.JButton();
         savebotton = new javax.swing.JButton();
-        Title = new javax.swing.JLabel();
         uploadbotton = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         detailArea = new javax.swing.JTextArea();
-        clubname = new javax.swing.JTextField();
         blackground = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -86,17 +90,40 @@ public class EditClub extends JFrame {
                 .addGap(139, 139, 139))
         );
 
+        String clubpicture=null;
+        try {
+            Statement st = con.createStatement();
+            String sql = "SELECT std_role FROM students WHERE std_id = 59130500004";
+            ResultSet res = st.executeQuery(sql);
+            int club_id =0;
+            String std_role=null;
+            while (res.next()) {
+                std_role = res.getString("std_role");
+                club_id = Integer.parseInt(std_role);
+                sql = "SELECT club_picture FROM clubs WHERE club_id = ?";
+                PreparedStatement pre = con.prepareStatement(sql);
+                pre.setInt(1, club_id);
+                ResultSet rs = pre.executeQuery();
+                if(rs.next()) {
+                    clubpicture =rs.getString("club_picture");
+                }
+
+                if(std_role!=null){
+                    Uploadphotos.setIcon(new ImageIcon((new ImageIcon("src/Images/"+clubpicture).getImage().getScaledInstance(436,366,Image.SCALE_SMOOTH))));
+                }
+            }
+
+        } catch (SQLException ex) {
+            System.out.println(ex);
+        }
+
         getContentPane().add(Boxphoto, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 200, 440, 370));
 
         textDetail1.setFont(new java.awt.Font("Quark", 0, 52)); // NOI18N
         textDetail1.setForeground(new java.awt.Color(77, 77, 77));
         textDetail1.setText("รายละเอียด");
         getContentPane().add(textDetail1, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 180, -1, -1));
-
-        textsearchclub.setFont(new java.awt.Font("Quark", 0, 14)); // NOI18N
-        textsearchclub.setText("serach from club or organize for you interest");
-        getContentPane().add(textsearchclub, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 80, 290, 20));
-        getContentPane().add(SearchTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 100, 300, 30));
+        getContentPane().add(SearchTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, 260, 30));
 
         Bottonsearch.setFont(new java.awt.Font("Quark", 0, 14)); // NOI18N
         Bottonsearch.setText("OK");
@@ -123,10 +150,6 @@ public class EditClub extends JFrame {
             }
         });
         getContentPane().add(savebotton, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 670, 230, 60));
-
-        Title.setFont(new java.awt.Font("Kailasa", 0, 36)); // NOI18N
-        Title.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/logo.png"))); // NOI18N
-        getContentPane().add(Title, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 440, 50));
 
         uploadbotton.setBackground(new java.awt.Color(213, 186, 55));
         uploadbotton.setFont(new java.awt.Font("Quark", 0, 24)); // NOI18N
@@ -174,42 +197,7 @@ public class EditClub extends JFrame {
 
         getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 240, 450, 330));
 
-        clubname.setFont(new java.awt.Font("Quark", 0, 24)); // NOI18N
-        clubname.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(0, 0, 0)));
-        clubname.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                clubnameActionPerformed(evt);
-            }
-        });
-        getContentPane().add(clubname, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 150, 220, 30));
-        String club_name=null;
-        try {
-            Statement st = con.createStatement();
-            String sql = "SELECT std_role FROM students WHERE std_id = 59130500004";
-            ResultSet res = st.executeQuery(sql);
-            int club_id =0;
-            String std_role=null;
-            while (res.next()) {
-                std_role = res.getString("std_role");
-                club_id = Integer.parseInt(std_role);
-                sql = "SELECT club_name FROM clubs WHERE club_id = ?";
-                PreparedStatement pre = con.prepareStatement(sql);
-                pre.setInt(1, club_id);
-                ResultSet rs = pre.executeQuery();
-                if(rs.next()) {
-                    club_name =rs.getString("club_name");
-                }
-
-                if(std_role!=null){
-                    clubname.setText(club_name);
-                }
-            }
-
-        } catch (SQLException ex) {
-            Logger.getLogger(ViewProfile.class.getName()).log(Level.SEVERE, null, ex);
-        }
-
-        blackground.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/background.png"))); // NOI18N
+        blackground.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/page.jpg"))); // NOI18N
         blackground.setText("jLabel1");
         getContentPane().add(blackground, new org.netbeans.lib.awtextra.AbsoluteConstraints(-5, 0, 1030, 770));
 
@@ -229,8 +217,9 @@ public class EditClub extends JFrame {
         fileOpen.addChoosableFileFilter(new FileNameExtensionFilter(".png","png"));
         int result = fileOpen.showDialog(null, "Choose Image");
             File selecFile = fileOpen.getSelectedFile();
-            String path = selecFile.getAbsolutePath();
-           Uploadphotos.setIcon(new ImageIcon((new ImageIcon(path).getImage().getScaledInstance(436,366,Image.SCALE_SMOOTH))));
+            path = selecFile.getName();
+            abPath = selecFile.getAbsolutePath();
+           Uploadphotos.setIcon(new ImageIcon((new ImageIcon(abPath).getImage().getScaledInstance(436,366,Image.SCALE_SMOOTH))));
             
     }//GEN-LAST:event_uploadbottonActionPerformed
 
@@ -241,30 +230,50 @@ public class EditClub extends JFrame {
         data.setVisible(true);
     }//GEN-LAST:event_savebottonActionPerformed
 
-    private void clubnameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clubnameActionPerformed
- 
-    }//GEN-LAST:event_clubnameActionPerformed
-
     private void savebottonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_savebottonMouseClicked
-
+        InputStream filepic = null;
         try {
-            
-            nameclub = clubname.getText();
+        
+            try{
             detailclub = detailArea.getText();
-            String sql = "UPDATE clubs SET club_description=? WHERE club_id=6";
+            String sql = "UPDATE clubs SET club_description=?,club_picture=? WHERE club_id=6";
             PreparedStatement pre = con.prepareStatement(sql);
-            System.out.println("0");
             pre.setString(1, detailclub);
-            System.out.println("1");
-            //pre.setString(2, nameclub);
+            pre.setString(2, path);
             //System.out.println("2");
             pre.executeUpdate();
             System.out.println("Yes");
             
         } catch (SQLException ex) {
-            Logger.getLogger(EditClub.class.getName()).log(Level.SEVERE, null, ex);
+                System.out.println(ex);
         }
-    
+        filepic = new FileInputStream(abPath);
+            OutputStream ops = null;
+            try{
+                //System.out.println("asdada");
+                System.out.println("Path :"+"/Users/taloey/Desktop/PublicRegister/src/Images/" + path);
+                ops = new FileOutputStream(new File("src/Images/" + path));
+                int read = 0;
+                byte[] b = new byte[1024];
+                while((read = filepic.read(b)) != -1){
+                    ops.write(b,0,read);
+                }
+            }catch (FileNotFoundException e){
+                System.out.println(e);
+            } catch (IOException ex) {
+                System.out.println(ex);
+            }
+            
+            
+        } catch (FileNotFoundException ex) {
+            System.out.println(ex);
+        } finally {
+            try {
+                filepic.close();
+            } catch (IOException ex) {
+                System.out.println(ex);
+            }
+        }
     }//GEN-LAST:event_savebottonMouseClicked
 
     /**
@@ -307,15 +316,12 @@ public class EditClub extends JFrame {
     private javax.swing.JButton Bottonsearch;
     private javax.swing.JPanel Boxphoto;
     private javax.swing.JTextField SearchTextField;
-    private javax.swing.JLabel Title;
     private javax.swing.JLabel Uploadphotos;
     private javax.swing.JLabel blackground;
-    private javax.swing.JTextField clubname;
     private javax.swing.JTextArea detailArea;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JButton savebotton;
     private javax.swing.JLabel textDetail1;
-    private javax.swing.JLabel textsearchclub;
     private javax.swing.JLabel textupload;
     private javax.swing.JButton uploadbotton;
     // End of variables declaration//GEN-END:variables

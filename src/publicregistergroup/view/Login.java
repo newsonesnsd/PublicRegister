@@ -44,7 +44,6 @@ public class Login extends JFrame {
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         setFont(new java.awt.Font("Quark", 0, 18)); // NOI18N
         setMinimumSize(new java.awt.Dimension(1024, 768));
-        setPreferredSize(new java.awt.Dimension(1024, 768));
         setResizable(false);
 
         jpnLogin.setBackground(new java.awt.Color(255, 255, 255));
@@ -110,7 +109,7 @@ public class Login extends JFrame {
         });
         jpnLogin.add(jpfInputPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 440, 430, 60));
 
-        background.setIcon(new javax.swing.ImageIcon("E:\\PublicRegister\\src\\Images\\EditLogin2.jpg")); // NOI18N
+        background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/page.jpg"))); // NOI18N
         background.setMaximumSize(new java.awt.Dimension(1024, 768));
         jpnLogin.add(background, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1024, 768));
         background.getAccessibleContext().setAccessibleName("Login");

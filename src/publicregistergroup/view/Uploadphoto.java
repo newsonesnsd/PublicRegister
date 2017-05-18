@@ -82,6 +82,33 @@ public class Uploadphoto extends JFrame {
                 .addGap(139, 139, 139))
         );
 
+        String clubpicture=null;
+        try {
+            Statement st = con.createStatement();
+            String sql = "SELECT std_role FROM students WHERE std_id = 59130500004";
+            ResultSet res = st.executeQuery(sql);
+            int club_id =0;
+            String std_role=null;
+            while (res.next()) {
+                std_role = res.getString("std_role");
+                club_id = Integer.parseInt(std_role);
+                sql = "SELECT club_picture FROM clubs WHERE club_id = ?";
+                PreparedStatement pre = con.prepareStatement(sql);
+                pre.setInt(1, club_id);
+                ResultSet rs = pre.executeQuery();
+                if(rs.next()) {
+                    clubpicture =rs.getString("club_picture");
+                }
+
+                if(std_role!=null){
+                    Uploadphotos.setIcon(new ImageIcon((new ImageIcon("src/Images/"+clubpicture).getImage().getScaledInstance(436,366,Image.SCALE_SMOOTH))));
+                }
+            }
+
+        } catch (SQLException ex) {
+            System.out.println(ex);
+        }
+
         getContentPane().add(Boxphoto, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 260, 440, 370));
 
         textDetail1.setFont(new java.awt.Font("Quark", 0, 40)); // NOI18N
@@ -125,7 +152,7 @@ public class Uploadphoto extends JFrame {
 
         detailArea.setEditable(false);
         detailArea.setColumns(20);
-        detailArea.setFont(new java.awt.Font("Quark", 0, 14)); // NOI18N
+        detailArea.setFont(new java.awt.Font("Quark", 0, 36)); // NOI18N
         detailArea.setRows(5);
         detailArea.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 5, 0, new java.awt.Color(255, 51, 0)));
         jScrollPane1.setViewportView(detailArea);
