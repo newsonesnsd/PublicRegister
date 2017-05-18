@@ -16,12 +16,7 @@ public class ConnectionBuilder {
             con = DriverManager.getConnection(url, user, pass);
             //System.out.println("ConnectCreate");
         }
-        catch (SQLException e) {
-            e.printStackTrace();
-            System.out.println(e.getMessage());
-        }
         catch (Exception e){
-            e.printStackTrace();
             System.out.println(e.getMessage());
         }  
         
