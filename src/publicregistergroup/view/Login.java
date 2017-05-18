@@ -14,7 +14,10 @@ import publicregistergroup.model.*;
  * @author newso
  */
 public class Login extends JFrame {
-
+    private static long stdIndex;
+    public static long getStdIndex() {
+        return stdIndex;
+    }
     /**
      * Creates new form Login
      */

@@ -6,13 +6,15 @@
 package publicregistergroup.model;
 
 import java.sql.Connection;
-//import java.sql.Date;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.Date;
-import publicregistergroup.controller.*;
+import publicregistergroup.controller.ConnectionBuilder;
+
 /**
  *
- * @author newsone
- * This is Class for student in database not ldap 5555
+ * @author kz_no
  */
 public class Students {
     static Connection con = ConnectionBuilder.getConnection();
@@ -22,81 +24,193 @@ public class Students {
     private static String std_department;
     private static String std_major;
     private static String std_tel;
+    private static String std_facebook;
+    private static String std_medicine;
+    private static String std_food;
+    private static String std_email;
+    private static String std_pic;
     //private bla bla std_picture;
     private static String std_role;
     private static Date created_at;
     private static Date updated_at;
 
-    public long getStd_id(long std_id) {
+    public static Connection getCon() {
+        return con;
+    }
+
+    public static long getStd_id(long stdIndex) {
+        std_id = stdIndex;        
+        try {
+            String sql = "SELECT * FROM students WHERE std_id = ?";
+            PreparedStatement pre = con.prepareStatement(sql);
+            ResultSet rs = pre.executeQuery();
+            if(rs.next()) {
+                std_id = rs.getInt("std_id");
+                //System.out.println(stdId);
+            }
+        } 
+        catch (SQLException e) {
+            System.out.println(e + "\n" + e.getMessage());
+        }
+        
         return std_id;
     }
 
-    public void setStd_id(long std_id) {
-        this.std_id = std_id;
-    }
-
-    public String getStd_name() {
+    public static String getStd_name(long std_id) {
+        try {
+            String sql = "SELECT * FROM students WHERE std_id = ?";
+            PreparedStatement pre = con.prepareStatement(sql);
+            pre.setLong(1, std_id);
+            ResultSet rs = pre.executeQuery();
+            if(rs.next()) {
+                std_name = rs.getString("std_name");
+                //System.out.println(stdName);
+            }
+        } 
+        catch (SQLException e) {
+            System.out.println(e + "\n" + e.getMessage());
+        }
         return std_name;
     }
 
-    public void setStd_name(String std_name) {
-        this.std_name = std_name;
-    }
-
-    public String getStd_faculty() {
+    public static String getStd_faculty(long std_id) {
+         try {
+            String sql = "SELECT * FROM students WHERE club_id = ?";
+            PreparedStatement pre = con.prepareStatement(sql);
+            pre.setLong(1, std_id);
+            ResultSet rs = pre.executeQuery();
+            if(rs.next()) {
+                std_name = rs.getString("std_faculty");
+                //System.out.println(stdFaculty);
+            }
+        } 
+        catch (SQLException e) {
+            System.out.println(e + "\n" + e.getMessage());
+        }
         return std_faculty;
     }
 
-    public void setStd_faculty(String std_faculty) {
-        this.std_faculty = std_faculty;
-    }
-
-    public String getStd_department() {
+    public static String getStd_department() {
         return std_department;
     }
 
-    public void setStd_department(String std_department) {
-        this.std_department = std_department;
-    }
-
-    public String getStd_major() {
+    public static String getStd_major() {
         return std_major;
     }
 
-    public void setStd_major(String std_major) {
-        this.std_major = std_major;
-    }
-
-    public String getStd_tel() {
+    public static String getStd_tel(long std_id) {
+        try {
+            String sql = "SELECT * FROM students WHERE std_id = ?";
+            PreparedStatement pre = con.prepareStatement(sql);
+            pre.setLong(1, std_id);
+            ResultSet rs = pre.executeQuery();
+            if(rs.next()) {
+                std_name = rs.getString("std_tel");
+                //System.out.println(stdTel);
+            }
+        } 
+        catch (SQLException e) {
+            System.out.println(e + "\n" + e.getMessage());
+        }
         return std_tel;
     }
 
-    public void setStd_tel(String std_tel) {
-        this.std_tel = std_tel;
+    public static String getStd_facebook(long std_id) {
+        try {
+            String sql = "SELECT * FROM students WHERE std_id = ?";
+            PreparedStatement pre = con.prepareStatement(sql);
+            pre.setLong(1, std_id);
+            ResultSet rs = pre.executeQuery();
+            if(rs.next()) {
+                std_name = rs.getString("std_facebook");
+                //System.out.println(stdFacebook);
+            }
+        } 
+        catch (SQLException e) {
+            System.out.println(e + "\n" + e.getMessage());
+        }
+        return std_facebook;
     }
 
-    public String getStd_role() {
+    public static String getStd_medicine(long std_id) {
+        try {
+            String sql = "SELECT * FROM students WHERE std_id = ?";
+            PreparedStatement pre = con.prepareStatement(sql);
+            pre.setLong(1, std_id);
+            ResultSet rs = pre.executeQuery();
+            if(rs.next()) {
+                std_name = rs.getString("std_medicine");
+                //System.out.println(stdMedicine);
+            }
+        } 
+        catch (SQLException e) {
+            System.out.println(e + "\n" + e.getMessage());
+        }
+        return std_medicine;
+    }
+
+    public static String getStd_food(long std_id) {
+        try {
+            String sql = "SELECT * FROM students WHERE std_id = ?";
+            PreparedStatement pre = con.prepareStatement(sql);
+            pre.setLong(1, std_id);
+            ResultSet rs = pre.executeQuery();
+            if(rs.next()) {
+                std_name = rs.getString("std_food");
+                //System.out.println(stdFood);
+            }
+        } 
+        catch (SQLException e) {
+            System.out.println(e + "\n" + e.getMessage());
+        }
+        return std_food;
+    }
+
+    public static String getStd_email(long std_id) {
+        try {
+            String sql = "SELECT * FROM students WHERE std_id = ?";
+            PreparedStatement pre = con.prepareStatement(sql);
+            pre.setLong(1, std_id);
+            ResultSet rs = pre.executeQuery();
+            if(rs.next()) {
+                std_name = rs.getString("std_email");
+                //System.out.println(stdEmail);
+            }
+        } 
+        catch (SQLException e) {
+            System.out.println(e + "\n" + e.getMessage());
+        }
+        return std_email;
+    }
+
+    public static String getStd_pic(long std_id) {
+        try {
+            String sql = "SELECT * FROM students WHERE std_id = ?";
+            PreparedStatement pre = con.prepareStatement(sql);
+            pre.setLong(1, std_id);
+            ResultSet rs = pre.executeQuery();
+            if(rs.next()) {
+                std_name = rs.getString("std_pic");
+                //System.out.println(stdPic);
+            }
+        } 
+        catch (SQLException e) {
+            System.out.println(e + "\n" + e.getMessage());
+        }
+        return std_pic;
+    }
+
+    public static String getStd_role() {
         return std_role;
     }
 
-    public void setStd_role(String std_role) {
-        this.std_role = std_role;
-    }
-
-    public Date getCreated_at() {
+    public static Date getCreated_at() {
         return created_at;
     }
 
-    public void setCreated_at(Date created_at) {
-        this.created_at = created_at;
-    }
-
-    public Date getUpdated_at() {
+    public static Date getUpdated_at() {
         return updated_at;
     }
-
-    public void setUpdated_at(Date updated_at) {
-        this.updated_at = updated_at;
-    }
+    
     
 }
