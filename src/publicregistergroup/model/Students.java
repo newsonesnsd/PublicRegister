@@ -27,7 +27,7 @@ public class Students {
     private Date created_at;
     private Date updated_at;
 
-    public long getStd_id() {
+    public long getStd_id(long std_id) {
         return std_id;
     }
 
