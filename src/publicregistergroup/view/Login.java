@@ -136,15 +136,15 @@ public class Login extends JFrame {
     private void loginButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_loginButtonMouseClicked
         // TODO add your handling code here:
         if (Users.getLogin(jtfInputUsername, jpfInputPassword) == true) {
-            JOptionPane frame = new JOptionPane();
-            JOptionPane.showMessageDialog(frame,"Login Success","Login",JOptionPane.PLAIN_MESSAGE);
-            this.setVisible(false);
-            Homepage newHome = new Homepage();
-            newHome.setVisible(true);
+//            JOptionPane frame = new JOptionPane();
+//            JOptionPane.showMessageDialog(frame,"Login Success","Login",JOptionPane.PLAIN_MESSAGE);
+//            this.setVisible(false);
+//            Homepage newHome = new Homepage();
+//            newHome.setVisible(true);
         }
         else {
-            JOptionPane frame = new JOptionPane();
-            JOptionPane.showMessageDialog(frame,"Failed to Login \n Please reenter your username or password","Login",JOptionPane.ERROR_MESSAGE);
+//            JOptionPane frame = new JOptionPane();
+//            JOptionPane.showMessageDialog(frame,"Failed to Login \n Please reenter your username or password","Login",JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_loginButtonMouseClicked
 
