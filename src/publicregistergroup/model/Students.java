@@ -16,16 +16,16 @@ import publicregistergroup.controller.*;
  */
 public class Students {
     static Connection con = ConnectionBuilder.getConnection();
-    private long std_id;
-    private String std_name;
-    private String std_faculty;
-    private String std_department;
-    private String std_major;
-    private String std_tel;
+    private static long std_id;
+    private static String std_name;
+    private static String std_faculty;
+    private static String std_department;
+    private static String std_major;
+    private static String std_tel;
     //private bla bla std_picture;
-    private String std_role;
-    private Date created_at;
-    private Date updated_at;
+    private static String std_role;
+    private static Date created_at;
+    private static Date updated_at;
 
     public long getStd_id(long std_id) {
         return std_id;
