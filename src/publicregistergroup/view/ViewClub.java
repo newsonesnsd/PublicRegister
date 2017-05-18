@@ -15,9 +15,9 @@ import publicregistergroup.model.*;
  */
 public class ViewClub extends javax.swing.JFrame {
     static Connection con = ConnectionBuilder.getConnection();
-    private String clubName;
-    private String clubDescription;
-    private static int club_id = Homepage.getClubIndex()+1;
+    private String clubName = Clubs.getClub_name(Homepage.getClubIndex());
+    private String clubDescription = Clubs.getClub_description(Homepage.getClubIndex());
+    private int club_id = Clubs.getClub_id(Homepage.getClubIndex());
     
     /**
      * Creates new form ViewClub
@@ -69,7 +69,7 @@ public class ViewClub extends javax.swing.JFrame {
         Bottonsearch = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         AddDescription = new javax.swing.JLabel();
-        AddID = new javax.swing.JLabel();
+        jlbClubId = new javax.swing.JLabel();
         AddName = new javax.swing.JLabel();
         blackground = new javax.swing.JLabel();
 
@@ -126,7 +126,8 @@ public class ViewClub extends javax.swing.JFrame {
         jLabel2.setText("____________________________________________________________________________________________________________________");
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 280, -1, -1));
         getContentPane().add(AddDescription, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 410, 230, 30));
-        getContentPane().add(AddID, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 330, 230, 30));
+        getContentPane().add(jlbClubId, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 330, 230, 30));
+        jlbClubId.setText(club_id+"");
         getContentPane().add(AddName, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 370, 230, 30));
 
         blackground.setFont(new java.awt.Font("Quark", 0, 19)); // NOI18N
@@ -226,7 +227,6 @@ public class ViewClub extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel AddDescription;
-    private javax.swing.JLabel AddID;
     private javax.swing.JLabel AddName;
     private javax.swing.JButton Bottonsearch;
     private javax.swing.JTextField SearchclubTextField;
@@ -236,5 +236,6 @@ public class ViewClub extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JLabel jlbClubId;
     // End of variables declaration//GEN-END:variables
 }
