@@ -25,7 +25,7 @@ public class ViewClub extends javax.swing.JFrame {
     private String clubDescription;
     Homepage hp = new Homepage();
     private int clubIndex;
-    private int clubId;
+    private int club_id;
 
     /**
      * Creates new form ViewClub
@@ -40,30 +40,13 @@ public class ViewClub extends javax.swing.JFrame {
      * @return 
      */
     
-    public int getClubID() {
-        clubId = clubIndex+1;        
-        try {
-            String sql = "SELECT * FROM clubs WHERE club_id = ?";
-            PreparedStatement pre = con.prepareStatement(sql);
-            pre.setString(1, ""+clubIndex);
-            ResultSet rs = pre.executeQuery();
-            if(rs.next()) {
-                clubId = rs.getInt("club_id");
-                //System.out.println(clubId);
-            }
-        } 
-        catch (SQLException e) {
-            System.out.println(e + "\n" + e.getMessage());
-        }
-        return clubId;        
-    }
     
     public String getClubName() {
-        clubId = clubIndex+1;        
+        club_id = clubIndex+1;        
         try {
             String sql = "SELECT * FROM clubs WHERE club_id = ?";
             PreparedStatement pre = con.prepareStatement(sql);
-            pre.setInt(1, clubId);
+            pre.setInt(1, club_id);
             ResultSet rs = pre.executeQuery();
             if(rs.next()) {
                 clubName = rs.getString("club_name");
@@ -77,11 +60,11 @@ public class ViewClub extends javax.swing.JFrame {
     }
     
     public String getClubDescription() {
-        clubId = clubIndex+1;        
+        club_id = clubIndex+1;        
         try {
             String sql = "SELECT * FROM clubs WHERE club_id = ?";
             PreparedStatement pre = con.prepareStatement(sql);
-            pre.setInt(1, clubId);
+            pre.setInt(1, club_id);
             ResultSet rs = pre.executeQuery();
             if(rs.next()) {
                 clubName = rs.getString("club_description");
