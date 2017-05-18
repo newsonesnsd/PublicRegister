@@ -1,7 +1,5 @@
 package publicregistergroup.controller;
 import java.sql.*;
-import java.util.*;
-import java.io.*;
 
 public class ConnectionBuilder {
     public static Connection getConnection(){
