@@ -25,7 +25,7 @@ public class ViewClub extends javax.swing.JFrame {
     private String clubDescription;
     Homepage hp = new Homepage();
     private int clubIndex;
-    private int club_id;
+    private static int club_id;
 
     /**
      * Creates new form ViewClub
@@ -59,22 +59,6 @@ public class ViewClub extends javax.swing.JFrame {
         return clubName;      
     }
     
-    public String getClubDescription() {
-        club_id = clubIndex+1;        
-        try {
-            String sql = "SELECT * FROM clubs WHERE club_id = ?";
-            PreparedStatement pre = con.prepareStatement(sql);
-            pre.setInt(1, club_id);
-            ResultSet rs = pre.executeQuery();
-            if(rs.next()) {
-                clubName = rs.getString("club_description");
-            }
-        } 
-        catch (SQLException e) {
-            System.out.println(e + "\n" + e.getMessage());
-        }
-        return clubName;  
-    }
     
     /**
      * This method is called from within the constructor to initialize the form.
