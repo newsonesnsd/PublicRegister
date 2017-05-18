@@ -224,13 +224,6 @@ public class EditClub extends JFrame {
     }//GEN-LAST:event_uploadbottonActionPerformed
 
     private void savebottonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_savebottonActionPerformed
-        
-        LinkData data = new LinkData();
-        this.setVisible(false);
-        data.setVisible(true);
-    }//GEN-LAST:event_savebottonActionPerformed
-
-    private void savebottonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_savebottonMouseClicked
         InputStream filepic = null;
         
         
@@ -280,7 +273,63 @@ public class EditClub extends JFrame {
         }catch (SQLException ex) {
                     Logger.getLogger(ViewProfile.class.getName()).log(Level.SEVERE, null, ex);
                 }
-        }/*finally {
+        }
+        LinkData data = new LinkData();
+        this.setVisible(false);
+        data.setVisible(true);
+    }//GEN-LAST:event_savebottonActionPerformed
+
+    private void savebottonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_savebottonMouseClicked
+        /*InputStream filepic = null;
+        
+        
+            try{
+            detailclub = detailArea.getText();
+            String sql = "UPDATE clubs SET club_description=? WHERE club_id=6";
+            PreparedStatement pre = con.prepareStatement(sql);
+            pre.setString(1, detailclub);
+            //System.out.println("2");
+            pre.executeUpdate();
+            System.out.println("Yes");
+            
+        } catch (SQLException ex) {
+                System.out.println(ex);
+        }
+        if(abPath == null){
+            System.out.println("");
+        }else{
+            
+        
+        try {
+    
+            filepic = new FileInputStream(abPath);
+            String sql = "UPDATE clubs SET club_picture=? WHERE club_id=6";
+                PreparedStatement pre = con.prepareStatement(sql);
+                pre.setString(1, path);
+                pre.executeUpdate();
+            OutputStream ops = null;
+            try {
+                
+                //System.out.println("asdada");
+                System.out.println("Path :" + "/Users/taloey/Desktop/PublicRegister/src/Images/" + path);
+                ops = new FileOutputStream(new File("src/Images/" + path));
+                int read = 0;
+                byte[] b = new byte[1024];
+                while ((read = filepic.read(b)) != -1) {
+                    ops.write(b, 0, read);
+                }
+                filepic.close();
+            } catch (FileNotFoundException e) {
+                System.out.println(e);
+            } catch (IOException ex) {
+                System.out.println(ex);
+            } 
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(ViewProfile.class.getName()).log(Level.SEVERE, null, ex);
+        }catch (SQLException ex) {
+                    Logger.getLogger(ViewProfile.class.getName()).log(Level.SEVERE, null, ex);
+                }
+        }finally {
             try {
                 filepic.close();
             } catch (IOException ex) {
