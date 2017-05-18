@@ -64,8 +64,20 @@ public class Clubs {
         this.club_name = club_name;
     }
 
-    public String getClub_description() {
-        return club_description;
+    public String getClub_description(int club_id) {       
+        try {
+            String sql = "SELECT * FROM clubs WHERE club_id = ?";
+            PreparedStatement pre = con.prepareStatement(sql);
+            pre.setInt(1, club_id);
+            ResultSet rs = pre.executeQuery();
+            if(rs.next()) {
+                club_name = rs.getString("club_description");
+            }
+        } 
+        catch (SQLException e) {
+            System.out.println(e + "\n" + e.getMessage());
+        }
+        return club_name;  
     }
 
     public void setClub_description(String club_description) {
