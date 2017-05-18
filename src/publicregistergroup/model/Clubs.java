@@ -57,7 +57,7 @@ public class Clubs {
         return club_name;      
     }
 
-    public String getClub_description(int club_id) {       
+    public static String getClub_description(int club_id) {       
         try {
             String sql = "SELECT * FROM clubs WHERE club_id = ?";
             PreparedStatement pre = con.prepareStatement(sql);
