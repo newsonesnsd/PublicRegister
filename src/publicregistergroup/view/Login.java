@@ -14,7 +14,7 @@ import publicregistergroup.model.Users;
  */
 public class Login extends JFrame {
     private static long stdUserName;
-    public static long getStdUserName(JTextField jtfInputUserName) {
+    public static long getStdId(JTextField jtfInputUserName) {
         long id = Long.parseLong(jtfInputUsername.getText());
         return id;
     }
