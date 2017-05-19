@@ -7,6 +7,8 @@ package publicregistergroup.model;
 
 
 import java.sql.Connection;
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.Calendar;
 import java.util.Date;
 import publicregistergroup.controller.ConnectionBuilder;
@@ -25,6 +27,13 @@ public class enroll {
     private static Calendar update_at = Calendar.getInstance();
     
     public static void enrollClub() {
+        try {
+            Statement st = con.createStatement();
+            String sql = "SELECT * FROM ...";
+        } catch (SQLException ex) {
+            System.out.println(ex + "/n" + ex.getMessage());
+            ex.printStackTrace();
+        }
         
     }
 }
