@@ -15,9 +15,9 @@ import publicregistergroup.model.*;
  */
 public class ViewClubFromSearch extends javax.swing.JFrame {
     static Connection con = ConnectionBuilder.getConnection();
-    private String clubName = Clubs.getClub_name();
-    private String clubDescription = Clubs.getClub_description();
-    private int club_id = Clubs.getClub_id();
+    private String clubName = Clubs.getClub_name(Homepage.getClubIndex());
+    private String clubDescription = Clubs.getClub_description(Homepage.getClubIndex());
+    private int club_id = Clubs.getClub_id(Homepage.getClubIndex());
     
     
     /**

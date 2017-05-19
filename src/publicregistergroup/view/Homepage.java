@@ -680,9 +680,9 @@ public class Homepage extends javax.swing.JFrame {
         //JOptionPane.showMessageDialog(null,"You selected : " + allClubs.getSelectedValue());
         clubIndex = allClubs.getSelectedIndex();
         //System.out.println(clubIndex);
-        ViewClubFromSearch view = new ViewClubFromSearch();
+        ViewClubBeforeLogin viewclub = new ViewClubBeforeLogin();
         this.setVisible(false);
-        view.setVisible(true);
+        viewclub.setVisible(true);
     }//GEN-LAST:event_chooseClubActionPerformed
 
     /**

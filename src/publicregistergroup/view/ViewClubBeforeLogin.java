@@ -200,7 +200,7 @@ public class ViewClubBeforeLogin extends javax.swing.JFrame {
 
     private void BackbottonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BackbottonActionPerformed
             this.setVisible(false);
-            LoginHomepage login = new LoginHomepage();
+            Homepage login = new Homepage();
             login.setVisible(true);
     }//GEN-LAST:event_BackbottonActionPerformed
 
