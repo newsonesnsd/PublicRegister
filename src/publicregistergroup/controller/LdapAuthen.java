@@ -6,6 +6,8 @@ package publicregistergroup.controller;
  */
 
 import java.util.Hashtable;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.naming.Context;
 import javax.naming.NamingEnumeration;
 import javax.naming.directory.Attributes;
@@ -13,7 +15,11 @@ import javax.naming.directory.DirContext;
 import javax.naming.directory.InitialDirContext;
 import javax.naming.directory.SearchControls;
 import javax.naming.directory.SearchResult;
+import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JPasswordField;
+import javax.swing.JTextField;
 
 /**
  *
@@ -75,9 +81,8 @@ public class LdapAuthen {
     }
 
     public static boolean getLogin (String username, String password) {
-        boolean status = false;
         Hashtable<String,String> env = new Hashtable <>();
-      
+        
         env.put(Context.INITIAL_CONTEXT_FACTORY, contextFactory);
         env.put(Context.PROVIDER_URL, LdapUrl);
         env.put(Context.SECURITY_AUTHENTICATION, "simple");
@@ -85,20 +90,14 @@ public class LdapAuthen {
         env.put(Context.SECURITY_CREDENTIALS, password);
 
         try {
-            //ldapContext(env);
-            if (!password.isEmpty()) {   
-                ldapContext(env);
-            }
-            else {
-                status = false;
-            }
+            ldapContext(env);
         }
         catch (javax.naming.AuthenticationException e) {
             return false;
         } catch (Exception e) {
             e.printStackTrace();
         }
-        return status;
+        return true;
     }
         
     public static void loginWelcome (String name , String password,JLabel welcome) throws Exception{
@@ -126,5 +125,5 @@ public class LdapAuthen {
     //          System.exit(1);
         }
     }
-
+    
 }
