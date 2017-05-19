@@ -20,7 +20,7 @@ import publicregistergroup.model.Students;
  *
  * @author taloey
  */
-public class ViewProfile extends JFrame {
+public class EditProfile extends JFrame {
 
     static Connection con = ConnectionBuilder.getConnection();
     private final long std_id = Login.getStdId();
@@ -33,7 +33,7 @@ public class ViewProfile extends JFrame {
     /**
      * Creates new form Uploadphoto
      */
-    public ViewProfile() {
+    public EditProfile() {
         initComponents();
         setLocationRelativeTo(null);
         /*.setModel(new javax.swing.AbstractListModel<String>() {
@@ -370,13 +370,11 @@ public class ViewProfile extends JFrame {
     }//GEN-LAST:event_UploadBottonActionPerformed
 
     private void SubmitbottonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SubmitbottonActionPerformed
-        System.out.println("437");
+ 
 
         InputStream filepic = null;
 
         try {
-            //System.out.println("mk,nksds");
-            // TODO add your handling code here:
             name = NameTextField.getText();
             faculty = SurnameTextField.getText();
             telephone = TelephoneTextField.getText();
@@ -396,13 +394,13 @@ public class ViewProfile extends JFrame {
             pre.setLong(7, std_id);
             //pre.setString(7, path);
             pre.executeUpdate();
-            //ResultSet res = st.executeQuery(sql);
+    
 
         } catch (SQLException ex) {
             ex.printStackTrace();
         }
 
-        System.out.println("บบรรดทัด 409");
+    
 
         if (abPath == null) {
             System.out.println("");
@@ -418,7 +416,7 @@ public class ViewProfile extends JFrame {
                 OutputStream ops = null;
                 try {
 
-                    //System.out.println("asdada");
+                    
                     System.out.println("Path :" + "/Users/taloey/Desktop/PublicRegister/src/Images/" + path);
                     ops = new FileOutputStream(new File("src/Images/" + path));
                     int read = 0;
@@ -440,21 +438,17 @@ public class ViewProfile extends JFrame {
         }
         String role = null;
         try {
-            System.out.println("Chk " + std_id);
             String sql = "SELECT * FROM students WHERE std_id = ?";
             PreparedStatement pre = con.prepareStatement(sql);
             pre.setLong(1, std_id);
             ResultSet res = pre.executeQuery();
-            System.out.println("456");
             while (res.next()) {
                 role = res.getString("std_role");
-                System.out.println(role);
             }
         } catch (SQLException ex) {
             System.out.println(ex);
         }
         if (role.isEmpty()) {
-            System.out.println("465");
             LinkDataforUser user = new LinkDataforUser();
             this.setVisible(false);
             user.setVisible(true);
@@ -561,21 +555,23 @@ public class ViewProfile extends JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(ViewProfile.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(EditProfile.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(ViewProfile.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(EditProfile.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(ViewProfile.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(EditProfile.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(ViewProfile.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(EditProfile.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new ViewProfile().setVisible(true);
+                new EditProfile().setVisible(true);
             }
         });
     }
