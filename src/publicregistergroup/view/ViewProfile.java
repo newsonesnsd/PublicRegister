@@ -396,7 +396,7 @@ public class ViewProfile extends javax.swing.JFrame{
             System.out.println(search+" search la");
              ResultSet res = pre.executeQuery();
              System.out.println("EXE LAEW");
-                if(res.next()) {
+                while(res.next()) {
                     club =res.getString("club_name");
                     System.out.println(club+" clubname");
                 }

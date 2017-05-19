@@ -14,7 +14,7 @@ public class ConnectionBuilder {
         try{
             Class.forName(driverName);
             //System.out.println("driver load");
-            String url = "jdbc:mysql://"+hostName+"/"+db_name+"";
+            String url = "jdbc:mysql://"+hostName+"/"+db_name+"?characterEncoding=UTF-8";
             con = DriverManager.getConnection(url, user, pass);
             //System.out.println("ConnectCreate");
         }

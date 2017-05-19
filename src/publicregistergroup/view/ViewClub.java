@@ -62,10 +62,10 @@ public class ViewClub extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel7 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
-        jButton3 = new javax.swing.JButton();
+        Picture = new javax.swing.JLabel();
+        Clubname = new javax.swing.JLabel();
+        Club = new javax.swing.JLabel();
+        Registclubbotton = new javax.swing.JButton();
         SearchclubTextField = new javax.swing.JTextField();
         Bottonsearch = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
@@ -76,37 +76,36 @@ public class ViewClub extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Club Detail");
-        setPreferredSize(new java.awt.Dimension(1024, 768));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel7.setFont(new java.awt.Font("Quark", 1, 70)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(153, 153, 153));
-        jLabel7.setText("      PIC");
-        jLabel7.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 320, 360, 320));
+        Picture.setFont(new java.awt.Font("Quark", 1, 70)); // NOI18N
+        Picture.setForeground(new java.awt.Color(153, 153, 153));
+        Picture.setText("      PIC");
+        Picture.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        getContentPane().add(Picture, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 320, 360, 320));
 
-        jLabel8.setFont(new java.awt.Font("Quark", 1, 45)); // NOI18N
-        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 200, 660, 80));
-        jLabel8.setText(Clubs.getClub_name(club_id));
+        Clubname.setFont(new java.awt.Font("Quark", 1, 45)); // NOI18N
+        getContentPane().add(Clubname, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 200, 660, 80));
+        Clubname.setText(Clubs.getClub_name(club_id));
 
-        jLabel9.setFont(new java.awt.Font("Quark", 0, 19)); // NOI18N
-        jLabel9.setText("<html> CLUB ID:  <br> <br>CLUB NAME:  <br> <br>DESCRIPTION:  </html>");
-        jLabel9.setVerticalAlignment(javax.swing.SwingConstants.TOP);
-        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 340, -1, 170));
+        Club.setFont(new java.awt.Font("Quark", 0, 19)); // NOI18N
+        Club.setText("<html> CLUB ID:  <br> <br>CLUB NAME:  <br> <br>DESCRIPTION:  </html>");
+        Club.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        getContentPane().add(Club, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 340, -1, 170));
 
-        jButton3.setFont(new java.awt.Font("Quark", 0, 14)); // NOI18N
-        jButton3.setText("สมัครเข้าร่วมชมรม");
-        jButton3.addMouseListener(new java.awt.event.MouseAdapter() {
+        Registclubbotton.setFont(new java.awt.Font("Quark", 0, 14)); // NOI18N
+        Registclubbotton.setText("สมัครเข้าร่วมชมรม");
+        Registclubbotton.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jButton3MouseClicked(evt);
+                RegistclubbottonMouseClicked(evt);
             }
         });
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        Registclubbotton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                RegistclubbottonActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 630, 130, 30));
+        getContentPane().add(Registclubbotton, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 630, 130, 30));
 
         SearchclubTextField.setFont(new java.awt.Font("Kanit", 0, 13)); // NOI18N
         SearchclubTextField.addActionListener(new java.awt.event.ActionListener() {
@@ -127,11 +126,11 @@ public class ViewClub extends javax.swing.JFrame {
 
         jLabel2.setText("____________________________________________________________________________________________________________________");
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 280, -1, -1));
-        getContentPane().add(AddDescription, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 410, 230, 30));
+        getContentPane().add(AddDescription, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 440, 230, 30));
         AddDescription.setText(clubDescription);
-        getContentPane().add(jlbClubId, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 330, 230, 30));
+        getContentPane().add(jlbClubId, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 340, 220, 30));
         jlbClubId.setText(club_id+"");
-        getContentPane().add(AddName, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 370, 230, 30));
+        getContentPane().add(AddName, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 390, 210, 30));
         AddName.setText(clubName);
 
         blackground.setFont(new java.awt.Font("Quark", 0, 19)); // NOI18N
@@ -142,11 +141,11 @@ public class ViewClub extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void RegistclubbottonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RegistclubbottonActionPerformed
         ViewRegist view = new ViewRegist();
         this.setVisible(false);
         view.setVisible(true);
-    }//GEN-LAST:event_jButton3ActionPerformed
+    }//GEN-LAST:event_RegistclubbottonActionPerformed
 
     private void SearchclubTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SearchclubTextFieldActionPerformed
         // TODO add your handling code here:
@@ -156,7 +155,7 @@ public class ViewClub extends javax.swing.JFrame {
 
     }//GEN-LAST:event_BottonsearchActionPerformed
 
-    private void jButton3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton3MouseClicked
+    private void RegistclubbottonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_RegistclubbottonMouseClicked
 //       try {
 //            // TODO add your handling code here:
 //            //name = NameTextField.getText();
@@ -181,7 +180,7 @@ public class ViewClub extends javax.swing.JFrame {
 //        } catch (SQLException ex) {
 //            Logger.getLogger(ViewProfile.class.getName()).log(Level.SEVERE, null, ex);
 //        }
-    }//GEN-LAST:event_jButton3MouseClicked
+    }//GEN-LAST:event_RegistclubbottonMouseClicked
 
 //    public void getClubName() {
 //        try {
@@ -233,13 +232,13 @@ public class ViewClub extends javax.swing.JFrame {
     private javax.swing.JLabel AddDescription;
     private javax.swing.JLabel AddName;
     private javax.swing.JButton Bottonsearch;
+    private javax.swing.JLabel Club;
+    private javax.swing.JLabel Clubname;
+    private javax.swing.JLabel Picture;
+    private javax.swing.JButton Registclubbotton;
     private javax.swing.JTextField SearchclubTextField;
     private javax.swing.JLabel blackground;
-    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JLabel jlbClubId;
     // End of variables declaration//GEN-END:variables
 }
