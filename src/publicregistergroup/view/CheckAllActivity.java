@@ -5,8 +5,11 @@
  */
 package publicregistergroup.view;
 
+import java.awt.Image;
 import java.sql.Connection;
 import java.util.ArrayList;
+import javax.swing.DefaultListModel;
+import javax.swing.*;
 import publicregistergroup.controller.ConnectionBuilder;
 import publicregistergroup.model.Clubs;
 import publicregistergroup.model.Students;
@@ -16,7 +19,20 @@ import publicregistergroup.model.Students;
  * @author ART
  */
 public class CheckAllActivity extends javax.swing.JFrame {
+
     static Connection con = ConnectionBuilder.getConnection();
+    private static int clubIndex;
+    DefaultListModel model = new DefaultListModel();
+
+    private String clubName = Clubs.getClub_name(getClubIndex());
+    private String clubDescription = Clubs.getClub_description(getClubIndex());
+    private int club_id = Clubs.getClub_id(getClubIndex());
+
+    public static int getClubIndex() {
+        
+        return clubIndex +1;
+    }
+
 //    private String stdName = Students.getStd_name(Login.);
 //    private String stdFaculty = Students.getStd_faculty(Login.getStdUserName());
     /**
@@ -27,15 +43,22 @@ public class CheckAllActivity extends javax.swing.JFrame {
         setLocationRelativeTo(null);
         listJoinClubs.setModel(new javax.swing.AbstractListModel<String>() {
             ArrayList<String> strings = Clubs.getAllClubs();
+
             @Override
             public int getSize() {
                 return strings.size();
             }
+
             @Override
             public String getElementAt(int i) {
                 return strings.get(i);
             }
         });
+        
+        jPanel2.setOpaque(false);
+        Clubname.setVisible(false);
+        Picture.setVisible(false);
+        Club.setVisible(false);
     }
 
     /**
@@ -61,13 +84,15 @@ public class CheckAllActivity extends javax.swing.JFrame {
         jScrollPane2 = new javax.swing.JScrollPane();
         listJoinClubs = new javax.swing.JList<>();
         jPanel2 = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        Clubname = new javax.swing.JLabel();
+        Picture = new javax.swing.JLabel();
         Club = new javax.swing.JLabel();
-        clubName = new javax.swing.JLabel();
-        AddId = new javax.swing.JLabel();
+        jlbClubId = new javax.swing.JLabel();
+        AddName = new javax.swing.JLabel();
         AddDescription = new javax.swing.JLabel();
-        AddPic = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
         blackground = new javax.swing.JLabel();
 
         jLabel1.setText("jLabel1");
@@ -96,13 +121,14 @@ public class CheckAllActivity extends javax.swing.JFrame {
         });
         getContentPane().add(Bottonsearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(286, 90, 80, 25));
 
+        backbotton.setFont(new java.awt.Font("Quark", 0, 18)); // NOI18N
         backbotton.setText("Back");
         backbotton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 backbottonActionPerformed(evt);
             }
         });
-        getContentPane().add(backbotton, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 640, -1, -1));
+        getContentPane().add(backbotton, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 630, 90, -1));
 
         showName.setFont(new java.awt.Font("Quark", 1, 30)); // NOI18N
         showName.setText("MS.KITTIYA YUTHASASTRKOSOL");
@@ -114,97 +140,100 @@ public class CheckAllActivity extends javax.swing.JFrame {
         getContentPane().add(showFaculty, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 262, 250, -1));
         //showFaculty.setText(stdFaculty);
 
-        เส้นขีดเฉยๆ.setText("____________________________________________________________________________________________________________________");
-        getContentPane().add(เส้นขีดเฉยๆ, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 280, -1, -1));
+        เส้นขีดเฉยๆ.setText("_____________________________________________________________________________________________________________________________________");
+        getContentPane().add(เส้นขีดเฉยๆ, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 280, 800, -1));
 
         ลงทะเบียนชมรมแล้ว.setFont(new java.awt.Font("Quark", 1, 20)); // NOI18N
         ลงทะเบียนชมรมแล้ว.setText("ลงทะเบียนชมรมแล้ว");
         getContentPane().add(ลงทะเบียนชมรมแล้ว, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 310, 148, -1));
 
-        formList.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        formList.setDividerLocation(250);
+        formList.setBorder(null);
+        formList.setDividerLocation(252);
         formList.setDividerSize(2);
 
+        listJoinClubs.setBackground(new java.awt.Color(253, 219, 160));
         listJoinClubs.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
             public int getSize() { return strings.length; }
             public String getElementAt(int i) { return strings[i]; }
         });
+        listJoinClubs.setOpaque(false);
+        listJoinClubs.setSelectionBackground(new java.awt.Color(247, 103, 63));
+        listJoinClubs.addAncestorListener(new javax.swing.event.AncestorListener() {
+            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
+            }
+            public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
+                listJoinClubsAncestorAdded(evt);
+            }
+            public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
+            }
+        });
+        listJoinClubs.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                listJoinClubsMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                listJoinClubsMouseEntered(evt);
+            }
+        });
+        listJoinClubs.addListSelectionListener(new javax.swing.event.ListSelectionListener() {
+            public void valueChanged(javax.swing.event.ListSelectionEvent evt) {
+                listJoinClubsValueChanged(evt);
+            }
+        });
         jScrollPane2.setViewportView(listJoinClubs);
 
         formList.setLeftComponent(jScrollPane2);
 
-        jLabel2.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        Club.setFont(new java.awt.Font("Agency FB", 0, 12)); // NOI18N
-        Club.setText("<html> CLUB ID:   <br>DESCRIPTION:  </html>");
+        jLabel4.setIcon(new javax.swing.ImageIcon("C:\\Users\\kz_no\\Desktop\\ProjectPublicRegister\\src\\Images\\RegisteredClubs.png")); // NOI18N
+        jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(-70, 0, 540, -1));
+
+        Clubname.setFont(new java.awt.Font("Quark", 1, 24)); // NOI18N
+        Clubname.setText("ชมรมอาสาพัฒนาชุมชน");
+        jPanel2.add(Clubname, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 40, 230, 30));
+
+        Picture.setBackground(new java.awt.Color(247, 247, 247));
+        Picture.setFont(new java.awt.Font("Quark", 1, 70)); // NOI18N
+        Picture.setForeground(new java.awt.Color(153, 153, 153));
+        Picture.setText(" PIC");
+        Picture.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        Picture.setOpaque(true);
+        jPanel2.add(Picture, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, 150, 150));
+
+        Club.setFont(new java.awt.Font("Quark", 1, 14)); // NOI18N
+        Club.setText("<html> CLUB ID : <br>DESCRIPTION :  </html>");
         Club.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        jPanel2.add(Club, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 100, -1, 50));
 
-        clubName.setFont(new java.awt.Font("Quark", 1, 22)); // NOI18N
-        clubName.setText("ชมรมอาสาพัฒนาชุมชน");
+        jlbClubId.setFont(new java.awt.Font("Quark", 0, 14)); // NOI18N
+        jlbClubId.setText("0");
+        jPanel2.add(jlbClubId, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 98, 60, 20));
 
-        AddId.setFont(new java.awt.Font("Agency FB", 0, 12)); // NOI18N
+        AddName.setFont(new java.awt.Font("Quark", 0, 14)); // NOI18N
+        jPanel2.add(AddName, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 90, 110, 30));
 
-        AddDescription.setFont(new java.awt.Font("Agency FB", 0, 12)); // NOI18N
+        AddDescription.setFont(new java.awt.Font("Quark", 0, 14)); // NOI18N
+        AddDescription.setText("    ข้อความ");
+        AddDescription.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        jPanel2.add(AddDescription, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 130, 120, 80));
+        AddDescription.setText(clubDescription);
 
-        AddPic.setFont(new java.awt.Font("Quark", 1, 24)); // NOI18N
-        AddPic.setForeground(new java.awt.Color(153, 153, 153));
-        AddPic.setText("        PIC");
-        AddPic.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jButton1.setBackground(new java.awt.Color(255, 63, 57));
+        jButton1.setFont(new java.awt.Font("Quark", 0, 12)); // NOI18N
+        jButton1.setText("UNJOIN");
+        jButton1.setBorder(null);
+        jButton1.setBorderPainted(false);
+        jPanel2.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 230, 80, 30));
 
-        jButton1.setText("ยกเลิกการสมัคร");
-
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(53, 53, 53)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(253, 253, 253)
-                        .addComponent(jButton1))
-                    .addComponent(clubName, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(AddPic, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addComponent(Club, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(93, 93, 93))
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGap(10, 10, 10)
-                                .addComponent(AddDescription, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(AddId, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(559, 559, 559)
-                .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(80, 80, 80)
-                .addComponent(AddId, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(clubName, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(AddPic, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(Club, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(AddDescription, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 71, Short.MAX_VALUE)
-                .addComponent(jButton1)
-                .addContainerGap())
-        );
+        jLabel3.setIcon(new javax.swing.ImageIcon("C:\\Users\\kz_no\\Desktop\\ProjectPublicRegister\\src\\Images\\bgRegisteredClubs.png")); // NOI18N
+        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(-70, 0, 540, -1));
 
         formList.setRightComponent(jPanel2);
 
-        getContentPane().add(formList, new org.netbeans.lib.awtextra.AbsoluteConstraints(145, 340, 720, 290));
+        getContentPane().add(formList, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 340, 720, 290));
 
         blackground.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/page.jpg"))); // NOI18N
         getContentPane().add(blackground, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1030, 770));
@@ -222,12 +251,43 @@ public class CheckAllActivity extends javax.swing.JFrame {
 
     private void backbottonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backbottonActionPerformed
 
-       LinkData data = new LinkData();
-       this.setVisible(false);
-       data.setVisible(true);
+        LinkData data = new LinkData();
+        this.setVisible(false);
+        data.setVisible(true);
 
     }//GEN-LAST:event_backbottonActionPerformed
 
+    private void listJoinClubsAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_listJoinClubsAncestorAdded
+        //clubIndex = listJoinClubs.getSelectedIndex();
+         
+    }//GEN-LAST:event_listJoinClubsAncestorAdded
+
+    private void listJoinClubsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_listJoinClubsMouseClicked
+        clubIndex = listJoinClubs.getSelectedIndex();
+        System.out.print(getClubIndex());
+        jLabel4.setIcon(new javax.swing.ImageIcon());
+        Clubname.setText(Clubs.getClub_name(getClubIndex()));
+        jlbClubId.setText(getClubIndex()+"");
+        AddDescription.setText(Clubs.getClub_description(getClubIndex()));
+        Picture.setIcon(new ImageIcon((new ImageIcon("src/Images/"+(Clubs.getClub_pic(getClubIndex()))).getImage().getScaledInstance(150,150,Image.SCALE_SMOOTH))));
+        
+        Clubname.setVisible(true);
+        Picture.setVisible(true);
+        Club.setVisible(true);
+       
+        
+        
+    }//GEN-LAST:event_listJoinClubsMouseClicked
+
+    private void listJoinClubsValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_listJoinClubsValueChanged
+        //clubIndex = listJoinClubs.getSelectedIndex();
+    }//GEN-LAST:event_listJoinClubsValueChanged
+
+    private void listJoinClubsMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_listJoinClubsMouseEntered
+
+   
+    }//GEN-LAST:event_listJoinClubsMouseEntered
+   
     /**
      * @param args the command line arguments
      */
@@ -267,23 +327,25 @@ public class CheckAllActivity extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel AddDescription;
-    private javax.swing.JLabel AddId;
-    private javax.swing.JLabel AddPic;
+    private javax.swing.JLabel AddName;
     private javax.swing.JButton Bottonsearch;
     private javax.swing.JLabel Club;
+    private javax.swing.JLabel Clubname;
+    private javax.swing.JLabel Picture;
     private javax.swing.JButton backbotton;
     private javax.swing.JLabel blackground;
-    private javax.swing.JLabel clubName;
     private javax.swing.JSplitPane formList;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel25;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTextField jTextField1;
-    private javax.swing.JList<String> listJoinClubs;
+    private javax.swing.JLabel jlbClubId;
+    private static javax.swing.JList<String> listJoinClubs;
     private javax.swing.JLabel showFaculty;
     private javax.swing.JLabel showName;
     private javax.swing.JLabel ลงทะเบียนชมรมแล้ว;
