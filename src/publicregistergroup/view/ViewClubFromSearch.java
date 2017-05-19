@@ -72,6 +72,7 @@ public class ViewClubFromSearch extends javax.swing.JFrame {
         AddDescription = new javax.swing.JLabel();
         jlbClubId = new javax.swing.JLabel();
         AddName = new javax.swing.JLabel();
+        Backbotton = new javax.swing.JButton();
         blackground = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -85,7 +86,7 @@ public class ViewClubFromSearch extends javax.swing.JFrame {
         getContentPane().add(Picture, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 320, 360, 320));
 
         Clubname.setFont(new java.awt.Font("Quark", 1, 45)); // NOI18N
-        getContentPane().add(Clubname, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 200, 660, 80));
+        getContentPane().add(Clubname, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 200, 660, 80));
         Clubname.setText(Clubs.getClub_name(club_id));
 
         Club.setFont(new java.awt.Font("Quark", 0, 19)); // NOI18N
@@ -125,13 +126,21 @@ public class ViewClubFromSearch extends javax.swing.JFrame {
         getContentPane().add(Bottonsearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 90, 80, 25));
 
         jLabel2.setText("____________________________________________________________________________________________________________________");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 280, -1, -1));
-        getContentPane().add(AddDescription, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 440, 230, 30));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 280, -1, -1));
+        getContentPane().add(AddDescription, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 440, 230, 30));
         AddDescription.setText(clubDescription);
         getContentPane().add(jlbClubId, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 340, 220, 30));
         jlbClubId.setText(club_id+"");
         getContentPane().add(AddName, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 390, 210, 30));
         AddName.setText(clubName);
+
+        Backbotton.setText("Back");
+        Backbotton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BackbottonActionPerformed(evt);
+            }
+        });
+        getContentPane().add(Backbotton, new org.netbeans.lib.awtextra.AbsoluteConstraints(880, 40, -1, -1));
 
         blackground.setFont(new java.awt.Font("Quark", 0, 19)); // NOI18N
         blackground.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/page.jpg"))); // NOI18N
@@ -181,6 +190,12 @@ public class ViewClubFromSearch extends javax.swing.JFrame {
 //            Logger.getLogger(ViewProfile.class.getName()).log(Level.SEVERE, null, ex);
 //        }
     }//GEN-LAST:event_RegistclubbottonMouseClicked
+
+    private void BackbottonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BackbottonActionPerformed
+            this.setVisible(false);
+            LoginHomepage login = new LoginHomepage();
+            login.setVisible(true);
+    }//GEN-LAST:event_BackbottonActionPerformed
 
 //    public void getClubName() {
 //        try {
@@ -232,6 +247,7 @@ public class ViewClubFromSearch extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel AddDescription;
     private javax.swing.JLabel AddName;
+    private javax.swing.JButton Backbotton;
     private javax.swing.JButton Bottonsearch;
     private javax.swing.JLabel Club;
     private javax.swing.JLabel Clubname;

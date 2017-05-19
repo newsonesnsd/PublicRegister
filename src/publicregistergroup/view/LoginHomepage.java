@@ -25,6 +25,7 @@ public class LoginHomepage extends javax.swing.JFrame {
     private static int clubIndex;
     private String listClubs;
     DefaultListModel model = new DefaultListModel();
+    private long stdID = Login.getStdId();
 
     public static int getClubIndex() {
         return clubIndex+1;
@@ -100,8 +101,8 @@ public class LoginHomepage extends javax.swing.JFrame {
         allClubs = new javax.swing.JList<>();
         chooseClub = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
-        jButton2 = new javax.swing.JButton();
-        jLabel10 = new javax.swing.JLabel();
+        Id = new javax.swing.JLabel();
+        ShowID = new javax.swing.JLabel();
         blackground = new javax.swing.JLabel();
 
         jLabel1.setText("jLabel1");
@@ -541,15 +542,11 @@ public class LoginHomepage extends javax.swing.JFrame {
 
         getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 210, 440, -1));
 
-        jButton2.setFont(new java.awt.Font("Quark", 0, 18)); // NOI18N
-        jButton2.setText("Login");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 30, 90, -1));
-        getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 640, -1, 40));
+        Id.setFont(new java.awt.Font("Quark", 1, 24)); // NOI18N
+        Id.setText("ID :");
+        getContentPane().add(Id, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 30, -1, -1));
+        getContentPane().add(ShowID, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 30, 220, 30));
+        ShowID.setText(stdID+"");
 
         blackground.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/page.jpg"))); // NOI18N
         getContentPane().add(blackground, new org.netbeans.lib.awtextra.AbsoluteConstraints(-5, 0, 1030, 770));
@@ -570,13 +567,6 @@ public class LoginHomepage extends javax.swing.JFrame {
        this.setVisible(false);
        view.setVisible(true);
     }//GEN-LAST:event_joinClub_P1ActionPerformed
-
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
-        Login log = new Login();
-        this.setVisible(false);
-        log.setVisible(true);
-    }//GEN-LAST:event_jButton2ActionPerformed
 
     private void joinClub_P2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_joinClub_P2ActionPerformed
        ViewRegist view = new ViewRegist();
@@ -695,6 +685,8 @@ public class LoginHomepage extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Bottonsearch;
+    private javax.swing.JLabel Id;
+    private javax.swing.JLabel ShowID;
     private javax.swing.JList<String> allClubs;
     private javax.swing.JTabbedPane allRecommend;
     private javax.swing.JLabel blackground;
@@ -711,11 +703,9 @@ public class LoginHomepage extends javax.swing.JFrame {
     private javax.swing.JLabel des_P2;
     private javax.swing.JLabel des_P3;
     private javax.swing.JLabel des_P4;
-    private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton7;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
