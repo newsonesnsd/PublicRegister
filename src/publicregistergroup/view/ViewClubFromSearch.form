@@ -65,7 +65,7 @@
     <Component class="javax.swing.JLabel" name="Club">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Quark" size="19" style="0"/>
+          <Font name="Quark" size="19" style="1"/>
         </Property>
         <Property name="text" type="java.lang.String" value="&lt;html&gt; CLUB ID:  &lt;br&gt; &lt;br&gt;CLUB NAME:  &lt;br&gt; &lt;br&gt;DESCRIPTION:  &lt;/html&gt;"/>
         <Property name="verticalAlignment" type="int" value="1"/>
@@ -135,6 +135,11 @@
       </Constraints>
     </Component>
     <Component class="javax.swing.JLabel" name="AddDescription">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Quark" size="14" style="0"/>
+        </Property>
+      </Properties>
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="AddDescription.setText(clubDescription);"/>
       </AuxValues>
@@ -145,6 +150,11 @@
       </Constraints>
     </Component>
     <Component class="javax.swing.JLabel" name="jlbClubId">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Quark" size="14" style="0"/>
+        </Property>
+      </Properties>
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="jlbClubId.setText(club_id+&quot;&quot;);"/>
       </AuxValues>
@@ -155,6 +165,11 @@
       </Constraints>
     </Component>
     <Component class="javax.swing.JLabel" name="AddName">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Quark" size="14" style="0"/>
+        </Property>
+      </Properties>
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="AddName.setText(clubName);"/>
       </AuxValues>

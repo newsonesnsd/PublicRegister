@@ -15,9 +15,9 @@ import publicregistergroup.model.*;
  */
 public class ViewClubFromSearch extends javax.swing.JFrame {
     static Connection con = ConnectionBuilder.getConnection();
-    private String clubName = Clubs.getClub_name(Homepage.getClubIndex());
-    private String clubDescription = Clubs.getClub_description(Homepage.getClubIndex());
-    private int club_id = Clubs.getClub_id(Homepage.getClubIndex());
+    private String clubName = Clubs.getClub_name();
+    private String clubDescription = Clubs.getClub_description();
+    private int club_id = Clubs.getClub_id();
     
     
     /**
@@ -89,7 +89,7 @@ public class ViewClubFromSearch extends javax.swing.JFrame {
         getContentPane().add(Clubname, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 200, 660, 80));
         Clubname.setText(Clubs.getClub_name(club_id));
 
-        Club.setFont(new java.awt.Font("Quark", 0, 19)); // NOI18N
+        Club.setFont(new java.awt.Font("Quark", 1, 19)); // NOI18N
         Club.setText("<html> CLUB ID:  <br> <br>CLUB NAME:  <br> <br>DESCRIPTION:  </html>");
         Club.setVerticalAlignment(javax.swing.SwingConstants.TOP);
         getContentPane().add(Club, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 340, -1, 170));
@@ -127,10 +127,16 @@ public class ViewClubFromSearch extends javax.swing.JFrame {
 
         jLabel2.setText("____________________________________________________________________________________________________________________");
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 280, -1, -1));
+
+        AddDescription.setFont(new java.awt.Font("Quark", 0, 14)); // NOI18N
         getContentPane().add(AddDescription, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 440, 230, 30));
         AddDescription.setText(clubDescription);
+
+        jlbClubId.setFont(new java.awt.Font("Quark", 0, 14)); // NOI18N
         getContentPane().add(jlbClubId, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 340, 220, 30));
         jlbClubId.setText(club_id+"");
+
+        AddName.setFont(new java.awt.Font("Quark", 0, 14)); // NOI18N
         getContentPane().add(AddName, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 390, 210, 30));
         AddName.setText(clubName);
 
