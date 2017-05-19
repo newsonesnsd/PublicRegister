@@ -71,6 +71,23 @@ public class Students {
         return std_name;
     }
 
+     public static String getStd_surname(long std_id) {
+            try {
+            String sql = "SELECT * FROM students WHERE std_id = ?";
+            PreparedStatement pre = con.prepareStatement(sql);
+            pre.setLong(1, std_id);
+            ResultSet rs = pre.executeQuery();
+            if(rs.next()) {
+                std_name = rs.getString("std_surname");
+                //System.out.println(stdPic);
+            }
+        } 
+        catch (SQLException e) {
+            System.out.println(e + "\n" + e.getMessage());
+            e.printStackTrace();
+        }
+        return std_role;
+    }
     public static String getStd_faculty(long std_id) {
          try {
             String sql = "SELECT * FROM students WHERE club_id = ?";
@@ -206,6 +223,20 @@ public class Students {
     }
 
     public static String getStd_role() {
+            try {
+            String sql = "SELECT * FROM students WHERE std_id = ?";
+            PreparedStatement pre = con.prepareStatement(sql);
+            pre.setLong(1, std_id);
+            ResultSet rs = pre.executeQuery();
+            if(rs.next()) {
+                std_name = rs.getString("std_role");
+                //System.out.println(stdPic);
+            }
+        } 
+        catch (SQLException e) {
+            System.out.println(e + "\n" + e.getMessage());
+            e.printStackTrace();
+        }
         return std_role;
     }
 
