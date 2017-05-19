@@ -95,7 +95,7 @@ public class Login extends JFrame {
         jtfInputUsername.setBackground(new java.awt.Color(204, 204, 204));
         jtfInputUsername.setFont(new java.awt.Font("Quark", 0, 18)); // NOI18N
         jtfInputUsername.setForeground(new java.awt.Color(248, 155, 124));
-        jtfInputUsername.setText(" Username");
+        jtfInputUsername.setText("Username");
         jtfInputUsername.setBorder(null);
         jtfInputUsername.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
