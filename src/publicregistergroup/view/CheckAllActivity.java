@@ -15,8 +15,8 @@ import publicregistergroup.model.Students;
  */
 public class CheckAllActivity extends javax.swing.JFrame {
     static Connection con = ConnectionBuilder.getConnection();
-    private String stdName = Students.getStd_name(Login.getStdIndex());
-    private String stdFaculty = Students.getStd_faculty(Login.getStdIndex());
+    private String stdName = Students.getStd_name(Login.getStdUserName());
+    private String stdFaculty = Students.getStd_faculty(Login.getStdUserName());
     /**
      * Creates new form Homepage
      */
