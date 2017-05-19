@@ -81,8 +81,9 @@ public class LdapAuthen {
     }
 
     public static boolean getLogin (String username, String password) {
+        boolean status = false;
         Hashtable<String,String> env = new Hashtable <>();
-        
+      
         env.put(Context.INITIAL_CONTEXT_FACTORY, contextFactory);
         env.put(Context.PROVIDER_URL, LdapUrl);
         env.put(Context.SECURITY_AUTHENTICATION, "simple");
@@ -90,14 +91,20 @@ public class LdapAuthen {
         env.put(Context.SECURITY_CREDENTIALS, password);
 
         try {
-            ldapContext(env);
+            //ldapContext(env);
+            if (!password.isEmpty()) {   
+                ldapContext(env);
+            }
+            else {
+                status = false;
+            }
         }
         catch (javax.naming.AuthenticationException e) {
             return false;
         } catch (Exception e) {
             e.printStackTrace();
         }
-        return true;
+        return status;
     }
         
     public static void loginWelcome (String name , String password,JLabel welcome) throws Exception{
