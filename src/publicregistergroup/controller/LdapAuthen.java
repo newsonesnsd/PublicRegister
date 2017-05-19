@@ -105,7 +105,7 @@ public class LdapAuthen {
         if(name!=null){
             username = name;
         }
-        String dn = getUid( username , welcome );
+        String dn = getUid(username , welcome);
 
         if (dn != null) {
             /* Found user - test password */
