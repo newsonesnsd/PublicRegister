@@ -9,7 +9,6 @@ package publicregistergroup.model;
 import java.sql.Connection;
 import java.util.Calendar;
 import java.util.Date;
-import java.util.Locale;
 import publicregistergroup.controller.ConnectionBuilder;
 import publicregistergroup.view.Login;
 
@@ -25,5 +24,7 @@ public class enroll {
     private static Date create_at;
     private static Calendar update_at = Calendar.getInstance();
     
-    
+    public static void enrollClub() {
+        
+    }
 }
