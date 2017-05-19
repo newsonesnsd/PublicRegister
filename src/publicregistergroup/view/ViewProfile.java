@@ -441,10 +441,10 @@ public class ViewProfile extends JFrame {
         String role = null;
         try {
             System.out.println("Chk " + std_id);
-            String sql = "SELECT * FROM students WHERE std_id = 59130500004";
+            String sql = "SELECT * FROM students WHERE std_id = ?";
             PreparedStatement pre = con.prepareStatement(sql);
-            //pre.setLong(1, std_id);
-            ResultSet res = pre.executeQuery(sql);
+            pre.setLong(1, std_id);
+            ResultSet res = pre.executeQuery();
             System.out.println("456");
             while (res.next()) {
                 role = res.getString("std_role");
