@@ -151,7 +151,7 @@ public class Uploadphoto extends JFrame {
                 EditBottonActionPerformed(evt);
             }
         });
-        getContentPane().add(EditBotton, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 150, 140, 30));
+        getContentPane().add(EditBotton, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 160, 140, 30));
 
         detailArea.setEditable(false);
         detailArea.setColumns(20);
@@ -188,8 +188,8 @@ public class Uploadphoto extends JFrame {
 
         getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 300, 450, 330));
 
-        NameClub.setFont(new java.awt.Font("Quark", 0, 24)); // NOI18N
-        getContentPane().add(NameClub, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 210, 290, 30));
+        NameClub.setFont(new java.awt.Font("Quark", 1, 36)); // NOI18N
+        getContentPane().add(NameClub, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 190, 350, 50));
         String club_name=null;
         try {
             Statement st = con.createStatement();

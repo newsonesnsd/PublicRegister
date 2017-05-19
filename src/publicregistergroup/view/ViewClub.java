@@ -6,8 +6,13 @@
 package publicregistergroup.view;
 
 import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import javax.swing.JOptionPane;
 import publicregistergroup.controller.ConnectionBuilder;
 import publicregistergroup.model.*;
+import static publicregistergroup.view.ViewProfile.con;
 
 /**
  *
@@ -15,10 +20,10 @@ import publicregistergroup.model.*;
  */
 public class ViewClub extends javax.swing.JFrame {
     static Connection con = ConnectionBuilder.getConnection();
-    private String clubName = Clubs.getClub_name(Homepage.getClubIndex());
-    private String clubDescription = Clubs.getClub_description(Homepage.getClubIndex());
-    private int club_id = Clubs.getClub_id(Homepage.getClubIndex());
-    
+    private String clubName = Clubs.getClub_name(LoginHomepage.getClubIndex());
+    private String clubDescription = Clubs.getClub_description(LoginHomepage.getClubIndex());
+    private int club_id = Clubs.getClub_id(LoginHomepage.getClubIndex());
+    private String search;
     
     /**
      * Creates new form ViewClub
@@ -161,7 +166,36 @@ public class ViewClub extends javax.swing.JFrame {
     }//GEN-LAST:event_SearchclubTextFieldActionPerformed
 
     private void BottonsearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BottonsearchActionPerformed
-
+        search = SearchclubTextField.getText();
+        String club="";    
+        try {
+            
+           
+            String sql = "SELECT * FROM clubs where club_name LIKE '%"+search+"%'";
+            PreparedStatement pre = con.prepareStatement(sql);
+//            pre.setString(1, "%"+search+"%");
+            System.out.println(search+" search la");
+             ResultSet res = pre.executeQuery();
+             System.out.println("EXE LAEW");
+                if(res.next()) {
+                    club =res.getString("club_name");
+                    System.out.println(club+" clubname");
+                }
+                
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }if (search .equals(club)) {
+            JOptionPane frame = new JOptionPane();
+            JOptionPane.showMessageDialog(frame,"Search success","Search club",JOptionPane.PLAIN_MESSAGE);
+             // = allClubs.getSelectedIndex();
+             ViewClubFromSearch view = new ViewClubFromSearch();
+            this.setVisible(false);
+             view.setVisible(true);
+        }
+        else {
+            JOptionPane frame = new JOptionPane();
+            JOptionPane.showMessageDialog(frame,"Failed club name","Search club",JOptionPane.ERROR_MESSAGE);
+        }
     }//GEN-LAST:event_BottonsearchActionPerformed
 
     private void RegistclubbottonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_RegistclubbottonMouseClicked

@@ -18,9 +18,9 @@ import publicregistergroup.model.*;
  */
 public class ViewRegist extends javax.swing.JFrame {
     static Connection con = ConnectionBuilder.getConnection();
-    private String clubName = Clubs.getClub_name(Homepage.getClubIndex());
+    private String clubName = Clubs.getClub_name(LoginHomepage.getClubIndex());
     //private String clubDescription = Clubs.getClub_description(Homepage.getClubIndex());
-    private int club_id = Clubs.getClub_id(Homepage.getClubIndex());
+    private int club_id = Clubs.getClub_id(LoginHomepage.getClubIndex());
     private long stdID = Login.getStdId();
     private String stdName = Students.getStd_name(stdID);
     private String stdTel = Students.getStd_tel(stdID);
@@ -85,7 +85,7 @@ public class ViewRegist extends javax.swing.JFrame {
         ClubID.setText("CLUB ID : ");
         getContentPane().add(ClubID, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 180, -1, -1));
 
-        ShowClubID.setFont(new java.awt.Font("Quark", 0, 36)); // NOI18N
+        ShowClubID.setFont(new java.awt.Font("Quark", 0, 30)); // NOI18N
         getContentPane().add(ShowClubID, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 180, 110, 30));
         ShowClubID.setText(club_id+"");
 

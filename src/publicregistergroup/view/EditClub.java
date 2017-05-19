@@ -19,6 +19,7 @@ import java.util.logging.*;
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 import javax.swing.filechooser.FileNameExtensionFilter;
 import publicregistergroup.controller.ConnectionBuilder;
 import static publicregistergroup.view.ViewProfile.con;
@@ -31,6 +32,7 @@ public class EditClub extends JFrame {
      static Connection con = ConnectionBuilder.getConnection();
      private String nameclub,detailclub;
      private String path,abPath;
+     private String search;
     /**
      * Creates new form Uploadphoto
      */
@@ -94,7 +96,8 @@ public class EditClub extends JFrame {
         String clubpicture=null;
         try {
             Statement st = con.createStatement();
-            String sql = "SELECT std_role FROM students WHERE std_id = 59130500004";
+            long id = Login.getStdId();
+            String sql = "SELECT std_role FROM students WHERE std_id = id";
             ResultSet res = st.executeQuery(sql);
             int club_id =0;
             String std_role=null;
@@ -170,9 +173,10 @@ public class EditClub extends JFrame {
         detailArea.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 5, 0, new java.awt.Color(255, 51, 0)));
         jScrollPane1.setViewportView(detailArea);
         String club_description=null;
+        long id = Login.getStdId();
         try {
             Statement st = con.createStatement();
-            String sql = "SELECT std_role FROM students WHERE std_id = 59130500004";
+            String sql = "SELECT std_role FROM students WHERE std_id = id";
             ResultSet res = st.executeQuery(sql);
             int club_id =0;
             String std_role=null;
@@ -206,7 +210,36 @@ public class EditClub extends JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void BottonsearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BottonsearchActionPerformed
-        // TODO add your handling code here:
+        search = SearchTextField.getText();
+        String club="";    
+        try {
+            
+           
+            String sql = "SELECT * FROM clubs where club_name LIKE '%"+search+"%'";
+            PreparedStatement pre = con.prepareStatement(sql);
+//            pre.setString(1, "%"+search+"%");
+            System.out.println(search+" search la");
+             ResultSet res = pre.executeQuery();
+             System.out.println("EXE LAEW");
+                if(res.next()) {
+                    club =res.getString("club_name");
+                    System.out.println(club+" clubname");
+                }
+                
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }if (search .equals(club)) {
+            JOptionPane frame = new JOptionPane();
+            JOptionPane.showMessageDialog(frame,"Search success","Search club",JOptionPane.PLAIN_MESSAGE);
+             // = allClubs.getSelectedIndex();
+             ViewClubFromSearch view = new ViewClubFromSearch();
+            this.setVisible(false);
+             view.setVisible(true);
+        }
+        else {
+            JOptionPane frame = new JOptionPane();
+            JOptionPane.showMessageDialog(frame,"Failed club name","Search club",JOptionPane.ERROR_MESSAGE);
+        }
     }//GEN-LAST:event_BottonsearchActionPerformed
 
     private void uploadbottonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_uploadbottonActionPerformed

@@ -8,27 +8,23 @@ package publicregistergroup.view;
 import java.awt.*;
 import java.io.*;
 import java.sql.*;
-import java.util.ArrayList;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
+import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.filechooser.FileNameExtensionFilter;
 import publicregistergroup.controller.ConnectionBuilder;
-import publicregistergroup.model.Clubs;
-import publicregistergroup.model.Users;
 import publicregistergroup.model.Students;
 
 /**
  *
  * @author taloey
  */
-public class ViewProfile extends javax.swing.JFrame{
+public class ViewProfile extends JFrame {
 
     static Connection con = ConnectionBuilder.getConnection();
-    private long std_id = Login.getStdId();
-    private long stdUsername = Login.getStdId();
+    private final long std_id = Login.getStdId();
+   // private long stdUsername = Login.getStdId();
     private String name, faculty, telephone, facebook, medicine, food, email, picture, image;
     private String path, abPath;
     private String search;
@@ -51,8 +47,8 @@ public class ViewProfile extends javax.swing.JFrame{
                 return strings.get(i);
             }
         }*/
-                }
-    
+    }
+
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
@@ -156,9 +152,9 @@ public class ViewProfile extends javax.swing.JFrame{
         ID.setText("ID :");
         getContentPane().add(ID, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 30, 40, 30));
 
-        ShowID.setFont(new java.awt.Font("Quark", 0, 14)); // NOI18N
+        ShowID.setFont(new java.awt.Font("Quark", 0, 24)); // NOI18N
         getContentPane().add(ShowID, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 30, 220, 30));
-        ShowID.setText(stdID+"");
+        ShowID.setText(std_id+"");
 
         Submitbotton.setBackground(new java.awt.Color(213, 186, 55));
         Submitbotton.setFont(new java.awt.Font("Quark", 0, 30)); // NOI18N
@@ -282,35 +278,34 @@ public class ViewProfile extends javax.swing.JFrame{
     }// </editor-fold>//GEN-END:initComponents
 
     private void BottonsearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BottonsearchActionPerformed
-       search = SearchclubTextField.getText();
-        String club="";    
+        search = SearchclubTextField.getText();
+        String club = "";
         try {
-            
-           
-            String sql = "SELECT * FROM clubs where club_name LIKE '%"+search+"%'";
+
+            String sql = "SELECT * FROM clubs where club_name LIKE '%" + search + "%'";
             PreparedStatement pre = con.prepareStatement(sql);
 //            pre.setString(1, "%"+search+"%");
-            System.out.println(search+" search la");
-             ResultSet res = pre.executeQuery();
-             System.out.println("EXE LAEW");
-                while(res.next()) {
-                    club =res.getString("club_name");
-                    System.out.println(club+" clubname");
-                }
-                
+            System.out.println(search + " search la");
+            ResultSet res = pre.executeQuery();
+            System.out.println("EXE LAEW");
+            while (res.next()) {
+                club = res.getString("club_name");
+                System.out.println(club + " clubname");
+            }
+
         } catch (SQLException ex) {
             ex.printStackTrace();
-        }if (search .equals(club)) {
-            JOptionPane frame = new JOptionPane();
-            JOptionPane.showMessageDialog(frame,"Search success","Search club",JOptionPane.PLAIN_MESSAGE);
-             // = allClubs.getSelectedIndex();
-             ViewClubFromSearch view = new ViewClubFromSearch();
-            this.setVisible(false);
-             view.setVisible(true);
         }
-        else {
+        if (search.equals(club)) {
             JOptionPane frame = new JOptionPane();
-            JOptionPane.showMessageDialog(frame,"Failed club name","Search club",JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(frame, "Search success", "Search club", JOptionPane.PLAIN_MESSAGE);
+            // = allClubs.getSelectedIndex();
+            ViewClubFromSearch view = new ViewClubFromSearch();
+            this.setVisible(false);
+            view.setVisible(true);
+        } else {
+            JOptionPane frame = new JOptionPane();
+            JOptionPane.showMessageDialog(frame, "Failed club name", "Search club", JOptionPane.ERROR_MESSAGE);
         }
         /*if (search == club) {
             JOptionPane frame = new JOptionPane();
@@ -324,7 +319,7 @@ public class ViewProfile extends javax.swing.JFrame{
             JOptionPane frame = new JOptionPane();
             JOptionPane.showMessageDialog(frame,"Failed club name","Search club",JOptionPane.ERROR_MESSAGE);
         }*/
-        /*clubIndex = allClubs.getSelectedIndex();
+ /*clubIndex = allClubs.getSelectedIndex();
         //System.out.println(clubIndex);
         ViewClub view = new ViewClub();
         this.setVisible(false);
@@ -348,13 +343,11 @@ public class ViewProfile extends javax.swing.JFrame{
     }//GEN-LAST:event_FoodTextFieldActionPerformed
 
     private void SearchclubTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SearchclubTextFieldActionPerformed
-      
+
     }//GEN-LAST:event_SearchclubTextFieldActionPerformed
 
     private void ChangePageActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ChangePageActionPerformed
 
-        
-        
         Homepage home = new Homepage();
         this.setVisible(false);
         home.setVisible(true);
@@ -378,97 +371,95 @@ public class ViewProfile extends javax.swing.JFrame{
 
     private void SubmitbottonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SubmitbottonActionPerformed
         System.out.println("437");
-        
+
         InputStream filepic = null;
- 
-            try {
-                //System.out.println("mk,nksds");
-                // TODO add your handling code here:
-                name = NameTextField.getText();
-                faculty = SurnameTextField.getText();
-                telephone = TelephoneTextField.getText();
-                facebook = FacebookTextField.getText();
-                medicine = MedicineTextField.getText();
-                food = FoodTextField.getText();
-                email = EmailTextField.getText();
 
-                String sql = "UPDATE students SET std_name=?, std_tel=?, std_facebook=?, std_medicine=?, std_food=?, std_email=? WHERE std_id=?";
-                PreparedStatement pre = con.prepareStatement(sql);
-                pre.setString(1, name);
-                pre.setString(2, telephone);
-                pre.setString(3, facebook);
-                pre.setString(4, medicine);
-                pre.setString(5, food);
-                pre.setString(6, email);
-                pre.setLong(7, std_id);
-                //pre.setString(7, path);
-                pre.executeUpdate();
-                //ResultSet res = st.executeQuery(sql);
-
-            } catch (SQLException ex) {
-                ex.printStackTrace();
-            }
-
-            System.out.println("บบรรดทัด 466");
-
-         if(abPath == null){
-            System.out.println("");
-        }else{
-              
         try {
-    
-            filepic = new FileInputStream(abPath);
-            String sql = "UPDATE students SET std_picture=? WHERE std_id=?";
+            //System.out.println("mk,nksds");
+            // TODO add your handling code here:
+            name = NameTextField.getText();
+            faculty = SurnameTextField.getText();
+            telephone = TelephoneTextField.getText();
+            facebook = FacebookTextField.getText();
+            medicine = MedicineTextField.getText();
+            food = FoodTextField.getText();
+            email = EmailTextField.getText();
+
+            String sql = "UPDATE students SET std_name=?, std_tel=?, std_facebook=?, std_medicine=?, std_food=?, std_email=? WHERE std_id=?";
+            PreparedStatement pre = con.prepareStatement(sql);
+            pre.setString(1, name);
+            pre.setString(2, telephone);
+            pre.setString(3, facebook);
+            pre.setString(4, medicine);
+            pre.setString(5, food);
+            pre.setString(6, email);
+            pre.setLong(7, std_id);
+            //pre.setString(7, path);
+            pre.executeUpdate();
+            //ResultSet res = st.executeQuery(sql);
+
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+
+        System.out.println("บบรรดทัด 409");
+
+        if (abPath == null) {
+            System.out.println("");
+        } else {
+            try {
+
+                filepic = new FileInputStream(abPath);
+                String sql = "UPDATE students SET std_picture=? WHERE std_id=?";
                 PreparedStatement pre = con.prepareStatement(sql);
                 pre.setString(1, path);
                 pre.setLong(2, std_id);
                 pre.executeUpdate();
-            OutputStream ops = null;
-            try {
-                
-                //System.out.println("asdada");
-                System.out.println("Path :" + "/Users/taloey/Desktop/PublicRegister/src/Images/" + path);
-                ops = new FileOutputStream(new File("src/Images/" + path));
-                int read = 0;
-                byte[] b = new byte[1024];
-                while ((read = filepic.read(b)) != -1) {
-                    ops.write(b, 0, read);
+                OutputStream ops = null;
+                try {
+
+                    //System.out.println("asdada");
+                    System.out.println("Path :" + "/Users/taloey/Desktop/PublicRegister/src/Images/" + path);
+                    ops = new FileOutputStream(new File("src/Images/" + path));
+                    int read = 0;
+                    byte[] b = new byte[1024];
+                    while ((read = filepic.read(b)) != -1) {
+                        ops.write(b, 0, read);
+                    }
+                    filepic.close();
+                } catch (FileNotFoundException e) {
+                    System.out.println(e);
+                } catch (IOException ex) {
+                    System.out.println(ex);
                 }
-                filepic.close();
-            } catch (FileNotFoundException e) {
-                System.out.println(e);
-            } catch (IOException ex) {
-                System.out.println(ex);
-            } 
-        } catch (FileNotFoundException ex) {
-            ex.printStackTrace();
-        }catch (SQLException ex) {
-                    ex.printStackTrace();
-                }
-         }
-        String role=null;    
+            } catch (FileNotFoundException ex) {
+                ex.printStackTrace();
+            } catch (SQLException ex) {
+                ex.printStackTrace();
+            }
+        }
+        String role = null;
         try {
-            
-            
+            System.out.println("Chk " + std_id);
             String sql = "SELECT * FROM students WHERE std_id = ?";
             PreparedStatement pre = con.prepareStatement(sql);
-            pre.setLong(1 , std_id);
+            pre.setLong(1, std_id);
             ResultSet res = pre.executeQuery(sql);
             System.out.println("456");
             while (res.next()) {
                 role = res.getString("std_role");
                 System.out.println(role);
-            }   
+            }
         } catch (SQLException ex) {
             System.out.println(ex);
         }
-        if(role.isEmpty()){
+        if (role.isEmpty()) {
             System.out.println("465");
             LinkDataforUser user = new LinkDataforUser();
             this.setVisible(false);
             user.setVisible(true);
-        }else{
-             LinkData admin = new LinkData();
+        } else {
+            LinkData admin = new LinkData();
             this.setVisible(false);
             admin.setVisible(true);
         }/*

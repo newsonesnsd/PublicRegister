@@ -171,7 +171,7 @@
       </Events>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="830" y="150" width="140" height="30"/>
+          <AbsoluteConstraints x="830" y="160" width="140" height="30"/>
         </Constraint>
       </Constraints>
     </Component>
@@ -212,7 +212,7 @@
     <Component class="javax.swing.JLabel" name="NameClub">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Quark" size="24" style="0"/>
+          <Font name="Quark" size="36" style="1"/>
         </Property>
       </Properties>
       <AuxValues>
@@ -220,7 +220,7 @@
       </AuxValues>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="60" y="210" width="290" height="30"/>
+          <AbsoluteConstraints x="60" y="190" width="350" height="50"/>
         </Constraint>
       </Constraints>
     </Component>

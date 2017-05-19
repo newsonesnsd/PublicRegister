@@ -15,6 +15,7 @@ import javax.swing.DefaultListModel;
 import javax.swing.JOptionPane;
 import publicregistergroup.controller.ConnectionBuilder;
 import publicregistergroup.model.*;
+import static publicregistergroup.view.ViewProfile.con;
 
 /**
  *
@@ -26,6 +27,7 @@ public class LoginHomepage extends javax.swing.JFrame {
     private String listClubs;
     DefaultListModel model = new DefaultListModel();
     private long stdID = Login.getStdId();
+    private String search;
 
     public static int getClubIndex() {
         return clubIndex+1;
@@ -63,7 +65,7 @@ public class LoginHomepage extends javax.swing.JFrame {
 
         jLabel1 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        searchclubTextField = new javax.swing.JTextField();
         Bottonsearch = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         allRecommend = new javax.swing.JTabbedPane();
@@ -115,13 +117,13 @@ public class LoginHomepage extends javax.swing.JFrame {
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        searchclubTextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                searchclubTextFieldActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(13, 91, 261, 22));
-        jTextField1.getAccessibleContext().setAccessibleDescription("");
+        getContentPane().add(searchclubTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(13, 91, 261, 22));
+        searchclubTextField.getAccessibleContext().setAccessibleDescription("");
 
         Bottonsearch.setFont(new java.awt.Font("Kanit", 0, 13)); // NOI18N
         Bottonsearch.setText("OK");
@@ -545,6 +547,8 @@ public class LoginHomepage extends javax.swing.JFrame {
         Id.setFont(new java.awt.Font("Quark", 1, 24)); // NOI18N
         Id.setText("ID :");
         getContentPane().add(Id, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 30, -1, -1));
+
+        ShowID.setFont(new java.awt.Font("Quark", 1, 30)); // NOI18N
         getContentPane().add(ShowID, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 30, 220, 30));
         ShowID.setText(stdID+"");
 
@@ -555,12 +559,41 @@ public class LoginHomepage extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void BottonsearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BottonsearchActionPerformed
-        // TODO add your handling code here:
+      search = searchclubTextField.getText();
+        String club="";    
+        try {
+            
+           
+            String sql = "SELECT * FROM clubs where club_name LIKE '%"+search+"%'";
+            PreparedStatement pre = con.prepareStatement(sql);
+//            pre.setString(1, "%"+search+"%");
+            System.out.println(search+" search la");
+             ResultSet res = pre.executeQuery();
+             System.out.println("EXE LAEW");
+                if(res.next()) {
+                    club =res.getString("club_name");
+                    System.out.println(club+" clubname");
+                }
+                
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }if (search .equals(club)) {
+            JOptionPane frame = new JOptionPane();
+            JOptionPane.showMessageDialog(frame,"Search success","Search club",JOptionPane.PLAIN_MESSAGE);
+             // = allClubs.getSelectedIndex();
+             ViewClubFromSearch view = new ViewClubFromSearch();
+            this.setVisible(false);
+             view.setVisible(true);
+        }
+        else {
+            JOptionPane frame = new JOptionPane();
+            JOptionPane.showMessageDialog(frame,"Failed club name","Search club",JOptionPane.ERROR_MESSAGE);
+        }
     }//GEN-LAST:event_BottonsearchActionPerformed
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void searchclubTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchclubTextFieldActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_searchclubTextFieldActionPerformed
 
     private void joinClub_P1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_joinClub_P1ActionPerformed
        ViewRegist view = new ViewRegist();
@@ -718,7 +751,6 @@ public class LoginHomepage extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextField jTextField1;
     private javax.swing.JButton joinClub_P1;
     private javax.swing.JButton joinClub_P2;
     private javax.swing.JLabel pic_P1;
@@ -727,5 +759,6 @@ public class LoginHomepage extends javax.swing.JFrame {
     private javax.swing.JLabel pic_P4;
     private javax.swing.JPanel recommendPage1;
     private javax.swing.JPanel recommendPage2;
+    private javax.swing.JTextField searchclubTextField;
     // End of variables declaration//GEN-END:variables
 }
