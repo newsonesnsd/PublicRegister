@@ -20,13 +20,13 @@ public class ViewRegist extends javax.swing.JFrame {
     //private String clubDescription = Clubs.getClub_description(Homepage.getClubIndex());
     private int club_id = Clubs.getClub_id(Homepage.getClubIndex());
     
-    private String stdName = Students.getStd_name(Login.getStdIndex());
-    private String stdTel = Students.getStd_tel(Login.getStdIndex());
-    private String stdFacebook = Students.getStd_facebook(Login.getStdIndex());
-    private String stdMedicine = Students.getStd_medicine(Login.getStdIndex());
-    private String stdFood = Students.getStd_food(Login.getStdIndex());
-    private String stdEmail = Students.getStd_email(Login.getStdIndex());
-    private long stdID = Students.getStd_id(Login.getStdIndex());
+    private String stdName = Students.getStd_name(Login.getStdUserName());
+    private String stdTel = Students.getStd_tel(Login.getStdUserName());
+    private String stdFacebook = Students.getStd_facebook(Login.getStdUserName());
+    private String stdMedicine = Students.getStd_medicine(Login.getStdUserName());
+    private String stdFood = Students.getStd_food(Login.getStdUserName());
+    private String stdEmail = Students.getStd_email(Login.getStdUserName());
+    private long stdID = Students.getStd_id(Login.getStdUserName());
     
     
     
