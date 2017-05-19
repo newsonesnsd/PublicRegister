@@ -13,8 +13,8 @@ import publicregistergroup.model.Users;
  * @author newso
  */
 public class Login extends JFrame {
-    private static long stdUserName;
-    public static long getStdId(JTextField jtfInputUserName) {
+    private static long stdId;
+    public static long getStdId() {
         long id = Long.parseLong(jtfInputUsername.getText());
         return id;
     }
@@ -170,7 +170,7 @@ public class Login extends JFrame {
     private void loginButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_loginButtonMouseClicked
         // TODO add your handling code here:
         if (Users.getLogin(jtfInputUsername, jpfInputPassword) == true) {
-            stdUserName = Long.parseLong(jtfInputUsername.getText());
+            stdId = Long.parseLong(jtfInputUsername.getText());
             JOptionPane frame = new JOptionPane();
             JOptionPane.showMessageDialog(frame,"Login Success","Login",JOptionPane.PLAIN_MESSAGE);
             this.setVisible(false);
