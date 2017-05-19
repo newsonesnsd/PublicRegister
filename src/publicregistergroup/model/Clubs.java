@@ -256,31 +256,3 @@ public class Clubs {
         System.out.println(getAllClubs());
     }
 }
-
-/*String club_description=null;    
-        try {
-            Statement st = con.createStatement();
-            String sql = "SELECT std_role FROM students WHERE std_id = 59130500004";
-            ResultSet res = st.executeQuery(sql);
-            int club_id =0;
-            String std_role=null;
-            while (res.next()) {
-                std_role = res.getString("std_role");
-                club_id = Integer.parseInt(std_role);
-                sql = "SELECT club_description FROM clubs WHERE club_id = ?";
-                PreparedStatement pre = con.prepareStatement(sql);
-                pre.setInt(1, club_id);
-                ResultSet rs = pre.executeQuery();
-                if(rs.next()) {
-                    club_description =rs.getString("club_description");
-                }
-
-                if(std_role!=null){
-                    detailArea.setText(club_description);
-                }
-            }
-           
-        } catch (SQLException ex) {
-            Logger.getLogger(ViewProfile.class.getName()).log(Level.SEVERE, null, ex);
-        }
-*/
