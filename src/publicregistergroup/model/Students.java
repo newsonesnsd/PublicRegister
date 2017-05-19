@@ -5,12 +5,16 @@
  */
 package publicregistergroup.model;
 
+import java.awt.Image;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Date;
+import javax.swing.ImageIcon;
+import javax.swing.JLabel;
 import publicregistergroup.controller.ConnectionBuilder;
+import publicregistergroup.view.ViewProfile;
 
 /**
  *
@@ -33,6 +37,7 @@ public class Students {
     private static String std_role;
     private static Date created_at;
     private static Date updated_at;
+    private static JLabel ImageS = ViewProfile.ImageS;
 
     public static long getStd_id(long stdUsername) {
         std_id = stdUsername;        
@@ -71,14 +76,14 @@ public class Students {
         return std_name;
     }
 
-     public static String getStd_surname(long std_id) {
+     /*public static String getStd_surname(long std_id) {
             try {
             String sql = "SELECT * FROM students WHERE std_id = ?";
             PreparedStatement pre = con.prepareStatement(sql);
             pre.setLong(1, std_id);
             ResultSet rs = pre.executeQuery();
             if(rs.next()) {
-                std_name = rs.getString("std_surname");
+                std_surname = rs.getString("std_surname");
                 //System.out.println(stdPic);
             }
         } 
@@ -86,16 +91,16 @@ public class Students {
             System.out.println(e + "\n" + e.getMessage());
             e.printStackTrace();
         }
-        return std_role;
-    }
+        return std_surname;
+    }*/
     public static String getStd_faculty(long std_id) {
          try {
-            String sql = "SELECT * FROM students WHERE club_id = ?";
+            String sql = "SELECT * FROM students WHERE std_id = ?";
             PreparedStatement pre = con.prepareStatement(sql);
             pre.setLong(1, std_id);
             ResultSet rs = pre.executeQuery();
             if(rs.next()) {
-                std_name = rs.getString("std_faculty");
+                std_faculty = rs.getString("std_faculty");
                 //System.out.println(stdFaculty);
             }
         } 
@@ -121,7 +126,7 @@ public class Students {
             pre.setLong(1, std_id);
             ResultSet rs = pre.executeQuery();
             if(rs.next()) {
-                std_name = rs.getString("std_tel");
+                std_tel = rs.getString("std_tel");
                 //System.out.println(stdTel);
             }
         } 
@@ -139,7 +144,7 @@ public class Students {
             pre.setLong(1, std_id);
             ResultSet rs = pre.executeQuery();
             if(rs.next()) {
-                std_name = rs.getString("std_facebook");
+                std_facebook = rs.getString("std_facebook");
                 //System.out.println(stdFacebook);
             }
         } 
@@ -157,7 +162,7 @@ public class Students {
             pre.setLong(1, std_id);
             ResultSet rs = pre.executeQuery();
             if(rs.next()) {
-                std_name = rs.getString("std_medicine");
+                std_medicine = rs.getString("std_medicine");
                 //System.out.println(stdMedicine);
             }
         } 
@@ -175,7 +180,7 @@ public class Students {
             pre.setLong(1, std_id);
             ResultSet rs = pre.executeQuery();
             if(rs.next()) {
-                std_name = rs.getString("std_food");
+                std_food = rs.getString("std_food");
                 //System.out.println(stdFood);
             }
         } 
@@ -193,7 +198,7 @@ public class Students {
             pre.setLong(1, std_id);
             ResultSet rs = pre.executeQuery();
             if(rs.next()) {
-                std_name = rs.getString("std_email");
+                std_email = rs.getString("std_email");
                 //System.out.println(stdEmail);
             }
         } 
@@ -211,7 +216,8 @@ public class Students {
             pre.setLong(1, std_id);
             ResultSet rs = pre.executeQuery();
             if(rs.next()) {
-                std_name = rs.getString("std_pic");
+                std_pic = rs.getString("std_picture");
+                
                 //System.out.println(stdPic);
             }
         } 
@@ -221,15 +227,17 @@ public class Students {
         }
         return std_pic;
     }
+    
 
-    public static String getStd_role() {
+
+    public static String getStd_role (long std_id){
             try {
             String sql = "SELECT * FROM students WHERE std_id = ?";
             PreparedStatement pre = con.prepareStatement(sql);
             pre.setLong(1, std_id);
             ResultSet rs = pre.executeQuery();
             if(rs.next()) {
-                std_name = rs.getString("std_role");
+                std_role = rs.getString("std_role");
                 //System.out.println(stdPic);
             }
         } 
