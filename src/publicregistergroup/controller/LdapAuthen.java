@@ -16,6 +16,8 @@ import javax.naming.directory.SearchResult;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JPasswordField;
+import javax.swing.JTextField;
 
 /**
  *
@@ -120,26 +122,4 @@ public class LdapAuthen {
         }
     }
 
-        public static void main(String[] args) {
-            try {
-                //boolean isLogin = testBind("59130500011", "News@ne0845221915");
-                //System.out.println(isLogin);
-                JFrame newFrame = new JFrame("TestLogin");
-                newFrame.setSize(800,600);
-                JPanel newPanel = new JPanel();
-                newFrame.add(newPanel);
-                JLabel welcome = new JLabel();
-                newFrame.setLocationRelativeTo(null);
-                newFrame.setVisible(true);
-                newPanel.add(welcome);
-                //newFrame.pack();
-                getUid("59130500004", welcome);
-                System.out.println(testBind("59130500011", "News@ne0845221915"));
-                newFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-            } 
-            catch (Exception ex) {
-                ex.printStackTrace();
-            }
-        }
-    
 }
