@@ -384,14 +384,10 @@ public class EditProfile extends JFrame {
             pre.setLong(7, std_id);
             //pre.setString(7, path);
             pre.executeUpdate();
-    
-
+            
         } catch (SQLException ex) {
             ex.printStackTrace();
         }
-
-    
-
         if (abPath == null) {
             System.out.println("");
         } else {
@@ -437,8 +433,12 @@ public class EditProfile extends JFrame {
             }
         } catch (SQLException ex) {
             System.out.println(ex);
-        }
-        if (role.isEmpty()) {
+        } ViewRegist regist = new ViewRegist();
+            this.setVisible(false);
+            regist.setVisible(true);
+    
+
+        /*if (role.isEmpty()) {
             LinkDataforUser user = new LinkDataforUser();
             this.setVisible(false);
             user.setVisible(true);
@@ -446,7 +446,7 @@ public class EditProfile extends JFrame {
             LinkData admin = new LinkData();
             this.setVisible(false);
             admin.setVisible(true);
-        }
+        }*/
     }//GEN-LAST:event_SubmitbottonActionPerformed
 
     private void SubmitbottonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SubmitbottonMouseClicked

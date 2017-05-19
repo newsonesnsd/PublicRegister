@@ -28,6 +28,7 @@ public class LoginHomepage extends javax.swing.JFrame {
     DefaultListModel model = new DefaultListModel();
     private long stdID = Login.getStdId();
     private String search;
+    private long std_id = Login.getStdId();
 
     public static int getClubIndex() {
         return clubIndex+1;
@@ -105,6 +106,7 @@ public class LoginHomepage extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         Id = new javax.swing.JLabel();
         ShowID = new javax.swing.JLabel();
+        CheckActivity = new javax.swing.JButton();
         blackground = new javax.swing.JLabel();
 
         jLabel1.setText("jLabel1");
@@ -552,6 +554,14 @@ public class LoginHomepage extends javax.swing.JFrame {
         getContentPane().add(ShowID, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 30, 220, 30));
         ShowID.setText(stdID+"");
 
+        CheckActivity.setText("CheckActivity");
+        CheckActivity.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CheckActivityActionPerformed(evt);
+            }
+        });
+        getContentPane().add(CheckActivity, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 80, -1, -1));
+
         blackground.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/page.jpg"))); // NOI18N
         getContentPane().add(blackground, new org.netbeans.lib.awtextra.AbsoluteConstraints(-5, 0, 1030, 770));
 
@@ -677,6 +687,34 @@ public class LoginHomepage extends javax.swing.JFrame {
         viewc.setVisible(true);
     }//GEN-LAST:event_chooseClubActionPerformed
 
+    private void CheckActivityActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CheckActivityActionPerformed
+        String role = null;
+        try {
+         
+            String sql = "SELECT * FROM students WHERE std_id = ?";
+            PreparedStatement pre = con.prepareStatement(sql);
+            pre.setLong(1, std_id);
+            ResultSet res = pre.executeQuery();
+            System.out.println("456");
+            while (res.next()) {
+                role = res.getString("std_role");
+                System.out.println(role);
+            }
+        } catch (SQLException ex) {
+            System.out.println(ex);
+        }
+        if (role.isEmpty()) {
+            System.out.println("465");
+            LinkDataforUser user = new LinkDataforUser();
+            this.setVisible(false);
+            user.setVisible(true);
+        } else {
+            LinkData admin = new LinkData();
+            this.setVisible(false);
+            admin.setVisible(true);
+        }
+    }//GEN-LAST:event_CheckActivityActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -718,6 +756,7 @@ public class LoginHomepage extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Bottonsearch;
+    private javax.swing.JButton CheckActivity;
     private javax.swing.JLabel Id;
     private javax.swing.JLabel ShowID;
     private javax.swing.JList<String> allClubs;

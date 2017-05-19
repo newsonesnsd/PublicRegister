@@ -44,6 +44,7 @@ private String search;
         Box3 = new javax.swing.JPanel();
         clubbotton = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
+        Backbotton = new javax.swing.JButton();
         blackground = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -178,6 +179,14 @@ private String search;
         getContentPane().add(Box3, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 490, 480, 90));
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 640, 400, 40));
 
+        Backbotton.setText("Back");
+        Backbotton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BackbottonActionPerformed(evt);
+            }
+        });
+        getContentPane().add(Backbotton, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 140, 150, 60));
+
         blackground.setIcon(new javax.swing.ImageIcon("/Users/taloey/Desktop/PublicRegister/src/Images/page.jpg")); // NOI18N
         blackground.setText("jLabel1");
         getContentPane().add(blackground, new org.netbeans.lib.awtextra.AbsoluteConstraints(-5, 0, 1030, 770));
@@ -240,6 +249,10 @@ private String search;
         // TODO add your handling code here:
     }//GEN-LAST:event_searchTextFieldActionPerformed
 
+    private void BackbottonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BackbottonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_BackbottonActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -277,6 +290,7 @@ private String search;
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton Backbotton;
     private javax.swing.JButton Bottonsearch;
     private javax.swing.JPanel Box1;
     private javax.swing.JPanel Box2;

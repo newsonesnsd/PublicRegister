@@ -166,9 +166,9 @@ public class ViewClub extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void RegistclubbottonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RegistclubbottonActionPerformed
-        ViewRegist view = new ViewRegist();
+        EditProfile edit = new EditProfile();
         this.setVisible(true);
-        view.setVisible(true);
+        edit.setVisible(true);
     }//GEN-LAST:event_RegistclubbottonActionPerformed
 
     private void SearchclubTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SearchclubTextFieldActionPerformed

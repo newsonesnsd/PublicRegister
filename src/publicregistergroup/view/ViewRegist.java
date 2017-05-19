@@ -192,9 +192,9 @@ public class ViewRegist extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void EditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EditActionPerformed
-       ViewProfile view = new ViewProfile();
+       EditProfile edit = new EditProfile();
        this.setVisible(false);
-       view.setVisible(true);
+       edit.setVisible(true);
     }//GEN-LAST:event_EditActionPerformed
 
     private void ConfirmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ConfirmActionPerformed
