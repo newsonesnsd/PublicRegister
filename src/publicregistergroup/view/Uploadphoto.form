@@ -81,7 +81,7 @@
         </Component>
         <Component class="javax.swing.JLabel" name="Uploadphotos">
           <AuxValues>
-            <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="Uploadphotos.setIcon(new ImageIcon((new ImageIcon(&quot;src/Images/&quot;+).getImage().getScaledInstance(436,366,Image.SCALE_SMOOTH))));"/>
+            <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="Uploadphotos.setIcon(new ImageIcon((new ImageIcon(&quot;src/Images/&quot;+(Clubs.getClub_picture(std_id))).getImage().getScaledInstance(436,366,Image.SCALE_SMOOTH))));"/>
           </AuxValues>
         </Component>
       </SubComponents>

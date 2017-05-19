@@ -24,6 +24,7 @@ public class Clubs {
     private static String club_picture;
     private static String club_pict;
     private static String club_desc;
+    private static String club_editname;
 
     public static int getClub_id(int clubIndex) {
         club_id = clubIndex;        
@@ -192,6 +193,38 @@ public class Clubs {
         }
         return club_pict;
      }
+    
+     public static String getClub_nameEdit(long std_id) {   
+        try {
+            String sql = "SELECT std_role FROM students WHERE std_id = ?";
+            PreparedStatement pre = con.prepareStatement(sql);
+            pre.setLong(1, std_id);
+            ResultSet res = pre.executeQuery();
+            int club_id =0;
+            String std_role=null;
+            while (res.next()) {
+                std_role = res.getString("std_role");
+                club_id = Integer.parseInt(std_role);
+                sql = "SELECT club_picture FROM clubs WHERE club_id = ?";
+                PreparedStatement pre2 = con.prepareStatement(sql);
+                pre2.setInt(1, club_id);
+                ResultSet rs = pre2.executeQuery();
+                if(rs.next()) {
+                    club_editname =rs.getString("club_picture");
+                }
+
+                if(std_role!=null){
+                   
+                }
+            }
+        }
+        catch (SQLException e) {
+            System.out.println(e + "\n" + e.getMessage());
+            e.printStackTrace();
+        }
+        return club_editname;
+     }
+
 
     
       

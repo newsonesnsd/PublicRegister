@@ -88,7 +88,7 @@ public class Uploadphoto extends JFrame {
                 .addGap(139, 139, 139))
         );
 
-        Uploadphotos.setIcon(new ImageIcon((new ImageIcon("src/Images/"+).getImage().getScaledInstance(436,366,Image.SCALE_SMOOTH))));
+        Uploadphotos.setIcon(new ImageIcon((new ImageIcon("src/Images/"+(Clubs.getClub_picture(std_id))).getImage().getScaledInstance(436,366,Image.SCALE_SMOOTH))));
 
         getContentPane().add(Boxphoto, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 260, 440, 370));
 
