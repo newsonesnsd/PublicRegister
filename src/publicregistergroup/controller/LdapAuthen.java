@@ -96,7 +96,7 @@ public class LdapAuthen {
         return true;
     }
         
-    public static void login (String name , String password,JLabel welcome) throws Exception{
+    public static void loginWelcome (String name , String password,JLabel welcome) throws Exception{
         String username = "";
         if(name!=null){
             username = name;
