@@ -22,7 +22,7 @@ import javax.swing.JPanel;
  *
  * @author newsonesnsd
  */
-public class JavaLDAP {
+public class LdapAuthen {
 
     /**
      * @param args the command line arguments
@@ -61,10 +61,11 @@ public class JavaLDAP {
             Attributes attrs = result.getAttributes();
             System.out.println(attrs);
             String tempName = attrs.get("uid")+"";
+            tempName = tempName.substring(4);
 //            System.out.println("Hi!, " + tempName.substring(4));
 //            welcome.setText("Hi , " + tempName.substring(4));
             // LDAP จะมี context มาให้ ต้องตัดออก ไม่สามารถ get ค่ามาโดยตรได้
-            welcome.setText("Hi , " + tempName.substring(4));
+            welcome.setText("Hi , " + tempName);
 
             dn = result.getNameInNamespace();
         }
@@ -104,7 +105,7 @@ public class JavaLDAP {
 
         if (dn != null) {
             /* Found user - test password */
-            if (testBind( dn, password ) ) {
+            if (testBind(dn, password)) {
                 welcome.setText( "user '" + username + "' authentication succeeded" );
                 System.exit(0);
             }
