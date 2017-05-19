@@ -63,6 +63,7 @@ public class EditClub extends JFrame {
         uploadbotton = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         detailArea = new javax.swing.JTextArea();
+        NameClub = new javax.swing.JLabel();
         blackground = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -95,6 +96,8 @@ public class EditClub extends JFrame {
                 .addComponent(textupload, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(139, 139, 139))
         );
+
+        Uploadphotos.setIcon(new ImageIcon((new ImageIcon("src/Images/"+(Clubs.getClub_picture(std_id))).getImage().getScaledInstance(436,366,Image.SCALE_SMOOTH))));
 
         getContentPane().add(Boxphoto, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 200, 440, 370));
 
@@ -150,6 +153,11 @@ public class EditClub extends JFrame {
         detailArea.setText(Clubs.getClub_descriptionUpload(std_id));
 
         getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 240, 450, 330));
+
+        NameClub.setFont(new java.awt.Font("Quark", 1, 24)); // NOI18N
+        NameClub.setForeground(new java.awt.Color(255, 255, 255));
+        getContentPane().add(NameClub, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 40, 290, 40));
+        NameClub.setText(Clubs.getClub_nameEdit(std_id));
 
         blackground.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/page.jpg"))); // NOI18N
         blackground.setText("jLabel1");
@@ -361,6 +369,7 @@ public class EditClub extends JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Bottonsearch;
     private javax.swing.JPanel Boxphoto;
+    private javax.swing.JLabel NameClub;
     private javax.swing.JTextField SearchTextField;
     private javax.swing.JLabel Uploadphotos;
     private javax.swing.JLabel blackground;
