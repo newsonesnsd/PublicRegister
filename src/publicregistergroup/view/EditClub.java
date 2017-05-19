@@ -96,34 +96,6 @@ public class EditClub extends JFrame {
                 .addGap(139, 139, 139))
         );
 
-        String clubpicture=null;
-        try {
-            Statement st = con.createStatement();
-            long id = Login.getStdId();
-            String sql = "SELECT std_role FROM students WHERE std_id = id";
-            ResultSet res = st.executeQuery(sql);
-            int club_id =0;
-            String std_role=null;
-            while (res.next()) {
-                std_role = res.getString("std_role");
-                club_id = Integer.parseInt(std_role);
-                sql = "SELECT club_picture FROM clubs WHERE club_id = ?";
-                PreparedStatement pre = con.prepareStatement(sql);
-                pre.setInt(1, club_id);
-                ResultSet rs = pre.executeQuery();
-                if(rs.next()) {
-                    clubpicture =rs.getString("club_picture");
-                }
-
-                if(std_role!=null){
-                    Uploadphotos.setIcon(new ImageIcon((new ImageIcon("src/Images/"+clubpicture).getImage().getScaledInstance(436,366,Image.SCALE_SMOOTH))));
-                }
-            }
-
-        } catch (SQLException ex) {
-            System.out.println(ex);
-        }
-
         getContentPane().add(Boxphoto, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 200, 440, 370));
 
         textDetail1.setFont(new java.awt.Font("Quark", 0, 52)); // NOI18N
