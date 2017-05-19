@@ -220,9 +220,10 @@ public class EditClub extends JFrame {
         
             try{
             detailclub = detailArea.getText();
-            String sql = "UPDATE clubs SET club_description=? WHERE club_id=6";
+            String sql = "UPDATE clubs SET club_description=? WHERE club_id=?";
             PreparedStatement pre = con.prepareStatement(sql);
             pre.setString(1, detailclub);
+            pre.setLong(2, std_id);
             //System.out.println("2");
             pre.executeUpdate();
             System.out.println("Yes");
@@ -238,9 +239,10 @@ public class EditClub extends JFrame {
         try {
     
             filepic = new FileInputStream(abPath);
-            String sql = "UPDATE clubs SET club_picture=? WHERE club_id=6";
+            String sql = "UPDATE clubs SET club_picture=? WHERE club_id=?";
                 PreparedStatement pre = con.prepareStatement(sql);
                 pre.setString(1, path);
+                pre.setLong(2, std_id);
                 pre.executeUpdate();
             OutputStream ops = null;
             try {
