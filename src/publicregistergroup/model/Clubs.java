@@ -162,6 +162,37 @@ public class Clubs {
         }
         return club_pict;  
     }*/
+     public static String getClub_picture(long std_id) {   
+        try {
+            String sql = "SELECT std_role FROM students WHERE std_id = ?";
+            PreparedStatement pre = con.prepareStatement(sql);
+            pre.setLong(1, std_id);
+            ResultSet res = pre.executeQuery();
+            int club_id =0;
+            String std_role=null;
+            while (res.next()) {
+                std_role = res.getString("std_role");
+                club_id = Integer.parseInt(std_role);
+                sql = "SELECT club_picture FROM clubs WHERE club_id = ?";
+                PreparedStatement pre2 = con.prepareStatement(sql);
+                pre2.setInt(1, club_id);
+                ResultSet rs = pre2.executeQuery();
+                if(rs.next()) {
+                    club_pict =rs.getString("club_picture");
+                }
+
+                if(std_role!=null){
+                   
+                }
+            }
+        }
+        catch (SQLException e) {
+            System.out.println(e + "\n" + e.getMessage());
+            e.printStackTrace();
+        }
+        return club_pict;
+     }
+
     
       
  
