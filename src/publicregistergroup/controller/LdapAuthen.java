@@ -80,7 +80,7 @@ public class LdapAuthen {
         return dn;
     }
 
-    private static boolean getLogin (String username, String password) {
+    public static boolean getLogin (String username, String password) {
         Hashtable<String,String> env = new Hashtable <>();
         
         env.put(Context.INITIAL_CONTEXT_FACTORY, contextFactory);
