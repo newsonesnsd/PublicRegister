@@ -23,6 +23,8 @@ import javax.swing.JOptionPane;
 import javax.swing.filechooser.FileNameExtensionFilter;
 import publicregistergroup.controller.ConnectionBuilder;
 import static publicregistergroup.view.ViewProfile.con;
+import publicregistergroup.model.Students;
+import publicregistergroup.model.Clubs;
 
 /**
  *
@@ -33,6 +35,7 @@ public class EditClub extends JFrame {
      private String nameclub,detailclub;
      private String path,abPath;
      private String search;
+     private long std_id = Login.getStdId();
     /**
      * Creates new form Uploadphoto
      */
@@ -172,33 +175,7 @@ public class EditClub extends JFrame {
         detailArea.setRows(5);
         detailArea.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 5, 0, new java.awt.Color(255, 51, 0)));
         jScrollPane1.setViewportView(detailArea);
-        String club_description=null;
-        long id = Login.getStdId();
-        try {
-            Statement st = con.createStatement();
-            String sql = "SELECT std_role FROM students WHERE std_id = ?";
-            ResultSet res = st.executeQuery(sql);
-            int club_id =0;
-            String std_role=null;
-            while (res.next()) {
-                std_role = res.getString("std_role");
-                club_id = Integer.parseInt(std_role);
-                sql = "SELECT club_description FROM clubs WHERE club_id = ?";
-                PreparedStatement pre = con.prepareStatement(sql);
-                pre.setInt(1, club_id);
-                ResultSet rs = pre.executeQuery();
-                if(rs.next()) {
-                    club_description =rs.getString("club_description");
-                }
-
-                if(std_role!=null){
-                    detailArea.setText(club_description);
-                }
-            }
-
-        } catch (SQLException ex) {
-            Logger.getLogger(ViewProfile.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        detailArea.setText(Clubs.getClub_descriptionUpload(std_id));
 
         getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 240, 450, 330));
 

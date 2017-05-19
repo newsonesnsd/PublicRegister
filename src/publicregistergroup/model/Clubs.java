@@ -118,22 +118,20 @@ public class Clubs {
             PreparedStatement pre = con.prepareStatement(sql);
             pre.setLong(1, std_id);
             ResultSet res = pre.executeQuery();
-            System.out.println(res);
+//            System.out.println(res);
             int club_id =0;
             String std_role=null;
-            System.out.println(std_role);
+//            System.out.println(std_role);
             while (res.next()) {
-                std_role = res.getString("std_role");
-                System.out.println(std_role);
-                club_id = Integer.parseInt(std_role);
-                System.out.println(club_id);
+                std_role = res.getString("std_role");        //                System.out.println(std_role);
+                club_id = Integer.parseInt(std_role);       //                System.out.println(club_id);
                 sql = "SELECT club_description FROM clubs WHERE club_id = ?";
                 PreparedStatement pre2 = con.prepareStatement(sql);
                 pre2.setInt(1, club_id);
                 ResultSet rs = pre2.executeQuery();
-                System.out.println("133");
+//                System.out.println("133");
                 if(rs.next()) {
-                    System.out.println("135");
+//                    System.out.println("135");
                     club_desc =rs.getString("club_description");
                 }
 
@@ -148,7 +146,7 @@ public class Clubs {
         return club_desc;
      }
     
-    public static String getClub_picture(int club_id) {       
+    /*public static String getClub_picture(int club_id) {       
         try {
             String sql = "SELECT * FROM clubs WHERE club_id = ?";
             PreparedStatement pre = con.prepareStatement(sql);
@@ -163,7 +161,39 @@ public class Clubs {
             e.printStackTrace();
         }
         return club_pict;  
-    }
+    }*/
+    
+      public static String getClub_picture(long std_id) {   
+        try {
+            String sql = "SELECT std_role FROM students WHERE std_id = ?";
+            PreparedStatement pre = con.prepareStatement(sql);
+            pre.setLong(1, std_id);
+            ResultSet res = pre.executeQuery();
+            int club_id =0;
+            String std_role=null;
+            while (res.next()) {
+                std_role = res.getString("std_role");
+                club_id = Integer.parseInt(std_role);
+                sql = "SELECT club_picture FROM clubs WHERE club_id = ?";
+                PreparedStatement pre2 = con.prepareStatement(sql);
+                pre2.setInt(1, club_id);
+                ResultSet rs = pre2.executeQuery();
+                if(rs.next()) {
+                    club_pict =rs.getString("club_picture");
+                }
+
+                if(std_role!=null){
+                   
+                }
+            }
+        }
+        catch (SQLException e) {
+            System.out.println(e + "\n" + e.getMessage());
+            e.printStackTrace();
+        }
+        return club_pict;
+     }
+
  
     public static ArrayList<String> getAllClubs() {
         ArrayList<String> str = new ArrayList<>();
