@@ -6,7 +6,9 @@
 package publicregistergroup.view;
 
 import java.sql.Connection;
+import java.util.ArrayList;
 import publicregistergroup.controller.ConnectionBuilder;
+import publicregistergroup.model.Clubs;
 import publicregistergroup.model.Students;
 
 /**
@@ -23,6 +25,17 @@ public class CheckAllActivity extends javax.swing.JFrame {
     public CheckAllActivity() {
         initComponents();
         setLocationRelativeTo(null);
+        listJoinClubs.setModel(new javax.swing.AbstractListModel<String>() {
+            ArrayList<String> strings = Clubs.getAllClubs();
+            @Override
+            public int getSize() {
+                return strings.size();
+            }
+            @Override
+            public String getElementAt(int i) {
+                return strings.get(i);
+            }
+        });
     }
 
     /**
@@ -37,27 +50,24 @@ public class CheckAllActivity extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel25 = new javax.swing.JLabel();
-        Title = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
         Bottonsearch = new javax.swing.JButton();
-        jPanel1 = new javax.swing.JPanel();
-        jPanel6 = new javax.swing.JPanel();
-        jLabel22 = new javax.swing.JLabel();
-        jLabel23 = new javax.swing.JLabel();
-        jLabel24 = new javax.swing.JLabel();
-        jToggleButton9 = new javax.swing.JToggleButton();
-        jToggleButton10 = new javax.swing.JToggleButton();
-        jPanel4 = new javax.swing.JPanel();
-        jLabel17 = new javax.swing.JLabel();
-        jLabel18 = new javax.swing.JLabel();
-        jLabel19 = new javax.swing.JLabel();
-        jToggleButton4 = new javax.swing.JToggleButton();
-        jToggleButton5 = new javax.swing.JToggleButton();
         backbotton = new javax.swing.JButton();
         showName = new javax.swing.JLabel();
         showFaculty = new javax.swing.JLabel();
         เส้นขีดเฉยๆ = new javax.swing.JLabel();
         ลงทะเบียนชมรมแล้ว = new javax.swing.JLabel();
+        formList = new javax.swing.JSplitPane();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        listJoinClubs = new javax.swing.JList<>();
+        jPanel2 = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
+        Club = new javax.swing.JLabel();
+        clubName = new javax.swing.JLabel();
+        AddId = new javax.swing.JLabel();
+        AddDescription = new javax.swing.JLabel();
+        AddPic = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
         blackground = new javax.swing.JLabel();
 
         jLabel1.setText("jLabel1");
@@ -70,15 +80,12 @@ public class CheckAllActivity extends javax.swing.JFrame {
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
         getContentPane().add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 640, -1, 40));
 
-        Title.setFont(new java.awt.Font("Kailasa", 0, 36)); // NOI18N
-        getContentPane().add(Title, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 440, 50));
-
         jTextField1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(13, 91, 261, 22));
+        getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(18, 91, 261, 22));
 
         Bottonsearch.setFont(new java.awt.Font("Kanit", 0, 13)); // NOI18N
         Bottonsearch.setText("OK");
@@ -87,148 +94,7 @@ public class CheckAllActivity extends javax.swing.JFrame {
                 BottonsearchActionPerformed(evt);
             }
         });
-        getContentPane().add(Bottonsearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 90, 80, 25));
-
-        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
-
-        jPanel6.setBackground(new java.awt.Color(241, 232, 239));
-        jPanel6.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-
-        jLabel22.setFont(new java.awt.Font("Quark", 1, 36)); // NOI18N
-        jLabel22.setForeground(new java.awt.Color(153, 153, 153));
-        jLabel22.setText("   PIC");
-        jLabel22.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-
-        jLabel23.setFont(new java.awt.Font("Quark", 1, 20)); // NOI18N
-        jLabel23.setText("ชมรมอาสาพัฒนาชุมชน");
-
-        jLabel24.setFont(new java.awt.Font("Quark", 0, 11)); // NOI18N
-        jLabel24.setText("DESCRIPTION:");
-
-        jToggleButton9.setFont(new java.awt.Font("Quark", 0, 14)); // NOI18N
-        jToggleButton9.setText("ติดต่อชมรม");
-
-        jToggleButton10.setFont(new java.awt.Font("Quark", 0, 14)); // NOI18N
-        jToggleButton10.setText("ยกเลิกชมรม");
-
-        javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
-        jPanel6.setLayout(jPanel6Layout);
-        jPanel6Layout.setHorizontalGroup(
-            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel6Layout.createSequentialGroup()
-                .addGap(21, 21, 21)
-                .addComponent(jLabel22, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
-                        .addGap(0, 278, Short.MAX_VALUE)
-                        .addComponent(jToggleButton9)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jToggleButton10))
-                    .addGroup(jPanel6Layout.createSequentialGroup()
-                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel23)
-                            .addComponent(jLabel24))
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addContainerGap())
-        );
-        jPanel6Layout.setVerticalGroup(
-            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel6Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel6Layout.createSequentialGroup()
-                        .addComponent(jLabel23)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel24)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 28, Short.MAX_VALUE)
-                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jToggleButton9)
-                            .addComponent(jToggleButton10)))
-                    .addComponent(jLabel22, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap())
-        );
-
-        jPanel4.setBackground(new java.awt.Color(241, 232, 239));
-        jPanel4.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-
-        jLabel17.setFont(new java.awt.Font("Quark", 1, 36)); // NOI18N
-        jLabel17.setForeground(new java.awt.Color(153, 153, 153));
-        jLabel17.setText("   PIC");
-        jLabel17.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-
-        jLabel18.setFont(new java.awt.Font("Quark", 1, 20)); // NOI18N
-        jLabel18.setText("ชมรมอาสาพัฒนาชุมชน");
-
-        jLabel19.setFont(new java.awt.Font("Quark", 0, 11)); // NOI18N
-        jLabel19.setText("DESCRIPTION:");
-
-        jToggleButton4.setFont(new java.awt.Font("Quark", 0, 14)); // NOI18N
-        jToggleButton4.setText("ติดต่อชมรม");
-
-        jToggleButton5.setFont(new java.awt.Font("Quark", 0, 14)); // NOI18N
-        jToggleButton5.setText("ยกเลิกชมรม");
-
-        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
-        jPanel4.setLayout(jPanel4Layout);
-        jPanel4Layout.setHorizontalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGap(21, 21, 21)
-                .addComponent(jLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                        .addGap(0, 278, Short.MAX_VALUE)
-                        .addComponent(jToggleButton4)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jToggleButton5))
-                    .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel18)
-                            .addComponent(jLabel19))
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addContainerGap())
-        );
-        jPanel4Layout.setVerticalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addComponent(jLabel18)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel19)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 28, Short.MAX_VALUE)
-                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jToggleButton4)
-                            .addComponent(jToggleButton5)))
-                    .addComponent(jLabel17, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap())
-        );
-
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGap(0, 172, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(160, 160, 160))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(3, 3, 3)
-                .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 340, 960, 250));
+        getContentPane().add(Bottonsearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(286, 90, 80, 25));
 
         backbotton.setText("Back");
         backbotton.addActionListener(new java.awt.event.ActionListener() {
@@ -236,27 +102,112 @@ public class CheckAllActivity extends javax.swing.JFrame {
                 backbottonActionPerformed(evt);
             }
         });
-        getContentPane().add(backbotton, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 600, -1, -1));
+        getContentPane().add(backbotton, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 640, -1, -1));
 
         showName.setFont(new java.awt.Font("Quark", 1, 30)); // NOI18N
-        showName.setText(" ");
-        getContentPane().add(showName, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 220, 380, -1));
+        showName.setText("MS.KITTIYA YUTHASASTRKOSOL");
+        getContentPane().add(showName, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 230, 480, -1));
         //showName.setText(stdName);
 
-        showFaculty.setFont(new java.awt.Font("Quark", 1, 18)); // NOI18N
-        showFaculty.setText("  ");
-        getContentPane().add(showFaculty, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 250, 220, -1));
+        showFaculty.setFont(new java.awt.Font("Quark", 0, 18)); // NOI18N
+        showFaculty.setText("INFORMATION TECHNOLOGY");
+        getContentPane().add(showFaculty, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 262, 250, -1));
         //showFaculty.setText(stdFaculty);
 
         เส้นขีดเฉยๆ.setText("____________________________________________________________________________________________________________________");
-        getContentPane().add(เส้นขีดเฉยๆ, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 280, -1, -1));
+        getContentPane().add(เส้นขีดเฉยๆ, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 280, -1, -1));
 
         ลงทะเบียนชมรมแล้ว.setFont(new java.awt.Font("Quark", 1, 20)); // NOI18N
         ลงทะเบียนชมรมแล้ว.setText("ลงทะเบียนชมรมแล้ว");
         getContentPane().add(ลงทะเบียนชมรมแล้ว, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 310, 148, -1));
 
-        blackground.setText("jLabel1");
-        getContentPane().add(blackground, new org.netbeans.lib.awtextra.AbsoluteConstraints(-5, 0, 1030, 770));
+        formList.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        formList.setDividerLocation(250);
+        formList.setDividerSize(2);
+
+        listJoinClubs.setModel(new javax.swing.AbstractListModel<String>() {
+            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
+            public int getSize() { return strings.length; }
+            public String getElementAt(int i) { return strings[i]; }
+        });
+        jScrollPane2.setViewportView(listJoinClubs);
+
+        formList.setLeftComponent(jScrollPane2);
+
+        jLabel2.setBackground(new java.awt.Color(204, 204, 204));
+
+        Club.setFont(new java.awt.Font("Agency FB", 0, 12)); // NOI18N
+        Club.setText("<html> CLUB ID:   <br>DESCRIPTION:  </html>");
+        Club.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+
+        clubName.setFont(new java.awt.Font("Quark", 1, 22)); // NOI18N
+        clubName.setText("ชมรมอาสาพัฒนาชุมชน");
+
+        AddId.setFont(new java.awt.Font("Agency FB", 0, 12)); // NOI18N
+
+        AddDescription.setFont(new java.awt.Font("Agency FB", 0, 12)); // NOI18N
+
+        AddPic.setFont(new java.awt.Font("Quark", 1, 24)); // NOI18N
+        AddPic.setForeground(new java.awt.Color(153, 153, 153));
+        AddPic.setText("        PIC");
+        AddPic.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+        jButton1.setText("ยกเลิกการสมัคร");
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(53, 53, 53)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(253, 253, 253)
+                        .addComponent(jButton1))
+                    .addComponent(clubName, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(AddPic, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addComponent(Club, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(93, 93, 93))
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addGap(10, 10, 10)
+                                .addComponent(AddDescription, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(AddId, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(559, 559, 559)
+                .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(80, 80, 80)
+                .addComponent(AddId, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(clubName, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(AddPic, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(Club, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(AddDescription, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 71, Short.MAX_VALUE)
+                .addComponent(jButton1)
+                .addContainerGap())
+        );
+
+        formList.setRightComponent(jPanel2);
+
+        getContentPane().add(formList, new org.netbeans.lib.awtextra.AbsoluteConstraints(145, 340, 720, 290));
+
+        blackground.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/page.jpg"))); // NOI18N
+        getContentPane().add(blackground, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1030, 770));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -315,27 +266,24 @@ public class CheckAllActivity extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel AddDescription;
+    private javax.swing.JLabel AddId;
+    private javax.swing.JLabel AddPic;
     private javax.swing.JButton Bottonsearch;
-    private javax.swing.JLabel Title;
+    private javax.swing.JLabel Club;
     private javax.swing.JButton backbotton;
     private javax.swing.JLabel blackground;
+    private javax.swing.JLabel clubName;
+    private javax.swing.JSplitPane formList;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel17;
-    private javax.swing.JLabel jLabel18;
-    private javax.swing.JLabel jLabel19;
-    private javax.swing.JLabel jLabel22;
-    private javax.swing.JLabel jLabel23;
-    private javax.swing.JLabel jLabel24;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel25;
     private javax.swing.JLabel jLabel6;
-    private static javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel4;
-    private javax.swing.JPanel jPanel6;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTextField jTextField1;
-    private javax.swing.JToggleButton jToggleButton10;
-    private javax.swing.JToggleButton jToggleButton4;
-    private javax.swing.JToggleButton jToggleButton5;
-    private javax.swing.JToggleButton jToggleButton9;
+    private javax.swing.JList<String> listJoinClubs;
     private javax.swing.JLabel showFaculty;
     private javax.swing.JLabel showName;
     private javax.swing.JLabel ลงทะเบียนชมรมแล้ว;
