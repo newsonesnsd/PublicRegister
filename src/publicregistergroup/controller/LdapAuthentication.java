@@ -15,8 +15,8 @@ import javax.naming.directory.InitialDirContext;
 
 public class LdapAuthentication {
 	public static void main(String[] args) {
-            String username = "";
-            String password = "";
+            String username = "59130500011";
+            String password = "News@ne0845221915";
             String base = "ou=People,ou=st,dc=kmutt,dc=ac,dc=th";
             String dn = "uid=" + username + "," + base;
             String ldapURL = "ldap://10.1.130.12:389";
@@ -27,7 +27,7 @@ public class LdapAuthentication {
             environment = new Hashtable<String, String>();
             environment.put(Context.INITIAL_CONTEXT_FACTORY,"com.sun.jndi.ldap.LdapCtxFactory");
             environment.put(Context.PROVIDER_URL, ldapURL);
-            environment.put(Context.SECURITY_AUTHENTICATION, "none");
+            environment.put(Context.SECURITY_AUTHENTICATION, "simple");
             environment.put(Context.SECURITY_PRINCIPAL, dn);
             environment.put(Context.SECURITY_CREDENTIALS, password);
 
