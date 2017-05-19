@@ -15,8 +15,8 @@ import publicregistergroup.model.Students;
  */
 public class CheckAllActivity extends javax.swing.JFrame {
     static Connection con = ConnectionBuilder.getConnection();
-    private String stdName = Students.getStd_name(Login.getStdUserName());
-    private String stdFaculty = Students.getStd_faculty(Login.getStdUserName());
+//    private String stdName = Students.getStd_name(Login.);
+//    private String stdFaculty = Students.getStd_faculty(Login.getStdUserName());
     /**
      * Creates new form Homepage
      */
@@ -241,12 +241,12 @@ public class CheckAllActivity extends javax.swing.JFrame {
         showName.setFont(new java.awt.Font("Quark", 1, 30)); // NOI18N
         showName.setText(" ");
         getContentPane().add(showName, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 220, 380, -1));
-        showName.setText(stdName);
+        //showName.setText(stdName);
 
         showFaculty.setFont(new java.awt.Font("Quark", 1, 18)); // NOI18N
         showFaculty.setText("  ");
         getContentPane().add(showFaculty, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 250, 220, -1));
-        showFaculty.setText(stdFaculty);
+        //showFaculty.setText(stdFaculty);
 
         เส้นขีดเฉยๆ.setText("____________________________________________________________________________________________________________________");
         getContentPane().add(เส้นขีดเฉยๆ, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 280, -1, -1));
@@ -255,7 +255,6 @@ public class CheckAllActivity extends javax.swing.JFrame {
         ลงทะเบียนชมรมแล้ว.setText("ลงทะเบียนชมรมแล้ว");
         getContentPane().add(ลงทะเบียนชมรมแล้ว, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 310, 148, -1));
 
-        blackground.setIcon(new javax.swing.ImageIcon("C:\\Users\\kz_no\\Desktop\\ProjectPublicRegister\\src\\Images\\page.jpg")); // NOI18N
         blackground.setText("jLabel1");
         getContentPane().add(blackground, new org.netbeans.lib.awtextra.AbsoluteConstraints(-5, 0, 1030, 770));
 
