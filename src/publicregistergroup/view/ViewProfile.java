@@ -441,9 +441,9 @@ public class ViewProfile extends JFrame {
         String role = null;
         try {
             System.out.println("Chk " + std_id);
-            String sql = "SELECT * FROM students WHERE std_id = ?";
+            String sql = "SELECT * FROM students WHERE std_id = 59130500004";
             PreparedStatement pre = con.prepareStatement(sql);
-            pre.setLong(1, std_id);
+            //pre.setLong(1, std_id);
             ResultSet res = pre.executeQuery(sql);
             System.out.println("456");
             while (res.next()) {

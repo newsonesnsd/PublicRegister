@@ -52,6 +52,11 @@ private String search;
 
         searchTextField.setMinimumSize(new java.awt.Dimension(8, 22));
         searchTextField.setPreferredSize(new java.awt.Dimension(8, 22));
+        searchTextField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                searchTextFieldActionPerformed(evt);
+            }
+        });
         getContentPane().add(searchTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(13, 91, 261, 22));
 
         Bottonsearch.setFont(new java.awt.Font("Kanit", 0, 13)); // NOI18N
@@ -230,6 +235,10 @@ private String search;
        this.setVisible(false);
        profile.setVisible(true);
     }//GEN-LAST:event_changeprofilebottonActionPerformed
+
+    private void searchTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchTextFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_searchTextFieldActionPerformed
 
     /**
      * @param args the command line arguments

@@ -118,6 +118,12 @@ public class Uploadphoto extends JFrame {
         textDetail1.setForeground(new java.awt.Color(77, 77, 77));
         textDetail1.setText("รายละเอียด");
         getContentPane().add(textDetail1, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 260, -1, -1));
+
+        SearchTextField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SearchTextFieldActionPerformed(evt);
+            }
+        });
         getContentPane().add(SearchTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(13, 91, 261, 25));
 
         Bottonsearch.setFont(new java.awt.Font("Quark", 0, 14)); // NOI18N
@@ -269,6 +275,10 @@ public class Uploadphoto extends JFrame {
         this.setVisible(false);
         edit.setVisible(true);
     }//GEN-LAST:event_EditBottonActionPerformed
+
+    private void SearchTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SearchTextFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_SearchTextFieldActionPerformed
 
     /**
      * @param args the command line arguments

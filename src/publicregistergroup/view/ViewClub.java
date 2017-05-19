@@ -5,10 +5,12 @@
  */
 package publicregistergroup.view;
 
+import java.awt.Image;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import publicregistergroup.controller.ConnectionBuilder;
 import publicregistergroup.model.*;
@@ -23,6 +25,7 @@ public class ViewClub extends javax.swing.JFrame {
     private String clubName = Clubs.getClub_name(LoginHomepage.getClubIndex());
     private String clubDescription = Clubs.getClub_description(LoginHomepage.getClubIndex());
     private int club_id = Clubs.getClub_id(LoginHomepage.getClubIndex());
+    //private int Picture = Clubs.getClub_description(LoginHomepage.getClubIndex());
     private String search;
     
     /**
@@ -89,8 +92,9 @@ public class ViewClub extends javax.swing.JFrame {
         Picture.setText("      PIC");
         Picture.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         getContentPane().add(Picture, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 320, 360, 320));
+        Picture.setIcon(new ImageIcon((new ImageIcon("src/Images/"+(Clubs.getClub_pic(club_id))).getImage().getScaledInstance(395,335,Image.SCALE_SMOOTH))));
 
-        Clubname.setFont(new java.awt.Font("Quark", 1, 45)); // NOI18N
+        Clubname.setFont(new java.awt.Font("Quark", 1, 36)); // NOI18N
         getContentPane().add(Clubname, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 200, 660, 80));
         Clubname.setText(Clubs.getClub_name(club_id));
 

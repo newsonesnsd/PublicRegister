@@ -176,7 +176,7 @@ public class EditClub extends JFrame {
         long id = Login.getStdId();
         try {
             Statement st = con.createStatement();
-            String sql = "SELECT std_role FROM students WHERE std_id = id";
+            String sql = "SELECT std_role FROM students WHERE std_id = ?";
             ResultSet res = st.executeQuery(sql);
             int club_id =0;
             String std_role=null;

@@ -21,6 +21,7 @@ public class Clubs {
     private static int club_id;
     private static String club_name;
     private static String club_description;
+    private static String club_picture;
 
     public static int getClub_id(int clubIndex) {
         club_id = clubIndex;        
@@ -57,8 +58,26 @@ public class Clubs {
             e.printStackTrace();
         }
         return club_name;      
+    } 
+    public static String getClub_pic(int club_id) {       
+        try {
+            String sql = "SELECT * FROM clubs WHERE club_id = ?";
+            PreparedStatement pre = con.prepareStatement(sql);
+            pre.setInt(1, club_id);
+            ResultSet rs = pre.executeQuery();
+            if(rs.next()) {
+                club_picture = rs.getString("club_picture");
+            }
+        } 
+        catch (SQLException e) {
+            System.out.println(e + "\n" + e.getMessage());
+            e.printStackTrace();
+        }
+        return club_picture;  
     }
+ 
 
+    
     public static String getClub_description(int club_id) {       
         try {
             String sql = "SELECT * FROM clubs WHERE club_id = ?";
