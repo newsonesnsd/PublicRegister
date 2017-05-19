@@ -28,9 +28,10 @@ public class Homepage extends javax.swing.JFrame {
     DefaultListModel model = new DefaultListModel();
 
     public static int getClubIndex() {
-        return clubIndex;
+        return clubIndex+1;
     }
 
+    
     /**
      * Creates new form Homepage
      */
@@ -65,27 +66,35 @@ public class Homepage extends javax.swing.JFrame {
         jTextField1 = new javax.swing.JTextField();
         Bottonsearch = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
-        jTabbedPane1 = new javax.swing.JTabbedPane();
-        jPanel3 = new javax.swing.JPanel();
-        jLabel7 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
+        allRecommend = new javax.swing.JTabbedPane();
+        recommendPage1 = new javax.swing.JPanel();
+        pic_P1 = new javax.swing.JLabel();
+        clubName_P1 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
-        jButton3 = new javax.swing.JButton();
-        jPanel6 = new javax.swing.JPanel();
-        jLabel13 = new javax.swing.JLabel();
-        jLabel14 = new javax.swing.JLabel();
-        jLabel15 = new javax.swing.JLabel();
-        jButton5 = new javax.swing.JButton();
+        clubId_P1 = new javax.swing.JLabel();
+        des_P1 = new javax.swing.JLabel();
+        joinClub_P1 = new javax.swing.JButton();
+        recommendPage2 = new javax.swing.JPanel();
+        pic_P2 = new javax.swing.JLabel();
+        clubName_P2 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        clubId_P2 = new javax.swing.JLabel();
+        des_P2 = new javax.swing.JLabel();
+        joinClub_P2 = new javax.swing.JButton();
         jPanel7 = new javax.swing.JPanel();
-        jLabel16 = new javax.swing.JLabel();
-        jLabel17 = new javax.swing.JLabel();
-        jLabel18 = new javax.swing.JLabel();
+        pic_P3 = new javax.swing.JLabel();
+        clubName_P3 = new javax.swing.JLabel();
         jButton6 = new javax.swing.JButton();
+        jLabel13 = new javax.swing.JLabel();
+        clubId_P3 = new javax.swing.JLabel();
+        des_P3 = new javax.swing.JLabel();
         jPanel8 = new javax.swing.JPanel();
-        jLabel19 = new javax.swing.JLabel();
-        jLabel20 = new javax.swing.JLabel();
-        jLabel21 = new javax.swing.JLabel();
+        pic_P4 = new javax.swing.JLabel();
+        clubName_P4 = new javax.swing.JLabel();
         jButton7 = new javax.swing.JButton();
+        jLabel14 = new javax.swing.JLabel();
+        clubId_P4 = new javax.swing.JLabel();
+        des_P4 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -123,146 +132,179 @@ public class Homepage extends javax.swing.JFrame {
         });
         getContentPane().add(Bottonsearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 90, 80, 25));
 
-        jTabbedPane1.setTabPlacement(javax.swing.JTabbedPane.LEFT);
+        allRecommend.setTabPlacement(javax.swing.JTabbedPane.LEFT);
 
-        jPanel3.setBackground(new java.awt.Color(241, 232, 239));
-        jPanel3.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        recommendPage1.setBackground(new java.awt.Color(241, 232, 239));
+        recommendPage1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
-        jLabel7.setFont(new java.awt.Font("Quark", 1, 65)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(153, 153, 153));
-        jLabel7.setText("   PIC");
-        jLabel7.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        pic_P1.setFont(new java.awt.Font("Quark", 1, 65)); // NOI18N
+        pic_P1.setForeground(new java.awt.Color(153, 153, 153));
+        pic_P1.setText("   PIC");
+        pic_P1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
-        jLabel8.setFont(new java.awt.Font("Quark", 1, 20)); // NOI18N
-        jLabel8.setText("ชมรมอาสาพัฒนาชุมชน");
+        clubName_P1.setFont(new java.awt.Font("Quark", 1, 20)); // NOI18N
+        clubName_P1.setText("ชมรมอาสาพัฒนาชุมชน");
 
-        jLabel9.setFont(new java.awt.Font("Quark", 0, 10)); // NOI18N
-        jLabel9.setText("<html> CLUB ID:   <br>CLUB NAME:   <br>DESCRIPTION:  </html>");
+        jLabel9.setFont(new java.awt.Font("Quark", 1, 14)); // NOI18N
+        jLabel9.setText("<html> CLUB ID :  <br>DESCRIPTION : </html>");
         jLabel9.setVerticalAlignment(javax.swing.SwingConstants.TOP);
 
-        jButton3.setFont(new java.awt.Font("Quark", 0, 14)); // NOI18N
-        jButton3.setText("สมัครเข้าร่วมชมรม");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        clubId_P1.setText("  ");
+
+        des_P1.setText("    ");
+        des_P1.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+
+        joinClub_P1.setFont(new java.awt.Font("Quark", 0, 14)); // NOI18N
+        joinClub_P1.setText("สมัครเข้าร่วมชมรม");
+        joinClub_P1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                joinClub_P1ActionPerformed(evt);
             }
         });
 
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel3Layout.createSequentialGroup()
+        javax.swing.GroupLayout recommendPage1Layout = new javax.swing.GroupLayout(recommendPage1);
+        recommendPage1.setLayout(recommendPage1Layout);
+        recommendPage1Layout.setHorizontalGroup(
+            recommendPage1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(recommendPage1Layout.createSequentialGroup()
+                .addGroup(recommendPage1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(recommendPage1Layout.createSequentialGroup()
                         .addGap(25, 25, 25)
-                        .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 229, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(pic_P1, javax.swing.GroupLayout.PREFERRED_SIZE, 229, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGroup(recommendPage1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(recommendPage1Layout.createSequentialGroup()
+                                .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(clubId_P1, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(des_P1, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(recommendPage1Layout.createSequentialGroup()
                         .addGap(45, 45, 45)
-                        .addComponent(jLabel8)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                        .addComponent(clubName_P1)))
+                .addContainerGap(28, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, recommendPage1Layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jButton3)
+                .addComponent(joinClub_P1)
                 .addGap(157, 157, 157))
         );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 216, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(34, 34, 34))
-                    .addGroup(jPanel3Layout.createSequentialGroup()
+        recommendPage1Layout.setVerticalGroup(
+            recommendPage1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(recommendPage1Layout.createSequentialGroup()
+                .addGroup(recommendPage1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(recommendPage1Layout.createSequentialGroup()
                         .addGap(22, 22, 22)
-                        .addComponent(jLabel8)
+                        .addComponent(clubName_P1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 272, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addComponent(jButton3)
+                        .addComponent(pic_P1, javax.swing.GroupLayout.PREFERRED_SIZE, 272, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, recommendPage1Layout.createSequentialGroup()
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(recommendPage1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(clubId_P1))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(des_P1, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(116, 116, 116)))
+                .addComponent(joinClub_P1)
                 .addGap(16, 16, 16))
         );
 
-        jTabbedPane1.addTab("", jPanel3);
+        clubName_P1.setText(Clubs.getClub_name(2));
+        clubId_P1.setText(Clubs.getClub_id(2)+"");
+        des_P1.setText(Clubs.getClub_description(2));
 
-        jPanel6.setBackground(new java.awt.Color(241, 232, 239));
-        jPanel6.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        allRecommend.addTab("", recommendPage1);
 
-        jLabel13.setFont(new java.awt.Font("Quark", 1, 65)); // NOI18N
-        jLabel13.setForeground(new java.awt.Color(153, 153, 153));
-        jLabel13.setText("   PIC");
-        jLabel13.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        recommendPage2.setBackground(new java.awt.Color(241, 232, 239));
+        recommendPage2.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
-        jLabel14.setFont(new java.awt.Font("Quark", 1, 20)); // NOI18N
-        jLabel14.setText("ชมรมอาสาพัฒนาชุมชน");
+        pic_P2.setFont(new java.awt.Font("Quark", 1, 65)); // NOI18N
+        pic_P2.setForeground(new java.awt.Color(153, 153, 153));
+        pic_P2.setText("   PIC");
+        pic_P2.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
-        jLabel15.setFont(new java.awt.Font("Quark", 0, 10)); // NOI18N
-        jLabel15.setText("<html>\nCLUB ID:  \n<br>CLUB NAME:  \n<br>DESCRIPTION: \n</html>");
-        jLabel15.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        clubName_P2.setFont(new java.awt.Font("Quark", 1, 20)); // NOI18N
+        clubName_P2.setText("ชมรมอาสาพัฒนาชุมชน");
 
-        jButton5.setFont(new java.awt.Font("Quark", 0, 14)); // NOI18N
-        jButton5.setText("สมัครเข้าร่วมชมรม");
-        jButton5.addActionListener(new java.awt.event.ActionListener() {
+        jLabel12.setFont(new java.awt.Font("Quark", 1, 14)); // NOI18N
+        jLabel12.setText("<html> CLUB ID :  <br>DESCRIPTION : </html>");
+        jLabel12.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+
+        clubId_P2.setText("  ");
+
+        des_P2.setText("    ");
+        des_P2.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+
+        joinClub_P2.setFont(new java.awt.Font("Quark", 0, 14)); // NOI18N
+        joinClub_P2.setText("สมัครเข้าร่วมชมรม");
+        joinClub_P2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton5ActionPerformed(evt);
+                joinClub_P2ActionPerformed(evt);
             }
         });
 
-        javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
-        jPanel6.setLayout(jPanel6Layout);
-        jPanel6Layout.setHorizontalGroup(
-            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel6Layout.createSequentialGroup()
-                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel6Layout.createSequentialGroup()
+        javax.swing.GroupLayout recommendPage2Layout = new javax.swing.GroupLayout(recommendPage2);
+        recommendPage2.setLayout(recommendPage2Layout);
+        recommendPage2Layout.setHorizontalGroup(
+            recommendPage2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(recommendPage2Layout.createSequentialGroup()
+                .addGroup(recommendPage2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(recommendPage2Layout.createSequentialGroup()
                         .addGap(25, 25, 25)
-                        .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 229, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(pic_P2, javax.swing.GroupLayout.PREFERRED_SIZE, 229, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel6Layout.createSequentialGroup()
+                        .addGroup(recommendPage2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(recommendPage2Layout.createSequentialGroup()
+                                .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(clubId_P2, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(des_P2, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(recommendPage2Layout.createSequentialGroup()
                         .addGap(45, 45, 45)
-                        .addComponent(jLabel14)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
+                        .addComponent(clubName_P2)))
+                .addContainerGap(28, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, recommendPage2Layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jButton5)
+                .addComponent(joinClub_P2)
                 .addGap(157, 157, 157))
         );
-        jPanel6Layout.setVerticalGroup(
-            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel6Layout.createSequentialGroup()
-                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel6Layout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 216, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(34, 34, 34))
-                    .addGroup(jPanel6Layout.createSequentialGroup()
-                        .addGap(22, 22, 22)
-                        .addComponent(jLabel14)
+        recommendPage2Layout.setVerticalGroup(
+            recommendPage2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(recommendPage2Layout.createSequentialGroup()
+                .addGap(22, 22, 22)
+                .addComponent(clubName_P2)
+                .addGroup(recommendPage2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(recommendPage2Layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 272, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addComponent(jButton5)
+                        .addComponent(pic_P2, javax.swing.GroupLayout.PREFERRED_SIZE, 272, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(recommendPage2Layout.createSequentialGroup()
+                        .addGap(53, 53, 53)
+                        .addGroup(recommendPage2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(clubId_P2))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(des_P2, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
+                .addComponent(joinClub_P2)
                 .addGap(16, 16, 16))
         );
 
-        jTabbedPane1.addTab("", jPanel6);
+        clubName_P2.setText(Clubs.getClub_name(3));
+        clubId_P2.setText(Clubs.getClub_id(3)+"");
+        des_P2.setText(Clubs.getClub_description(3));
+
+        allRecommend.addTab("", recommendPage2);
 
         jPanel7.setBackground(new java.awt.Color(241, 232, 239));
         jPanel7.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
-        jLabel16.setFont(new java.awt.Font("Quark", 1, 65)); // NOI18N
-        jLabel16.setForeground(new java.awt.Color(153, 153, 153));
-        jLabel16.setText("   PIC");
-        jLabel16.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        pic_P3.setFont(new java.awt.Font("Quark", 1, 65)); // NOI18N
+        pic_P3.setForeground(new java.awt.Color(153, 153, 153));
+        pic_P3.setText("   PIC");
+        pic_P3.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
-        jLabel17.setFont(new java.awt.Font("Quark", 1, 20)); // NOI18N
-        jLabel17.setText("ชมรมอาสาพัฒนาชุมชน");
-
-        jLabel18.setFont(new java.awt.Font("Quark", 0, 10)); // NOI18N
-        jLabel18.setText("<html>\nCLUB ID:  \n<br>CLUB NAME:  \n<br>DESCRIPTION: \n</html>");
-        jLabel18.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        clubName_P3.setFont(new java.awt.Font("Quark", 1, 20)); // NOI18N
+        clubName_P3.setText("ชมรมอาสาพัฒนาชุมชน");
 
         jButton6.setFont(new java.awt.Font("Quark", 0, 14)); // NOI18N
         jButton6.setText("สมัครเข้าร่วมชมรม");
@@ -272,6 +314,15 @@ public class Homepage extends javax.swing.JFrame {
             }
         });
 
+        jLabel13.setFont(new java.awt.Font("Quark", 1, 14)); // NOI18N
+        jLabel13.setText("<html> CLUB ID :  <br>DESCRIPTION : </html>");
+        jLabel13.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+
+        clubId_P3.setText("  ");
+
+        des_P3.setText("    ");
+        des_P3.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+
         javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
         jPanel7.setLayout(jPanel7Layout);
         jPanel7Layout.setHorizontalGroup(
@@ -280,13 +331,18 @@ public class Homepage extends javax.swing.JFrame {
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel7Layout.createSequentialGroup()
                         .addGap(25, 25, 25)
-                        .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 229, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(pic_P3, javax.swing.GroupLayout.PREFERRED_SIZE, 229, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(jLabel18, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel7Layout.createSequentialGroup()
+                                .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(clubId_P3, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(des_P3, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel7Layout.createSequentialGroup()
                         .addGap(45, 45, 45)
-                        .addComponent(jLabel17)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(clubName_P3)))
+                .addContainerGap(28, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel7Layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(jButton6)
@@ -295,37 +351,41 @@ public class Homepage extends javax.swing.JFrame {
         jPanel7Layout.setVerticalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel7Layout.createSequentialGroup()
+                .addGap(22, 22, 22)
+                .addComponent(clubName_P3)
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel7Layout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jLabel18, javax.swing.GroupLayout.PREFERRED_SIZE, 216, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(34, 34, 34))
-                    .addGroup(jPanel7Layout.createSequentialGroup()
-                        .addGap(22, 22, 22)
-                        .addComponent(jLabel17)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 272, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(pic_P3, javax.swing.GroupLayout.PREFERRED_SIZE, 272, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel7Layout.createSequentialGroup()
+                        .addGap(56, 56, 56)
+                        .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(clubId_P3))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(des_P3, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
                 .addComponent(jButton6)
                 .addGap(16, 16, 16))
         );
 
-        jTabbedPane1.addTab("", jPanel7);
+        clubName_P3.setText(Clubs.getClub_name(4));
+        clubId_P3.setText(Clubs.getClub_id(4)+"");
+        des_P3.setText(Clubs.getClub_description(4));
+
+        allRecommend.addTab("", jPanel7);
 
         jPanel8.setBackground(new java.awt.Color(241, 232, 239));
         jPanel8.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
-        jLabel19.setBackground(new java.awt.Color(251, 236, 215));
-        jLabel19.setFont(new java.awt.Font("Quark", 1, 65)); // NOI18N
-        jLabel19.setForeground(new java.awt.Color(153, 153, 153));
-        jLabel19.setText("   PIC");
-        jLabel19.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        pic_P4.setBackground(new java.awt.Color(251, 236, 215));
+        pic_P4.setFont(new java.awt.Font("Quark", 1, 65)); // NOI18N
+        pic_P4.setForeground(new java.awt.Color(153, 153, 153));
+        pic_P4.setText("   PIC");
+        pic_P4.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
-        jLabel20.setFont(new java.awt.Font("Quark", 1, 20)); // NOI18N
-        jLabel20.setText("ชมรมอาสาพัฒนาชุมชน");
-
-        jLabel21.setFont(new java.awt.Font("Quark", 0, 10)); // NOI18N
-        jLabel21.setText("<html>\nCLUB ID:  \n<br>CLUB NAME:  \n<br>DESCRIPTION: \n</html>");
-        jLabel21.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        clubName_P4.setFont(new java.awt.Font("Quark", 1, 20)); // NOI18N
+        clubName_P4.setText("ชมรมอาสาพัฒนาชุมชน");
 
         jButton7.setFont(new java.awt.Font("Quark", 0, 14)); // NOI18N
         jButton7.setText("สมัครเข้าร่วมชมรม");
@@ -335,6 +395,15 @@ public class Homepage extends javax.swing.JFrame {
             }
         });
 
+        jLabel14.setFont(new java.awt.Font("Quark", 1, 14)); // NOI18N
+        jLabel14.setText("<html> CLUB ID :  <br>DESCRIPTION : </html>");
+        jLabel14.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+
+        clubId_P4.setText("  ");
+
+        des_P4.setText("    ");
+        des_P4.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+
         javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
         jPanel8.setLayout(jPanel8Layout);
         jPanel8Layout.setHorizontalGroup(
@@ -343,13 +412,18 @@ public class Homepage extends javax.swing.JFrame {
                 .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel8Layout.createSequentialGroup()
                         .addGap(25, 25, 25)
-                        .addComponent(jLabel19, javax.swing.GroupLayout.PREFERRED_SIZE, 229, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(pic_P4, javax.swing.GroupLayout.PREFERRED_SIZE, 229, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(jLabel21, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel8Layout.createSequentialGroup()
+                                .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(clubId_P4, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(des_P4, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel8Layout.createSequentialGroup()
                         .addGap(45, 45, 45)
-                        .addComponent(jLabel20)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(clubName_P4)))
+                .addContainerGap(28, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel8Layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(jButton7)
@@ -358,21 +432,29 @@ public class Homepage extends javax.swing.JFrame {
         jPanel8Layout.setVerticalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel8Layout.createSequentialGroup()
+                .addGap(22, 22, 22)
+                .addComponent(clubName_P4)
                 .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel8Layout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jLabel21, javax.swing.GroupLayout.PREFERRED_SIZE, 216, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(34, 34, 34))
-                    .addGroup(jPanel8Layout.createSequentialGroup()
-                        .addGap(22, 22, 22)
-                        .addComponent(jLabel20)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel19, javax.swing.GroupLayout.PREFERRED_SIZE, 272, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(pic_P4, javax.swing.GroupLayout.PREFERRED_SIZE, 272, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel8Layout.createSequentialGroup()
+                        .addGap(52, 52, 52)
+                        .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(clubId_P4))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(des_P4, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
                 .addComponent(jButton7)
                 .addGap(16, 16, 16))
         );
 
-        jTabbedPane1.addTab("", jPanel8);
+        clubName_P4.setText(Clubs.getClub_name(5));
+        clubId_P4.setText(Clubs.getClub_id(5)+"");
+        des_P4.setText(Clubs.getClub_description(5));
+
+        allRecommend.addTab("", jPanel8);
 
         jLabel11.setFont(new java.awt.Font("Quark", 1, 24)); // NOI18N
         jLabel11.setText("ชมรมแนะนำ");
@@ -383,7 +465,7 @@ public class Homepage extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 476, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(allRecommend, javax.swing.GroupLayout.PREFERRED_SIZE, 476, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(50, 50, 50))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(18, 18, 18)
@@ -396,19 +478,19 @@ public class Homepage extends javax.swing.JFrame {
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(jLabel11)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 387, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(allRecommend, javax.swing.GroupLayout.PREFERRED_SIZE, 387, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 210, 490, 430));
 
         allClubs.setFont(new java.awt.Font("Quark", 0, 16)); // NOI18N
         allClubs.addAncestorListener(new javax.swing.event.AncestorListener() {
+            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
+            }
             public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
                 allClubsAncestorAdded(evt);
             }
             public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
-            }
-            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
             }
         });
         allClubs.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -486,11 +568,11 @@ public class Homepage extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField1ActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void joinClub_P1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_joinClub_P1ActionPerformed
        ViewRegist view = new ViewRegist();
        this.setVisible(false);
        view.setVisible(true);
-    }//GEN-LAST:event_jButton3ActionPerformed
+    }//GEN-LAST:event_joinClub_P1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
@@ -499,11 +581,11 @@ public class Homepage extends javax.swing.JFrame {
         log.setVisible(true);
     }//GEN-LAST:event_jButton2ActionPerformed
 
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+    private void joinClub_P2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_joinClub_P2ActionPerformed
        ViewRegist view = new ViewRegist();
        this.setVisible(false);
        view.setVisible(true);
-    }//GEN-LAST:event_jButton5ActionPerformed
+    }//GEN-LAST:event_joinClub_P2ActionPerformed
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
        ViewRegist view = new ViewRegist();
@@ -616,38 +698,46 @@ public class Homepage extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Bottonsearch;
     private javax.swing.JList<String> allClubs;
+    private javax.swing.JTabbedPane allRecommend;
     private javax.swing.JLabel blackground;
     private javax.swing.JButton chooseClub;
+    private javax.swing.JLabel clubId_P1;
+    private javax.swing.JLabel clubId_P2;
+    private javax.swing.JLabel clubId_P3;
+    private javax.swing.JLabel clubId_P4;
+    private javax.swing.JLabel clubName_P1;
+    private javax.swing.JLabel clubName_P2;
+    private javax.swing.JLabel clubName_P3;
+    private javax.swing.JLabel clubName_P4;
+    private javax.swing.JLabel des_P1;
+    private javax.swing.JLabel des_P2;
+    private javax.swing.JLabel des_P3;
+    private javax.swing.JLabel des_P4;
     private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton7;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
-    private javax.swing.JLabel jLabel15;
-    private javax.swing.JLabel jLabel16;
-    private javax.swing.JLabel jLabel17;
-    private javax.swing.JLabel jLabel18;
-    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel20;
-    private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private static javax.swing.JPanel jPanel1;
     private static javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTextField jTextField1;
+    private javax.swing.JButton joinClub_P1;
+    private javax.swing.JButton joinClub_P2;
+    private javax.swing.JLabel pic_P1;
+    private javax.swing.JLabel pic_P2;
+    private javax.swing.JLabel pic_P3;
+    private javax.swing.JLabel pic_P4;
+    private javax.swing.JPanel recommendPage1;
+    private javax.swing.JPanel recommendPage2;
     // End of variables declaration//GEN-END:variables
 }
