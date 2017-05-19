@@ -37,13 +37,12 @@ public class Students {
     public static long getStd_id(long stdUsername) {
         std_id = stdUsername;        
         try {
-            String sql = "SELECT * FROM students WHERE std_id = ?";
+            String sql = "SELECT std_id FROM students WHERE std_id = ?";
             PreparedStatement pre = con.prepareStatement(sql);
             pre.setLong(1, std_id);
             ResultSet rs = pre.executeQuery();
             if(rs.next()) {
-                std_id = rs.getInt("std_id");
-                //System.out.println(stdId);
+                std_id = rs.getLong("std_id");
             }
         } 
         catch (SQLException e) {
@@ -217,6 +216,5 @@ public class Students {
     public static Date getUpdated_at() {
         return updated_at;
     }
-    
     
 }
