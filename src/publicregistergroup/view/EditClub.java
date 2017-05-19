@@ -124,7 +124,7 @@ public class EditClub extends JFrame {
         textDetail1.setForeground(new java.awt.Color(77, 77, 77));
         textDetail1.setText("รายละเอียด");
         getContentPane().add(textDetail1, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 180, -1, -1));
-        getContentPane().add(SearchTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, 260, 30));
+        getContentPane().add(SearchTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 90, 260, 30));
 
         Bottonsearch.setFont(new java.awt.Font("Quark", 0, 14)); // NOI18N
         Bottonsearch.setText("OK");
