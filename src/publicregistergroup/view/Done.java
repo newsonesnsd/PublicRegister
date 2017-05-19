@@ -52,7 +52,7 @@ public class Done extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-       ViewClub vclub = new ViewClub();
+       ViewClubFromSearch vclub = new ViewClubFromSearch();
        this.setVisible(false);
        vclub.setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed

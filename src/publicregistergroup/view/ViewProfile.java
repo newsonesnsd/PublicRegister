@@ -364,7 +364,7 @@ public class ViewProfile extends javax.swing.JFrame{
                 SearchclubTextFieldActionPerformed(evt);
             }
         });
-        getContentPane().add(SearchclubTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(13, 91, 261, 22));
+        getContentPane().add(SearchclubTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, 261, 30));
 
         ChangePage.setBorder(null);
         ChangePage.setContentAreaFilled(false);
@@ -407,7 +407,7 @@ public class ViewProfile extends javax.swing.JFrame{
             JOptionPane frame = new JOptionPane();
             JOptionPane.showMessageDialog(frame,"Search success","Search club",JOptionPane.PLAIN_MESSAGE);
              // = allClubs.getSelectedIndex();
-             ViewClub view = new ViewClub();
+             ViewClubFromSearch view = new ViewClubFromSearch();
             this.setVisible(false);
              view.setVisible(true);
         }

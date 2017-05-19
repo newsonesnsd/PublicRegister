@@ -203,7 +203,7 @@ private String search;
             JOptionPane frame = new JOptionPane();
             JOptionPane.showMessageDialog(frame,"Search success","Search club",JOptionPane.PLAIN_MESSAGE);
              // = allClubs.getSelectedIndex();
-             ViewClub view = new ViewClub();
+             ViewClubFromSearch view = new ViewClubFromSearch();
             this.setVisible(false);
              view.setVisible(true);
         }
