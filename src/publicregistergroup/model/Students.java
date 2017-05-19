@@ -38,11 +38,12 @@ public class Students {
         return con;
     }
 
-    public static long getStd_id(long stdIndex) {
-        std_id = stdIndex;        
+    public static long getStd_id(long stdUsername) {
+        std_id = stdUsername;        
         try {
             String sql = "SELECT * FROM students WHERE std_id = ?";
             PreparedStatement pre = con.prepareStatement(sql);
+            pre.setLong(1, std_id);
             ResultSet rs = pre.executeQuery();
             if(rs.next()) {
                 std_id = rs.getInt("std_id");
@@ -51,6 +52,7 @@ public class Students {
         } 
         catch (SQLException e) {
             System.out.println(e + "\n" + e.getMessage());
+            e.printStackTrace();
         }
         
         return std_id;
@@ -69,6 +71,7 @@ public class Students {
         } 
         catch (SQLException e) {
             System.out.println(e + "\n" + e.getMessage());
+            e.printStackTrace();
         }
         return std_name;
     }
@@ -86,6 +89,7 @@ public class Students {
         } 
         catch (SQLException e) {
             System.out.println(e + "\n" + e.getMessage());
+            e.printStackTrace();
         }
         return std_faculty;
     }
@@ -111,6 +115,7 @@ public class Students {
         } 
         catch (SQLException e) {
             System.out.println(e + "\n" + e.getMessage());
+            e.printStackTrace();
         }
         return std_tel;
     }
@@ -128,6 +133,7 @@ public class Students {
         } 
         catch (SQLException e) {
             System.out.println(e + "\n" + e.getMessage());
+            e.printStackTrace();
         }
         return std_facebook;
     }
@@ -145,6 +151,7 @@ public class Students {
         } 
         catch (SQLException e) {
             System.out.println(e + "\n" + e.getMessage());
+            e.printStackTrace();
         }
         return std_medicine;
     }
@@ -162,6 +169,7 @@ public class Students {
         } 
         catch (SQLException e) {
             System.out.println(e + "\n" + e.getMessage());
+            e.printStackTrace();
         }
         return std_food;
     }
@@ -179,6 +187,7 @@ public class Students {
         } 
         catch (SQLException e) {
             System.out.println(e + "\n" + e.getMessage());
+            e.printStackTrace();
         }
         return std_email;
     }
@@ -196,6 +205,7 @@ public class Students {
         } 
         catch (SQLException e) {
             System.out.println(e + "\n" + e.getMessage());
+            e.printStackTrace();
         }
         return std_pic;
     }
