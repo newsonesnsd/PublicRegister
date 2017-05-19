@@ -170,7 +170,7 @@ public class Login extends JFrame {
 
     private void loginButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_loginButtonMouseClicked
         // TODO add your handling code here:
-        if (User.getLogin(jtfInputUsername, jpfInputPassword) == true) {
+        if (Users.getLogin(jtfInputUsername, jpfInputPassword) == true) {
             stdUserName = Long.parseLong(jtfInputUsername.getText());
             JOptionPane frame = new JOptionPane();
             JOptionPane.showMessageDialog(frame,"Login Success","Login",JOptionPane.PLAIN_MESSAGE);
