@@ -639,9 +639,9 @@ public class LoginHomepage extends javax.swing.JFrame {
         //JOptionPane.showMessageDialog(null,"You selected : " + allClubs.getSelectedValue());
         clubIndex = allClubs.getSelectedIndex();
         //System.out.println(clubIndex);
-        ViewClubFromSearch view = new ViewClubFromSearch();
+        ViewClub viewc = new ViewClub();
         this.setVisible(false);
-        view.setVisible(true);
+        viewc.setVisible(true);
     }//GEN-LAST:event_chooseClubActionPerformed
 
     /**
