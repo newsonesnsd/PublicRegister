@@ -174,8 +174,8 @@ public class Login extends JFrame {
             JOptionPane frame = new JOptionPane();
             JOptionPane.showMessageDialog(frame,"Login Success","Login",JOptionPane.PLAIN_MESSAGE);
             this.setVisible(false);
-            Homepage newHome = new Homepage();
-            newHome.setVisible(true);
+            LoginHomepage login = new LoginHomepage();
+            login.setVisible(true);
         }
         else {
             JOptionPane frame = new JOptionPane();
