@@ -34,10 +34,6 @@ public class Students {
     private static Date created_at;
     private static Date updated_at;
 
-    public static Connection getCon() {
-        return con;
-    }
-
     public static long getStd_id(long stdUsername) {
         std_id = stdUsername;        
         try {
