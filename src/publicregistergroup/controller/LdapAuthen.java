@@ -6,7 +6,6 @@ package publicregistergroup.controller;
  */
 
 import java.util.Hashtable;
-import java.util.Scanner;
 import javax.naming.Context;
 import javax.naming.NamingEnumeration;
 import javax.naming.directory.Attributes;
@@ -28,7 +27,7 @@ public class LdapAuthen {
      * @param args the command line arguments
      */
     
-    private final static String ldapURI = "ldap://10.1.130.12:389";
+    private final static String LdapUrl = "ldap://10.1.130.12:389";
     private final static String base = "ou=people,ou=st,dc=kmutt,dc=ac,dc=th";
     private final static String contextFactory = "com.sun.jndi.ldap.LdapCtxFactory";
 
@@ -43,7 +42,7 @@ public class LdapAuthen {
 
     private static DirContext ldapContext (Hashtable <String,String>env) throws Exception {
         env.put(Context.INITIAL_CONTEXT_FACTORY, contextFactory);
-        env.put(Context.PROVIDER_URL, ldapURI + "/"+ base);
+        env.put(Context.PROVIDER_URL, LdapUrl + "/"+ base);
         DirContext ctx = new InitialDirContext(env);
         return ctx;
     }
@@ -81,7 +80,7 @@ public class LdapAuthen {
         Hashtable<String,String> env = new Hashtable <>();
         
         env.put(Context.INITIAL_CONTEXT_FACTORY, contextFactory);
-        env.put(Context.PROVIDER_URL, ldapURI);
+        env.put(Context.PROVIDER_URL, LdapUrl);
         env.put(Context.SECURITY_AUTHENTICATION, "simple");
         env.put(Context.SECURITY_PRINCIPAL, getDn(username));
         env.put(Context.SECURITY_CREDENTIALS, password);
@@ -96,7 +95,6 @@ public class LdapAuthen {
     }
         
     public static void login (String name , String password,JLabel welcome) throws Exception{
-        Scanner sc = new Scanner(System.in);
         String username = "";
         if(name!=null){
             username = name;
@@ -122,20 +120,26 @@ public class LdapAuthen {
         }
     }
 
-        public static void main(String[] args) throws Exception {
-            //boolean isLogin = testBind("59130500011", "News@ne0845221915");
-            //System.out.println(isLogin);
-            JFrame newFrame = new JFrame("TestLogin");
-            newFrame.setSize(800,600);
-            JPanel newPanel = new JPanel();
-            newFrame.add(newPanel);
-            JLabel welcome = new JLabel();
-            newFrame.setLocationRelativeTo(null);
-            newFrame.setVisible(true);
-            newPanel.add(welcome);
-            //newFrame.pack();
-            getUid("59130500004", welcome);
-            System.out.println(testBind("59130500011", "News@ne0845221915"));
+        public static void main(String[] args) {
+            try {
+                //boolean isLogin = testBind("59130500011", "News@ne0845221915");
+                //System.out.println(isLogin);
+                JFrame newFrame = new JFrame("TestLogin");
+                newFrame.setSize(800,600);
+                JPanel newPanel = new JPanel();
+                newFrame.add(newPanel);
+                JLabel welcome = new JLabel();
+                newFrame.setLocationRelativeTo(null);
+                newFrame.setVisible(true);
+                newPanel.add(welcome);
+                //newFrame.pack();
+                getUid("59130500004", welcome);
+                System.out.println(testBind("59130500011", "News@ne0845221915"));
+                newFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+            } 
+            catch (Exception ex) {
+                ex.printStackTrace();
+            }
         }
     
 }
