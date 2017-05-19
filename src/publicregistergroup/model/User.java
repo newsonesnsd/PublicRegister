@@ -14,7 +14,7 @@ import publicregistergroup.controller.LdapAuthen;
  *
  * @author newso
  */
-public class Users {
+public class User {
     static Connection con = ConnectionBuilder.getConnection();
     private int user_id;
     private long username;
@@ -58,8 +58,8 @@ public class Users {
         this.update_at = update_at;
     }
     
-    public static Users getUsers(long username) {
-        Users user = new Users();
+    public static User getUsers(long username) {
+        User user = new User();
         long std = 0;
         /*String query = "SELECT a.std_id as username, a.std_name, b.password "
                 + "FROM students AS a LEFT OUTER JOIN user as b ON a.std_id = b.username "
