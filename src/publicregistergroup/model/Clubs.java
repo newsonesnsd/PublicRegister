@@ -174,7 +174,7 @@ public class Clubs {
             while (res.next()) {
                 std_role = res.getString("std_role");
                 club_id = Integer.parseInt(std_role);
-                sql = "SELECT club_picture FROM clubs WHERE club_id = ?";
+                sql = "SELECT club_name FROM clubs WHERE club_id = ?";
                 PreparedStatement pre2 = con.prepareStatement(sql);
                 pre2.setInt(1, club_id);
                 ResultSet rs = pre2.executeQuery();
