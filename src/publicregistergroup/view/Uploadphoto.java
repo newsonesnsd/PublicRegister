@@ -149,32 +149,7 @@ public class Uploadphoto extends JFrame {
 
         NameClub.setFont(new java.awt.Font("Quark", 1, 36)); // NOI18N
         getContentPane().add(NameClub, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 190, 350, 50));
-        String club_name=null;
-        try {
-            Statement st = con.createStatement();
-            String sql = "SELECT std_role FROM students WHERE std_id = 59130500004";
-            ResultSet res = st.executeQuery(sql);
-            int club_id =0;
-            String std_role=null;
-            while (res.next()) {
-                std_role = res.getString("std_role");
-                club_id = Integer.parseInt(std_role);
-                sql = "SELECT club_name FROM clubs WHERE club_id = ?";
-                PreparedStatement pre = con.prepareStatement(sql);
-                pre.setInt(1, club_id);
-                ResultSet rs = pre.executeQuery();
-                if(rs.next()) {
-                    club_name =rs.getString("club_name");
-                }
-
-                if(std_role!=null){
-                    NameClub.setText(club_name);
-                }
-            }
-
-        } catch (SQLException ex) {
-            Logger.getLogger(ViewProfile.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        NameClub.setText(Clubs.getClub_nameEdit(std_id));
 
         blackground.setIcon(new javax.swing.ImageIcon("/Users/taloey/Desktop/PublicRegister/src/Images/page.jpg")); // NOI18N
         blackground.setText("jLabel1");

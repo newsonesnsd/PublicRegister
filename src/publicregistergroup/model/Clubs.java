@@ -210,7 +210,7 @@ public class Clubs {
                 pre2.setInt(1, club_id);
                 ResultSet rs = pre2.executeQuery();
                 if(rs.next()) {
-                    club_editname =rs.getString("club_picture");
+                    club_editname =rs.getString("club_name");
                 }
 
                 if(std_role!=null){

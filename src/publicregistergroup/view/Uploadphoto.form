@@ -219,7 +219,7 @@
         </Property>
       </Properties>
       <AuxValues>
-        <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="String club_name=null;    &#xa;        try {&#xa;            Statement st = con.createStatement();&#xa;            String sql = &quot;SELECT std_role FROM students WHERE std_id = 59130500004&quot;;&#xa;            ResultSet res = st.executeQuery(sql);&#xa;            int club_id =0;&#xa;            String std_role=null;&#xa;            while (res.next()) {&#xa;                std_role = res.getString(&quot;std_role&quot;);&#xa;                club_id = Integer.parseInt(std_role);&#xa;                sql = &quot;SELECT club_name FROM clubs WHERE club_id = ?&quot;;&#xa;                PreparedStatement pre = con.prepareStatement(sql);&#xa;                pre.setInt(1, club_id);&#xa;                ResultSet rs = pre.executeQuery();&#xa;                if(rs.next()) {&#xa;                    club_name =rs.getString(&quot;club_name&quot;);&#xa;                }&#xa;&#xa;                if(std_role!=null){&#xa;                    NameClub.setText(club_name);&#xa;                }&#xa;            }&#xa;           &#xa;        } catch (SQLException ex) {&#xa;            Logger.getLogger(ViewProfile.class.getName()).log(Level.SEVERE, null, ex);&#xa;        }"/>
+        <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="NameClub.setText(Clubs.getClub_nameEdit(std_id));"/>
       </AuxValues>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
