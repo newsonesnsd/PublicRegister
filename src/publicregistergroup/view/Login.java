@@ -15,7 +15,7 @@ import publicregistergroup.model.*;
  */
 public class Login extends JFrame {
     private static long stdUserName;
-    public static long getStdUserName() {
+    public static long getStdUserName(JTextField jtfInputUserName) {
         long id = Long.parseLong(jtfInputUsername.getText());
         return id;
     }
@@ -170,7 +170,7 @@ public class Login extends JFrame {
 
     private void loginButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_loginButtonMouseClicked
         // TODO add your handling code here:
-        if (Users.getLogin(jtfInputUsername, jpfInputPassword) == true) {
+        if (User.getLogin(jtfInputUsername, jpfInputPassword) == true) {
             stdUserName = Long.parseLong(jtfInputUsername.getText());
             JOptionPane frame = new JOptionPane();
             JOptionPane.showMessageDialog(frame,"Login Success","Login",JOptionPane.PLAIN_MESSAGE);
@@ -180,7 +180,7 @@ public class Login extends JFrame {
         }
         else {
             JOptionPane frame = new JOptionPane();
-            JOptionPane.showMessageDialog(frame,"Failed to Login \n Please reenter your username or password","Login",JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(frame,"Failed to Login \n Please re-enter your username or password","Login",JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_loginButtonMouseClicked
 
