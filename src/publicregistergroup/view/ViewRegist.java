@@ -19,8 +19,7 @@ public class ViewRegist extends javax.swing.JFrame {
     private String clubName = Clubs.getClub_name(Homepage.getClubIndex());
     //private String clubDescription = Clubs.getClub_description(Homepage.getClubIndex());
     private int club_id = Clubs.getClub_id(Homepage.getClubIndex());
-    
-    private long stdID = Students.getStd_id(Login.getStdUserName());
+    private long stdID = Students.getStd_id(59130500011L);
     private String stdName = Students.getStd_name(stdID);
     private String stdTel = Students.getStd_tel(stdID);
     private String stdFacebook = Students.getStd_facebook(stdID);
@@ -72,6 +71,7 @@ public class ViewRegist extends javax.swing.JFrame {
         blackground = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Confirmmation");
         setPreferredSize(new java.awt.Dimension(1024, 768));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
