@@ -143,7 +143,7 @@ public class ViewClubFromSearch extends javax.swing.JFrame {
 
     private void RegistclubbottonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RegistclubbottonActionPerformed
         ViewRegist view = new ViewRegist();
-        this.setVisible(false);
+        this.setVisible(true);
         view.setVisible(true);
     }//GEN-LAST:event_RegistclubbottonActionPerformed
 

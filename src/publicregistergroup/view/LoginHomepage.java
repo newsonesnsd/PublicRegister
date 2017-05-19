@@ -20,7 +20,7 @@ import publicregistergroup.model.*;
  *
  * @author ART
  */
-public class Homepage extends javax.swing.JFrame {
+public class LoginHomepage extends javax.swing.JFrame {
     static Connection con = ConnectionBuilder.getConnection();
     private static int clubIndex;
     private String listClubs;
@@ -35,7 +35,7 @@ public class Homepage extends javax.swing.JFrame {
      * Creates new form Homepage
      */
 
-    public Homepage() {
+    public LoginHomepage() {
         initComponents();
         setLocationRelativeTo(null);
         allClubs.setModel(new javax.swing.AbstractListModel<String>() {
@@ -671,21 +671,22 @@ public class Homepage extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Homepage.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(LoginHomepage.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Homepage.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(LoginHomepage.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Homepage.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(LoginHomepage.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Homepage.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(LoginHomepage.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             @Override
             public void run() {
-                new Homepage().setVisible(true);
+                new LoginHomepage().setVisible(true);
                 jPanel1.setOpaque(false);
                 jPanel2.setOpaque(false);
             }
