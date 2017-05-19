@@ -6,6 +6,8 @@ package publicregistergroup.controller;
  */
 
 import java.util.Hashtable;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.naming.Context;
 import javax.naming.NamingEnumeration;
 import javax.naming.directory.Attributes;
@@ -78,7 +80,7 @@ public class LdapAuthen {
         return dn;
     }
 
-    private static boolean testBind (String username, String password) throws Exception {
+    private static boolean getLogin (String username, String password) {
         Hashtable<String,String> env = new Hashtable <>();
         
         env.put(Context.INITIAL_CONTEXT_FACTORY, contextFactory);
@@ -92,6 +94,8 @@ public class LdapAuthen {
         }
         catch (javax.naming.AuthenticationException e) {
             return false;
+        } catch (Exception e) {
+            e.printStackTrace();
         }
         return true;
     }
@@ -105,7 +109,7 @@ public class LdapAuthen {
 
         if (dn != null) {
             /* Found user - test password */
-            if (testBind(dn, password)) {
+            if (getLogin(dn, password)) {
                 welcome.setText( "user '" + username + "' authentication succeeded" );
                 System.exit(0);
             }
