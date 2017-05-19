@@ -73,7 +73,6 @@ public class ViewClubBeforeLogin extends javax.swing.JFrame {
         Picture = new javax.swing.JLabel();
         Clubname = new javax.swing.JLabel();
         Club = new javax.swing.JLabel();
-        Registclubbotton = new javax.swing.JButton();
         SearchclubTextField = new javax.swing.JTextField();
         Bottonsearch = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
@@ -81,6 +80,7 @@ public class ViewClubBeforeLogin extends javax.swing.JFrame {
         jlbClubId = new javax.swing.JLabel();
         AddName = new javax.swing.JLabel();
         Backbotton = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
         blackground = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -102,20 +102,6 @@ public class ViewClubBeforeLogin extends javax.swing.JFrame {
         Club.setText("<html> CLUB ID:  <br> <br>CLUB NAME:  <br> <br>DESCRIPTION:  </html>");
         Club.setVerticalAlignment(javax.swing.SwingConstants.TOP);
         getContentPane().add(Club, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 340, -1, 170));
-
-        Registclubbotton.setFont(new java.awt.Font("Quark", 0, 14)); // NOI18N
-        Registclubbotton.setText("สมัครเข้าร่วมชมรม");
-        Registclubbotton.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                RegistclubbottonMouseClicked(evt);
-            }
-        });
-        Registclubbotton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                RegistclubbottonActionPerformed(evt);
-            }
-        });
-        getContentPane().add(Registclubbotton, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 630, 130, 30));
 
         SearchclubTextField.setFont(new java.awt.Font("Kanit", 0, 13)); // NOI18N
         SearchclubTextField.addActionListener(new java.awt.event.ActionListener() {
@@ -149,13 +135,23 @@ public class ViewClubBeforeLogin extends javax.swing.JFrame {
         getContentPane().add(AddName, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 390, 210, 30));
         AddName.setText(clubName);
 
+        Backbotton.setFont(new java.awt.Font("Quark", 0, 18)); // NOI18N
         Backbotton.setText("Back");
         Backbotton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BackbottonActionPerformed(evt);
             }
         });
-        getContentPane().add(Backbotton, new org.netbeans.lib.awtextra.AbsoluteConstraints(880, 40, -1, -1));
+        getContentPane().add(Backbotton, new org.netbeans.lib.awtextra.AbsoluteConstraints(805, 633, 100, 30));
+
+        jButton2.setFont(new java.awt.Font("Quark", 0, 18)); // NOI18N
+        jButton2.setText("Login");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 30, 90, -1));
 
         blackground.setFont(new java.awt.Font("Quark", 0, 19)); // NOI18N
         blackground.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/page.jpg"))); // NOI18N
@@ -164,12 +160,6 @@ public class ViewClubBeforeLogin extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void RegistclubbottonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RegistclubbottonActionPerformed
-        ViewRegist view = new ViewRegist();
-        this.setVisible(true);
-        view.setVisible(true);
-    }//GEN-LAST:event_RegistclubbottonActionPerformed
 
     private void SearchclubTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SearchclubTextFieldActionPerformed
         // TODO add your handling code here:
@@ -208,38 +198,18 @@ public class ViewClubBeforeLogin extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_BottonsearchActionPerformed
 
-    private void RegistclubbottonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_RegistclubbottonMouseClicked
-//       try {
-//            // TODO add your handling code here:
-//            //name = NameTextField.getText();
-//            //faculty = SurnameTextField.getText();
-//            //telephone = TelephoneTextField.getText();
-//            //facebook = FacebookTextField.getText();
-//            //medicineloss = MedicineTextField.getText();
-//            //foodloss = FoodTextField.getText();
-//            //email = EmailTextField.getText();
-////            clubID =  Integer.parseInt(AddID.getText()); 
-////            clubName = AddName.getText();
-////            clubDescription = AddDescription.getText();
-////            Statement st = con.createStatement();
-////            String sql = "SELECT * FROM clubs SET club_name=?, club_description=? where club_id=1";
-////            PreparedStatement pre = con.prepareStatement(sql);
-////            pre.setString(1, clubName);
-////            pre.setString(2, clubDescription);
-////            //pre.setString(3, telephone);
-////            ResultSet res = pre.executeQuery();
-////            //ResultSet res = st.executeQuery(sql);
-//            
-//        } catch (SQLException ex) {
-//            Logger.getLogger(ViewProfile.class.getName()).log(Level.SEVERE, null, ex);
-//        }
-    }//GEN-LAST:event_RegistclubbottonMouseClicked
-
     private void BackbottonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BackbottonActionPerformed
             this.setVisible(false);
             LoginHomepage login = new LoginHomepage();
             login.setVisible(true);
     }//GEN-LAST:event_BackbottonActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+        Login log = new Login();
+        this.setVisible(false);
+        log.setVisible(true);
+    }//GEN-LAST:event_jButton2ActionPerformed
 
 //    public void getClubName() {
 //        try {
@@ -302,9 +272,9 @@ public class ViewClubBeforeLogin extends javax.swing.JFrame {
     private javax.swing.JLabel Club;
     private javax.swing.JLabel Clubname;
     private javax.swing.JLabel Picture;
-    private javax.swing.JButton Registclubbotton;
     private javax.swing.JTextField SearchclubTextField;
     private javax.swing.JLabel blackground;
+    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jlbClubId;
     // End of variables declaration//GEN-END:variables
