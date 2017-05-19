@@ -455,9 +455,9 @@ public class ViewProfile extends javax.swing.JFrame{
     }//GEN-LAST:event_SearchclubTextFieldActionPerformed
 
     private void ChangePageActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ChangePageActionPerformed
-        LinkData data = new LinkData();
+        Homepage home = new Homepage();
         this.setVisible(false);
-        data.setVisible(true);
+        home.setVisible(true);
     }//GEN-LAST:event_ChangePageActionPerformed
 
     private void UploadBottonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UploadBottonActionPerformed
