@@ -6,6 +6,7 @@ package publicregistergroup.controller;
  */
 
 import java.util.Hashtable;
+import javax.naming.AuthenticationException;
 import javax.naming.Context;
 import javax.naming.NamingEnumeration;
 import javax.naming.directory.Attributes;
@@ -84,7 +85,15 @@ public class LdapAuthen {
         env.put(Context.SECURITY_CREDENTIALS, password);
 
         try {
-            ldapContext(env);
+            if (password != null && !password.isEmpty()) {
+                ldapContext(env);
+                System.out.println("ผ่านจ้า");
+            }
+            else {
+                AuthenticationException authen;
+                authen = new AuthenticationException();
+                return false;
+            }
         }
         catch (javax.naming.AuthenticationException e) {
             return false;
