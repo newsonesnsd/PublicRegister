@@ -190,7 +190,7 @@ public class Login extends JFrame {
 
     private void jtfInputUsernameMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jtfInputUsernameMouseClicked
         // TODO add your handling code here:
-        jtfInputUsername.setText("  ");
+        jtfInputUsername.setText("");
         jlbUsername.setText("Username");
     }//GEN-LAST:event_jtfInputUsernameMouseClicked
 
