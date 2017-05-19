@@ -36,17 +36,7 @@ public class EditProfile extends JFrame {
     public EditProfile() {
         initComponents();
         setLocationRelativeTo(null);
-        /*.setModel(new javax.swing.AbstractListModel<String>() {
-            ArrayList<String> strings = Clubs.getAllClubs();
-            @Override
-            public int getSize() {
-                return strings.size();
-            }
-            @Override
-            public String getElementAt(int i) {
-                return strings.get(i);
-            }
-        }*/
+      
     }
 
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -460,73 +450,6 @@ public class EditProfile extends JFrame {
     }//GEN-LAST:event_SubmitbottonActionPerformed
 
     private void SubmitbottonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SubmitbottonMouseClicked
-//      System.out.println("437");
-//        
-//        InputStream filepic = null;
-// 
-//            try {
-//                //System.out.println("mk,nksds");
-//                // TODO add your handling code here:
-//                name = NameTextField.getText();
-//                faculty = SurnameTextField.getText();
-//                telephone = TelephoneTextField.getText();
-//                facebook = FacebookTextField.getText();
-//                medicine = MedicineTextField.getText();
-//                food = FoodTextField.getText();
-//                email = EmailTextField.getText();
-//
-//                String sql = "UPDATE students SET std_name=?, std_tel=?, std_facebook=?, std_medicine=?, std_food=?, std_email=? WHERE std_id=59130500004";
-//                PreparedStatement pre = con.prepareStatement(sql);
-//                pre.setString(1, name);
-//                pre.setString(2, telephone);
-//                pre.setString(3, facebook);
-//                pre.setString(4, medicine);
-//                pre.setString(5, food);
-//                pre.setString(6, email);
-//                //pre.setString(7, path);
-//                pre.executeUpdate();
-//                //ResultSet res = st.executeQuery(sql);
-//
-//            } catch (SQLException ex) {
-//                ex.printStackTrace();
-//            }
-//
-//            System.out.println("บบรรดทัด 466");
-//
-//         if(abPath == null){
-//            System.out.println("");
-//        }else{
-//              
-//        try {
-//    
-//            filepic = new FileInputStream(abPath);
-//            String sql = "UPDATE students SET std_picture=? WHERE std_id=59130500004";
-//                PreparedStatement pre = con.prepareStatement(sql);
-//                pre.setString(1, path);
-//                pre.executeUpdate();
-//            OutputStream ops = null;
-//            try {
-//                
-//                //System.out.println("asdada");
-//                System.out.println("Path :" + "/Users/taloey/Desktop/PublicRegister/src/Images/" + path);
-//                ops = new FileOutputStream(new File("src/Images/" + path));
-//                int read = 0;
-//                byte[] b = new byte[1024];
-//                while ((read = filepic.read(b)) != -1) {
-//                    ops.write(b, 0, read);
-//                }
-//                filepic.close();
-//            } catch (FileNotFoundException e) {
-//                System.out.println(e);
-//            } catch (IOException ex) {
-//                System.out.println(ex);
-//            } 
-//        } catch (FileNotFoundException ex) {
-//            ex.printStackTrace();
-//        }catch (SQLException ex) {
-//                    ex.printStackTrace();
-//                }
-//         }
 
     }//GEN-LAST:event_SubmitbottonMouseClicked
 
@@ -604,64 +527,3 @@ public class EditProfile extends JFrame {
     private javax.swing.JLabel แพ้อาหาอะไร;
     // End of variables declaration//GEN-END:variables
 }
-/*String fac=null;    
-        try {
-            Statement st = con.createStatement();
-            String sql = "SELECT * FROM students WHERE std_id = 59130500004";
-            ResultSet res = st.executeQuery(sql);
-            while (res.next()) {
-                fac = res.getString("std_faculty");
-                //System.out.println(res.getString("std_name"));
-                SurnameTextField.setText(fac);
-            }
-            //string sql = "INSERT INTO students VALUES
-            //NameTextField.setText(name);
-            
-           
-        } catch (SQLException ex) {
-            Logger.getLogger(ViewProfile.class.getName()).log(Level.SEVERE, null, ex);
-        }
-String tel=null;    
-        try {
-            Statement st = con.createStatement();
-            String sql = "SELECT * FROM students WHERE std_id = 59130500004";
-            ResultSet res = st.executeQuery(sql);
-            while (res.next()) {
-                tel = res.getString("std_tel");
-                
-                TelephoneTextField.setText(tel);
-            }
-       
-           
-        } catch (SQLException ex) {
-            Logger.getLogger(ViewProfile.class.getName()).log(Level.SEVERE, null, ex);
-        }
-String face=null;    
-        try {
-            Statement st = con.createStatement();
-            String sql = "SELECT * FROM students WHERE std_id = 59130500004";
-            ResultSet res = st.executeQuery(sql);
-            while (res.next()) {
-                face = res.getString("std_facebook");
-                
-               FacebookTextField.setText(face);
-            }
-       
-           
-        } catch (SQLException ex) {
-            Logger.getLogger(ViewProfile.class.getName()).log(Level.SEVERE, null, ex);
-        }
-*String pic=null;    
-        try {
-            Statement st = con.createStatement();
-            String sql = "SELECT * FROM students WHERE std_id = 59130500004";
-            ResultSet res = st.executeQuery(sql);
-            while (res.next()) {
-                pic = res.getString("std_picture");
-                ImageS.setIcon(new ImageIcon((new ImageIcon("src/Images/"+pic).getImage().getScaledInstance(395,335,Image.SCALE_SMOOTH))));
-            }
-       
-           
-        } catch (SQLException ex) {
-            Logger.getLogger(ViewProfile.class.getName()).log(Level.SEVERE, null, ex);
-        }*/
