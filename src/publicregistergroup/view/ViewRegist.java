@@ -5,7 +5,9 @@
  */
 package publicregistergroup.view;
 
+import java.awt.Image;
 import java.sql.Connection;
+import javax.swing.ImageIcon;
 import publicregistergroup.controller.ConnectionBuilder;
 import publicregistergroup.model.*;
 
@@ -19,13 +21,14 @@ public class ViewRegist extends javax.swing.JFrame {
     private String clubName = Clubs.getClub_name(Homepage.getClubIndex());
     //private String clubDescription = Clubs.getClub_description(Homepage.getClubIndex());
     private int club_id = Clubs.getClub_id(Homepage.getClubIndex());
-    private long stdID = Students.getStd_id(59130500011L);
+    private long stdID = Login.getStdId();
     private String stdName = Students.getStd_name(stdID);
     private String stdTel = Students.getStd_tel(stdID);
     private String stdFacebook = Students.getStd_facebook(stdID);
     private String stdMedicine = Students.getStd_medicine(stdID);
     private String stdFood = Students.getStd_food(stdID);
     private String stdEmail = Students.getStd_email(stdID);
+    private long std_id = Login.getStdId();
     
     
     
@@ -68,23 +71,22 @@ public class ViewRegist extends javax.swing.JFrame {
         ShowID = new javax.swing.JLabel();
         Edit = new javax.swing.JButton();
         Confirm = new javax.swing.JButton();
-        blackground = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Confirmmation");
         setPreferredSize(new java.awt.Dimension(1024, 768));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         NameClub.setFont(new java.awt.Font("Quark", 1, 32)); // NOI18N
-        getContentPane().add(NameClub, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 130, 490, 40));
+        getContentPane().add(NameClub, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 130, 250, 40));
         NameClub.setText(Clubs.getClub_name(club_id));
 
-        ClubID.setFont(new java.awt.Font("Quark", 0, 14)); // NOI18N
+        ClubID.setFont(new java.awt.Font("Quark", 0, 24)); // NOI18N
         ClubID.setText("CLUB ID : ");
-        getContentPane().add(ClubID, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 180, -1, -1));
+        getContentPane().add(ClubID, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 180, -1, -1));
 
-        ShowClubID.setFont(new java.awt.Font("Quark", 0, 14)); // NOI18N
-        getContentPane().add(ShowClubID, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 180, 260, 20));
+        ShowClubID.setFont(new java.awt.Font("Quark", 0, 36)); // NOI18N
+        getContentPane().add(ShowClubID, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 180, 110, 30));
         ShowClubID.setText(club_id+"");
 
         เส้นขีดเฉยๆ.setText("____________________________________________________________________________________________________________");
@@ -95,59 +97,61 @@ public class ViewRegist extends javax.swing.JFrame {
         pic.setText("    PIC");
         pic.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         getContentPane().add(pic, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 240, 274, 277));
+        pic.setIcon(new ImageIcon((new ImageIcon("src/Images/"+(Students.getStd_pic(std_id))).getImage().getScaledInstance(395,335,Image.SCALE_SMOOTH))));
 
-        Name.setFont(new java.awt.Font("Quark", 1, 16)); // NOI18N
+        Name.setFont(new java.awt.Font("Quark", 1, 18)); // NOI18N
         Name.setText("Name :");
-        getContentPane().add(Name, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 260, -1, -1));
+        getContentPane().add(Name, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 240, -1, -1));
 
-        AnsName.setFont(new java.awt.Font("Quark", 0, 16)); // NOI18N
+        AnsName.setFont(new java.awt.Font("Quark", 1, 18)); // NOI18N
         AnsName.setText(" ");
-        getContentPane().add(AnsName, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 260, 420, -1));
+        getContentPane().add(AnsName, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 240, 370, 30));
         AnsName.setText(Students.getStd_name(stdID));
 
-        Telephone.setFont(new java.awt.Font("Quark", 1, 16)); // NOI18N
+        Telephone.setFont(new java.awt.Font("Quark", 1, 18)); // NOI18N
         Telephone.setText("Telephone :");
         getContentPane().add(Telephone, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 290, -1, -1));
 
-        AnsTelephone.setFont(new java.awt.Font("Quark", 0, 16)); // NOI18N
+        AnsTelephone.setFont(new java.awt.Font("Quark", 1, 16)); // NOI18N
         AnsTelephone.setText(" ");
-        getContentPane().add(AnsTelephone, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 280, 270, 30));
+        getContentPane().add(AnsTelephone, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 280, 240, 30));
         AnsTelephone.setText(Students.getStd_tel(stdID));
 
-        Facebook.setFont(new java.awt.Font("Quark", 1, 16)); // NOI18N
+        Facebook.setFont(new java.awt.Font("Quark", 1, 18)); // NOI18N
         Facebook.setText("Facebook :");
-        getContentPane().add(Facebook, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 320, -1, -1));
+        getContentPane().add(Facebook, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 340, -1, -1));
 
-        AnsFacebook.setFont(new java.awt.Font("Quark", 0, 16)); // NOI18N
+        AnsFacebook.setFont(new java.awt.Font("Quark", 1, 16)); // NOI18N
         AnsFacebook.setText(" ");
-        getContentPane().add(AnsFacebook, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 320, 300, -1));
+        getContentPane().add(AnsFacebook, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 330, 260, 30));
         AnsFacebook.setText(Students.getStd_facebook(stdID));
 
-        แพ้ยาอะไร.setFont(new java.awt.Font("Quark", 1, 16)); // NOI18N
+        แพ้ยาอะไร.setFont(new java.awt.Font("Quark", 1, 18)); // NOI18N
         แพ้ยาอะไร.setText("แพ้ยาอะไร :");
-        getContentPane().add(แพ้ยาอะไร, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 350, -1, -1));
+        getContentPane().add(แพ้ยาอะไร, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 390, -1, -1));
 
-        AnsMedicine.setFont(new java.awt.Font("Quark", 0, 16)); // NOI18N
+        AnsMedicine.setFont(new java.awt.Font("Quark", 1, 16)); // NOI18N
         AnsMedicine.setText(" ");
-        getContentPane().add(AnsMedicine, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 350, 80, -1));
+        getContentPane().add(AnsMedicine, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 380, 190, 30));
         AnsMedicine.setText(Students.getStd_medicine(stdID));
 
-        แพ้อาหาอะไร.setFont(new java.awt.Font("Quark", 1, 16)); // NOI18N
+        แพ้อาหาอะไร.setFont(new java.awt.Font("Quark", 1, 18)); // NOI18N
         แพ้อาหาอะไร.setText("แพ้อาหารอะไร :");
-        getContentPane().add(แพ้อาหาอะไร, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 380, -1, -1));
+        getContentPane().add(แพ้อาหาอะไร, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 440, -1, -1));
 
-        AnsFood.setFont(new java.awt.Font("Quark", 0, 16)); // NOI18N
+        AnsFood.setFont(new java.awt.Font("Quark", 1, 16)); // NOI18N
         AnsFood.setText(" ");
-        getContentPane().add(AnsFood, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 380, 170, -1));
+        getContentPane().add(AnsFood, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 430, 180, 30));
         AnsFood.setText(Students.getStd_food(stdID));
 
-        Email.setFont(new java.awt.Font("Quark", 1, 16)); // NOI18N
+        Email.setFont(new java.awt.Font("Quark", 1, 18)); // NOI18N
         Email.setText("E-mail :");
-        getContentPane().add(Email, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 410, -1, -1));
+        getContentPane().add(Email, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 490, 70, 30));
 
-        AnsEmail.setFont(new java.awt.Font("Quark", 0, 16)); // NOI18N
+        AnsEmail.setBackground(new java.awt.Color(255, 255, 255));
+        AnsEmail.setFont(new java.awt.Font("Quark", 1, 16)); // NOI18N
         AnsEmail.setText(" ");
-        getContentPane().add(AnsEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 410, 240, -1));
+        getContentPane().add(AnsEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 480, 240, 30));
         AnsEmail.setText(Students.getStd_email(stdID));
 
         ID.setFont(new java.awt.Font("Quark", 0, 18)); // NOI18N
@@ -155,7 +159,7 @@ public class ViewRegist extends javax.swing.JFrame {
         getContentPane().add(ID, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 70, 40, 30));
 
         ShowID.setFont(new java.awt.Font("Quark", 0, 18)); // NOI18N
-        getContentPane().add(ShowID, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 70, 220, 30));
+        getContentPane().add(ShowID, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 70, 220, 30));
         ShowID.setText(stdID+"");
 
         Edit.setBackground(new java.awt.Color(255, 51, 0));
@@ -167,7 +171,7 @@ public class ViewRegist extends javax.swing.JFrame {
                 EditActionPerformed(evt);
             }
         });
-        getContentPane().add(Edit, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 530, 92, 50));
+        getContentPane().add(Edit, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 560, 120, 50));
 
         Confirm.setBackground(new java.awt.Color(255, 51, 0));
         Confirm.setFont(new java.awt.Font("Quark", 0, 18)); // NOI18N
@@ -179,10 +183,10 @@ public class ViewRegist extends javax.swing.JFrame {
                 ConfirmActionPerformed(evt);
             }
         });
-        getContentPane().add(Confirm, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 530, 150, 50));
+        getContentPane().add(Confirm, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 570, 140, 40));
 
-        blackground.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Confirmation.png"))); // NOI18N
-        getContentPane().add(blackground, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -80, 1030, 770));
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Confirm.png"))); // NOI18N
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 860, 650));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -253,7 +257,7 @@ public class ViewRegist extends javax.swing.JFrame {
     private javax.swing.JLabel ShowClubID;
     private javax.swing.JLabel ShowID;
     private javax.swing.JLabel Telephone;
-    private javax.swing.JLabel blackground;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel pic;
     private javax.swing.JLabel เส้นขีดเฉยๆ;
     private javax.swing.JLabel แพ้ยาอะไร;

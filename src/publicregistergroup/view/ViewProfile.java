@@ -28,9 +28,11 @@ public class ViewProfile extends javax.swing.JFrame{
 
     static Connection con = ConnectionBuilder.getConnection();
     private long std_id = Login.getStdId();
+    private long stdUsername = Login.getStdId();
     private String name, faculty, telephone, facebook, medicine, food, email, picture, image;
     private String path, abPath;
     private String search;
+    private long stdID = Login.getStdId();
 
     /**
      * Creates new form Uploadphoto
@@ -156,6 +158,7 @@ public class ViewProfile extends javax.swing.JFrame{
 
         ShowID.setFont(new java.awt.Font("Quark", 0, 14)); // NOI18N
         getContentPane().add(ShowID, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 30, 220, 30));
+        ShowID.setText(stdID+"");
 
         Submitbotton.setBackground(new java.awt.Color(213, 186, 55));
         Submitbotton.setFont(new java.awt.Font("Quark", 0, 30)); // NOI18N
@@ -349,6 +352,9 @@ public class ViewProfile extends javax.swing.JFrame{
     }//GEN-LAST:event_SearchclubTextFieldActionPerformed
 
     private void ChangePageActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ChangePageActionPerformed
+
+        
+        
         Homepage home = new Homepage();
         this.setVisible(false);
         home.setVisible(true);
@@ -443,16 +449,21 @@ public class ViewProfile extends javax.swing.JFrame{
         String role=null;    
         try {
             
-            Statement st = con.createStatement();
-            String sql = "SELECT * FROM students WHERE std_id = 59130500004";
-            ResultSet res = st.executeQuery(sql);
+            
+            String sql = "SELECT * FROM students WHERE std_id = ?";
+            PreparedStatement pre = con.prepareStatement(sql);
+            pre.setLong(1 , std_id);
+            ResultSet res = pre.executeQuery(sql);
+            System.out.println("456");
             while (res.next()) {
                 role = res.getString("std_role");
+                System.out.println(role);
             }   
         } catch (SQLException ex) {
             System.out.println(ex);
         }
         if(role.isEmpty()){
+            System.out.println("465");
             LinkDataforUser user = new LinkDataforUser();
             this.setVisible(false);
             user.setVisible(true);
@@ -467,73 +478,73 @@ public class ViewProfile extends javax.swing.JFrame{
     }//GEN-LAST:event_SubmitbottonActionPerformed
 
     private void SubmitbottonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SubmitbottonMouseClicked
-        /*System.out.println("437");
-        
-        InputStream filepic = null;
- 
-            try {
-                //System.out.println("mk,nksds");
-                // TODO add your handling code here:
-                name = NameTextField.getText();
-                faculty = SurnameTextField.getText();
-                telephone = TelephoneTextField.getText();
-                facebook = FacebookTextField.getText();
-                medicine = MedicineTextField.getText();
-                food = FoodTextField.getText();
-                email = EmailTextField.getText();
-
-                String sql = "UPDATE students SET std_name=?, std_tel=?, std_facebook=?, std_medicine=?, std_food=?, std_email=? WHERE std_id=59130500004";
-                PreparedStatement pre = con.prepareStatement(sql);
-                pre.setString(1, name);
-                pre.setString(2, telephone);
-                pre.setString(3, facebook);
-                pre.setString(4, medicine);
-                pre.setString(5, food);
-                pre.setString(6, email);
-                //pre.setString(7, path);
-                pre.executeUpdate();
-                //ResultSet res = st.executeQuery(sql);
-
-            } catch (SQLException ex) {
-                ex.printStackTrace();
-            }
-
-            System.out.println("บบรรดทัด 466");
-
-         if(abPath == null){
-            System.out.println("");
-        }else{
-              
-        try {
-    
-            filepic = new FileInputStream(abPath);
-            String sql = "UPDATE students SET std_picture=? WHERE std_id=59130500004";
-                PreparedStatement pre = con.prepareStatement(sql);
-                pre.setString(1, path);
-                pre.executeUpdate();
-            OutputStream ops = null;
-            try {
-                
-                //System.out.println("asdada");
-                System.out.println("Path :" + "/Users/taloey/Desktop/PublicRegister/src/Images/" + path);
-                ops = new FileOutputStream(new File("src/Images/" + path));
-                int read = 0;
-                byte[] b = new byte[1024];
-                while ((read = filepic.read(b)) != -1) {
-                    ops.write(b, 0, read);
-                }
-                filepic.close();
-            } catch (FileNotFoundException e) {
-                System.out.println(e);
-            } catch (IOException ex) {
-                System.out.println(ex);
-            } 
-        } catch (FileNotFoundException ex) {
-            ex.printStackTrace();
-        }catch (SQLException ex) {
-                    ex.printStackTrace();
-                }
-         }*/
+//      System.out.println("437");
+//        
+//        InputStream filepic = null;
+// 
+//            try {
+//                //System.out.println("mk,nksds");
+//                // TODO add your handling code here:
+//                name = NameTextField.getText();
+//                faculty = SurnameTextField.getText();
+//                telephone = TelephoneTextField.getText();
+//                facebook = FacebookTextField.getText();
+//                medicine = MedicineTextField.getText();
+//                food = FoodTextField.getText();
+//                email = EmailTextField.getText();
+//
+//                String sql = "UPDATE students SET std_name=?, std_tel=?, std_facebook=?, std_medicine=?, std_food=?, std_email=? WHERE std_id=59130500004";
+//                PreparedStatement pre = con.prepareStatement(sql);
+//                pre.setString(1, name);
+//                pre.setString(2, telephone);
+//                pre.setString(3, facebook);
+//                pre.setString(4, medicine);
+//                pre.setString(5, food);
+//                pre.setString(6, email);
+//                //pre.setString(7, path);
+//                pre.executeUpdate();
+//                //ResultSet res = st.executeQuery(sql);
+//
+//            } catch (SQLException ex) {
+//                ex.printStackTrace();
+//            }
+//
+//            System.out.println("บบรรดทัด 466");
+//
+//         if(abPath == null){
+//            System.out.println("");
+//        }else{
+//              
+//        try {
+//    
+//            filepic = new FileInputStream(abPath);
+//            String sql = "UPDATE students SET std_picture=? WHERE std_id=59130500004";
+//                PreparedStatement pre = con.prepareStatement(sql);
+//                pre.setString(1, path);
+//                pre.executeUpdate();
+//            OutputStream ops = null;
+//            try {
+//                
+//                //System.out.println("asdada");
+//                System.out.println("Path :" + "/Users/taloey/Desktop/PublicRegister/src/Images/" + path);
+//                ops = new FileOutputStream(new File("src/Images/" + path));
+//                int read = 0;
+//                byte[] b = new byte[1024];
+//                while ((read = filepic.read(b)) != -1) {
+//                    ops.write(b, 0, read);
+//                }
+//                filepic.close();
+//            } catch (FileNotFoundException e) {
+//                System.out.println(e);
+//            } catch (IOException ex) {
+//                System.out.println(ex);
+//            } 
+//        } catch (FileNotFoundException ex) {
+//            ex.printStackTrace();
+//        }catch (SQLException ex) {
+//                    ex.printStackTrace();
+//                }
+//         }
 
     }//GEN-LAST:event_SubmitbottonMouseClicked
 
