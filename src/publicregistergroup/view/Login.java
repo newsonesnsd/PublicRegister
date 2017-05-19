@@ -5,10 +5,9 @@
  */
 package publicregistergroup.view;
 
-import java.sql.*;
 import javax.swing.*;
-import publicregistergroup.controller.*;
-import publicregistergroup.model.*;
+import publicregistergroup.model.Users;
+
 /**
  *
  * @author newso
