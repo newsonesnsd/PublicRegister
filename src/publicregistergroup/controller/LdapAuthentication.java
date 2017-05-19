@@ -15,8 +15,8 @@ import javax.naming.directory.InitialDirContext;
 
 public class LdapAuthentication {
 	public static void main(String[] args) {
-            String username = "59130500011";
-            String password = "News@ne0845221915";
+            String username = "";
+            String password = "";
             String base = "ou=People,ou=st,dc=kmutt,dc=ac,dc=th";
             String dn = "uid=" + username + "," + base;
             String ldapURL = "ldap://10.1.130.12:389";
