@@ -62,6 +62,7 @@ public class EditClub extends JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         detailArea = new javax.swing.JTextArea();
         NameClub = new javax.swing.JLabel();
+        jButton2 = new javax.swing.JButton();
         blackground = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -156,6 +157,14 @@ public class EditClub extends JFrame {
         NameClub.setForeground(new java.awt.Color(255, 255, 255));
         getContentPane().add(NameClub, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 40, 290, 40));
         NameClub.setText(Clubs.getClub_nameEdit(std_id));
+
+        jButton2.setText("Export");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 140, -1, -1));
 
         blackground.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/page.jpg"))); // NOI18N
         blackground.setText("jLabel1");
@@ -285,6 +294,10 @@ public class EditClub extends JFrame {
 
     }//GEN-LAST:event_savebottonMouseClicked
 
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton2ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -329,6 +342,7 @@ public class EditClub extends JFrame {
     private javax.swing.JLabel Uploadphotos;
     private javax.swing.JLabel blackground;
     private javax.swing.JTextArea detailArea;
+    private javax.swing.JButton jButton2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JButton savebotton;
     private javax.swing.JLabel textDetail1;

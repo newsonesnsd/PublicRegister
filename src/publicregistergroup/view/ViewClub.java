@@ -21,13 +21,14 @@ import static publicregistergroup.view.ViewProfile.con;
  * @author kz_no
  */
 public class ViewClub extends javax.swing.JFrame {
+
     static Connection con = ConnectionBuilder.getConnection();
     private String clubName = Clubs.getClub_name(LoginHomepage.getClubIndex());
     private String clubDescription = Clubs.getClub_description(LoginHomepage.getClubIndex());
     private int club_id = Clubs.getClub_id(LoginHomepage.getClubIndex());
     //private int Picture = Clubs.getClub_description(LoginHomepage.getClubIndex());
     private String search;
-    
+
     /**
      * Creates new form ViewClub
      */
@@ -35,15 +36,14 @@ public class ViewClub extends javax.swing.JFrame {
         initComponents();
         setLocationRelativeTo(null);
     }
+
     /**
-     * This is the part of my method 
-     * This zone is about getMethod to call Club: name, id, description
-     * @return 
+     * This is the part of my method This zone is about getMethod to call Club:
+     * name, id, description
+     *
+     * @return
      */
-    
-    
-    
-    
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -157,32 +157,31 @@ public class ViewClub extends javax.swing.JFrame {
 
     private void BottonsearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BottonsearchActionPerformed
         search = SearchclubTextField.getText();
-        String club="";    
+        String club = "";
         try {
-            
-           
-            String sql = "SELECT * FROM clubs where club_name LIKE '%"+search+"%'";
+
+            String sql = "SELECT * FROM clubs where club_name LIKE '%" + search + "%'";
             PreparedStatement pre = con.prepareStatement(sql);
 //            pre.setString(1, "%"+search+"%");
-             ResultSet res = pre.executeQuery();
-                if(res.next()) {
-                    club =res.getString("club_name");
-                    System.out.println(club+" clubname");
-                }
-                
+            ResultSet res = pre.executeQuery();
+            if (res.next()) {
+                club = res.getString("club_name");
+                System.out.println(club + " clubname");
+            }
+
         } catch (SQLException ex) {
             ex.printStackTrace();
-        }if (search .equals(club)) {
-            JOptionPane frame = new JOptionPane();
-            JOptionPane.showMessageDialog(frame,"Search success","Search club",JOptionPane.PLAIN_MESSAGE);
-             // = allClubs.getSelectedIndex();
-             ViewClubFromSearch view = new ViewClubFromSearch();
-            this.setVisible(false);
-             view.setVisible(true);
         }
-        else {
+        if (search.equals(club)) {
             JOptionPane frame = new JOptionPane();
-            JOptionPane.showMessageDialog(frame,"Failed club name","Search club",JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(frame, "Search success", "Search club", JOptionPane.PLAIN_MESSAGE);
+            // = allClubs.getSelectedIndex();
+            ViewClubFromSearch view = new ViewClubFromSearch();
+            this.setVisible(false);
+            view.setVisible(true);
+        } else {
+            JOptionPane frame = new JOptionPane();
+            JOptionPane.showMessageDialog(frame, "Failed club name", "Search club", JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_BottonsearchActionPerformed
 
@@ -191,9 +190,9 @@ public class ViewClub extends javax.swing.JFrame {
     }//GEN-LAST:event_RegistclubbottonMouseClicked
 
     private void BackbottonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BackbottonActionPerformed
-            this.setVisible(false);
-            LoginHomepage login = new LoginHomepage();
-            login.setVisible(true);
+        this.setVisible(false);
+        LoginHomepage login = new LoginHomepage();
+        login.setVisible(true);
     }//GEN-LAST:event_BackbottonActionPerformed
 
     /**

@@ -24,7 +24,7 @@ public class ViewProfile extends JFrame {
 
     static Connection con = ConnectionBuilder.getConnection();
     private final long std_id = Login.getStdId();
-   // private long stdUsername = Login.getStdId();
+    // private long stdUsername = Login.getStdId();
     private String name, faculty, telephone, facebook, medicine, food, email, picture, image;
     private String path, abPath;
     private String search;
@@ -356,10 +356,8 @@ public class ViewProfile extends JFrame {
     private void UploadBottonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UploadBottonActionPerformed
         JFileChooser fileOpen = new JFileChooser();
         fileOpen.showDialog(null, "Choose Image");
-        fileOpen.setAcceptAllFileFilterUsed(false);
-        fileOpen.addChoosableFileFilter(new FileNameExtensionFilter(".jpg", "jpg"));
-        fileOpen.addChoosableFileFilter(new FileNameExtensionFilter(".gif", "gif"));
-        fileOpen.addChoosableFileFilter(new FileNameExtensionFilter(".png", "png"));
+        fileOpen.setAcceptAllFileFilterUsed(true);
+        fileOpen.addChoosableFileFilter(new FileNameExtensionFilter(".jpg", ".png" ));
         int result = fileOpen.showDialog(null, "Choose Image");
         File selecFile = fileOpen.getSelectedFile();
         abPath = selecFile.getAbsolutePath();

@@ -19,15 +19,17 @@ import publicregistergroup.controller.ConnectionBuilder;
 import static publicregistergroup.view.ViewProfile.con;
 import publicregistergroup.model.Students;
 import publicregistergroup.model.Clubs;
+
 /**
  *
  * @author taloey
  */
 public class Uploadphoto extends JFrame {
+
     static Connection con = ConnectionBuilder.getConnection();
     private String search;
     private long std_id = Login.getStdId();
-   
+
     /**
      * Creates new form Uploadphoto
      */
@@ -160,32 +162,31 @@ public class Uploadphoto extends JFrame {
 
     private void BottonsearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BottonsearchActionPerformed
         search = SearchTextField.getText();
-        String club="";    
+        String club = "";
         try {
-            
-           
-            String sql = "SELECT * FROM clubs where club_name LIKE '%"+search+"%'";
+
+            String sql = "SELECT * FROM clubs where club_name LIKE '%" + search + "%'";
             PreparedStatement pre = con.prepareStatement(sql);
 //            pre.setString(1, "%"+search+"%");
-             ResultSet res = pre.executeQuery();
-                if(res.next()) {
-                    club =res.getString("club_name");
-                    System.out.println(club+" clubname");
-                }
-                
+            ResultSet res = pre.executeQuery();
+            if (res.next()) {
+                club = res.getString("club_name");
+                System.out.println(club + " clubname");
+            }
+
         } catch (SQLException ex) {
             ex.printStackTrace();
-        }if (search .equals(club)) {
-            JOptionPane frame = new JOptionPane();
-            JOptionPane.showMessageDialog(frame,"Search success","Search club",JOptionPane.PLAIN_MESSAGE);
-             // = allClubs.getSelectedIndex();
-             ViewClubFromSearch view = new ViewClubFromSearch();
-            this.setVisible(false);
-             view.setVisible(true);
         }
-        else {
+        if (search.equals(club)) {
             JOptionPane frame = new JOptionPane();
-            JOptionPane.showMessageDialog(frame,"Failed club name","Search club",JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(frame, "Search success", "Search club", JOptionPane.PLAIN_MESSAGE);
+            // = allClubs.getSelectedIndex();
+            ViewClubFromSearch view = new ViewClubFromSearch();
+            this.setVisible(false);
+            view.setVisible(true);
+        } else {
+            JOptionPane frame = new JOptionPane();
+            JOptionPane.showMessageDialog(frame, "Failed club name", "Search club", JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_BottonsearchActionPerformed
 
@@ -197,7 +198,7 @@ public class Uploadphoto extends JFrame {
     }//GEN-LAST:event_savebottonActionPerformed
 
     private void EditBottonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EditBottonActionPerformed
-               EditClub edit = new EditClub();
+        EditClub edit = new EditClub();
         this.setVisible(false);
         edit.setVisible(true);
     }//GEN-LAST:event_EditBottonActionPerformed
