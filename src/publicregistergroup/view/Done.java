@@ -16,6 +16,7 @@ public class Done extends javax.swing.JFrame {
      */
     public Done() {
         initComponents();
+        setLocationRelativeTo(null);
     }
 
     /**
