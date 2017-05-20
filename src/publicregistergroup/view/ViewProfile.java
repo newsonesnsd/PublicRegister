@@ -357,7 +357,8 @@ public class ViewProfile extends JFrame {
 
     private void UploadBottonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UploadBottonActionPerformed
         JFileChooser fileOpen = new JFileChooser();
-        FileNameExtensionFilter filter = new FileNameExtensionFilter( ".jpg", ".jpeg" , ".png");
+        FileNameExtensionFilter filter = new FileNameExtensionFilter("JPEG file", new String[] {"jpg", "jpeg" , "png"});
+        fileOpen.setFileFilter(filter);
         fileOpen.addChoosableFileFilter(filter);
         result = fileOpen.showDialog(null, "Choose Image");
         File selecFile = fileOpen.getSelectedFile();

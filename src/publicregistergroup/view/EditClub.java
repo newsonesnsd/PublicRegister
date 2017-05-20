@@ -202,9 +202,10 @@ public class EditClub extends JFrame {
     }//GEN-LAST:event_BottonsearchActionPerformed
 
     private void uploadbottonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_uploadbottonActionPerformed
-       JFileChooser fileOpen = new JFileChooser();
-        FileNameExtensionFilter filter = new FileNameExtensionFilter("JPEG file", ".jpg", ".jpeg");
-        fileOpen.setAcceptAllFileFilterUsed(true);
+        JFileChooser fileOpen = new JFileChooser();
+        FileNameExtensionFilter filter = new FileNameExtensionFilter("JPEG file", new String[]{"jpg", "jpeg", "png"});
+        fileOpen.setFileFilter(filter);
+        fileOpen.addChoosableFileFilter(filter);
         int result = fileOpen.showDialog(null, "Choose Image");
         File selecFile = fileOpen.getSelectedFile();
         if (selecFile == null) {
