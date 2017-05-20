@@ -127,25 +127,23 @@ public class Enroll {
         }      
     }
     
-//    public static void getStudentEnroll() {
-//        try {
-//            String sql = "SELECT c.club_id "
-//                    + "FROM clubs e JOIN students s on e.std_id = s.std_id "
-//                    + "WHERE e.club_id = ?";
-//            PreparedStatement pre = con.prepareStatement(sql);
-//            pre.setInt(1, club_id);
-//            ResultSet res = pre.executeQuery();
-//            while(res.next()) {
-//                System.out.println(res.getLong("s.std_id"));
-//            }
-//            
-//            
-//        } 
-//        catch (SQLException ex) {
-//            System.out.println(ex + "\n" + ex.getMessage() + "\n" + ex.getSQLState()); 
-//            ex.printStackTrace();
-//        }   
-//    
+    public static void getStudentEnroll() {
+        try {
+            String sql = "select * FROM clubs c join enroll t on s.club_id and t.std_id = ?";
+            PreparedStatement pre = con.prepareStatement(sql);
+            pre.setLong(1, std_id);
+            ResultSet res = pre.executeQuery();
+            while(res.next()) {
+                System.out.println(res.getLong("s.std_id"));
+            }
+            
+            
+        } 
+        catch (SQLException ex) {
+            System.out.println(ex + "\n" + ex.getMessage() + "\n" + ex.getSQLState()); 
+            ex.printStackTrace();
+        }   
+    }
 
     
     
