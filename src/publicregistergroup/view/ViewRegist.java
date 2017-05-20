@@ -11,12 +11,12 @@ import javax.swing.ImageIcon;
 import publicregistergroup.controller.ConnectionBuilder;
 import publicregistergroup.model.*;
 
-
 /**
  *
  * @author kz_no
  */
 public class ViewRegist extends javax.swing.JFrame {
+
     static Connection con = ConnectionBuilder.getConnection();
     private String clubName = Clubs.getClub_name(LoginHomepage.getClubIndex());
     //private String clubDescription = Clubs.getClub_description(Homepage.getClubIndex());
@@ -33,9 +33,7 @@ public class ViewRegist extends javax.swing.JFrame {
     public static int getClub_id() {
         return club_id;
     }
-    
-     
-    
+
     /**
      * Creates new form ViewRegist
      */
@@ -199,16 +197,16 @@ public class ViewRegist extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void EditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EditActionPerformed
-       EditProfile edit = new EditProfile();
-       this.setVisible(false);
-       edit.setVisible(true);
+        EditProfile edit = new EditProfile();
+        this.setVisible(false);
+        edit.setVisible(true);
     }//GEN-LAST:event_EditActionPerformed
 
     private void ConfirmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ConfirmActionPerformed
-       Enroll.enrollClub();
-       Done d = new Done();
-       this.setVisible(false);
-       d.setVisible(true);
+        Enroll.enrollClub();
+        Done d = new Done();
+        this.setVisible(false);
+        d.setVisible(true);
     }//GEN-LAST:event_ConfirmActionPerformed
 
     /**
@@ -242,7 +240,7 @@ public class ViewRegist extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new ViewRegist().setVisible(true);
-               
+
             }
         });
     }
