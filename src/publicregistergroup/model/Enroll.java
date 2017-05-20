@@ -7,10 +7,14 @@ package publicregistergroup.model;
 
 
 import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import publicregistergroup.controller.ConnectionBuilder;
 import publicregistergroup.view.Login;
 
@@ -25,15 +29,38 @@ public class Enroll {
     private static long std_id = Login.getStdId();
     private static Date create_at;
     private static Calendar update_at = Calendar.getInstance();
+    private static int countId = getCountId();
     
-    public static void enrollClub() {
+    private static int getCountId() {
         try {
             Statement st = con.createStatement();
-            String sql = "SELECT * FROM ...";
-        } catch (SQLException ex) {
+            String sql = "SELECT COUNT(*) FROM enroll";
+            ResultSet res = st.executeQuery(sql);
+            if (res.next()) {
+                countId = res.getInt("COUNT(*)");
+            }
+        } 
+        catch (SQLException ex) {
+            System.out.println(ex + "\n" + ex.getMessage());
+            ex.printStackTrace();
+        }
+        return countId;
+    }
+    
+    public static void enrollClub() {
+        int enrollId = countId;
+        try {
+            String sql = "INSERT INTO enroll (enroll_id, club_id, std_id, create_at, update_at) VALUES (?, ?, ?, ?, ?);";
+            PreparedStatement pre = con.prepareStatement(sql);
+            pre.setInt(1, enrollId);
+            pre.setInt(1, 4);
+            
+        } 
+        catch (SQLException ex) {
             System.out.println(ex + "/n" + ex.getMessage());
             ex.printStackTrace();
         }
         
     }
+
 }
