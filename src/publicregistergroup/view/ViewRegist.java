@@ -20,7 +20,7 @@ public class ViewRegist extends javax.swing.JFrame {
     static Connection con = ConnectionBuilder.getConnection();
     private String clubName = Clubs.getClub_name(LoginHomepage.getClubIndex());
     //private String clubDescription = Clubs.getClub_description(Homepage.getClubIndex());
-    private int club_id = Clubs.getClub_id(LoginHomepage.getClubIndex());
+    private static int club_id = Clubs.getClub_id(LoginHomepage.getClubIndex());
     private long stdID = Login.getStdId();
     private String stdName = Students.getStd_name(stdID);
     private String stdTel = Students.getStd_tel(stdID);
@@ -29,9 +29,12 @@ public class ViewRegist extends javax.swing.JFrame {
     private String stdFood = Students.getStd_food(stdID);
     private String stdEmail = Students.getStd_email(stdID);
     private long std_id = Login.getStdId();
+
+    public static int getClub_id() {
+        return club_id;
+    }
     
-    
-    
+     
     
     /**
      * Creates new form ViewRegist
@@ -202,6 +205,7 @@ public class ViewRegist extends javax.swing.JFrame {
     }//GEN-LAST:event_EditActionPerformed
 
     private void ConfirmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ConfirmActionPerformed
+       Enroll.enrollClub();
        Done d = new Done();
        this.setVisible(false);
        d.setVisible(true);
