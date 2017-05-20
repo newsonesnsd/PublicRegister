@@ -79,7 +79,6 @@ public class ViewClub extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         AddDescription = new javax.swing.JLabel();
         jlbClubId = new javax.swing.JLabel();
-        AddName = new javax.swing.JLabel();
         Backbotton = new javax.swing.JButton();
         blackground = new javax.swing.JLabel();
 
@@ -98,8 +97,8 @@ public class ViewClub extends javax.swing.JFrame {
         getContentPane().add(Clubname, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 200, 660, 80));
         Clubname.setText(Clubs.getClub_name(club_id));
 
-        Club.setFont(new java.awt.Font("Quark", 0, 19)); // NOI18N
-        Club.setText("<html> CLUB ID:  <br> <br>CLUB NAME:  <br> <br>DESCRIPTION:  </html>");
+        Club.setFont(new java.awt.Font("Quark", 1, 19)); // NOI18N
+        Club.setText("<html> CLUB ID:  <br> <br>DESCRIPTION:  </html>");
         Club.setVerticalAlignment(javax.swing.SwingConstants.TOP);
         getContentPane().add(Club, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 340, -1, 170));
 
@@ -137,17 +136,15 @@ public class ViewClub extends javax.swing.JFrame {
         jLabel2.setText("____________________________________________________________________________________________________________________");
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 280, -1, -1));
 
-        AddDescription.setFont(new java.awt.Font("Quark", 0, 14)); // NOI18N
-        getContentPane().add(AddDescription, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 440, 230, 30));
+        AddDescription.setFont(new java.awt.Font("Quark", 0, 19)); // NOI18N
+        AddDescription.setText("ข้อความข้อความข้อความข้อความข้อความ");
+        getContentPane().add(AddDescription, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 370, 250, 40));
         AddDescription.setText(clubDescription);
 
-        jlbClubId.setFont(new java.awt.Font("Quark", 0, 14)); // NOI18N
-        getContentPane().add(jlbClubId, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 340, 220, 30));
+        jlbClubId.setFont(new java.awt.Font("Quark", 0, 19)); // NOI18N
+        jlbClubId.setText("0");
+        getContentPane().add(jlbClubId, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 335, 220, 30));
         jlbClubId.setText(club_id+"");
-
-        AddName.setFont(new java.awt.Font("Quark", 0, 14)); // NOI18N
-        getContentPane().add(AddName, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 390, 210, 30));
-        AddName.setText(clubName);
 
         Backbotton.setText("Back");
         Backbotton.addActionListener(new java.awt.event.ActionListener() {
@@ -155,12 +152,12 @@ public class ViewClub extends javax.swing.JFrame {
                 BackbottonActionPerformed(evt);
             }
         });
-        getContentPane().add(Backbotton, new org.netbeans.lib.awtextra.AbsoluteConstraints(880, 40, -1, -1));
+        getContentPane().add(Backbotton, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 630, 101, 30));
 
         blackground.setFont(new java.awt.Font("Quark", 0, 19)); // NOI18N
         blackground.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/page.jpg"))); // NOI18N
         blackground.setText("jLabel1");
-        getContentPane().add(blackground, new org.netbeans.lib.awtextra.AbsoluteConstraints(-5, 0, 1030, 770));
+        getContentPane().add(blackground, new org.netbeans.lib.awtextra.AbsoluteConstraints(-5, 0, 1020, 770));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -292,7 +289,6 @@ public class ViewClub extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel AddDescription;
-    private javax.swing.JLabel AddName;
     private javax.swing.JButton Backbotton;
     private javax.swing.JButton Bottonsearch;
     private javax.swing.JLabel Club;
