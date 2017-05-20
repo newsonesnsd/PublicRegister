@@ -14,7 +14,6 @@ import java.sql.Statement;
 import java.sql.Timestamp;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-//import java.util.Date;
 import publicregistergroup.controller.ConnectionBuilder;
 import publicregistergroup.view.Login;
 import publicregistergroup.view.ViewRegist;
@@ -104,7 +103,32 @@ public class Enroll {
                
     }
     
-    
+    public static void getStudentEnrollClub() {
+        try {
+            String sql = "SELECT s.std_id s.std_name , s.std_faculty , s.std_department , s.std_email , s.std_tel "
+                    + "FROM enroll e JOIN students s on e.std_id = s.std_id "
+                    + "WHERE e.club_id = ?";
+            PreparedStatement pre = con.prepareStatement(sql);
+            pre.setInt(1, club_id);
+            ResultSet res = pre.executeQuery();
+            while(res.next()) {
+                System.out.println(res.getLong("std_id"));
+                System.out.println(res.getString("std_name"));
+                System.out.println(res.getString("std_faculty"));
+                System.out.println(res.getString("std_department"));
+                System.out.println(res.getString("std_email"));
+                System.out.println(res.getString("std_tel"));
+            }
+            
+            
+        } 
+        catch (SQLException ex) {
+            System.out.println(ex + "\n" + ex.getMessage() + "\n" + ex.getSQLState()); 
+            ex.printStackTrace();
+        }
+        
+        
+    }
     
     
 }
