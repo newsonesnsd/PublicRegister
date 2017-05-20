@@ -15,9 +15,9 @@ import publicregistergroup.model.*;
  */
 public class ViewClubFromSearch extends javax.swing.JFrame {
     static Connection con = ConnectionBuilder.getConnection();
-    private String clubName = Clubs.getClub_name(Homepage.getClubIndex());
-    private String clubDescription = Clubs.getClub_description(Homepage.getClubIndex());
-    private int club_id = Clubs.getClub_id(Homepage.getClubIndex());
+    private String clubName = Clubs.getClub_name(LoginHomepage.getClubIndex());
+    private String clubDescription = Clubs.getClub_description(LoginHomepage.getClubIndex());
+    private int club_id = Clubs.getClub_id(LoginHomepage.getClubIndex());
     
     
     /**
@@ -32,25 +32,7 @@ public class ViewClubFromSearch extends javax.swing.JFrame {
      * This zone is about getMethod to call Club: name, id, description
      * @return 
      */
-    
-    
-//    public String getClubName() {
-//        club_id = clubIndex+1;        
-//        try {
-//            String sql = "SELECT * FROM clubs WHERE club_id = ?";
-//            PreparedStatement pre = con.prepareStatement(sql);
-//            pre.setInt(1, club_id);
-//            ResultSet rs = pre.executeQuery();
-//            if(rs.next()) {
-//                clubName = rs.getString("club_name");
-//                //System.out.println(clubName);
-//            }
-//        } 
-//        catch (SQLException e) {
-//            System.out.println(e + "\n" + e.getMessage());
-//        }
-//        return clubName;      
-//    }
+
     
     
     /**
@@ -66,8 +48,6 @@ public class ViewClubFromSearch extends javax.swing.JFrame {
         Clubname = new javax.swing.JLabel();
         Club = new javax.swing.JLabel();
         Registclubbotton = new javax.swing.JButton();
-        SearchclubTextField = new javax.swing.JTextField();
-        Bottonsearch = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         AddDescription = new javax.swing.JLabel();
         jlbClubId = new javax.swing.JLabel();
@@ -108,23 +88,6 @@ public class ViewClubFromSearch extends javax.swing.JFrame {
         });
         getContentPane().add(Registclubbotton, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 630, 130, 30));
 
-        SearchclubTextField.setFont(new java.awt.Font("Kanit", 0, 13)); // NOI18N
-        SearchclubTextField.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                SearchclubTextFieldActionPerformed(evt);
-            }
-        });
-        getContentPane().add(SearchclubTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(13, 91, 261, 22));
-        SearchclubTextField.getAccessibleContext().setAccessibleDescription("");
-
-        Bottonsearch.setText("OK");
-        Bottonsearch.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BottonsearchActionPerformed(evt);
-            }
-        });
-        getContentPane().add(Bottonsearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 90, 80, 25));
-
         jLabel2.setText("____________________________________________________________________________________________________________________");
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 280, -1, -1));
 
@@ -162,39 +125,8 @@ public class ViewClubFromSearch extends javax.swing.JFrame {
         view.setVisible(true);
     }//GEN-LAST:event_RegistclubbottonActionPerformed
 
-    private void SearchclubTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SearchclubTextFieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_SearchclubTextFieldActionPerformed
-
-    private void BottonsearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BottonsearchActionPerformed
-
-    }//GEN-LAST:event_BottonsearchActionPerformed
-
     private void RegistclubbottonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_RegistclubbottonMouseClicked
-//       try {
-//            // TODO add your handling code here:
-//            //name = NameTextField.getText();
-//            //faculty = SurnameTextField.getText();
-//            //telephone = TelephoneTextField.getText();
-//            //facebook = FacebookTextField.getText();
-//            //medicineloss = MedicineTextField.getText();
-//            //foodloss = FoodTextField.getText();
-//            //email = EmailTextField.getText();
-////            clubID =  Integer.parseInt(AddID.getText()); 
-////            clubName = AddName.getText();
-////            clubDescription = AddDescription.getText();
-////            Statement st = con.createStatement();
-////            String sql = "SELECT * FROM clubs SET club_name=?, club_description=? where club_id=1";
-////            PreparedStatement pre = con.prepareStatement(sql);
-////            pre.setString(1, clubName);
-////            pre.setString(2, clubDescription);
-////            //pre.setString(3, telephone);
-////            ResultSet res = pre.executeQuery();
-////            //ResultSet res = st.executeQuery(sql);
-//            
-//        } catch (SQLException ex) {
-//            Logger.getLogger(ViewProfile.class.getName()).log(Level.SEVERE, null, ex);
-//        }
+
     }//GEN-LAST:event_RegistclubbottonMouseClicked
 
     private void BackbottonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BackbottonActionPerformed
@@ -254,12 +186,10 @@ public class ViewClubFromSearch extends javax.swing.JFrame {
     private javax.swing.JLabel AddDescription;
     private javax.swing.JLabel AddName;
     private javax.swing.JButton Backbotton;
-    private javax.swing.JButton Bottonsearch;
     private javax.swing.JLabel Club;
     private javax.swing.JLabel Clubname;
     private javax.swing.JLabel Picture;
     private javax.swing.JButton Registclubbotton;
-    private javax.swing.JTextField SearchclubTextField;
     private javax.swing.JLabel blackground;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jlbClubId;

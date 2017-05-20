@@ -38,8 +38,6 @@ public class LinkData extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        searchTextField = new javax.swing.JTextField();
-        Bottonsearch = new javax.swing.JButton();
         UsernameID = new javax.swing.JLabel();
         Box1 = new javax.swing.JPanel();
         changeprofilebotton = new javax.swing.JButton();
@@ -54,27 +52,6 @@ public class LinkData extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        searchTextField.setMinimumSize(new java.awt.Dimension(8, 22));
-        searchTextField.setPreferredSize(new java.awt.Dimension(8, 22));
-        searchTextField.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                searchTextFieldActionPerformed(evt);
-            }
-        });
-        getContentPane().add(searchTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(17, 88, 264, 27));
-
-        Bottonsearch.setFont(new java.awt.Font("Kanit", 0, 13)); // NOI18N
-        Bottonsearch.setText("OK");
-        Bottonsearch.setMaximumSize(new java.awt.Dimension(55, 30));
-        Bottonsearch.setMinimumSize(new java.awt.Dimension(55, 30));
-        Bottonsearch.setPreferredSize(new java.awt.Dimension(55, 30));
-        Bottonsearch.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BottonsearchActionPerformed(evt);
-            }
-        });
-        getContentPane().add(Bottonsearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(284, 87, 84, 27));
 
         UsernameID.setFont(new java.awt.Font("Kanit", 0, 24)); // NOI18N
         getContentPane().add(UsernameID, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 30, 220, 30));
@@ -200,35 +177,6 @@ public class LinkData extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void BottonsearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BottonsearchActionPerformed
-        search = searchTextField.getText();
-        String club = "";
-        try {
-
-            String sql = "SELECT * FROM clubs where club_name LIKE '%" + search + "%'";
-            PreparedStatement pre = con.prepareStatement(sql);
-//            pre.setString(1, "%"+search+"%");
-            ResultSet res = pre.executeQuery();
-            if (res.next()) {
-                club = res.getString("club_name");
-                System.out.println(club + " clubname");
-            }
-
-        } catch (SQLException ex) {
-            ex.printStackTrace();
-        }
-        if (search.equals(club)) {
-            JOptionPane frame = new JOptionPane();
-            JOptionPane.showMessageDialog(frame, "Search success", "Search club", JOptionPane.PLAIN_MESSAGE);
-            ViewClubFromSearch view = new ViewClubFromSearch();
-            this.setVisible(false);
-            view.setVisible(true);
-        } else {
-            JOptionPane frame = new JOptionPane();
-            JOptionPane.showMessageDialog(frame, "Failed club name", "Search club", JOptionPane.ERROR_MESSAGE);
-        }
-    }//GEN-LAST:event_BottonsearchActionPerformed
-
     private void checkclubbottonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkclubbottonActionPerformed
         CheckAllActivity check = new CheckAllActivity();
         this.setVisible(false);
@@ -246,10 +194,6 @@ public class LinkData extends javax.swing.JFrame {
         this.setVisible(false);
         profile.setVisible(true);
     }//GEN-LAST:event_changeprofilebottonActionPerformed
-
-    private void searchTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchTextFieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_searchTextFieldActionPerformed
 
     private void BackbottonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BackbottonActionPerformed
         this.setVisible(false);
@@ -295,7 +239,6 @@ public class LinkData extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Backbotton;
-    private javax.swing.JButton Bottonsearch;
     private javax.swing.JPanel Box1;
     private javax.swing.JPanel Box2;
     private javax.swing.JPanel Box3;
@@ -305,6 +248,5 @@ public class LinkData extends javax.swing.JFrame {
     private javax.swing.JButton checkclubbotton;
     private javax.swing.JButton clubbotton;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JTextField searchTextField;
     // End of variables declaration//GEN-END:variables
 }
