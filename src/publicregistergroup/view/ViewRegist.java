@@ -74,7 +74,6 @@ public class ViewRegist extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
 
         setTitle("Confirmmation");
-        setPreferredSize(new java.awt.Dimension(853, 614));
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 

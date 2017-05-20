@@ -36,6 +36,7 @@ public class EditClub extends JFrame {
      private String path,abPath;
      private String search;
      private long std_id = Login.getStdId();
+    
     /**
      * Creates new form Uploadphoto
      */
@@ -217,17 +218,28 @@ public class EditClub extends JFrame {
     private void savebottonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_savebottonActionPerformed
         InputStream filepic = null;
         
-        
-            try{
-            detailclub = detailArea.getText();
-            String sql = "UPDATE clubs SET club_description=? WHERE club_id=?";
+           try{
+            String sql = "SELECT std_role FROM students WHERE std_id = ?";
             PreparedStatement pre = con.prepareStatement(sql);
-            pre.setString(1, detailclub);
-            pre.setLong(2, std_id);
+            pre.setLong(1, std_id);
+            ResultSet res = pre.executeQuery();
+            int club_id =0;
+            String std_role=null;
+            while (res.next()) {
+                std_role = res.getString("std_role");
+                club_id = Integer.parseInt(std_role);
+                detailclub = detailArea.getText();
+                sql = "UPDATE clubs SET club_description=? WHERE club_id=?";
+                PreparedStatement pre2 = con.prepareStatement(sql);
+                pre.setString(1, detailclub);
+                pre2.setLong(2, std_id);   
+       
+//            pre.setString(1, detailclub);
+//            pre.setLong(2, std_id);
             //System.out.println("2");
-            pre.executeUpdate();
+            pre2.executeUpdate();
             System.out.println("Yes");
-            
+            }
         } catch (SQLException ex) {
                 System.out.println(ex);
         }
@@ -262,9 +274,10 @@ public class EditClub extends JFrame {
                 System.out.println(ex);
             } 
         } catch (FileNotFoundException ex) {
-            Logger.getLogger(ViewProfile.class.getName()).log(Level.SEVERE, null, ex);
+            ex.printStackTrace();
         }catch (SQLException ex) {
-                    Logger.getLogger(ViewProfile.class.getName()).log(Level.SEVERE, null, ex);
+                    System.out.println(ex);
+                    ex.printStackTrace();
                 }
         }
         LinkData data = new LinkData();

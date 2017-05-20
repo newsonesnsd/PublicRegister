@@ -206,7 +206,7 @@ public class LoginHomepage extends javax.swing.JFrame {
                         .addComponent(clubName_P1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(pic_P1, javax.swing.GroupLayout.PREFERRED_SIZE, 272, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, recommendPage1Layout.createSequentialGroup()
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(recommendPage1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -295,7 +295,7 @@ public class LoginHomepage extends javax.swing.JFrame {
                             .addComponent(clubId_P2))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(des_P2, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(joinClub_P2)
                 .addGap(16, 16, 16))
         );
@@ -378,7 +378,7 @@ public class LoginHomepage extends javax.swing.JFrame {
                             .addComponent(clubId_P3))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(des_P3, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jButton6)
                 .addGap(16, 16, 16))
         );
@@ -459,7 +459,7 @@ public class LoginHomepage extends javax.swing.JFrame {
                             .addComponent(clubId_P4))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(des_P4, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jButton7)
                 .addGap(16, 16, 16))
         );
@@ -566,7 +566,6 @@ public class LoginHomepage extends javax.swing.JFrame {
         ShowID.setText(stdID+"");
 
         CheckActivity.setFont(new java.awt.Font("Quark", 0, 14)); // NOI18N
-        CheckActivity.setIcon(new javax.swing.ImageIcon("C:\\Users\\kz_no\\Desktop\\ProjectPublicRegister\\src\\Images\\task.png")); // NOI18N
         CheckActivity.setBorder(null);
         CheckActivity.setBorderPainted(false);
         CheckActivity.setDebugGraphicsOptions(javax.swing.DebugGraphics.NONE_OPTION);
@@ -586,9 +585,8 @@ public class LoginHomepage extends javax.swing.JFrame {
                 CheckActivityActionPerformed(evt);
             }
         });
-        getContentPane().add(CheckActivity, new org.netbeans.lib.awtextra.AbsoluteConstraints(936, 40, 30, -1));
+        getContentPane().add(CheckActivity, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 130, 140, 30));
 
-        logout.setIcon(new javax.swing.ImageIcon("C:\\Users\\kz_no\\Desktop\\ProjectPublicRegister\\src\\Images\\exit.png")); // NOI18N
         logout.setBorder(null);
         logout.setBorderPainted(false);
         logout.setDebugGraphicsOptions(javax.swing.DebugGraphics.NONE_OPTION);
