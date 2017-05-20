@@ -75,9 +75,9 @@ public class ViewProfile extends JFrame {
         EmailTextField = new javax.swing.JTextField();
         SearchclubTextField = new javax.swing.JTextField();
         logout = new javax.swing.JButton();
+        logOut = new javax.swing.JLabel();
         ShowID = new javax.swing.JLabel();
         Id = new javax.swing.JLabel();
-        logOut = new javax.swing.JLabel();
         blackground = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -274,16 +274,17 @@ public class ViewProfile extends JFrame {
         });
         getContentPane().add(logout, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 50, 40, 40));
 
+        logOut.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        getContentPane().add(logOut, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 90, 40, 20));
+
         ShowID.setFont(new java.awt.Font("Quark", 1, 18)); // NOI18N
-        getContentPane().add(ShowID, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 20, 130, 21));
+        ShowID.setText("59130500005");
+        getContentPane().add(ShowID, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 11, 140, 40));
         ShowID.setText(stdID+"");
 
         Id.setFont(new java.awt.Font("Quark", 1, 19)); // NOI18N
         Id.setText("ID :");
-        getContentPane().add(Id, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 10, 30, 30));
-
-        logOut.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        getContentPane().add(logOut, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 90, 40, 20));
+        getContentPane().add(Id, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 17, -1, 30));
 
         blackground.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/page.jpg"))); // NOI18N
         blackground.setText("jLabel1");

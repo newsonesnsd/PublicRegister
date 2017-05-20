@@ -63,6 +63,10 @@ public class ViewClub extends javax.swing.JFrame {
         AddDescription = new javax.swing.JLabel();
         jlbClubId = new javax.swing.JLabel();
         Backbotton = new javax.swing.JButton();
+        logout = new javax.swing.JButton();
+        logOut = new javax.swing.JLabel();
+        ShowID = new javax.swing.JLabel();
+        Id = new javax.swing.JLabel();
         blackground = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -71,13 +75,15 @@ public class ViewClub extends javax.swing.JFrame {
 
         Picture.setFont(new java.awt.Font("Quark", 1, 70)); // NOI18N
         Picture.setForeground(new java.awt.Color(153, 153, 153));
-        Picture.setText("      PIC");
-        Picture.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        getContentPane().add(Picture, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 320, 360, 320));
+        Picture.setText("     PIC");
+        Picture.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        Picture.setOpaque(true);
+        getContentPane().add(Picture, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 320, 320, 290));
         Picture.setIcon(new ImageIcon((new ImageIcon("src/Images/"+(Clubs.getClub_pic(club_id))).getImage().getScaledInstance(355,315,Image.SCALE_SMOOTH))));
 
-        Clubname.setFont(new java.awt.Font("Quark", 1, 36)); // NOI18N
-        getContentPane().add(Clubname, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 200, 660, 80));
+        Clubname.setFont(new java.awt.Font("Quark", 1, 42)); // NOI18N
+        Clubname.setText("ชมรมอาสาพัฒนาชุมชน");
+        getContentPane().add(Clubname, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 220, 780, 80));
         Clubname.setText(Clubs.getClub_name(club_id));
 
         Club.setFont(new java.awt.Font("Quark", 1, 19)); // NOI18N
@@ -105,7 +111,7 @@ public class ViewClub extends javax.swing.JFrame {
                 SearchclubTextFieldActionPerformed(evt);
             }
         });
-        getContentPane().add(SearchclubTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(13, 91, 261, 22));
+        getContentPane().add(SearchclubTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(17, 88, 264, 27));
         SearchclubTextField.getAccessibleContext().setAccessibleDescription("");
 
         Bottonsearch.setText("OK");
@@ -114,7 +120,7 @@ public class ViewClub extends javax.swing.JFrame {
                 BottonsearchActionPerformed(evt);
             }
         });
-        getContentPane().add(Bottonsearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 90, 80, 25));
+        getContentPane().add(Bottonsearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(284, 87, 84, 27));
 
         jLabel2.setText("____________________________________________________________________________________________________________________");
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 280, -1, -1));
@@ -137,10 +143,43 @@ public class ViewClub extends javax.swing.JFrame {
         });
         getContentPane().add(Backbotton, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 630, 101, 30));
 
+        logout.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/exit.png"))); // NOI18N
+        logout.setBorder(null);
+        logout.setBorderPainted(false);
+        logout.setDebugGraphicsOptions(javax.swing.DebugGraphics.NONE_OPTION);
+        logout.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                logoutMouseMoved(evt);
+            }
+        });
+        logout.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                logoutMouseExited(evt);
+            }
+        });
+        logout.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                logoutActionPerformed(evt);
+            }
+        });
+        getContentPane().add(logout, new org.netbeans.lib.awtextra.AbsoluteConstraints(930, 50, 32, 32));
+
+        logOut.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        getContentPane().add(logOut, new org.netbeans.lib.awtextra.AbsoluteConstraints(930, 90, 40, 20));
+
+        ShowID.setFont(new java.awt.Font("Quark", 1, 18)); // NOI18N
+        ShowID.setText("59130500005");
+        getContentPane().add(ShowID, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 11, 140, 40));
+        ShowID.setText(club_id+"");
+
+        Id.setFont(new java.awt.Font("Quark", 1, 19)); // NOI18N
+        Id.setText("ID :");
+        getContentPane().add(Id, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 17, -1, 30));
+
         blackground.setFont(new java.awt.Font("Quark", 0, 19)); // NOI18N
         blackground.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/page.jpg"))); // NOI18N
         blackground.setText("jLabel1");
-        getContentPane().add(blackground, new org.netbeans.lib.awtextra.AbsoluteConstraints(-5, 0, 1020, 770));
+        getContentPane().add(blackground, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1020, 770));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -195,6 +234,20 @@ public class ViewClub extends javax.swing.JFrame {
         login.setVisible(true);
     }//GEN-LAST:event_BackbottonActionPerformed
 
+    private void logoutMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_logoutMouseMoved
+        logOut.setText("logout");
+    }//GEN-LAST:event_logoutMouseMoved
+
+    private void logoutMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_logoutMouseExited
+        logOut.setText(" ");
+    }//GEN-LAST:event_logoutMouseExited
+
+    private void logoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logoutActionPerformed
+        Homepage homep = new Homepage();
+        this.setVisible(false);
+        homep.setVisible(true);
+    }//GEN-LAST:event_logoutActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -239,11 +292,15 @@ public class ViewClub extends javax.swing.JFrame {
     private javax.swing.JButton Bottonsearch;
     private javax.swing.JLabel Club;
     private javax.swing.JLabel Clubname;
+    private javax.swing.JLabel Id;
     private javax.swing.JLabel Picture;
     private javax.swing.JButton Registclubbotton;
     private javax.swing.JTextField SearchclubTextField;
+    private javax.swing.JLabel ShowID;
     private javax.swing.JLabel blackground;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jlbClubId;
+    private javax.swing.JLabel logOut;
+    private javax.swing.JButton logout;
     // End of variables declaration//GEN-END:variables
 }
