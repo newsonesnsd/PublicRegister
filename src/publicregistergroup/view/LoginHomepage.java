@@ -125,7 +125,6 @@ public class LoginHomepage extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Homepage");
         setIconImages(getIconImages());
-        setPreferredSize(new java.awt.Dimension(1024, 768));
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -197,7 +196,7 @@ public class LoginHomepage extends javax.swing.JFrame {
                     .addGroup(recommendPage1Layout.createSequentialGroup()
                         .addGap(45, 45, 45)
                         .addComponent(clubName_P1)))
-                .addContainerGap(28, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, recommendPage1Layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(joinClub_P1)
@@ -212,7 +211,7 @@ public class LoginHomepage extends javax.swing.JFrame {
                         .addComponent(clubName_P1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(pic_P1, javax.swing.GroupLayout.PREFERRED_SIZE, 272, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, recommendPage1Layout.createSequentialGroup()
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(recommendPage1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -280,7 +279,7 @@ public class LoginHomepage extends javax.swing.JFrame {
                     .addGroup(recommendPage2Layout.createSequentialGroup()
                         .addGap(45, 45, 45)
                         .addComponent(clubName_P2)))
-                .addContainerGap(28, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, recommendPage2Layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(joinClub_P2)
@@ -302,7 +301,7 @@ public class LoginHomepage extends javax.swing.JFrame {
                             .addComponent(clubId_P2))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(des_P2, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(joinClub_P2)
                 .addGap(16, 16, 16))
         );
@@ -364,7 +363,7 @@ public class LoginHomepage extends javax.swing.JFrame {
                     .addGroup(jPanel7Layout.createSequentialGroup()
                         .addGap(45, 45, 45)
                         .addComponent(clubName_P3)))
-                .addContainerGap(28, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel7Layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(jButton6)
@@ -386,7 +385,7 @@ public class LoginHomepage extends javax.swing.JFrame {
                             .addComponent(clubId_P3))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(des_P3, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jButton6)
                 .addGap(16, 16, 16))
         );
@@ -446,7 +445,7 @@ public class LoginHomepage extends javax.swing.JFrame {
                     .addGroup(jPanel8Layout.createSequentialGroup()
                         .addGap(45, 45, 45)
                         .addComponent(clubName_P4)))
-                .addContainerGap(28, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel8Layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(jButton7)
@@ -468,7 +467,7 @@ public class LoginHomepage extends javax.swing.JFrame {
                             .addComponent(clubId_P4))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(des_P4, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jButton7)
                 .addGap(16, 16, 16))
         );
@@ -572,11 +571,11 @@ public class LoginHomepage extends javax.swing.JFrame {
 
         Id.setFont(new java.awt.Font("Quark", 1, 19)); // NOI18N
         Id.setText("ID :");
-        getContentPane().add(Id, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 17, -1, -1));
+        getContentPane().add(Id, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 17, -1, 30));
 
         ShowID.setFont(new java.awt.Font("Quark", 1, 18)); // NOI18N
         ShowID.setText("59130500005");
-        getContentPane().add(ShowID, new org.netbeans.lib.awtextra.AbsoluteConstraints(880, 17, 120, 21));
+        getContentPane().add(ShowID, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 11, 140, 40));
         ShowID.setText(stdID+"");
 
         CheckActivity.setFont(new java.awt.Font("Quark", 0, 14)); // NOI18N
@@ -600,13 +599,12 @@ public class LoginHomepage extends javax.swing.JFrame {
                 CheckActivityActionPerformed(evt);
             }
         });
-        getContentPane().add(CheckActivity, new org.netbeans.lib.awtextra.AbsoluteConstraints(930, 40, 32, 32));
+        getContentPane().add(CheckActivity, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 50, 32, 32));
 
         logout.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/exit.png"))); // NOI18N
         logout.setBorder(null);
         logout.setBorderPainted(false);
         logout.setDebugGraphicsOptions(javax.swing.DebugGraphics.NONE_OPTION);
-        logout.setPreferredSize(new java.awt.Dimension(32, 32));
         logout.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseMoved(java.awt.event.MouseEvent evt) {
                 logoutMouseMoved(evt);
@@ -622,7 +620,7 @@ public class LoginHomepage extends javax.swing.JFrame {
                 logoutActionPerformed(evt);
             }
         });
-        getContentPane().add(logout, new org.netbeans.lib.awtextra.AbsoluteConstraints(970, 40, 32, 32));
+        getContentPane().add(logout, new org.netbeans.lib.awtextra.AbsoluteConstraints(930, 50, 32, 32));
 
         checkActivity.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         getContentPane().add(checkActivity, new org.netbeans.lib.awtextra.AbsoluteConstraints(910, 70, 80, 20));

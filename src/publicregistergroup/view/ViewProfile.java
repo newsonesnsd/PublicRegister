@@ -113,7 +113,7 @@ public class ViewProfile extends JFrame {
             boxphotoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(boxphotoLayout.createSequentialGroup()
                 .addComponent(ImageS, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(136, 136, 136)
+                .addGap(143, 143, 143)
                 .addComponent(ImageUpload)
                 .addGap(202, 202, 202))
         );
@@ -180,7 +180,6 @@ public class ViewProfile extends JFrame {
         getContentPane().add(UploadBotton, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 205, 110, 30));
 
         NameTextField.setFont(new java.awt.Font("Quark", 0, 21)); // NOI18N
-        NameTextField.setText("Kittiya");
         NameTextField.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         NameTextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -192,7 +191,6 @@ public class ViewProfile extends JFrame {
 
         SurnameTextField.setEditable(false);
         SurnameTextField.setFont(new java.awt.Font("Quark", 0, 22)); // NOI18N
-        SurnameTextField.setText("IT");
         SurnameTextField.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         SurnameTextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -203,7 +201,6 @@ public class ViewProfile extends JFrame {
         SurnameTextField.setText(Students.getStd_faculty(std_id));
 
         TelephoneTextField.setFont(new java.awt.Font("Quark", 0, 20)); // NOI18N
-        TelephoneTextField.setText("0907700443");
         TelephoneTextField.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         TelephoneTextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -214,7 +211,6 @@ public class ViewProfile extends JFrame {
         TelephoneTextField.setText(Students.getStd_tel(std_id));
 
         FacebookTextField.setFont(new java.awt.Font("Quark", 0, 21)); // NOI18N
-        FacebookTextField.setText("Noey");
         FacebookTextField.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         FacebookTextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -225,7 +221,6 @@ public class ViewProfile extends JFrame {
         FacebookTextField.setText(Students.getStd_facebook(std_id));
 
         MedicineTextField.setFont(new java.awt.Font("Quark", 0, 22)); // NOI18N
-        MedicineTextField.setText("-");
         MedicineTextField.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         MedicineTextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -236,7 +231,6 @@ public class ViewProfile extends JFrame {
         MedicineTextField.setText(Students.getStd_medicine(std_id));
 
         FoodTextField.setFont(new java.awt.Font("Quark", 0, 22)); // NOI18N
-        FoodTextField.setText("-");
         FoodTextField.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         FoodTextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -247,7 +241,6 @@ public class ViewProfile extends JFrame {
         FoodTextField.setText(Students.getStd_food(std_id));
 
         EmailTextField.setFont(new java.awt.Font("Quark", 0, 21)); // NOI18N
-        EmailTextField.setText("kz_noey");
         EmailTextField.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         getContentPane().add(EmailTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 530, 320, 40));
         EmailTextField.setText(Students.getStd_email(std_id));
@@ -279,16 +272,15 @@ public class ViewProfile extends JFrame {
                 logoutActionPerformed(evt);
             }
         });
-        getContentPane().add(logout, new org.netbeans.lib.awtextra.AbsoluteConstraints(970, 40, 32, 32));
+        getContentPane().add(logout, new org.netbeans.lib.awtextra.AbsoluteConstraints(950, 60, 40, 40));
 
         ShowID.setFont(new java.awt.Font("Quark", 1, 18)); // NOI18N
-        ShowID.setText("59130500005");
-        getContentPane().add(ShowID, new org.netbeans.lib.awtextra.AbsoluteConstraints(880, 17, 120, 21));
+        getContentPane().add(ShowID, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 20, 130, 21));
         ShowID.setText(stdID+"");
 
         Id.setFont(new java.awt.Font("Quark", 1, 19)); // NOI18N
         Id.setText("ID :");
-        getContentPane().add(Id, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 17, -1, -1));
+        getContentPane().add(Id, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 10, 30, 30));
 
         logOut.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         getContentPane().add(logOut, new org.netbeans.lib.awtextra.AbsoluteConstraints(970, 70, 40, 20));
@@ -357,17 +349,17 @@ public class ViewProfile extends JFrame {
 
     private void UploadBottonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UploadBottonActionPerformed
         JFileChooser fileOpen = new JFileChooser();
-        FileNameExtensionFilter filter = new FileNameExtensionFilter("JPEG file", new String[] {"jpg", "jpeg" , "png"});
+        FileNameExtensionFilter filter = new FileNameExtensionFilter("JPEG file", new String[]{"jpg", "jpeg", "png"});
         fileOpen.setFileFilter(filter);
         fileOpen.addChoosableFileFilter(filter);
-        result = fileOpen.showDialog(null, "Choose Image");
+        result = fileOpen.showOpenDialog(null);
         File selecFile = fileOpen.getSelectedFile();
         if (selecFile == null) {
             System.out.println(" ");
         } else {
             abPath = selecFile.getAbsolutePath();
             path = selecFile.getName();
-            ImageS.setIcon(new ImageIcon((new ImageIcon(abPath).getImage().getScaledInstance(395, 335, Image.SCALE_SMOOTH))));
+            ImageS.setIcon(new ImageIcon((new ImageIcon(abPath).getImage().getScaledInstance(400, 340, Image.SCALE_SMOOTH))));
             System.out.println(path);
         }
     }//GEN-LAST:event_UploadBottonActionPerformed
