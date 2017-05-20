@@ -58,7 +58,8 @@ public class Login extends JFrame {
         jpnLogin.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         loginButton.setBackground(new java.awt.Color(249, 92, 52));
-        loginButton.setFont(new java.awt.Font("Quark", 0, 24)); // NOI18N
+        loginButton.setFont(new java.awt.Font("Quark", 1, 25)); // NOI18N
+        loginButton.setForeground(new java.awt.Color(255, 255, 255));
         loginButton.setText("Login");
         loginButton.setBorder(null);
         loginButton.setBorderPainted(false);
@@ -74,10 +75,11 @@ public class Login extends JFrame {
         });
         jpnLogin.add(loginButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(297, 510, 445, 65));
 
-        jpfInputPassword.setBackground(new java.awt.Color(204, 204, 204));
+        jpfInputPassword.setBackground(new java.awt.Color(225, 223, 223));
         jpfInputPassword.setFont(new java.awt.Font("Quark", 0, 18)); // NOI18N
-        jpfInputPassword.setForeground(new java.awt.Color(255, 255, 255));
+        jpfInputPassword.setForeground(new java.awt.Color(248, 155, 124));
         jpfInputPassword.setBorder(null);
+        jpfInputPassword.setDisabledTextColor(new java.awt.Color(225, 223, 223));
         jpfInputPassword.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jpfInputPasswordMouseClicked(evt);
@@ -90,21 +92,22 @@ public class Login extends JFrame {
         });
         jpnLogin.add(jpfInputPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 440, 440, 60));
 
-        jlbUsername.setFont(new java.awt.Font("Quark", 0, 24)); // NOI18N
+        jlbUsername.setFont(new java.awt.Font("Quark", 1, 24)); // NOI18N
         jlbUsername.setForeground(new java.awt.Color(255, 102, 51));
         jlbUsername.setFocusTraversalPolicyProvider(true);
         jpnLogin.add(jlbUsername, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 290, 440, 60));
 
-        jlbPassword.setFont(new java.awt.Font("Quark", 0, 24)); // NOI18N
+        jlbPassword.setFont(new java.awt.Font("Quark", 1, 24)); // NOI18N
         jlbPassword.setForeground(new java.awt.Color(255, 102, 51));
         jlbPassword.setText(" ");
         jpnLogin.add(jlbPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 400, 440, 50));
 
-        jtfInputUsername.setBackground(new java.awt.Color(204, 204, 204));
+        jtfInputUsername.setBackground(new java.awt.Color(225, 223, 223));
         jtfInputUsername.setFont(new java.awt.Font("Quark", 0, 18)); // NOI18N
         jtfInputUsername.setForeground(new java.awt.Color(248, 155, 124));
         jtfInputUsername.setText(" Username");
         jtfInputUsername.setBorder(null);
+        jtfInputUsername.setDisabledTextColor(new java.awt.Color(225, 223, 223));
         jtfInputUsername.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jtfInputUsernameMouseClicked(evt);
@@ -167,9 +170,9 @@ public class Login extends JFrame {
         // TODO add your handling code here:
         if (Users.getLogin(jtfInputUsername, jpfInputPassword) == true) {
             stdId = Long.parseLong(jtfInputUsername.getText());
-            JOptionPane frame = new JOptionPane();
+            /*JOptionPane frame = new JOptionPane();
             JOptionPane.showMessageDialog(frame,"Login Success","Login",JOptionPane.PLAIN_MESSAGE);
-            this.setVisible(false);
+            this.setVisible(false);*/
             LoginHomepage login = new LoginHomepage();
             login.setVisible(true);
         }

@@ -53,6 +53,8 @@ public class Homepage extends javax.swing.JFrame {
                 return strings.get(i);
             }
         });
+       jPanel1.setOpaque(false);
+       jPanel2.setOpaque(false);
        
     }
 
@@ -646,6 +648,7 @@ public class Homepage extends javax.swing.JFrame {
         Login log = new Login();
         this.setVisible(false);
         log.setVisible(true);
+        log.pack();
     }//GEN-LAST:event_loginActionPerformed
 
     private void joinClub_P2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_joinClub_P2ActionPerformed
@@ -760,8 +763,7 @@ public class Homepage extends javax.swing.JFrame {
             @Override
             public void run() {
                 new Homepage().setVisible(true);
-                jPanel1.setOpaque(false);
-                jPanel2.setOpaque(false);
+                
             }
         });
     }
