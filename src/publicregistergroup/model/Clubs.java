@@ -8,7 +8,9 @@ package publicregistergroup.model;
 import java.sql.*;
 import java.sql.Statement;
 import java.util.ArrayList;
+import publicregistergroup.view.LoginHomepage;
 import publicregistergroup.controller.ConnectionBuilder;
+import static publicregistergroup.view.LoginHomepage.search;
 //import publicregistergroup.view.ViewClub;
 
 /**
@@ -219,8 +221,30 @@ public class Clubs {
         }
         return str;
     }
+    public static ArrayList<String> getAllSearch() {
+        ArrayList<String> str = new ArrayList<>();
+        try {
+            Statement st = con.createStatement();
+            String sql = "SELECT * FROM clubs WHERE club_name LIKE '%"+search+"%'";
+            ResultSet res = st.executeQuery(sql);
+            while (res.next()) {
+                //System.out.println("Club ID: " + res.getInt("club_id") + " Club Name: " + res.getString("club_name"));
+                str.add(res.getString("club_name"));
+            }
+        }
+        catch (SQLException ex) {
+            System.out.println(ex);
+            System.out.println(ex.getMessage());
+            ex.printStackTrace();
+        }
+        catch (Exception ex) {
+            System.out.println(ex.getMessage());
+            ex.printStackTrace();
+        }
+        return str;
+    }
     
     public static void main(String[] args) {
-        System.out.println(getAllClubs());
+        System.out.println(getAllSearch());
     }
 }

@@ -51,8 +51,6 @@ public class Uploadphoto extends JFrame {
         textupload = new javax.swing.JLabel();
         Uploadphotos = new javax.swing.JLabel();
         textDetail1 = new javax.swing.JLabel();
-        SearchTextField = new javax.swing.JTextField();
-        Bottonsearch = new javax.swing.JButton();
         savebotton = new javax.swing.JButton();
         EditBotton = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -99,22 +97,6 @@ public class Uploadphoto extends JFrame {
         textDetail1.setText("รายละเอียด");
         getContentPane().add(textDetail1, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 260, -1, -1));
 
-        SearchTextField.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                SearchTextFieldActionPerformed(evt);
-            }
-        });
-        getContentPane().add(SearchTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(13, 91, 261, 25));
-
-        Bottonsearch.setFont(new java.awt.Font("Quark", 0, 14)); // NOI18N
-        Bottonsearch.setText("OK");
-        Bottonsearch.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BottonsearchActionPerformed(evt);
-            }
-        });
-        getContentPane().add(Bottonsearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 90, 80, 25));
-
         savebotton.setBackground(new java.awt.Color(213, 186, 55));
         savebotton.setFont(new java.awt.Font("Quark", 0, 30)); // NOI18N
         savebotton.setForeground(new java.awt.Color(255, 255, 255));
@@ -153,42 +135,12 @@ public class Uploadphoto extends JFrame {
         getContentPane().add(NameClub, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 190, 350, 50));
         NameClub.setText(Clubs.getClub_nameEdit(std_id));
 
-        blackground.setIcon(new javax.swing.ImageIcon("/Users/taloey/Desktop/PublicRegister/src/Images/page.jpg")); // NOI18N
+        blackground.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/pagenoserach.jpg"))); // NOI18N
         blackground.setText("jLabel1");
         getContentPane().add(blackground, new org.netbeans.lib.awtextra.AbsoluteConstraints(-5, 0, 1030, 770));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void BottonsearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BottonsearchActionPerformed
-        search = SearchTextField.getText();
-        String club = "";
-        try {
-
-            String sql = "SELECT * FROM clubs where club_name LIKE '%" + search + "%'";
-            PreparedStatement pre = con.prepareStatement(sql);
-//            pre.setString(1, "%"+search+"%");
-            ResultSet res = pre.executeQuery();
-            if (res.next()) {
-                club = res.getString("club_name");
-                System.out.println(club + " clubname");
-            }
-
-        } catch (SQLException ex) {
-            ex.printStackTrace();
-        }
-        if (search.equals(club)) {
-            JOptionPane frame = new JOptionPane();
-            JOptionPane.showMessageDialog(frame, "Search success", "Search club", JOptionPane.PLAIN_MESSAGE);
-            // = allClubs.getSelectedIndex();
-            ViewClubFromSearch view = new ViewClubFromSearch();
-            this.setVisible(false);
-            view.setVisible(true);
-        } else {
-            JOptionPane frame = new JOptionPane();
-            JOptionPane.showMessageDialog(frame, "Failed club name", "Search club", JOptionPane.ERROR_MESSAGE);
-        }
-    }//GEN-LAST:event_BottonsearchActionPerformed
 
     private void savebottonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_savebottonActionPerformed
         // TODO add your handling code here:
@@ -202,10 +154,6 @@ public class Uploadphoto extends JFrame {
         this.setVisible(false);
         edit.setVisible(true);
     }//GEN-LAST:event_EditBottonActionPerformed
-
-    private void SearchTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SearchTextFieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_SearchTextFieldActionPerformed
 
     /**
      * @param args the command line arguments
@@ -243,11 +191,9 @@ public class Uploadphoto extends JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton Bottonsearch;
     private javax.swing.JPanel Boxphoto;
     private javax.swing.JButton EditBotton;
     private javax.swing.JLabel NameClub;
-    private javax.swing.JTextField SearchTextField;
     private javax.swing.JLabel Uploadphotos;
     private javax.swing.JLabel blackground;
     private javax.swing.JTextArea detailArea;

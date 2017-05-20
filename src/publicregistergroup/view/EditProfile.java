@@ -42,7 +42,6 @@ public class EditProfile extends JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        Bottonsearch = new javax.swing.JButton();
         boxphoto = new javax.swing.JPanel();
         ImageUpload = new javax.swing.JLabel();
         ImageS = new javax.swing.JLabel();
@@ -64,21 +63,12 @@ public class EditProfile extends JFrame {
         MedicineTextField = new javax.swing.JTextField();
         FoodTextField = new javax.swing.JTextField();
         EmailTextField = new javax.swing.JTextField();
-        SearchclubTextField = new javax.swing.JTextField();
         ChangePage = new javax.swing.JButton();
         blackground = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        Bottonsearch.setText("OK");
-        Bottonsearch.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BottonsearchActionPerformed(evt);
-            }
-        });
-        getContentPane().add(Bottonsearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 90, 80, 25));
 
         boxphoto.setBackground(new java.awt.Color(255, 255, 255));
         boxphoto.setBorder(javax.swing.BorderFactory.createMatteBorder(3, 3, 3, 3, new java.awt.Color(255, 51, 0)));
@@ -241,14 +231,6 @@ public class EditProfile extends JFrame {
         getContentPane().add(EmailTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 530, 320, 40));
         EmailTextField.setText(Students.getStd_email(std_id));
 
-        SearchclubTextField.setFont(new java.awt.Font("Kanit", 0, 13)); // NOI18N
-        SearchclubTextField.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                SearchclubTextFieldActionPerformed(evt);
-            }
-        });
-        getContentPane().add(SearchclubTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, 261, 30));
-
         ChangePage.setBorder(null);
         ChangePage.setContentAreaFilled(false);
         ChangePage.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -259,42 +241,13 @@ public class EditProfile extends JFrame {
         });
         getContentPane().add(ChangePage, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 20, 230, 40));
 
-        blackground.setIcon(new javax.swing.ImageIcon("/Users/taloey/Desktop/PublicRegister/src/Images/page.jpg")); // NOI18N
+        blackground.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/pagenoserach.jpg"))); // NOI18N
         blackground.setText("jLabel1");
         getContentPane().add(blackground, new org.netbeans.lib.awtextra.AbsoluteConstraints(-5, 0, 1030, 770));
 
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
-
-    private void BottonsearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BottonsearchActionPerformed
-        search = SearchclubTextField.getText();
-        String club = "";
-        try {
-
-            String sql = "SELECT * FROM clubs where club_name LIKE '%" + search + "%'";
-            PreparedStatement pre = con.prepareStatement(sql);
-//            pre.setString(1, "%"+search+"%");
-            ResultSet res = pre.executeQuery();
-            while (res.next()) {
-                club = res.getString("club_name");
-                System.out.println(club + " clubname");
-            }
-
-        } catch (SQLException ex) {
-            ex.printStackTrace();
-        }
-        if (search.equals(club)) {
-            JOptionPane frame = new JOptionPane();
-            JOptionPane.showMessageDialog(frame, "Search success", "Search club", JOptionPane.PLAIN_MESSAGE);
-            ViewClubFromSearch view = new ViewClubFromSearch();
-            this.setVisible(false);
-            view.setVisible(true);
-        } else {
-            JOptionPane frame = new JOptionPane();
-            JOptionPane.showMessageDialog(frame, "Failed club name", "Search club", JOptionPane.ERROR_MESSAGE);
-        }
-    }//GEN-LAST:event_BottonsearchActionPerformed
 
     private void NameTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NameTextFieldActionPerformed
 
@@ -311,10 +264,6 @@ public class EditProfile extends JFrame {
     private void FoodTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FoodTextFieldActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_FoodTextFieldActionPerformed
-
-    private void SearchclubTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SearchclubTextFieldActionPerformed
-
-    }//GEN-LAST:event_SearchclubTextFieldActionPerformed
 
     private void ChangePageActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ChangePageActionPerformed
 
@@ -471,7 +420,6 @@ public class EditProfile extends JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton Bottonsearch;
     private javax.swing.JButton ChangePage;
     private javax.swing.JLabel Email;
     private javax.swing.JTextField EmailTextField;
@@ -484,7 +432,6 @@ public class EditProfile extends JFrame {
     private javax.swing.JTextField MedicineTextField;
     private javax.swing.JLabel Name;
     private javax.swing.JTextField NameTextField;
-    private javax.swing.JTextField SearchclubTextField;
     private javax.swing.JLabel ShowID;
     private javax.swing.JButton Submitbotton;
     private javax.swing.JLabel Surname;

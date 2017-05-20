@@ -30,7 +30,7 @@ public class LoginHomepage extends javax.swing.JFrame {
     private String listClubs;
     DefaultListModel model = new DefaultListModel();
     private long stdID = Login.getStdId();
-    private String search;
+    public static String search;
     private long std_id = Login.getStdId();
 
     public static int getClubIndex() {
@@ -43,6 +43,7 @@ public class LoginHomepage extends javax.swing.JFrame {
     public LoginHomepage() {
         initComponents();
         setLocationRelativeTo(null);
+
         allClubs.setModel(new javax.swing.AbstractListModel<String>() {
             ArrayList<String> strings = Clubs.getAllClubs();
 
@@ -581,25 +582,32 @@ public class LoginHomepage extends javax.swing.JFrame {
             PreparedStatement pre = con.prepareStatement(sql);
 //            pre.setString(1, "%"+search+"%");
             ResultSet res = pre.executeQuery();
-            if (res.next()) {
+            while (res.next()) {
                 club = res.getString("club_name");
                 System.out.println(club + " clubname");
             }
 
+            allClubs.setModel(new javax.swing.AbstractListModel<String>() {
+                ArrayList<String> strings = Clubs.getAllSearch();
+                @Override
+                public int getSize() {
+
+                    return strings.size();
+                }
+
+                @Override
+                public String getElementAt(int i) {
+                    return strings.get(i);
+                }
+            });
+
+            jPanel1.setOpaque(false);
+            jPanel2.setOpaque(false);
+
         } catch (SQLException ex) {
             ex.printStackTrace();
         }
-        if (search.equals(club)) {
-            JOptionPane frame = new JOptionPane();
-            JOptionPane.showMessageDialog(frame, "Search success", "Search club", JOptionPane.PLAIN_MESSAGE);
-            // = allClubs.getSelectedIndex();
-            ViewClubFromSearch view = new ViewClubFromSearch();
-            this.setVisible(false);
-            view.setVisible(true);
-        } else {
-            JOptionPane frame = new JOptionPane();
-            JOptionPane.showMessageDialog(frame, "Failed club name", "Search club", JOptionPane.ERROR_MESSAGE);
-        }
+
     }//GEN-LAST:event_BottonsearchActionPerformed
 
     private void searchclubTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchclubTextFieldActionPerformed

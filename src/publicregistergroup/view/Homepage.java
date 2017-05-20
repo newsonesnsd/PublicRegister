@@ -253,7 +253,7 @@ public class Homepage extends javax.swing.JFrame {
                     .addGroup(recommendPage2Layout.createSequentialGroup()
                         .addGap(45, 45, 45)
                         .addComponent(clubName_P2)))
-                .addContainerGap(28, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         recommendPage2Layout.setVerticalGroup(
             recommendPage2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -320,7 +320,7 @@ public class Homepage extends javax.swing.JFrame {
                     .addGroup(jPanel7Layout.createSequentialGroup()
                         .addGap(45, 45, 45)
                         .addComponent(clubName_P3)))
-                .addContainerGap(28, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel7Layout.setVerticalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -388,7 +388,7 @@ public class Homepage extends javax.swing.JFrame {
                     .addGroup(jPanel8Layout.createSequentialGroup()
                         .addGap(45, 45, 45)
                         .addComponent(clubName_P4)))
-                .addContainerGap(28, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel8Layout.setVerticalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -538,19 +538,12 @@ public class Homepage extends javax.swing.JFrame {
         if (search.equals(club)) {
             JOptionPane frame = new JOptionPane();
             JOptionPane.showMessageDialog(frame, "Search success", "Search club", JOptionPane.PLAIN_MESSAGE);
-            // = allClubs.getSelectedIndex();
-            ViewClubFromSearch view = new ViewClubFromSearch();
-            this.setVisible(false);
-            view.setVisible(true);
+            
         } else {
             JOptionPane frame = new JOptionPane();
             JOptionPane.showMessageDialog(frame, "Failed club name", "Search club", JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_BottonsearchActionPerformed
-
-    private void searchclubTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchclubTextFieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_searchclubTextFieldActionPerformed
 
     private void loginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginActionPerformed
         // TODO add your handling code here:
@@ -572,6 +565,10 @@ public class Homepage extends javax.swing.JFrame {
     private void allRecommendAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_allRecommendAncestorAdded
 
     }//GEN-LAST:event_allRecommendAncestorAdded
+
+    private void searchclubTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchclubTextFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_searchclubTextFieldActionPerformed
 
     /**
      * @param args the command line arguments

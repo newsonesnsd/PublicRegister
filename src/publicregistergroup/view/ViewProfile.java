@@ -268,7 +268,7 @@ public class ViewProfile extends JFrame {
         Id.setText("ID :");
         getContentPane().add(Id, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 17, -1, 30));
 
-        blackground.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/page.jpg"))); // NOI18N
+        blackground.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/pagenoserach.jpg"))); // NOI18N
         blackground.setText("jLabel1");
         blackground.setPreferredSize(new java.awt.Dimension(1024, 768));
         getContentPane().add(blackground, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 770));
