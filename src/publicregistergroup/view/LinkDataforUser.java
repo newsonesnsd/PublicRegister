@@ -16,7 +16,9 @@ import static publicregistergroup.view.ViewProfile.con;
  * @author taloey
  */
 public class LinkDataforUser extends javax.swing.JFrame {
-private String search;
+
+    private String search;
+
     /**
      * Creates new form Uploadphoto
      */
@@ -160,47 +162,43 @@ private String search;
 
     private void BottonsearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BottonsearchActionPerformed
         search = searchTextField.getText();
-        String club="";    
+        String club = "";
         try {
-            
-           
-            String sql = "SELECT * FROM clubs where club_name LIKE '%"+search+"%'";
+
+            String sql = "SELECT * FROM clubs where club_name LIKE '%" + search + "%'";
             PreparedStatement pre = con.prepareStatement(sql);
 //            pre.setString(1, "%"+search+"%");
-            System.out.println(search+" search la");
-             ResultSet res = pre.executeQuery();
-             System.out.println("EXE LAEW");
-                if(res.next()) {
-                    club =res.getString("club_name");
-                    System.out.println(club+" clubname");
-                }
-                
+            ResultSet res = pre.executeQuery();
+            if (res.next()) {
+                club = res.getString("club_name");
+            }
+
         } catch (SQLException ex) {
             ex.printStackTrace();
-        }if (search .equals(club)) {
-            JOptionPane frame = new JOptionPane();
-            JOptionPane.showMessageDialog(frame,"Search success","Search club",JOptionPane.PLAIN_MESSAGE);
-             // = allClubs.getSelectedIndex();
-             ViewClubFromSearch view = new ViewClubFromSearch();
-            this.setVisible(false);
-             view.setVisible(true);
         }
-        else {
+        if (search.equals(club)) {
             JOptionPane frame = new JOptionPane();
-            JOptionPane.showMessageDialog(frame,"Failed club name","Search club",JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(frame, "Search success", "Search club", JOptionPane.PLAIN_MESSAGE);
+            // = allClubs.getSelectedIndex();
+            ViewClubFromSearch view = new ViewClubFromSearch();
+            this.setVisible(false);
+            view.setVisible(true);
+        } else {
+            JOptionPane frame = new JOptionPane();
+            JOptionPane.showMessageDialog(frame, "Failed club name", "Search club", JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_BottonsearchActionPerformed
 
     private void checkclubbottonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkclubbottonActionPerformed
-     CheckAllActivity check = new CheckAllActivity();
-       this.setVisible(false);
-       check.setVisible(true);
+        CheckAllActivity check = new CheckAllActivity();
+        this.setVisible(false);
+        check.setVisible(true);
     }//GEN-LAST:event_checkclubbottonActionPerformed
 
     private void changeprofilebottonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_changeprofilebottonActionPerformed
-      ViewProfile profile = new ViewProfile();
-       this.setVisible(false);
-       profile.setVisible(true);
+        ViewProfile profile = new ViewProfile();
+        this.setVisible(false);
+        profile.setVisible(true);
     }//GEN-LAST:event_changeprofilebottonActionPerformed
 
     private void searchTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchTextFieldActionPerformed
@@ -209,8 +207,8 @@ private String search;
 
     private void BackbottonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BackbottonActionPerformed
         this.setVisible(false);
-            LoginHomepage login = new LoginHomepage();
-            login.setVisible(true);
+        LoginHomepage login = new LoginHomepage();
+        login.setVisible(true);
     }//GEN-LAST:event_BackbottonActionPerformed
 
     /**

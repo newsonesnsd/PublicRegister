@@ -24,7 +24,7 @@ public class EditProfile extends JFrame {
 
     static Connection con = ConnectionBuilder.getConnection();
     private final long std_id = Login.getStdId();
-   // private long stdUsername = Login.getStdId();
+    // private long stdUsername = Login.getStdId();
     private String name, faculty, telephone, facebook, medicine, food, email, picture, image;
     private String path, abPath;
     private String search;
@@ -36,7 +36,7 @@ public class EditProfile extends JFrame {
     public EditProfile() {
         initComponents();
         setLocationRelativeTo(null);
-      
+
     }
 
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -275,9 +275,7 @@ public class EditProfile extends JFrame {
             String sql = "SELECT * FROM clubs where club_name LIKE '%" + search + "%'";
             PreparedStatement pre = con.prepareStatement(sql);
 //            pre.setString(1, "%"+search+"%");
-            System.out.println(search + " search la");
             ResultSet res = pre.executeQuery();
-            System.out.println("EXE LAEW");
             while (res.next()) {
                 club = res.getString("club_name");
                 System.out.println(club + " clubname");
@@ -289,7 +287,6 @@ public class EditProfile extends JFrame {
         if (search.equals(club)) {
             JOptionPane frame = new JOptionPane();
             JOptionPane.showMessageDialog(frame, "Search success", "Search club", JOptionPane.PLAIN_MESSAGE);
-            // = allClubs.getSelectedIndex();
             ViewClubFromSearch view = new ViewClubFromSearch();
             this.setVisible(false);
             view.setVisible(true);
@@ -297,23 +294,6 @@ public class EditProfile extends JFrame {
             JOptionPane frame = new JOptionPane();
             JOptionPane.showMessageDialog(frame, "Failed club name", "Search club", JOptionPane.ERROR_MESSAGE);
         }
-        /*if (search == club) {
-            JOptionPane frame = new JOptionPane();
-            JOptionPane.showMessageDialog(frame,"Search success","Search club",JOptionPane.PLAIN_MESSAGE);
-             // = allClubs.getSelectedIndex();
-             ViewClub view = new ViewClub();
-            this.setVisible(false);
-             view.setVisible(true);
-        }
-        else {
-            JOptionPane frame = new JOptionPane();
-            JOptionPane.showMessageDialog(frame,"Failed club name","Search club",JOptionPane.ERROR_MESSAGE);
-        }*/
- /*clubIndex = allClubs.getSelectedIndex();
-        //System.out.println(clubIndex);
-        ViewClub view = new ViewClub();
-        this.setVisible(false);
-        view.setVisible(true);*/
     }//GEN-LAST:event_BottonsearchActionPerformed
 
     private void NameTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NameTextFieldActionPerformed
@@ -360,7 +340,6 @@ public class EditProfile extends JFrame {
     }//GEN-LAST:event_UploadBottonActionPerformed
 
     private void SubmitbottonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SubmitbottonActionPerformed
- 
 
         InputStream filepic = null;
 
@@ -384,7 +363,7 @@ public class EditProfile extends JFrame {
             pre.setLong(7, std_id);
             //pre.setString(7, path);
             pre.executeUpdate();
-            
+
         } catch (SQLException ex) {
             ex.printStackTrace();
         }
@@ -402,7 +381,6 @@ public class EditProfile extends JFrame {
                 OutputStream ops = null;
                 try {
 
-                    
                     System.out.println("Path :" + "/Users/taloey/Desktop/PublicRegister/src/Images/" + path);
                     ops = new FileOutputStream(new File("src/Images/" + path));
                     int read = 0;
@@ -433,20 +411,11 @@ public class EditProfile extends JFrame {
             }
         } catch (SQLException ex) {
             System.out.println(ex);
-        } ViewRegist regist = new ViewRegist();
-            this.setVisible(false);
-            regist.setVisible(true);
-    
+        }
+        ViewRegist regist = new ViewRegist();
+        this.setVisible(false);
+        regist.setVisible(true);
 
-        /*if (role.isEmpty()) {
-            LinkDataforUser user = new LinkDataforUser();
-            this.setVisible(false);
-            user.setVisible(true);
-        } else {
-            LinkData admin = new LinkData();
-            this.setVisible(false);
-            admin.setVisible(true);
-        }*/
     }//GEN-LAST:event_SubmitbottonActionPerformed
 
     private void SubmitbottonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SubmitbottonMouseClicked

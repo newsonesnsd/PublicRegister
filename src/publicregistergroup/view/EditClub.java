@@ -27,12 +27,13 @@ import publicregistergroup.model.Clubs;
  * @author taloey
  */
 public class EditClub extends JFrame {
-     static Connection con = ConnectionBuilder.getConnection();
-     private String nameclub,detailclub;
-     private String path,abPath;
-     private String search;
-     private static long std_id = Login.getStdId();
-    
+
+    static Connection con = ConnectionBuilder.getConnection();
+    private String nameclub, detailclub;
+    private String path, abPath;
+    private String search;
+    private static long std_id = Login.getStdId();
+
     /**
      * Creates new form Uploadphoto
      */
@@ -165,62 +166,56 @@ public class EditClub extends JFrame {
 
     private void BottonsearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BottonsearchActionPerformed
         search = SearchTextField.getText();
-        String club="";    
+        String club = "";
         try {
-            
-           
-            String sql = "SELECT * FROM clubs where club_name LIKE '%"+search+"%'";
+
+            String sql = "SELECT * FROM clubs where club_name LIKE '%" + search + "%'";
             PreparedStatement pre = con.prepareStatement(sql);
-//            pre.setString(1, "%"+search+"%");
-            System.out.println(search+" search la");
-             ResultSet res = pre.executeQuery();
-             System.out.println("EXE LAEW");
-                if(res.next()) {
-                    club =res.getString("club_name");
-                    System.out.println(club+" clubname");
-                }
-                
+            ResultSet res = pre.executeQuery();
+            if (res.next()) {
+                club = res.getString("club_name");
+            }
+
         } catch (SQLException ex) {
             ex.printStackTrace();
-        }if (search .equals(club)) {
-            JOptionPane frame = new JOptionPane();
-            JOptionPane.showMessageDialog(frame,"Search success","Search club",JOptionPane.PLAIN_MESSAGE);
-             // = allClubs.getSelectedIndex();
-             ViewClubFromSearch view = new ViewClubFromSearch();
-            this.setVisible(false);
-             view.setVisible(true);
         }
-        else {
+        if (search.equals(club)) {
             JOptionPane frame = new JOptionPane();
-            JOptionPane.showMessageDialog(frame,"Failed club name","Search club",JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(frame, "Search success", "Search club", JOptionPane.PLAIN_MESSAGE);
+
+            ViewClubFromSearch view = new ViewClubFromSearch();
+            this.setVisible(false);
+            view.setVisible(true);
+        } else {
+            JOptionPane frame = new JOptionPane();
+            JOptionPane.showMessageDialog(frame, "Failed club name", "Search club", JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_BottonsearchActionPerformed
 
     private void uploadbottonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_uploadbottonActionPerformed
-    JFileChooser fileOpen = new JFileChooser();
-        fileOpen.showDialog(null , "Choose Image");
+        JFileChooser fileOpen = new JFileChooser();
+        fileOpen.showDialog(null, "Choose Image");
         fileOpen.setAcceptAllFileFilterUsed(false);
-        fileOpen.addChoosableFileFilter(new FileNameExtensionFilter(".jpg","jpg"));
-        fileOpen.addChoosableFileFilter(new FileNameExtensionFilter(".gif","gif"));
-        fileOpen.addChoosableFileFilter(new FileNameExtensionFilter(".png","png"));
+        fileOpen.addChoosableFileFilter(new FileNameExtensionFilter(".jpg", "jpg"));
+        fileOpen.addChoosableFileFilter(new FileNameExtensionFilter(".gif", "gif"));
+        fileOpen.addChoosableFileFilter(new FileNameExtensionFilter(".png", "png"));
         int result = fileOpen.showDialog(null, "Choose Image");
-            File selecFile = fileOpen.getSelectedFile();
-            path = selecFile.getName();
-            abPath = selecFile.getAbsolutePath();
-           Uploadphotos.setIcon(new ImageIcon((new ImageIcon(abPath).getImage().getScaledInstance(436,366,Image.SCALE_SMOOTH))));
-            
+        File selecFile = fileOpen.getSelectedFile();
+        path = selecFile.getName();
+        abPath = selecFile.getAbsolutePath();
+        Uploadphotos.setIcon(new ImageIcon((new ImageIcon(abPath).getImage().getScaledInstance(436, 366, Image.SCALE_SMOOTH))));
+
     }//GEN-LAST:event_uploadbottonActionPerformed
 
     private void savebottonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_savebottonActionPerformed
         InputStream filepic = null;
-//        detailclub = detailArea.getText();
-           try{
+        try {
             String sql = "SELECT std_role FROM students WHERE std_id = ?";
             PreparedStatement pre = con.prepareStatement(sql);
             pre.setLong(1, std_id);
             ResultSet res = pre.executeQuery();
-            int club_id =0;
-            String std_role=null;
+            int club_id = 0;
+            String std_role = null;
             while (res.next()) {
                 std_role = res.getString("std_role");
                 club_id = Integer.parseInt(std_role);
@@ -228,77 +223,58 @@ public class EditClub extends JFrame {
                 sql = "UPDATE clubs SET club_description= ? WHERE club_id=?";
                 PreparedStatement pre2 = con.prepareStatement(sql);
                 pre2.setString(1, detailclub);
-                pre2.setInt(2, club_id);   
+                pre2.setInt(2, club_id);
                 pre2.executeUpdate();
-//            pre.setString(1, detailclub);
-//           pre.setLong(2, std_id);
-            //System.out.println("2");
-       /*          sql = "SELECT club_picture FROM clubs WHERE club_id = ?";
-                PreparedStatement pre2 = con.prepareStatement(sql);
-                pre2.setInt(1, club_id);
-                ResultSet rs = pre2.executeQuery();
-                if(rs.next()) {
-//                    detailclub =rs.getString("club_picture");
-                    sql = "UPDATE clubs SET club_description= ? WHERE club_id=?";
-                    PreparedStatement pre3 = con.prepareStatement(sql);
-                    pre.setString(1, detailclub);
-                    pre2.setInt(2, club_id); 
-                    pre2.executeUpdate();
-                }*/
-            System.out.println("Yes");
             }
         } catch (SQLException ex) {
+            System.out.println(ex);
+            ex.printStackTrace();
+        }
+
+        if (abPath == null) {
+            System.out.println("");
+        } else {
+
+            try {
+
+                filepic = new FileInputStream(abPath);
+                String sql = "SELECT std_role FROM students WHERE std_id = ?";
+                PreparedStatement pre = con.prepareStatement(sql);
+                pre.setLong(1, std_id);
+                ResultSet res = pre.executeQuery();
+                int club_id = 0;
+                String std_role = null;
+                while (res.next()) {
+                    std_role = res.getString("std_role");
+                    club_id = Integer.parseInt(std_role);
+                    detailclub = detailArea.getText();
+                    sql = "UPDATE clubs SET club_picture= ? WHERE club_id=?";
+                    PreparedStatement pre2 = con.prepareStatement(sql);
+                    pre2.setString(1, path);
+                    pre2.setInt(2, club_id);
+                    pre2.executeUpdate();
+                }
+                try {
+                    OutputStream ops = null;
+                    System.out.println("Path :" + "/Users/taloey/Desktop/PublicRegister/src/Images/" + path);
+                    ops = new FileOutputStream(new File("src/Images/" + path));
+                    int read = 0;
+                    byte[] b = new byte[1024];
+                    while ((read = filepic.read(b)) != -1) {
+                        ops.write(b, 0, read);
+                    }
+                    filepic.close();
+                } catch (FileNotFoundException e) {
+                    System.out.println(e);
+                } catch (IOException ex) {
+                    System.out.println(ex);
+                }
+            } catch (FileNotFoundException ex) {
+                ex.printStackTrace();
+            } catch (SQLException ex) {
                 System.out.println(ex);
                 ex.printStackTrace();
-        }
-        if(abPath == null){
-            System.out.println("");
-        }else{
-            
-        
-        try {
-        
-        
-    
-            filepic = new FileInputStream(abPath);
-            String sql = "SELECT std_role FROM students WHERE std_id = ?";
-            PreparedStatement pre = con.prepareStatement(sql);
-            pre.setLong(1, std_id);
-            ResultSet res = pre.executeQuery();
-            int club_id =0;
-            String std_role=null;
-            while (res.next()) {
-                std_role = res.getString("std_role");
-                club_id = Integer.parseInt(std_role);
-                detailclub = detailArea.getText();
-                sql = "UPDATE clubs SET club_picture= ? WHERE club_id=?";
-                PreparedStatement pre2 = con.prepareStatement(sql);
-                pre2.setString(1, path);
-                pre2.setInt(2, club_id);   
-                pre2.executeUpdate();
-//            OutputStream ops = null;
-            }try {
-                OutputStream ops = null;
-                //System.out.println("asdada");
-                System.out.println("Path :" + "/Users/taloey/Desktop/PublicRegister/src/Images/" + path);
-                ops = new FileOutputStream(new File("src/Images/" + path));
-                int read = 0;
-                byte[] b = new byte[1024];
-                while ((read = filepic.read(b)) != -1) {
-                    ops.write(b, 0, read);
-                }
-                filepic.close();
-            } catch (FileNotFoundException e) {
-                System.out.println(e);
-            } catch (IOException ex) {
-                System.out.println(ex);
-            } 
-        } catch (FileNotFoundException ex) {
-            ex.printStackTrace();
-        }catch (SQLException ex) {
-                    System.out.println(ex);
-                    ex.printStackTrace();
-                }
+            }
         }
         LinkData data = new LinkData();
         this.setVisible(false);
@@ -306,63 +282,7 @@ public class EditClub extends JFrame {
     }//GEN-LAST:event_savebottonActionPerformed
 
     private void savebottonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_savebottonMouseClicked
-        /*InputStream filepic = null;
-        
-        
-            try{
-            detailclub = detailArea.getText();
-            String sql = "UPDATE clubs SET club_description=? WHERE club_id=6";
-            PreparedStatement pre = con.prepareStatement(sql);
-            pre.setString(1, detailclub);
-            //System.out.println("2");
-            pre.executeUpdate();
-            System.out.println("Yes");
-            
-        } catch (SQLException ex) {
-                System.out.println(ex);
-        }
-        if(abPath == null){
-            System.out.println("");
-        }else{
-            
-        
-        try {
-    
-            filepic = new FileInputStream(abPath);
-            String sql = "UPDATE clubs SET club_picture=? WHERE club_id=6";
-                PreparedStatement pre = con.prepareStatement(sql);
-                pre.setString(1, path);
-                pre.executeUpdate();
-            OutputStream ops = null;
-            try {
-                
-                //System.out.println("asdada");
-                System.out.println("Path :" + "/Users/taloey/Desktop/PublicRegister/src/Images/" + path);
-                ops = new FileOutputStream(new File("src/Images/" + path));
-                int read = 0;
-                byte[] b = new byte[1024];
-                while ((read = filepic.read(b)) != -1) {
-                    ops.write(b, 0, read);
-                }
-                filepic.close();
-            } catch (FileNotFoundException e) {
-                System.out.println(e);
-            } catch (IOException ex) {
-                System.out.println(ex);
-            } 
-        } catch (FileNotFoundException ex) {
-            Logger.getLogger(ViewProfile.class.getName()).log(Level.SEVERE, null, ex);
-        }catch (SQLException ex) {
-                    Logger.getLogger(ViewProfile.class.getName()).log(Level.SEVERE, null, ex);
-                }
-        }finally {
-            try {
-                filepic.close();
-            } catch (IOException ex) {
-                System.out.println(ex);
-            }
-        }
-        */
+
     }//GEN-LAST:event_savebottonMouseClicked
 
     /**

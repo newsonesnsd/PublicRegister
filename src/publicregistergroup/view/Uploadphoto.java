@@ -167,9 +167,7 @@ public class Uploadphoto extends JFrame {
             String sql = "SELECT * FROM clubs where club_name LIKE '%"+search+"%'";
             PreparedStatement pre = con.prepareStatement(sql);
 //            pre.setString(1, "%"+search+"%");
-            System.out.println(search+" search la");
              ResultSet res = pre.executeQuery();
-             System.out.println("EXE LAEW");
                 if(res.next()) {
                     club =res.getString("club_name");
                     System.out.println(club+" clubname");

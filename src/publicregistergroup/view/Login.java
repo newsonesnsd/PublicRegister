@@ -13,11 +13,14 @@ import publicregistergroup.model.Users;
  * @author newso
  */
 public class Login extends JFrame {
+
     private static long stdId;
+
     public static long getStdId() {
         long id = Long.parseLong(jtfInputUsername.getText());
         return id;
     }
+
     /**
      * Creates new form Login
      */
@@ -170,18 +173,15 @@ public class Login extends JFrame {
         // TODO add your handling code here:
         if (Users.getLogin(jtfInputUsername, jpfInputPassword) == true) {
             stdId = Long.parseLong(jtfInputUsername.getText());
-            /*JOptionPane frame = new JOptionPane();
-            JOptionPane.showMessageDialog(frame,"Login Success","Login",JOptionPane.PLAIN_MESSAGE);*/
             this.setVisible(false);
             LoginHomepage login = new LoginHomepage();
             login.setVisible(true);
-        }
-        else {
+        } else {
             JOptionPane frame = new JOptionPane();
-            JOptionPane.showMessageDialog(frame,"Failed to Login \n Please re-enter your username or password","Login",JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(frame, "Failed to Login \n Please re-enter your username or password", "Login", JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_loginButtonMouseClicked
-    
+
     /**
      * @param args the command line arguments
      */
