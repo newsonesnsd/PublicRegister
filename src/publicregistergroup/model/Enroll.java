@@ -104,9 +104,7 @@ public class Enroll {
                
     }
     
-    public static void main(String[] args) {
-        enrollClub();
-    }
+    
     
     
 }
