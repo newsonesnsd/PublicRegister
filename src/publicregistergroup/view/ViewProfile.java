@@ -118,7 +118,7 @@ public class ViewProfile extends JFrame {
                 .addGap(202, 202, 202))
         );
 
-        ImageS.setIcon(new ImageIcon((new ImageIcon("src/Images/"+(Students.getStd_pic(std_id))).getImage().getScaledInstance(395,335,Image.SCALE_SMOOTH))));
+        ImageS.setIcon(new ImageIcon((new ImageIcon("src/Images/"+(Students.getStd_pic(std_id))).getImage().getScaledInstance(398,338,Image.SCALE_SMOOTH))));
 
         getContentPane().add(boxphoto, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 240, 400, 340));
 
@@ -272,7 +272,7 @@ public class ViewProfile extends JFrame {
                 logoutActionPerformed(evt);
             }
         });
-        getContentPane().add(logout, new org.netbeans.lib.awtextra.AbsoluteConstraints(950, 60, 40, 40));
+        getContentPane().add(logout, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 50, 40, 40));
 
         ShowID.setFont(new java.awt.Font("Quark", 1, 18)); // NOI18N
         getContentPane().add(ShowID, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 20, 130, 21));
@@ -283,7 +283,7 @@ public class ViewProfile extends JFrame {
         getContentPane().add(Id, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 10, 30, 30));
 
         logOut.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        getContentPane().add(logOut, new org.netbeans.lib.awtextra.AbsoluteConstraints(970, 70, 40, 20));
+        getContentPane().add(logOut, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 90, 40, 20));
 
         blackground.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/page.jpg"))); // NOI18N
         blackground.setText("jLabel1");
@@ -359,7 +359,7 @@ public class ViewProfile extends JFrame {
         } else {
             abPath = selecFile.getAbsolutePath();
             path = selecFile.getName();
-            ImageS.setIcon(new ImageIcon((new ImageIcon(abPath).getImage().getScaledInstance(400, 340, Image.SCALE_SMOOTH))));
+            ImageS.setIcon(new ImageIcon((new ImageIcon(abPath).getImage().getScaledInstance(398, 338, Image.SCALE_SMOOTH))));
             System.out.println(path);
         }
     }//GEN-LAST:event_UploadBottonActionPerformed
@@ -461,73 +461,6 @@ public class ViewProfile extends JFrame {
     }//GEN-LAST:event_SubmitbottonActionPerformed
 
     private void SubmitbottonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SubmitbottonMouseClicked
-//      System.out.println("437");
-//        
-//        InputStream filepic = null;
-// 
-//            try {
-//                //System.out.println("mk,nksds");
-//                // TODO add your handling code here:
-//                name = NameTextField.getText();
-//                faculty = SurnameTextField.getText();
-//                telephone = TelephoneTextField.getText();
-//                facebook = FacebookTextField.getText();
-//                medicine = MedicineTextField.getText();
-//                food = FoodTextField.getText();
-//                email = EmailTextField.getText();
-//
-//                String sql = "UPDATE students SET std_name=?, std_tel=?, std_facebook=?, std_medicine=?, std_food=?, std_email=? WHERE std_id=59130500004";
-//                PreparedStatement pre = con.prepareStatement(sql);
-//                pre.setString(1, name);
-//                pre.setString(2, telephone);
-//                pre.setString(3, facebook);
-//                pre.setString(4, medicine);
-//                pre.setString(5, food);
-//                pre.setString(6, email);
-//                //pre.setString(7, path);
-//                pre.executeUpdate();
-//                //ResultSet res = st.executeQuery(sql);
-//
-//            } catch (SQLException ex) {
-//                ex.printStackTrace();
-//            }
-//
-//            System.out.println("บบรรดทัด 466");
-//
-//         if(abPath == null){
-//            System.out.println("");
-//        }else{
-//              
-//        try {
-//    
-//            filepic = new FileInputStream(abPath);
-//            String sql = "UPDATE students SET std_picture=? WHERE std_id=59130500004";
-//                PreparedStatement pre = con.prepareStatement(sql);
-//                pre.setString(1, path);
-//                pre.executeUpdate();
-//            OutputStream ops = null;
-//            try {
-//                
-//                //System.out.println("asdada");
-//                System.out.println("Path :" + "/Users/taloey/Desktop/PublicRegister/src/Images/" + path);
-//                ops = new FileOutputStream(new File("src/Images/" + path));
-//                int read = 0;
-//                byte[] b = new byte[1024];
-//                while ((read = filepic.read(b)) != -1) {
-//                    ops.write(b, 0, read);
-//                }
-//                filepic.close();
-//            } catch (FileNotFoundException e) {
-//                System.out.println(e);
-//            } catch (IOException ex) {
-//                System.out.println(ex);
-//            } 
-//        } catch (FileNotFoundException ex) {
-//            ex.printStackTrace();
-//        }catch (SQLException ex) {
-//                    ex.printStackTrace();
-//                }
-//         }
 
     }//GEN-LAST:event_SubmitbottonMouseClicked
 
@@ -618,64 +551,3 @@ public class ViewProfile extends JFrame {
     private javax.swing.JLabel แพ้อาหาอะไร;
     // End of variables declaration//GEN-END:variables
 }
-/*String fac=null;    
-        try {
-            Statement st = con.createStatement();
-            String sql = "SELECT * FROM students WHERE std_id = 59130500004";
-            ResultSet res = st.executeQuery(sql);
-            while (res.next()) {
-                fac = res.getString("std_faculty");
-                //System.out.println(res.getString("std_name"));
-                SurnameTextField.setText(fac);
-            }
-            //string sql = "INSERT INTO students VALUES
-            //NameTextField.setText(name);
-            
-           
-        } catch (SQLException ex) {
-            Logger.getLogger(ViewProfile.class.getName()).log(Level.SEVERE, null, ex);
-        }
-String tel=null;    
-        try {
-            Statement st = con.createStatement();
-            String sql = "SELECT * FROM students WHERE std_id = 59130500004";
-            ResultSet res = st.executeQuery(sql);
-            while (res.next()) {
-                tel = res.getString("std_tel");
-                
-                TelephoneTextField.setText(tel);
-            }
-       
-           
-        } catch (SQLException ex) {
-            Logger.getLogger(ViewProfile.class.getName()).log(Level.SEVERE, null, ex);
-        }
-String face=null;    
-        try {
-            Statement st = con.createStatement();
-            String sql = "SELECT * FROM students WHERE std_id = 59130500004";
-            ResultSet res = st.executeQuery(sql);
-            while (res.next()) {
-                face = res.getString("std_facebook");
-                
-               FacebookTextField.setText(face);
-            }
-       
-           
-        } catch (SQLException ex) {
-            Logger.getLogger(ViewProfile.class.getName()).log(Level.SEVERE, null, ex);
-        }
-*String pic=null;    
-        try {
-            Statement st = con.createStatement();
-            String sql = "SELECT * FROM students WHERE std_id = 59130500004";
-            ResultSet res = st.executeQuery(sql);
-            while (res.next()) {
-                pic = res.getString("std_picture");
-                ImageS.setIcon(new ImageIcon((new ImageIcon("src/Images/"+pic).getImage().getScaledInstance(395,335,Image.SCALE_SMOOTH))));
-            }
-       
-           
-        } catch (SQLException ex) {
-            Logger.getLogger(ViewProfile.class.getName()).log(Level.SEVERE, null, ex);
-        }*/

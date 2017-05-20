@@ -623,10 +623,10 @@ public class LoginHomepage extends javax.swing.JFrame {
         getContentPane().add(logout, new org.netbeans.lib.awtextra.AbsoluteConstraints(930, 50, 32, 32));
 
         checkActivity.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        getContentPane().add(checkActivity, new org.netbeans.lib.awtextra.AbsoluteConstraints(910, 70, 80, 20));
+        getContentPane().add(checkActivity, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 90, 80, 20));
 
         logOut.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        getContentPane().add(logOut, new org.netbeans.lib.awtextra.AbsoluteConstraints(970, 70, 40, 20));
+        getContentPane().add(logOut, new org.netbeans.lib.awtextra.AbsoluteConstraints(930, 90, 40, 20));
 
         blackground.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/page.jpg"))); // NOI18N
         getContentPane().add(blackground, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
