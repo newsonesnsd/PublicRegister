@@ -7,6 +7,9 @@ package publicregistergroup.view;
 
 import java.awt.Image;
 import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import javax.swing.DefaultListModel;
 import javax.swing.*;
@@ -14,6 +17,7 @@ import publicregistergroup.controller.ConnectionBuilder;
 import publicregistergroup.model.Clubs;
 import publicregistergroup.model.Enroll;
 import publicregistergroup.model.Students;
+import static publicregistergroup.view.LoginHomepage.con;
 
 /**
  *
@@ -29,6 +33,7 @@ public class CheckAllActivity extends javax.swing.JFrame {
     private String clubName = Clubs.getClub_name(getClubIndex());
     private String clubDescription = Clubs.getClub_description(getClubIndex());
     private int club_id = Clubs.getClub_id(getClubIndex());
+    private long std_id = Login.getStdId();
 
     public static int getClubIndex() {
         return clubIndex +1;
@@ -240,11 +245,29 @@ public class CheckAllActivity extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextField1ActionPerformed
 
     private void backbottonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backbottonActionPerformed
+ String role = null;
+        try {
 
-        LinkData data = new LinkData();
-        this.setVisible(false);
-        data.setVisible(true);
-
+            String sql = "SELECT * FROM students WHERE std_id = ?";
+            PreparedStatement pre = con.prepareStatement(sql);
+            pre.setLong(1, std_id);
+            ResultSet res = pre.executeQuery();
+            while (res.next()) {
+                role = res.getString("std_role");
+                System.out.println(role);
+            }
+        } catch (SQLException ex) {
+            System.out.println(ex);
+        }
+        if (role.isEmpty()) {
+            LinkDataforUser user = new LinkDataforUser();
+            this.setVisible(false);
+            user.setVisible(true);
+        } else {
+            LinkData admin = new LinkData();
+            this.setVisible(false);
+            admin.setVisible(true);
+        }
     }//GEN-LAST:event_backbottonActionPerformed
 
     private void listJoinClubsAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_listJoinClubsAncestorAdded
