@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 package publicregistergroup.view;
-
+import java.awt.Image;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -12,6 +12,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import javax.swing.DefaultListModel;
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import publicregistergroup.controller.ConnectionBuilder;
 import publicregistergroup.model.*;
@@ -27,6 +28,7 @@ public class Homepage extends javax.swing.JFrame {
     private String listClubs;
     DefaultListModel model = new DefaultListModel();
     private String search;
+    
 
     public static int getClubIndex() {
         return clubIndex+1;
@@ -51,6 +53,7 @@ public class Homepage extends javax.swing.JFrame {
                 return strings.get(i);
             }
         });
+       
     }
 
     /**
@@ -134,6 +137,15 @@ public class Homepage extends javax.swing.JFrame {
         getContentPane().add(Bottonsearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 90, 80, 25));
 
         allRecommend.setTabPlacement(javax.swing.JTabbedPane.LEFT);
+        allRecommend.addAncestorListener(new javax.swing.event.AncestorListener() {
+            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
+            }
+            public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
+                allRecommendAncestorAdded(evt);
+            }
+            public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
+            }
+        });
 
         recommendPage1.setBackground(new java.awt.Color(241, 232, 239));
         recommendPage1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
@@ -210,6 +222,7 @@ public class Homepage extends javax.swing.JFrame {
                 .addGap(16, 16, 16))
         );
 
+        pic_P1.setIcon(new ImageIcon((new ImageIcon("src/Images/"+(Clubs.getClub_pic(2))).getImage().getScaledInstance(229,272,Image.SCALE_SMOOTH))));
         clubName_P1.setText(Clubs.getClub_name(2));
         clubId_P1.setText(Clubs.getClub_id(2)+"");
         des_P1.setText(Clubs.getClub_description(2));
@@ -290,6 +303,7 @@ public class Homepage extends javax.swing.JFrame {
                 .addGap(16, 16, 16))
         );
 
+        pic_P2.setIcon(new ImageIcon((new ImageIcon("src/Images/"+(Clubs.getClub_pic(3))).getImage().getScaledInstance(229,272,Image.SCALE_SMOOTH))));
         clubName_P2.setText(Clubs.getClub_name(3));
         clubId_P2.setText(Clubs.getClub_id(3)+"");
         des_P2.setText(Clubs.getClub_description(3));
@@ -370,6 +384,7 @@ public class Homepage extends javax.swing.JFrame {
                 .addGap(16, 16, 16))
         );
 
+        pic_P3.setIcon(new ImageIcon((new ImageIcon("src/Images/"+(Clubs.getClub_pic(4))).getImage().getScaledInstance(229,272,Image.SCALE_SMOOTH))));
         clubName_P3.setText(Clubs.getClub_name(4));
         clubId_P3.setText(Clubs.getClub_id(4)+"");
         des_P3.setText(Clubs.getClub_description(4));
@@ -451,6 +466,7 @@ public class Homepage extends javax.swing.JFrame {
                 .addGap(16, 16, 16))
         );
 
+        pic_P4.setIcon(new ImageIcon((new ImageIcon("src/Images/"+(Clubs.getClub_pic(5))).getImage().getScaledInstance(229,272,Image.SCALE_SMOOTH))));
         clubName_P4.setText(Clubs.getClub_name(5));
         clubId_P4.setText(Clubs.getClub_id(5)+"");
         des_P4.setText(Clubs.getClub_description(5));
@@ -684,6 +700,10 @@ public class Homepage extends javax.swing.JFrame {
         this.setVisible(false);
         viewclub.setVisible(true);
     }//GEN-LAST:event_chooseClubActionPerformed
+
+    private void allRecommendAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_allRecommendAncestorAdded
+      
+    }//GEN-LAST:event_allRecommendAncestorAdded
 
     /**
      * @param args the command line arguments

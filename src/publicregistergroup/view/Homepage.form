@@ -112,6 +112,9 @@
           <Properties>
             <Property name="tabPlacement" type="int" value="2"/>
           </Properties>
+          <Events>
+            <EventHandler event="ancestorAdded" listener="javax.swing.event.AncestorListener" parameters="javax.swing.event.AncestorEvent" handler="allRecommendAncestorAdded"/>
+          </Events>
 
           <Layout class="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout"/>
           <SubComponents>
@@ -210,6 +213,9 @@
                       </Border>
                     </Property>
                   </Properties>
+                  <AuxValues>
+                    <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="pic_P1.setIcon(new ImageIcon((new ImageIcon(&quot;src/Images/&quot;+(Clubs.getClub_pic(2))).getImage().getScaledInstance(229,272,Image.SCALE_SMOOTH))));"/>
+                  </AuxValues>
                 </Component>
                 <Component class="javax.swing.JLabel" name="clubName_P1">
                   <Properties>
@@ -355,6 +361,9 @@
                       </Border>
                     </Property>
                   </Properties>
+                  <AuxValues>
+                    <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="pic_P2.setIcon(new ImageIcon((new ImageIcon(&quot;src/Images/&quot;+(Clubs.getClub_pic(3))).getImage().getScaledInstance(229,272,Image.SCALE_SMOOTH))));"/>
+                  </AuxValues>
                 </Component>
                 <Component class="javax.swing.JLabel" name="clubName_P2">
                   <Properties>
@@ -500,6 +509,9 @@
                       </Border>
                     </Property>
                   </Properties>
+                  <AuxValues>
+                    <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="pic_P3.setIcon(new ImageIcon((new ImageIcon(&quot;src/Images/&quot;+(Clubs.getClub_pic(4))).getImage().getScaledInstance(229,272,Image.SCALE_SMOOTH))));"/>
+                  </AuxValues>
                 </Component>
                 <Component class="javax.swing.JLabel" name="clubName_P3">
                   <Properties>
@@ -648,6 +660,9 @@
                       </Border>
                     </Property>
                   </Properties>
+                  <AuxValues>
+                    <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="pic_P4.setIcon(new ImageIcon((new ImageIcon(&quot;src/Images/&quot;+(Clubs.getClub_pic(5))).getImage().getScaledInstance(229,272,Image.SCALE_SMOOTH))));"/>
+                  </AuxValues>
                 </Component>
                 <Component class="javax.swing.JLabel" name="clubName_P4">
                   <Properties>
