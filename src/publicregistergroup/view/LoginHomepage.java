@@ -88,18 +88,15 @@ public class LoginHomepage extends javax.swing.JFrame {
         jLabel12 = new javax.swing.JLabel();
         clubId_P2 = new javax.swing.JLabel();
         des_P2 = new javax.swing.JLabel();
-        joinClub_P2 = new javax.swing.JButton();
         jPanel7 = new javax.swing.JPanel();
         pic_P3 = new javax.swing.JLabel();
         clubName_P3 = new javax.swing.JLabel();
-        jButton6 = new javax.swing.JButton();
         jLabel13 = new javax.swing.JLabel();
         clubId_P3 = new javax.swing.JLabel();
         des_P3 = new javax.swing.JLabel();
         jPanel8 = new javax.swing.JPanel();
         pic_P4 = new javax.swing.JLabel();
         clubName_P4 = new javax.swing.JLabel();
-        jButton7 = new javax.swing.JButton();
         jLabel14 = new javax.swing.JLabel();
         clubId_P4 = new javax.swing.JLabel();
         des_P4 = new javax.swing.JLabel();
@@ -235,14 +232,6 @@ public class LoginHomepage extends javax.swing.JFrame {
         des_P2.setText("    ");
         des_P2.setVerticalAlignment(javax.swing.SwingConstants.TOP);
 
-        joinClub_P2.setFont(new java.awt.Font("Quark", 0, 14)); // NOI18N
-        joinClub_P2.setText("สมัครเข้าร่วมชมรม");
-        joinClub_P2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                joinClub_P2ActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout recommendPage2Layout = new javax.swing.GroupLayout(recommendPage2);
         recommendPage2.setLayout(recommendPage2Layout);
         recommendPage2Layout.setHorizontalGroup(
@@ -262,11 +251,7 @@ public class LoginHomepage extends javax.swing.JFrame {
                     .addGroup(recommendPage2Layout.createSequentialGroup()
                         .addGap(45, 45, 45)
                         .addComponent(clubName_P2)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, recommendPage2Layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(joinClub_P2)
-                .addGap(157, 157, 157))
+                .addContainerGap(28, Short.MAX_VALUE))
         );
         recommendPage2Layout.setVerticalGroup(
             recommendPage2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -284,9 +269,7 @@ public class LoginHomepage extends javax.swing.JFrame {
                             .addComponent(clubId_P2))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(des_P2, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(joinClub_P2)
-                .addGap(16, 16, 16))
+                .addContainerGap(57, Short.MAX_VALUE))
         );
 
         pic_P2.setIcon(new ImageIcon((new ImageIcon("src/Images/"+(Clubs.getClub_pic(3))).getImage().getScaledInstance(229,272,Image.SCALE_SMOOTH))));
@@ -307,14 +290,6 @@ public class LoginHomepage extends javax.swing.JFrame {
 
         clubName_P3.setFont(new java.awt.Font("Quark", 1, 20)); // NOI18N
         clubName_P3.setText("ชมรมอาสาพัฒนาชุมชน");
-
-        jButton6.setFont(new java.awt.Font("Quark", 0, 14)); // NOI18N
-        jButton6.setText("สมัครเข้าร่วมชมรม");
-        jButton6.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton6ActionPerformed(evt);
-            }
-        });
 
         jLabel13.setFont(new java.awt.Font("Quark", 1, 14)); // NOI18N
         jLabel13.setText("<html> CLUB ID :  <br>DESCRIPTION : </html>");
@@ -346,11 +321,7 @@ public class LoginHomepage extends javax.swing.JFrame {
                     .addGroup(jPanel7Layout.createSequentialGroup()
                         .addGap(45, 45, 45)
                         .addComponent(clubName_P3)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel7Layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jButton6)
-                .addGap(157, 157, 157))
+                .addContainerGap(28, Short.MAX_VALUE))
         );
         jPanel7Layout.setVerticalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -368,9 +339,7 @@ public class LoginHomepage extends javax.swing.JFrame {
                             .addComponent(clubId_P3))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(des_P3, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton6)
-                .addGap(16, 16, 16))
+                .addContainerGap(57, Short.MAX_VALUE))
         );
 
         clubName_P3.setText(Clubs.getClub_name(4));
@@ -391,14 +360,6 @@ public class LoginHomepage extends javax.swing.JFrame {
 
         clubName_P4.setFont(new java.awt.Font("Quark", 1, 20)); // NOI18N
         clubName_P4.setText("ชมรมอาสาพัฒนาชุมชน");
-
-        jButton7.setFont(new java.awt.Font("Quark", 0, 14)); // NOI18N
-        jButton7.setText("สมัครเข้าร่วมชมรม");
-        jButton7.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton7ActionPerformed(evt);
-            }
-        });
 
         jLabel14.setFont(new java.awt.Font("Quark", 1, 14)); // NOI18N
         jLabel14.setText("<html> CLUB ID :  <br>DESCRIPTION : </html>");
@@ -428,11 +389,7 @@ public class LoginHomepage extends javax.swing.JFrame {
                     .addGroup(jPanel8Layout.createSequentialGroup()
                         .addGap(45, 45, 45)
                         .addComponent(clubName_P4)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel8Layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jButton7)
-                .addGap(157, 157, 157))
+                .addContainerGap(28, Short.MAX_VALUE))
         );
         jPanel8Layout.setVerticalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -450,9 +407,7 @@ public class LoginHomepage extends javax.swing.JFrame {
                             .addComponent(clubId_P4))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(des_P4, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton7)
-                .addGap(16, 16, 16))
+                .addContainerGap(57, Short.MAX_VALUE))
         );
 
         pic_P4.setIcon(new ImageIcon((new ImageIcon("src/Images/"+(Clubs.getClub_pic(5))).getImage().getScaledInstance(229,272,Image.SCALE_SMOOTH))));
@@ -582,7 +537,7 @@ public class LoginHomepage extends javax.swing.JFrame {
                 CheckActivityActionPerformed(evt);
             }
         });
-        getContentPane().add(CheckActivity, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 50, 32, 32));
+        getContentPane().add(CheckActivity, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 50, 32, 32));
 
         logout.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/exit.png"))); // NOI18N
         logout.setBorder(null);
@@ -606,7 +561,7 @@ public class LoginHomepage extends javax.swing.JFrame {
         getContentPane().add(logout, new org.netbeans.lib.awtextra.AbsoluteConstraints(930, 50, 32, 32));
 
         checkActivity.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        getContentPane().add(checkActivity, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 90, 80, 20));
+        getContentPane().add(checkActivity, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 90, 80, 20));
 
         logOut.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         getContentPane().add(logOut, new org.netbeans.lib.awtextra.AbsoluteConstraints(930, 90, 40, 20));
@@ -651,24 +606,6 @@ public class LoginHomepage extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_searchclubTextFieldActionPerformed
 
-    private void joinClub_P2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_joinClub_P2ActionPerformed
-        ViewRegist view = new ViewRegist();
-        this.setVisible(false);
-        view.setVisible(true);
-    }//GEN-LAST:event_joinClub_P2ActionPerformed
-
-    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
-        ViewRegist view = new ViewRegist();
-        this.setVisible(false);
-        view.setVisible(true);
-    }//GEN-LAST:event_jButton6ActionPerformed
-
-    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
-        ViewRegist view = new ViewRegist();
-        this.setVisible(false);
-        view.setVisible(true);
-    }//GEN-LAST:event_jButton7ActionPerformed
-
     private void allClubsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_allClubsMouseClicked
 
     }//GEN-LAST:event_allClubsMouseClicked
@@ -677,19 +614,6 @@ public class LoginHomepage extends javax.swing.JFrame {
 
 
     }//GEN-LAST:event_allClubsAncestorAdded
-
-    private void chooseClubMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_chooseClubMouseClicked
-
-    }//GEN-LAST:event_chooseClubMouseClicked
-
-    private void chooseClubActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chooseClubActionPerformed
-
-        clubIndex = allClubs.getSelectedIndex();
-        ViewClub viewc = new ViewClub();
-        this.setVisible(false);
-        viewc.setVisible(true);
-
-    }//GEN-LAST:event_chooseClubActionPerformed
 
     private void CheckActivityActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CheckActivityActionPerformed
         String role = null;
@@ -738,6 +662,17 @@ public class LoginHomepage extends javax.swing.JFrame {
         this.setVisible(false);
         homep.setVisible(true);
     }//GEN-LAST:event_logoutActionPerformed
+
+    private void chooseClubActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chooseClubActionPerformed
+        clubIndex = allClubs.getSelectedIndex();
+        ViewClub viewc = new ViewClub();
+        this.setVisible(false);
+        viewc.setVisible(true);
+    }//GEN-LAST:event_chooseClubActionPerformed
+
+    private void chooseClubMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_chooseClubMouseClicked
+
+    }//GEN-LAST:event_chooseClubMouseClicked
 
     /**
      * @param args the command line arguments
@@ -799,8 +734,6 @@ public class LoginHomepage extends javax.swing.JFrame {
     private javax.swing.JLabel des_P2;
     private javax.swing.JLabel des_P3;
     private javax.swing.JLabel des_P4;
-    private javax.swing.JButton jButton6;
-    private javax.swing.JButton jButton7;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
@@ -814,7 +747,6 @@ public class LoginHomepage extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JButton joinClub_P2;
     private javax.swing.JLabel logOut;
     private javax.swing.JButton logout;
     private javax.swing.JLabel pic_P1;

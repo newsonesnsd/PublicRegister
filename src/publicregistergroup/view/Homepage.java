@@ -86,18 +86,15 @@ public class Homepage extends javax.swing.JFrame {
         jLabel12 = new javax.swing.JLabel();
         clubId_P2 = new javax.swing.JLabel();
         des_P2 = new javax.swing.JLabel();
-        joinClub_P2 = new javax.swing.JButton();
         jPanel7 = new javax.swing.JPanel();
         pic_P3 = new javax.swing.JLabel();
         clubName_P3 = new javax.swing.JLabel();
-        jButton6 = new javax.swing.JButton();
         jLabel13 = new javax.swing.JLabel();
         clubId_P3 = new javax.swing.JLabel();
         des_P3 = new javax.swing.JLabel();
         jPanel8 = new javax.swing.JPanel();
         pic_P4 = new javax.swing.JLabel();
         clubName_P4 = new javax.swing.JLabel();
-        jButton7 = new javax.swing.JButton();
         jLabel14 = new javax.swing.JLabel();
         clubId_P4 = new javax.swing.JLabel();
         des_P4 = new javax.swing.JLabel();
@@ -105,13 +102,12 @@ public class Homepage extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         allClubs = new javax.swing.JList<>();
-        chooseClub = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
+        chooseClub = new javax.swing.JButton();
         login = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         blackground = new javax.swing.JLabel();
-        jPanel3 = new javax.swing.JPanel();
 
         jLabel1.setText("jLabel1");
 
@@ -152,7 +148,7 @@ public class Homepage extends javax.swing.JFrame {
             }
         });
 
-        recommendPage1.setBackground(new java.awt.Color(241, 232, 239));
+        recommendPage1.setBackground(new java.awt.Color(0, 153, 102));
         recommendPage1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         pic_P1.setFont(new java.awt.Font("Quark", 1, 65)); // NOI18N
@@ -218,7 +214,7 @@ public class Homepage extends javax.swing.JFrame {
 
         allRecommend.addTab("", recommendPage1);
 
-        recommendPage2.setBackground(new java.awt.Color(241, 232, 239));
+        recommendPage2.setBackground(new java.awt.Color(83, 172, 172));
         recommendPage2.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         pic_P2.setFont(new java.awt.Font("Quark", 1, 65)); // NOI18N
@@ -237,14 +233,6 @@ public class Homepage extends javax.swing.JFrame {
 
         des_P2.setText("    ");
         des_P2.setVerticalAlignment(javax.swing.SwingConstants.TOP);
-
-        joinClub_P2.setFont(new java.awt.Font("Quark", 0, 14)); // NOI18N
-        joinClub_P2.setText("สมัครเข้าร่วมชมรม");
-        joinClub_P2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                joinClub_P2ActionPerformed(evt);
-            }
-        });
 
         javax.swing.GroupLayout recommendPage2Layout = new javax.swing.GroupLayout(recommendPage2);
         recommendPage2.setLayout(recommendPage2Layout);
@@ -265,11 +253,7 @@ public class Homepage extends javax.swing.JFrame {
                     .addGroup(recommendPage2Layout.createSequentialGroup()
                         .addGap(45, 45, 45)
                         .addComponent(clubName_P2)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, recommendPage2Layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(joinClub_P2)
-                .addGap(157, 157, 157))
+                .addContainerGap(28, Short.MAX_VALUE))
         );
         recommendPage2Layout.setVerticalGroup(
             recommendPage2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -287,9 +271,7 @@ public class Homepage extends javax.swing.JFrame {
                             .addComponent(clubId_P2))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(des_P2, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(joinClub_P2)
-                .addGap(16, 16, 16))
+                .addContainerGap(57, Short.MAX_VALUE))
         );
 
         pic_P2.setIcon(new ImageIcon((new ImageIcon("src/Images/"+(Clubs.getClub_pic(3))).getImage().getScaledInstance(229,272,Image.SCALE_SMOOTH))));
@@ -299,7 +281,7 @@ public class Homepage extends javax.swing.JFrame {
 
         allRecommend.addTab("", recommendPage2);
 
-        jPanel7.setBackground(new java.awt.Color(241, 232, 239));
+        jPanel7.setBackground(new java.awt.Color(204, 204, 255));
         jPanel7.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         pic_P3.setFont(new java.awt.Font("Quark", 1, 65)); // NOI18N
@@ -309,14 +291,6 @@ public class Homepage extends javax.swing.JFrame {
 
         clubName_P3.setFont(new java.awt.Font("Quark", 1, 20)); // NOI18N
         clubName_P3.setText("ชมรมอาสาพัฒนาชุมชน");
-
-        jButton6.setFont(new java.awt.Font("Quark", 0, 14)); // NOI18N
-        jButton6.setText("สมัครเข้าร่วมชมรม");
-        jButton6.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton6ActionPerformed(evt);
-            }
-        });
 
         jLabel13.setFont(new java.awt.Font("Quark", 1, 14)); // NOI18N
         jLabel13.setText("<html> CLUB ID :  <br>DESCRIPTION : </html>");
@@ -346,11 +320,7 @@ public class Homepage extends javax.swing.JFrame {
                     .addGroup(jPanel7Layout.createSequentialGroup()
                         .addGap(45, 45, 45)
                         .addComponent(clubName_P3)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel7Layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jButton6)
-                .addGap(157, 157, 157))
+                .addContainerGap(28, Short.MAX_VALUE))
         );
         jPanel7Layout.setVerticalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -368,9 +338,7 @@ public class Homepage extends javax.swing.JFrame {
                             .addComponent(clubId_P3))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(des_P3, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton6)
-                .addGap(16, 16, 16))
+                .addContainerGap(57, Short.MAX_VALUE))
         );
 
         pic_P3.setIcon(new ImageIcon((new ImageIcon("src/Images/"+(Clubs.getClub_pic(4))).getImage().getScaledInstance(229,272,Image.SCALE_SMOOTH))));
@@ -380,7 +348,7 @@ public class Homepage extends javax.swing.JFrame {
 
         allRecommend.addTab("", jPanel7);
 
-        jPanel8.setBackground(new java.awt.Color(241, 232, 239));
+        jPanel8.setBackground(new java.awt.Color(255, 102, 102));
         jPanel8.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         pic_P4.setBackground(new java.awt.Color(251, 236, 215));
@@ -391,14 +359,6 @@ public class Homepage extends javax.swing.JFrame {
 
         clubName_P4.setFont(new java.awt.Font("Quark", 1, 20)); // NOI18N
         clubName_P4.setText("ชมรมอาสาพัฒนาชุมชน");
-
-        jButton7.setFont(new java.awt.Font("Quark", 0, 14)); // NOI18N
-        jButton7.setText("สมัครเข้าร่วมชมรม");
-        jButton7.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton7ActionPerformed(evt);
-            }
-        });
 
         jLabel14.setFont(new java.awt.Font("Quark", 1, 14)); // NOI18N
         jLabel14.setText("<html> CLUB ID :  <br>DESCRIPTION : </html>");
@@ -428,11 +388,7 @@ public class Homepage extends javax.swing.JFrame {
                     .addGroup(jPanel8Layout.createSequentialGroup()
                         .addGap(45, 45, 45)
                         .addComponent(clubName_P4)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel8Layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jButton7)
-                .addGap(157, 157, 157))
+                .addContainerGap(28, Short.MAX_VALUE))
         );
         jPanel8Layout.setVerticalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -450,9 +406,7 @@ public class Homepage extends javax.swing.JFrame {
                             .addComponent(clubId_P4))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(des_P4, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton7)
-                .addGap(16, 16, 16))
+                .addContainerGap(57, Short.MAX_VALUE))
         );
 
         pic_P4.setIcon(new ImageIcon((new ImageIcon("src/Images/"+(Clubs.getClub_pic(5))).getImage().getScaledInstance(229,272,Image.SCALE_SMOOTH))));
@@ -506,21 +460,13 @@ public class Homepage extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(allClubs);
 
-        chooseClub.setFont(new java.awt.Font("Quark", 0, 13)); // NOI18N
-        chooseClub.setText(" Click");
-        chooseClub.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                chooseClubMouseClicked(evt);
-            }
-        });
-        chooseClub.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                chooseClubActionPerformed(evt);
-            }
-        });
-
         jLabel2.setFont(new java.awt.Font("Quark", 1, 18)); // NOI18N
         jLabel2.setText("ชมรมทั้งหมด");
+
+        chooseClub.setFont(new java.awt.Font("Quark", 0, 13)); // NOI18N
+        chooseClub.setText("Choose club");
+        chooseClub.setBorder(null);
+        chooseClub.setBorderPainted(false);
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -530,10 +476,11 @@ public class Homepage extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel2)
-                .addContainerGap(357, Short.MAX_VALUE))
+                .addContainerGap(351, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(chooseClub))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(chooseClub, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(26, 26, 26))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -542,13 +489,15 @@ public class Homepage extends javax.swing.JFrame {
                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 366, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(chooseClub))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(chooseClub, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 210, 440, -1));
+        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 210, 440, 450));
 
         login.setFont(new java.awt.Font("Quark", 0, 18)); // NOI18N
+        login.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/login.png"))); // NOI18N
         login.setBorder(null);
         login.setBorderPainted(false);
         login.addActionListener(new java.awt.event.ActionListener() {
@@ -556,7 +505,7 @@ public class Homepage extends javax.swing.JFrame {
                 loginActionPerformed(evt);
             }
         });
-        getContentPane().add(login, new org.netbeans.lib.awtextra.AbsoluteConstraints(960, 20, 30, -1));
+        getContentPane().add(login, new org.netbeans.lib.awtextra.AbsoluteConstraints(960, 20, 32, 32));
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
@@ -566,19 +515,6 @@ public class Homepage extends javax.swing.JFrame {
 
         blackground.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/page.jpg"))); // NOI18N
         getContentPane().add(blackground, new org.netbeans.lib.awtextra.AbsoluteConstraints(-5, 0, 1030, 770));
-
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
-        );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
-        );
-
-        getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 30, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -624,24 +560,6 @@ public class Homepage extends javax.swing.JFrame {
         log.pack();
     }//GEN-LAST:event_loginActionPerformed
 
-    private void joinClub_P2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_joinClub_P2ActionPerformed
-        ViewRegist view = new ViewRegist();
-        this.setVisible(false);
-        view.setVisible(true);
-    }//GEN-LAST:event_joinClub_P2ActionPerformed
-
-    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
-        ViewRegist view = new ViewRegist();
-        this.setVisible(false);
-        view.setVisible(true);
-    }//GEN-LAST:event_jButton6ActionPerformed
-
-    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
-        ViewRegist view = new ViewRegist();
-        this.setVisible(false);
-        view.setVisible(true);
-    }//GEN-LAST:event_jButton7ActionPerformed
-
     private void allClubsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_allClubsMouseClicked
 
     }//GEN-LAST:event_allClubsMouseClicked
@@ -650,18 +568,6 @@ public class Homepage extends javax.swing.JFrame {
 
 
     }//GEN-LAST:event_allClubsAncestorAdded
-
-    private void chooseClubMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_chooseClubMouseClicked
-
-    }//GEN-LAST:event_chooseClubMouseClicked
-
-    private void chooseClubActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chooseClubActionPerformed
-
-        clubIndex = allClubs.getSelectedIndex();
-        ViewClubBeforeLogin viewclub = new ViewClubBeforeLogin();
-        this.setVisible(false);
-        viewclub.setVisible(true);
-    }//GEN-LAST:event_chooseClubActionPerformed
 
     private void allRecommendAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_allRecommendAncestorAdded
 
@@ -722,8 +628,6 @@ public class Homepage extends javax.swing.JFrame {
     private javax.swing.JLabel des_P2;
     private javax.swing.JLabel des_P3;
     private javax.swing.JLabel des_P4;
-    private javax.swing.JButton jButton6;
-    private javax.swing.JButton jButton7;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -736,11 +640,9 @@ public class Homepage extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel9;
     private static javax.swing.JPanel jPanel1;
     private static javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JButton joinClub_P2;
     private javax.swing.JButton login;
     private javax.swing.JLabel pic_P1;
     private javax.swing.JLabel pic_P2;
