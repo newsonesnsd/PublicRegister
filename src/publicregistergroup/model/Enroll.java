@@ -53,7 +53,10 @@ public class Enroll {
             String sql = "INSERT INTO enroll (enroll_id, club_id, std_id, create_at, update_at) VALUES (?, ?, ?, ?, ?);";
             PreparedStatement pre = con.prepareStatement(sql);
             pre.setInt(1, enrollId);
-            pre.setInt(1, 4);
+            pre.setInt(1, club_id);
+            pre.setLong(3, std_id);
+            pre.setDate(4, new java.sql.Date(new Date().getTime()));
+            pre.setDate(5, new java.sql.Date(new Date().getTime()));
             
         } 
         catch (SQLException ex) {
@@ -62,5 +65,6 @@ public class Enroll {
         }
         
     }
+    
 
 }
