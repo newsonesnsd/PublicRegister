@@ -95,10 +95,9 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Quark" size="30" style="1"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="MS.KITTIYA YUTHASASTRKOSOL"/>
       </Properties>
       <AuxValues>
-        <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="//showName.setText(stdName);"/>
+        <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="showName.setText(stdName);"/>
       </AuxValues>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -111,10 +110,9 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Quark" size="18" style="0"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="INFORMATION TECHNOLOGY"/>
       </Properties>
       <AuxValues>
-        <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="//showFaculty.setText(stdFaculty);"/>
+        <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="showFaculty.setText(stdFaculty);"/>
       </AuxValues>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -222,11 +220,6 @@
           </Layout>
           <SubComponents>
             <Component class="javax.swing.JLabel" name="jLabel4">
-              <Properties>
-                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="C:\Users\kz_no\Desktop\ProjectPublicRegister\src\Images\RegisteredClubs.png"/>
-                </Property>
-              </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
                   <AbsoluteConstraints x="-70" y="0" width="540" height="-1"/>
@@ -348,11 +341,6 @@
               </Constraints>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel3">
-              <Properties>
-                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="C:\Users\kz_no\Desktop\ProjectPublicRegister\src\Images\bgRegisteredClubs.png"/>
-                </Property>
-              </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
                   <AbsoluteConstraints x="-70" y="0" width="540" height="-1"/>
