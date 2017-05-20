@@ -55,8 +55,6 @@ public class EditClub extends JFrame {
         textupload = new javax.swing.JLabel();
         Uploadphotos = new javax.swing.JLabel();
         textDetail1 = new javax.swing.JLabel();
-        SearchTextField = new javax.swing.JTextField();
-        Bottonsearch = new javax.swing.JButton();
         savebotton = new javax.swing.JButton();
         uploadbotton = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -104,16 +102,6 @@ public class EditClub extends JFrame {
         textDetail1.setForeground(new java.awt.Color(77, 77, 77));
         textDetail1.setText("รายละเอียด");
         getContentPane().add(textDetail1, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 180, -1, -1));
-        getContentPane().add(SearchTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 90, 260, 30));
-
-        Bottonsearch.setFont(new java.awt.Font("Quark", 0, 14)); // NOI18N
-        Bottonsearch.setText("OK");
-        Bottonsearch.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BottonsearchActionPerformed(evt);
-            }
-        });
-        getContentPane().add(Bottonsearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 90, 80, 30));
 
         savebotton.setBackground(new java.awt.Color(213, 186, 55));
         savebotton.setFont(new java.awt.Font("Quark", 0, 48)); // NOI18N
@@ -172,34 +160,6 @@ public class EditClub extends JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void BottonsearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BottonsearchActionPerformed
-        search = SearchTextField.getText();
-        String club = "";
-        try {
-
-            String sql = "SELECT * FROM clubs where club_name LIKE '%" + search + "%'";
-            PreparedStatement pre = con.prepareStatement(sql);
-            ResultSet res = pre.executeQuery();
-            if (res.next()) {
-                club = res.getString("club_name");
-            }
-
-        } catch (SQLException ex) {
-            ex.printStackTrace();
-        }
-        if (search.equals(club)) {
-            JOptionPane frame = new JOptionPane();
-            JOptionPane.showMessageDialog(frame, "Search success", "Search club", JOptionPane.PLAIN_MESSAGE);
-
-            ViewClubFromSearch view = new ViewClubFromSearch();
-            this.setVisible(false);
-            view.setVisible(true);
-        } else {
-            JOptionPane frame = new JOptionPane();
-            JOptionPane.showMessageDialog(frame, "Failed club name", "Search club", JOptionPane.ERROR_MESSAGE);
-        }
-    }//GEN-LAST:event_BottonsearchActionPerformed
 
     private void uploadbottonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_uploadbottonActionPerformed
         JFileChooser fileOpen = new JFileChooser();
@@ -337,10 +297,8 @@ public class EditClub extends JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton Bottonsearch;
     private javax.swing.JPanel Boxphoto;
     private javax.swing.JLabel NameClub;
-    private javax.swing.JTextField SearchTextField;
     private javax.swing.JLabel Uploadphotos;
     private javax.swing.JLabel blackground;
     private javax.swing.JTextArea detailArea;

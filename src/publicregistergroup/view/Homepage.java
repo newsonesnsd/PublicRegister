@@ -80,7 +80,6 @@ public class Homepage extends javax.swing.JFrame {
         jLabel9 = new javax.swing.JLabel();
         clubId_P1 = new javax.swing.JLabel();
         des_P1 = new javax.swing.JLabel();
-        joinClub_P1 = new javax.swing.JButton();
         recommendPage2 = new javax.swing.JPanel();
         pic_P2 = new javax.swing.JLabel();
         clubName_P2 = new javax.swing.JLabel();
@@ -173,14 +172,6 @@ public class Homepage extends javax.swing.JFrame {
         des_P1.setText("    ");
         des_P1.setVerticalAlignment(javax.swing.SwingConstants.TOP);
 
-        joinClub_P1.setFont(new java.awt.Font("Quark", 0, 14)); // NOI18N
-        joinClub_P1.setText("สมัครเข้าร่วมชมรม");
-        joinClub_P1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                joinClub_P1ActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout recommendPage1Layout = new javax.swing.GroupLayout(recommendPage1);
         recommendPage1.setLayout(recommendPage1Layout);
         recommendPage1Layout.setHorizontalGroup(
@@ -201,31 +192,23 @@ public class Homepage extends javax.swing.JFrame {
                         .addGap(45, 45, 45)
                         .addComponent(clubName_P1)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, recommendPage1Layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(joinClub_P1)
-                .addGap(157, 157, 157))
         );
         recommendPage1Layout.setVerticalGroup(
             recommendPage1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(recommendPage1Layout.createSequentialGroup()
-                .addGroup(recommendPage1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(recommendPage1Layout.createSequentialGroup()
-                        .addGap(22, 22, 22)
-                        .addComponent(clubName_P1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(pic_P1, javax.swing.GroupLayout.PREFERRED_SIZE, 272, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, recommendPage1Layout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(recommendPage1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(clubId_P1))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(des_P1, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(116, 116, 116)))
-                .addComponent(joinClub_P1)
-                .addGap(16, 16, 16))
+                .addGap(22, 22, 22)
+                .addComponent(clubName_P1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(pic_P1, javax.swing.GroupLayout.PREFERRED_SIZE, 272, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(33, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, recommendPage1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(recommendPage1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(clubId_P1))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(des_P1, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(161, 161, 161))
         );
 
         pic_P1.setIcon(new ImageIcon((new ImageIcon("src/Images/"+(Clubs.getClub_pic(2))).getImage().getScaledInstance(229,272,Image.SCALE_SMOOTH))));
@@ -304,7 +287,7 @@ public class Homepage extends javax.swing.JFrame {
                             .addComponent(clubId_P2))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(des_P2, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(joinClub_P2)
                 .addGap(16, 16, 16))
         );
@@ -385,7 +368,7 @@ public class Homepage extends javax.swing.JFrame {
                             .addComponent(clubId_P3))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(des_P3, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jButton6)
                 .addGap(16, 16, 16))
         );
@@ -467,7 +450,7 @@ public class Homepage extends javax.swing.JFrame {
                             .addComponent(clubId_P4))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(des_P4, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jButton7)
                 .addGap(16, 16, 16))
         );
@@ -566,7 +549,6 @@ public class Homepage extends javax.swing.JFrame {
         getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 210, 440, -1));
 
         login.setFont(new java.awt.Font("Quark", 0, 18)); // NOI18N
-        login.setIcon(new javax.swing.ImageIcon("C:\\Users\\kz_no\\Desktop\\ProjectPublicRegister\\src\\Images\\login.png")); // NOI18N
         login.setBorder(null);
         login.setBorderPainted(false);
         login.addActionListener(new java.awt.event.ActionListener() {
@@ -633,12 +615,6 @@ public class Homepage extends javax.swing.JFrame {
     private void searchclubTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchclubTextFieldActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_searchclubTextFieldActionPerformed
-
-    private void joinClub_P1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_joinClub_P1ActionPerformed
-        ViewRegist view = new ViewRegist();
-        this.setVisible(false);
-        view.setVisible(true);
-    }//GEN-LAST:event_joinClub_P1ActionPerformed
 
     private void loginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginActionPerformed
         // TODO add your handling code here:
@@ -764,7 +740,6 @@ public class Homepage extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JButton joinClub_P1;
     private javax.swing.JButton joinClub_P2;
     private javax.swing.JButton login;
     private javax.swing.JLabel pic_P1;
