@@ -18,7 +18,7 @@ import publicregistergroup.view.Login;
  *
  * @author newso
  */
-public class enroll {
+public class Enroll {
     static Connection con = ConnectionBuilder.getConnection();
     private static int enroll_id;
     private static int club_id;
