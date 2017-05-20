@@ -21,13 +21,14 @@ import static publicregistergroup.view.ViewProfile.con;
  * @author kz_no
  */
 public class ViewClubBeforeLogin extends javax.swing.JFrame {
+
     static Connection con = ConnectionBuilder.getConnection();
     private String clubName = Clubs.getClub_name(Homepage.getClubIndex());
     private String clubDescription = Clubs.getClub_description(Homepage.getClubIndex());
     private int club_id = Clubs.getClub_id(Homepage.getClubIndex());
     //private int Picture = Clubs.getClub_description(LoginHomepage.getClubIndex());
     private String search;
-    
+
     /**
      * Creates new form ViewClub
      */
@@ -35,32 +36,14 @@ public class ViewClubBeforeLogin extends javax.swing.JFrame {
         initComponents();
         setLocationRelativeTo(null);
     }
+
     /**
-     * This is the part of my method 
-     * This zone is about getMethod to call Club: name, id, description
-     * @return 
+     * This is the part of my method This zone is about getMethod to call Club:
+     * name, id, description
+     *
+     * @return
      */
-    
-    
-//    public String getClubName() {
-//        club_id = clubIndex+1;        
-//        try {
-//            String sql = "SELECT * FROM clubs WHERE club_id = ?";
-//            PreparedStatement pre = con.prepareStatement(sql);
-//            pre.setInt(1, club_id);
-//            ResultSet rs = pre.executeQuery();
-//            if(rs.next()) {
-//                clubName = rs.getString("club_name");
-//                //System.out.println(clubName);
-//            }
-//        } 
-//        catch (SQLException e) {
-//            System.out.println(e + "\n" + e.getMessage());
-//        }
-//        return clubName;      
-//    }
-    
-    
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -167,41 +150,38 @@ public class ViewClubBeforeLogin extends javax.swing.JFrame {
 
     private void BottonsearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BottonsearchActionPerformed
         search = SearchclubTextField.getText();
-        String club="";    
+        String club = "";
         try {
-            
-           
-            String sql = "SELECT * FROM clubs where club_name LIKE '%"+search+"%'";
+
+            String sql = "SELECT * FROM clubs where club_name LIKE '%" + search + "%'";
             PreparedStatement pre = con.prepareStatement(sql);
 //            pre.setString(1, "%"+search+"%");
-            System.out.println(search+" search la");
-             ResultSet res = pre.executeQuery();
-             System.out.println("EXE LAEW");
-                if(res.next()) {
-                    club =res.getString("club_name");
-                    System.out.println(club+" clubname");
-                }
-                
+            ResultSet res = pre.executeQuery();
+            if (res.next()) {
+                club = res.getString("club_name");
+                System.out.println(club + " clubname");
+            }
+
         } catch (SQLException ex) {
             ex.printStackTrace();
-        }if (search .equals(club)) {
-            JOptionPane frame = new JOptionPane();
-            JOptionPane.showMessageDialog(frame,"Search success","Search club",JOptionPane.PLAIN_MESSAGE);
-             // = allClubs.getSelectedIndex();
-             ViewClubFromSearch view = new ViewClubFromSearch();
-            this.setVisible(false);
-             view.setVisible(true);
         }
-        else {
+        if (search.equals(club)) {
             JOptionPane frame = new JOptionPane();
-            JOptionPane.showMessageDialog(frame,"Failed club name","Search club",JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(frame, "Search success", "Search club", JOptionPane.PLAIN_MESSAGE);
+            // = allClubs.getSelectedIndex();
+            ViewClubFromSearch view = new ViewClubFromSearch();
+            this.setVisible(false);
+            view.setVisible(true);
+        } else {
+            JOptionPane frame = new JOptionPane();
+            JOptionPane.showMessageDialog(frame, "Failed club name", "Search club", JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_BottonsearchActionPerformed
 
     private void BackbottonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BackbottonActionPerformed
-            this.setVisible(false);
-            Homepage login = new Homepage();
-            login.setVisible(true);
+        this.setVisible(false);
+        Homepage login = new Homepage();
+        login.setVisible(true);
     }//GEN-LAST:event_BackbottonActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
@@ -211,17 +191,6 @@ public class ViewClubBeforeLogin extends javax.swing.JFrame {
         log.setVisible(true);
     }//GEN-LAST:event_jButton2ActionPerformed
 
-//    public void getClubName() {
-//        try {
-//            String sql = "SELECT club_id from clubs where club_id = ?";
-//            PreparedStatement statement = con.prepareStatement(sql);
-//            statement.setInt(1, WIDTH);
-//        } 
-//        catch (SQLException ex) {
-//            Logger.getLogger(ViewClub.class.getName()).log(Level.SEVERE, null, ex);
-//            System.out.println(ex + "\n" + ex.getMessage());
-//        }
-//    }
     /**
      * @param args the command line arguments
      */

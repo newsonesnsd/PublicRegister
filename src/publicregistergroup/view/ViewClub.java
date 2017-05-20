@@ -42,23 +42,6 @@ public class ViewClub extends javax.swing.JFrame {
      */
     
     
-//    public String getClubName() {
-//        club_id = clubIndex+1;        
-//        try {
-//            String sql = "SELECT * FROM clubs WHERE club_id = ?";
-//            PreparedStatement pre = con.prepareStatement(sql);
-//            pre.setInt(1, club_id);
-//            ResultSet rs = pre.executeQuery();
-//            if(rs.next()) {
-//                clubName = rs.getString("club_name");
-//                //System.out.println(clubName);
-//            }
-//        } 
-//        catch (SQLException e) {
-//            System.out.println(e + "\n" + e.getMessage());
-//        }
-//        return clubName;      
-//    }
     
     
     /**
@@ -181,9 +164,7 @@ public class ViewClub extends javax.swing.JFrame {
             String sql = "SELECT * FROM clubs where club_name LIKE '%"+search+"%'";
             PreparedStatement pre = con.prepareStatement(sql);
 //            pre.setString(1, "%"+search+"%");
-            System.out.println(search+" search la");
              ResultSet res = pre.executeQuery();
-             System.out.println("EXE LAEW");
                 if(res.next()) {
                     club =res.getString("club_name");
                     System.out.println(club+" clubname");
@@ -206,30 +187,7 @@ public class ViewClub extends javax.swing.JFrame {
     }//GEN-LAST:event_BottonsearchActionPerformed
 
     private void RegistclubbottonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_RegistclubbottonMouseClicked
-//       try {
-//            // TODO add your handling code here:
-//            //name = NameTextField.getText();
-//            //faculty = SurnameTextField.getText();
-//            //telephone = TelephoneTextField.getText();
-//            //facebook = FacebookTextField.getText();
-//            //medicineloss = MedicineTextField.getText();
-//            //foodloss = FoodTextField.getText();
-//            //email = EmailTextField.getText();
-////            clubID =  Integer.parseInt(AddID.getText()); 
-////            clubName = AddName.getText();
-////            clubDescription = AddDescription.getText();
-////            Statement st = con.createStatement();
-////            String sql = "SELECT * FROM clubs SET club_name=?, club_description=? where club_id=1";
-////            PreparedStatement pre = con.prepareStatement(sql);
-////            pre.setString(1, clubName);
-////            pre.setString(2, clubDescription);
-////            //pre.setString(3, telephone);
-////            ResultSet res = pre.executeQuery();
-////            //ResultSet res = st.executeQuery(sql);
-//            
-//        } catch (SQLException ex) {
-//            Logger.getLogger(ViewProfile.class.getName()).log(Level.SEVERE, null, ex);
-//        }
+
     }//GEN-LAST:event_RegistclubbottonMouseClicked
 
     private void BackbottonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BackbottonActionPerformed
@@ -238,17 +196,6 @@ public class ViewClub extends javax.swing.JFrame {
             login.setVisible(true);
     }//GEN-LAST:event_BackbottonActionPerformed
 
-//    public void getClubName() {
-//        try {
-//            String sql = "SELECT club_id from clubs where club_id = ?";
-//            PreparedStatement statement = con.prepareStatement(sql);
-//            statement.setInt(1, WIDTH);
-//        } 
-//        catch (SQLException ex) {
-//            Logger.getLogger(ViewClub.class.getName()).log(Level.SEVERE, null, ex);
-//            System.out.println(ex + "\n" + ex.getMessage());
-//        }
-//    }
     /**
      * @param args the command line arguments
      */

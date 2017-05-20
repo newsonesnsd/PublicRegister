@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package publicregistergroup.view;
+
 import java.awt.Image;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -23,39 +24,39 @@ import static publicregistergroup.view.ViewProfile.con;
  * @author ART
  */
 public class Homepage extends javax.swing.JFrame {
+
     static Connection con = ConnectionBuilder.getConnection();
     private static int clubIndex;
     private String listClubs;
     DefaultListModel model = new DefaultListModel();
     private String search;
-    
 
     public static int getClubIndex() {
-        return clubIndex+1;
+        return clubIndex + 1;
     }
 
-    
     /**
      * Creates new form Homepage
      */
-
     public Homepage() {
         initComponents();
         setLocationRelativeTo(null);
         allClubs.setModel(new javax.swing.AbstractListModel<String>() {
             ArrayList<String> strings = Clubs.getAllClubs();
+
             @Override
             public int getSize() {
                 return strings.size();
             }
+
             @Override
             public String getElementAt(int i) {
                 return strings.get(i);
             }
         });
-       jPanel1.setOpaque(false);
-       jPanel2.setOpaque(false);
-       
+        jPanel1.setOpaque(false);
+        jPanel2.setOpaque(false);
+
     }
 
     /**
@@ -602,34 +603,30 @@ public class Homepage extends javax.swing.JFrame {
 
     private void BottonsearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BottonsearchActionPerformed
         search = searchclubTextField.getText();
-        String club="";    
+        String club = "";
         try {
-            
-           
-            String sql = "SELECT * FROM clubs where club_name LIKE '%"+search+"%'";
+
+            String sql = "SELECT * FROM clubs where club_name LIKE '%" + search + "%'";
             PreparedStatement pre = con.prepareStatement(sql);
-//            pre.setString(1, "%"+search+"%");
-            System.out.println(search+" search la");
-             ResultSet res = pre.executeQuery();
-             System.out.println("EXE LAEW");
-                if(res.next()) {
-                    club =res.getString("club_name");
-                    System.out.println(club+" clubname");
-                }
-                
+            ResultSet res = pre.executeQuery();
+            if (res.next()) {
+                club = res.getString("club_name");
+                System.out.println(club + " clubname");
+            }
+
         } catch (SQLException ex) {
             ex.printStackTrace();
-        }if (search .equals(club)) {
-            JOptionPane frame = new JOptionPane();
-            JOptionPane.showMessageDialog(frame,"Search success","Search club",JOptionPane.PLAIN_MESSAGE);
-             // = allClubs.getSelectedIndex();
-             ViewClubFromSearch view = new ViewClubFromSearch();
-            this.setVisible(false);
-             view.setVisible(true);
         }
-        else {
+        if (search.equals(club)) {
             JOptionPane frame = new JOptionPane();
-            JOptionPane.showMessageDialog(frame,"Failed club name","Search club",JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(frame, "Search success", "Search club", JOptionPane.PLAIN_MESSAGE);
+            // = allClubs.getSelectedIndex();
+            ViewClubFromSearch view = new ViewClubFromSearch();
+            this.setVisible(false);
+            view.setVisible(true);
+        } else {
+            JOptionPane frame = new JOptionPane();
+            JOptionPane.showMessageDialog(frame, "Failed club name", "Search club", JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_BottonsearchActionPerformed
 
@@ -638,9 +635,9 @@ public class Homepage extends javax.swing.JFrame {
     }//GEN-LAST:event_searchclubTextFieldActionPerformed
 
     private void joinClub_P1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_joinClub_P1ActionPerformed
-       ViewRegist view = new ViewRegist();
-       this.setVisible(false);
-       view.setVisible(true);
+        ViewRegist view = new ViewRegist();
+        this.setVisible(false);
+        view.setVisible(true);
     }//GEN-LAST:event_joinClub_P1ActionPerformed
 
     private void loginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginActionPerformed
@@ -652,64 +649,28 @@ public class Homepage extends javax.swing.JFrame {
     }//GEN-LAST:event_loginActionPerformed
 
     private void joinClub_P2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_joinClub_P2ActionPerformed
-       ViewRegist view = new ViewRegist();
-       this.setVisible(false);
-       view.setVisible(true);
+        ViewRegist view = new ViewRegist();
+        this.setVisible(false);
+        view.setVisible(true);
     }//GEN-LAST:event_joinClub_P2ActionPerformed
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
-       ViewRegist view = new ViewRegist();
-       this.setVisible(false);
-       view.setVisible(true);
+        ViewRegist view = new ViewRegist();
+        this.setVisible(false);
+        view.setVisible(true);
     }//GEN-LAST:event_jButton6ActionPerformed
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
-       ViewRegist view = new ViewRegist();
-       this.setVisible(false);
-       view.setVisible(true);
+        ViewRegist view = new ViewRegist();
+        this.setVisible(false);
+        view.setVisible(true);
     }//GEN-LAST:event_jButton7ActionPerformed
 
     private void allClubsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_allClubsMouseClicked
-        /*try {
-            // TODO add your handling code here:
-            //allClubs.getModel();
-            //name = NameTextField.getText();
-            //faculty = SurnameTextField.getText();
-            //telephone = TelephoneTextField.getText();
-            //facebook = FacebookTextField.getText();
-            //medicineloss = MedicineTextField.getText();
-            //foodloss = FoodTextField.getText();
-            //email = EmailTextField.getText();
-            Statement st = con.createStatement();
-            String sql = "SELECT * FROM clubs order by club_id ASC";
-            PreparedStatement pre = con.prepareStatement(sql);
-            //pre.setString(1, name);
-            //pre.setString(2, faculty);
-            //pre.setString(3, telephone);
-            ResultSet res = pre.executeQuery();
-            //ResultSet res = st.executeQuery(sql);
-            int row = 0;
-            while((res!=null) && (res.next())){
-                model.addElement(res.getInt("club_id") + "  " + res.getString("club_name"));
-            }
-            res.close();
-            con.close();
-        } catch (SQLException ex) {
-            System.out.println(ex);
-            System.out.println(ex.getMessage());
-        }
-        catch (Exception ex) {
-            System.out.println(ex.getMessage());
-        }
-        */
-        /*ViewClub view = new ViewClub();
-        this.setVisible(false);
-        view.setVisible(true);*/
 
     }//GEN-LAST:event_allClubsMouseClicked
 
     private void allClubsAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_allClubsAncestorAdded
-
 
 
     }//GEN-LAST:event_allClubsAncestorAdded
@@ -719,16 +680,15 @@ public class Homepage extends javax.swing.JFrame {
     }//GEN-LAST:event_chooseClubMouseClicked
 
     private void chooseClubActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chooseClubActionPerformed
-        //JOptionPane.showMessageDialog(null,"You selected : " + allClubs.getSelectedValue());
+
         clubIndex = allClubs.getSelectedIndex();
-        //System.out.println(clubIndex);
         ViewClubBeforeLogin viewclub = new ViewClubBeforeLogin();
         this.setVisible(false);
         viewclub.setVisible(true);
     }//GEN-LAST:event_chooseClubActionPerformed
 
     private void allRecommendAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_allRecommendAncestorAdded
-      
+
     }//GEN-LAST:event_allRecommendAncestorAdded
 
     /**
@@ -763,7 +723,7 @@ public class Homepage extends javax.swing.JFrame {
             @Override
             public void run() {
                 new Homepage().setVisible(true);
-                
+
             }
         });
     }
