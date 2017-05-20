@@ -18,6 +18,8 @@ import static publicregistergroup.view.ViewProfile.con;
 public class LinkDataforUser extends javax.swing.JFrame {
 
     private String search;
+    private final long std_id = Login.getStdId();
+    private long stdID = Login.getStdId();
 
     /**
      * Creates new form Uploadphoto
@@ -145,7 +147,7 @@ public class LinkDataforUser extends javax.swing.JFrame {
         ShowID.setFont(new java.awt.Font("Quark", 1, 18)); // NOI18N
         ShowID.setText("59130500005");
         getContentPane().add(ShowID, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 11, 140, 40));
-        ShowID.setText(stdId+"");
+        ShowID.setText(std_id+"");
 
         Id.setFont(new java.awt.Font("Quark", 1, 19)); // NOI18N
         Id.setText("ID :");
