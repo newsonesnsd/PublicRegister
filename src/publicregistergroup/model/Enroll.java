@@ -12,11 +12,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.sql.Timestamp;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import publicregistergroup.controller.ConnectionBuilder;
-import publicregistergroup.view.Login;
-import publicregistergroup.view.ViewRegist;
 
 /**
  *
@@ -25,8 +21,10 @@ import publicregistergroup.view.ViewRegist;
 public class Enroll {
     static Connection con = ConnectionBuilder.getConnection();
     private static int enroll_id;
-    private static int club_id = ViewRegist.getClub_id();
-    private static long std_id = Login.getStdId();
+//    private static int club_id = ViewRegist.getClub_id();
+//    private static long std_id = Login.getStdId();
+        private static int club_id = 1;
+    private static long std_id = 59130500011L;
     private static Timestamp create_at;
     private static Timestamp update_at;
     private static int countId = getCountId();
@@ -105,14 +103,14 @@ public class Enroll {
     
     public static void getStudentEnrollClub() {
         try {
-            String sql = "SELECT s.std_id s.std_name , s.std_faculty , s.std_department , s.std_email , s.std_tel "
+            String sql = "SELECT s.std_id, s.std_name , s.std_faculty , s.std_department , s.std_email , s.std_tel "
                     + "FROM enroll e JOIN students s on e.std_id = s.std_id "
                     + "WHERE e.club_id = ?";
             PreparedStatement pre = con.prepareStatement(sql);
             pre.setInt(1, club_id);
             ResultSet res = pre.executeQuery();
             while(res.next()) {
-                System.out.println(res.getLong("std_id"));
+                System.out.println(res.getLong("s.std_id"));
                 System.out.println(res.getString("std_name"));
                 System.out.println(res.getString("std_faculty"));
                 System.out.println(res.getString("std_department"));
@@ -125,9 +123,13 @@ public class Enroll {
         catch (SQLException ex) {
             System.out.println(ex + "\n" + ex.getMessage() + "\n" + ex.getSQLState()); 
             ex.printStackTrace();
-        }
-        
-        
+        }      
+    }
+    
+    public static void main(String[] args) {
+        //getStudentEnrollClub();
+        System.out.println(getCountId());
+        getStudentEnrollClub();
     }
     
     
