@@ -23,7 +23,8 @@ public class CheckAllActivity extends javax.swing.JFrame {
     static Connection con = ConnectionBuilder.getConnection();
     private static int clubIndex;
     DefaultListModel model = new DefaultListModel();
-
+    private String stdName = Students.getStd_name(Login.getStdId());
+    private String stdFaculty = Students.getStd_faculty(Login.getStdId());
     private String clubName = Clubs.getClub_name(getClubIndex());
     private String clubDescription = Clubs.getClub_description(getClubIndex());
     private int club_id = Clubs.getClub_id(getClubIndex());
@@ -131,14 +132,12 @@ public class CheckAllActivity extends javax.swing.JFrame {
         getContentPane().add(backbotton, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 630, 90, -1));
 
         showName.setFont(new java.awt.Font("Quark", 1, 30)); // NOI18N
-        showName.setText("MS.KITTIYA YUTHASASTRKOSOL");
         getContentPane().add(showName, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 230, 480, -1));
-        //showName.setText(stdName);
+        showName.setText(stdName);
 
         showFaculty.setFont(new java.awt.Font("Quark", 0, 18)); // NOI18N
-        showFaculty.setText("INFORMATION TECHNOLOGY");
         getContentPane().add(showFaculty, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 262, 250, -1));
-        //showFaculty.setText(stdFaculty);
+        showFaculty.setText(stdFaculty);
 
         เส้นขีดเฉยๆ.setText("_____________________________________________________________________________________________________________________________________");
         getContentPane().add(เส้นขีดเฉยๆ, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 280, 800, -1));
@@ -187,8 +186,6 @@ public class CheckAllActivity extends javax.swing.JFrame {
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel4.setIcon(new javax.swing.ImageIcon("C:\\Users\\kz_no\\Desktop\\ProjectPublicRegister\\src\\Images\\RegisteredClubs.png")); // NOI18N
         jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(-70, 0, 540, -1));
 
         Clubname.setFont(new java.awt.Font("Quark", 1, 24)); // NOI18N
@@ -227,8 +224,6 @@ public class CheckAllActivity extends javax.swing.JFrame {
         jButton1.setBorder(null);
         jButton1.setBorderPainted(false);
         jPanel2.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 230, 80, 30));
-
-        jLabel3.setIcon(new javax.swing.ImageIcon("C:\\Users\\kz_no\\Desktop\\ProjectPublicRegister\\src\\Images\\bgRegisteredClubs.png")); // NOI18N
         jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(-70, 0, 540, -1));
 
         formList.setRightComponent(jPanel2);
