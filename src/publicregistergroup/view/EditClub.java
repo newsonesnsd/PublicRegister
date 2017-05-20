@@ -154,7 +154,7 @@ public class EditClub extends JFrame {
         });
         getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 140, -1, -1));
 
-        blackground.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/page.jpg"))); // NOI18N
+        blackground.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/pagenoserach.jpg"))); // NOI18N
         blackground.setText("jLabel1");
         getContentPane().add(blackground, new org.netbeans.lib.awtextra.AbsoluteConstraints(-5, 0, 1030, 770));
 
