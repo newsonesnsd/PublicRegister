@@ -10,5 +10,7 @@ package publicregistergroup.model;
  * @author taloey
  */
 public class Search {
+    //public static ViewClubFromSearch searchClub{
     
+//}
 }
