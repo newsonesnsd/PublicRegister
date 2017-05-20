@@ -13,6 +13,8 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.sql.Timestamp;
 import publicregistergroup.controller.ConnectionBuilder;
+import publicregistergroup.view.Login;
+import publicregistergroup.view.ViewRegist;
 
 /**
  *
@@ -21,10 +23,8 @@ import publicregistergroup.controller.ConnectionBuilder;
 public class Enroll {
     static Connection con = ConnectionBuilder.getConnection();
     private static int enroll_id;
-//    private static int club_id = ViewRegist.getClub_id();
-//    private static long std_id = Login.getStdId();
-        private static int club_id = 1;
-    private static long std_id = 59130500011L;
+    private static int club_id = ViewRegist.getClub_id();
+    private static long std_id = Login.getStdId();
     private static Timestamp create_at;
     private static Timestamp update_at;
     private static int countId = getCountId();
@@ -42,7 +42,8 @@ public class Enroll {
             System.out.println(ex + "\n" + ex.getMessage());
             ex.printStackTrace();
         }
-        return countId+1;
+        countId++;
+        return countId;
     }
     
     private static boolean isEnroll() {
@@ -101,7 +102,7 @@ public class Enroll {
                
     }
     
-    public static void getStudentEnrollClub() {
+    public static void getClubRegister() {
         try {
             String sql = "SELECT s.std_id, s.std_name , s.std_faculty , s.std_department , s.std_email , s.std_tel "
                     + "FROM enroll e JOIN students s on e.std_id = s.std_id "
@@ -126,11 +127,26 @@ public class Enroll {
         }      
     }
     
-    public static void main(String[] args) {
-        //getStudentEnrollClub();
-        System.out.println(getCountId());
-        getStudentEnrollClub();
-    }
+//    public static void getStudentEnroll() {
+//        try {
+//            String sql = "SELECT c.club_id "
+//                    + "FROM clubs e JOIN students s on e.std_id = s.std_id "
+//                    + "WHERE e.club_id = ?";
+//            PreparedStatement pre = con.prepareStatement(sql);
+//            pre.setInt(1, club_id);
+//            ResultSet res = pre.executeQuery();
+//            while(res.next()) {
+//                System.out.println(res.getLong("s.std_id"));
+//            }
+//            
+//            
+//        } 
+//        catch (SQLException ex) {
+//            System.out.println(ex + "\n" + ex.getMessage() + "\n" + ex.getSQLState()); 
+//            ex.printStackTrace();
+//        }   
+//    
+
     
     
 }
