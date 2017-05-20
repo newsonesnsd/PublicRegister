@@ -56,6 +56,8 @@ public class LoginHomepage extends javax.swing.JFrame {
             }
         });
         
+        jPanel1.setOpaque(false);
+        jPanel2.setOpaque(false);
     }
 
     /**
@@ -122,6 +124,7 @@ public class LoginHomepage extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Homepage");
         setIconImages(getIconImages());
+        setPreferredSize(new java.awt.Dimension(1024, 768));
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -130,7 +133,7 @@ public class LoginHomepage extends javax.swing.JFrame {
                 searchclubTextFieldActionPerformed(evt);
             }
         });
-        getContentPane().add(searchclubTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(13, 91, 261, 22));
+        getContentPane().add(searchclubTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(17, 88, 264, 27));
         searchclubTextField.getAccessibleContext().setAccessibleDescription("");
 
         Bottonsearch.setFont(new java.awt.Font("Kanit", 0, 13)); // NOI18N
@@ -140,17 +143,19 @@ public class LoginHomepage extends javax.swing.JFrame {
                 BottonsearchActionPerformed(evt);
             }
         });
-        getContentPane().add(Bottonsearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 90, 80, 25));
+        getContentPane().add(Bottonsearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(284, 87, 84, 27));
 
+        allRecommend.setBackground(new java.awt.Color(204, 204, 204));
         allRecommend.setTabPlacement(javax.swing.JTabbedPane.LEFT);
 
-        recommendPage1.setBackground(new java.awt.Color(241, 232, 239));
+        recommendPage1.setBackground(new java.awt.Color(0, 153, 102));
         recommendPage1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         pic_P1.setFont(new java.awt.Font("Quark", 1, 65)); // NOI18N
         pic_P1.setForeground(new java.awt.Color(153, 153, 153));
         pic_P1.setText("   PIC");
         pic_P1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        pic_P1.setOpaque(true);
 
         clubName_P1.setFont(new java.awt.Font("Quark", 1, 20)); // NOI18N
         clubName_P1.setText("ชมรมอาสาพัฒนาชุมชน");
@@ -191,7 +196,7 @@ public class LoginHomepage extends javax.swing.JFrame {
                     .addGroup(recommendPage1Layout.createSequentialGroup()
                         .addGap(45, 45, 45)
                         .addComponent(clubName_P1)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(28, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, recommendPage1Layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(joinClub_P1)
@@ -206,7 +211,7 @@ public class LoginHomepage extends javax.swing.JFrame {
                         .addComponent(clubName_P1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(pic_P1, javax.swing.GroupLayout.PREFERRED_SIZE, 272, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, recommendPage1Layout.createSequentialGroup()
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(recommendPage1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -226,13 +231,14 @@ public class LoginHomepage extends javax.swing.JFrame {
 
         allRecommend.addTab("", recommendPage1);
 
-        recommendPage2.setBackground(new java.awt.Color(241, 232, 239));
+        recommendPage2.setBackground(new java.awt.Color(83, 172, 172));
         recommendPage2.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         pic_P2.setFont(new java.awt.Font("Quark", 1, 65)); // NOI18N
         pic_P2.setForeground(new java.awt.Color(153, 153, 153));
         pic_P2.setText("   PIC");
         pic_P2.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        pic_P2.setOpaque(true);
 
         clubName_P2.setFont(new java.awt.Font("Quark", 1, 20)); // NOI18N
         clubName_P2.setText("ชมรมอาสาพัฒนาชุมชน");
@@ -273,7 +279,7 @@ public class LoginHomepage extends javax.swing.JFrame {
                     .addGroup(recommendPage2Layout.createSequentialGroup()
                         .addGap(45, 45, 45)
                         .addComponent(clubName_P2)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(28, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, recommendPage2Layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(joinClub_P2)
@@ -295,7 +301,7 @@ public class LoginHomepage extends javax.swing.JFrame {
                             .addComponent(clubId_P2))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(des_P2, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
                 .addComponent(joinClub_P2)
                 .addGap(16, 16, 16))
         );
@@ -307,13 +313,14 @@ public class LoginHomepage extends javax.swing.JFrame {
 
         allRecommend.addTab("", recommendPage2);
 
-        jPanel7.setBackground(new java.awt.Color(241, 232, 239));
+        jPanel7.setBackground(new java.awt.Color(204, 204, 255));
         jPanel7.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         pic_P3.setFont(new java.awt.Font("Quark", 1, 65)); // NOI18N
         pic_P3.setForeground(new java.awt.Color(153, 153, 153));
         pic_P3.setText("   PIC");
         pic_P3.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        pic_P3.setOpaque(true);
 
         clubName_P3.setFont(new java.awt.Font("Quark", 1, 20)); // NOI18N
         clubName_P3.setText("ชมรมอาสาพัฒนาชุมชน");
@@ -356,7 +363,7 @@ public class LoginHomepage extends javax.swing.JFrame {
                     .addGroup(jPanel7Layout.createSequentialGroup()
                         .addGap(45, 45, 45)
                         .addComponent(clubName_P3)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(28, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel7Layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(jButton6)
@@ -378,7 +385,7 @@ public class LoginHomepage extends javax.swing.JFrame {
                             .addComponent(clubId_P3))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(des_P3, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
                 .addComponent(jButton6)
                 .addGap(16, 16, 16))
         );
@@ -389,7 +396,7 @@ public class LoginHomepage extends javax.swing.JFrame {
 
         allRecommend.addTab("", jPanel7);
 
-        jPanel8.setBackground(new java.awt.Color(241, 232, 239));
+        jPanel8.setBackground(new java.awt.Color(255, 102, 102));
         jPanel8.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         pic_P4.setBackground(new java.awt.Color(251, 236, 215));
@@ -397,6 +404,7 @@ public class LoginHomepage extends javax.swing.JFrame {
         pic_P4.setForeground(new java.awt.Color(153, 153, 153));
         pic_P4.setText("   PIC");
         pic_P4.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        pic_P4.setOpaque(true);
 
         clubName_P4.setFont(new java.awt.Font("Quark", 1, 20)); // NOI18N
         clubName_P4.setText("ชมรมอาสาพัฒนาชุมชน");
@@ -437,7 +445,7 @@ public class LoginHomepage extends javax.swing.JFrame {
                     .addGroup(jPanel8Layout.createSequentialGroup()
                         .addGap(45, 45, 45)
                         .addComponent(clubName_P4)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(28, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel8Layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(jButton7)
@@ -459,7 +467,7 @@ public class LoginHomepage extends javax.swing.JFrame {
                             .addComponent(clubId_P4))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(des_P4, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
                 .addComponent(jButton7)
                 .addGap(16, 16, 16))
         );
@@ -516,7 +524,9 @@ public class LoginHomepage extends javax.swing.JFrame {
         jScrollPane1.setViewportView(allClubs);
 
         chooseClub.setFont(new java.awt.Font("Quark", 0, 13)); // NOI18N
-        chooseClub.setText(" Click");
+        chooseClub.setText("Choose club");
+        chooseClub.setBorder(null);
+        chooseClub.setBorderPainted(false);
         chooseClub.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 chooseClubMouseClicked(evt);
@@ -541,8 +551,9 @@ public class LoginHomepage extends javax.swing.JFrame {
                 .addComponent(jLabel2)
                 .addContainerGap(357, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(chooseClub))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(chooseClub, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(30, 30, 30))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -551,21 +562,24 @@ public class LoginHomepage extends javax.swing.JFrame {
                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 366, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(chooseClub))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(chooseClub, javax.swing.GroupLayout.DEFAULT_SIZE, 24, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
-        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 210, 440, -1));
+        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 210, 440, 450));
 
-        Id.setFont(new java.awt.Font("Quark", 1, 18)); // NOI18N
+        Id.setFont(new java.awt.Font("Quark", 1, 19)); // NOI18N
         Id.setText("ID :");
-        getContentPane().add(Id, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 20, -1, -1));
+        getContentPane().add(Id, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 17, -1, -1));
 
         ShowID.setFont(new java.awt.Font("Quark", 1, 18)); // NOI18N
+        ShowID.setText("59130500005");
         getContentPane().add(ShowID, new org.netbeans.lib.awtextra.AbsoluteConstraints(880, 17, 120, 21));
         ShowID.setText(stdID+"");
 
         CheckActivity.setFont(new java.awt.Font("Quark", 0, 14)); // NOI18N
+        CheckActivity.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/task.png"))); // NOI18N
         CheckActivity.setBorder(null);
         CheckActivity.setBorderPainted(false);
         CheckActivity.setDebugGraphicsOptions(javax.swing.DebugGraphics.NONE_OPTION);
@@ -585,11 +599,13 @@ public class LoginHomepage extends javax.swing.JFrame {
                 CheckActivityActionPerformed(evt);
             }
         });
-        getContentPane().add(CheckActivity, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 130, 140, 30));
+        getContentPane().add(CheckActivity, new org.netbeans.lib.awtextra.AbsoluteConstraints(930, 40, 32, 32));
 
+        logout.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/exit.png"))); // NOI18N
         logout.setBorder(null);
         logout.setBorderPainted(false);
         logout.setDebugGraphicsOptions(javax.swing.DebugGraphics.NONE_OPTION);
+        logout.setPreferredSize(new java.awt.Dimension(32, 32));
         logout.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseMoved(java.awt.event.MouseEvent evt) {
                 logoutMouseMoved(evt);
@@ -605,7 +621,7 @@ public class LoginHomepage extends javax.swing.JFrame {
                 logoutActionPerformed(evt);
             }
         });
-        getContentPane().add(logout, new org.netbeans.lib.awtextra.AbsoluteConstraints(970, 40, 30, 30));
+        getContentPane().add(logout, new org.netbeans.lib.awtextra.AbsoluteConstraints(970, 40, 32, 32));
 
         checkActivity.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         getContentPane().add(checkActivity, new org.netbeans.lib.awtextra.AbsoluteConstraints(910, 70, 80, 20));
@@ -614,7 +630,7 @@ public class LoginHomepage extends javax.swing.JFrame {
         getContentPane().add(logOut, new org.netbeans.lib.awtextra.AbsoluteConstraints(970, 70, 40, 20));
 
         blackground.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/page.jpg"))); // NOI18N
-        getContentPane().add(blackground, new org.netbeans.lib.awtextra.AbsoluteConstraints(-5, 0, 1030, 770));
+        getContentPane().add(blackground, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -822,8 +838,7 @@ public class LoginHomepage extends javax.swing.JFrame {
             @Override
             public void run() {
                 new LoginHomepage().setVisible(true);
-                jPanel1.setOpaque(false);
-                jPanel2.setOpaque(false);
+                
             }
         });
     }

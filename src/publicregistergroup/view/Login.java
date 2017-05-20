@@ -171,8 +171,8 @@ public class Login extends JFrame {
         if (Users.getLogin(jtfInputUsername, jpfInputPassword) == true) {
             stdId = Long.parseLong(jtfInputUsername.getText());
             /*JOptionPane frame = new JOptionPane();
-            JOptionPane.showMessageDialog(frame,"Login Success","Login",JOptionPane.PLAIN_MESSAGE);
-            this.setVisible(false);*/
+            JOptionPane.showMessageDialog(frame,"Login Success","Login",JOptionPane.PLAIN_MESSAGE);*/
+            this.setVisible(false);
             LoginHomepage login = new LoginHomepage();
             login.setVisible(true);
         }
