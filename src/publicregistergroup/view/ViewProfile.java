@@ -78,7 +78,6 @@ public class ViewProfile extends JFrame {
         ShowID = new javax.swing.JLabel();
         Id = new javax.swing.JLabel();
         logOut = new javax.swing.JLabel();
-        เส้นขีดเฉยๆ = new javax.swing.JLabel();
         blackground = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -94,7 +93,7 @@ public class ViewProfile extends JFrame {
         getContentPane().add(Bottonsearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(284, 87, 84, 27));
 
         boxphoto.setBackground(new java.awt.Color(255, 255, 255));
-        boxphoto.setBorder(javax.swing.BorderFactory.createMatteBorder(3, 3, 3, 3, new java.awt.Color(255, 51, 0)));
+        boxphoto.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         ImageUpload.setFont(new java.awt.Font("Quark", 1, 48)); // NOI18N
         ImageUpload.setForeground(new java.awt.Color(204, 204, 204));
@@ -104,7 +103,7 @@ public class ViewProfile extends JFrame {
         boxphoto.setLayout(boxphotoLayout);
         boxphotoLayout.setHorizontalGroup(
             boxphotoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(ImageS, javax.swing.GroupLayout.DEFAULT_SIZE, 394, Short.MAX_VALUE)
+            .addComponent(ImageS, javax.swing.GroupLayout.DEFAULT_SIZE, 398, Short.MAX_VALUE)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, boxphotoLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(ImageUpload)
@@ -116,7 +115,7 @@ public class ViewProfile extends JFrame {
                 .addComponent(ImageS, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGap(136, 136, 136)
                 .addComponent(ImageUpload)
-                .addGap(178, 178, 178))
+                .addGap(202, 202, 202))
         );
 
         ImageS.setIcon(new ImageIcon((new ImageIcon("src/Images/"+(Students.getStd_pic(std_id))).getImage().getScaledInstance(395,335,Image.SCALE_SMOOTH))));
@@ -166,7 +165,7 @@ public class ViewProfile extends JFrame {
                 SubmitbottonActionPerformed(evt);
             }
         });
-        getContentPane().add(Submitbotton, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 620, 180, 40));
+        getContentPane().add(Submitbotton, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 610, 180, 40));
 
         UploadBotton.setBackground(new java.awt.Color(213, 186, 55));
         UploadBotton.setFont(new java.awt.Font("Quark", 1, 18)); // NOI18N
@@ -180,7 +179,7 @@ public class ViewProfile extends JFrame {
         });
         getContentPane().add(UploadBotton, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 205, 110, 30));
 
-        NameTextField.setFont(new java.awt.Font("Quark", 0, 22)); // NOI18N
+        NameTextField.setFont(new java.awt.Font("Quark", 0, 21)); // NOI18N
         NameTextField.setText("Kittiya");
         NameTextField.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         NameTextField.addActionListener(new java.awt.event.ActionListener() {
@@ -214,7 +213,7 @@ public class ViewProfile extends JFrame {
         getContentPane().add(TelephoneTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 330, 320, 40));
         TelephoneTextField.setText(Students.getStd_tel(std_id));
 
-        FacebookTextField.setFont(new java.awt.Font("Quark", 0, 22)); // NOI18N
+        FacebookTextField.setFont(new java.awt.Font("Quark", 0, 21)); // NOI18N
         FacebookTextField.setText("Noey");
         FacebookTextField.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         FacebookTextField.addActionListener(new java.awt.event.ActionListener() {
@@ -247,7 +246,7 @@ public class ViewProfile extends JFrame {
         getContentPane().add(FoodTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 480, 320, 40));
         FoodTextField.setText(Students.getStd_food(std_id));
 
-        EmailTextField.setFont(new java.awt.Font("Quark", 0, 22)); // NOI18N
+        EmailTextField.setFont(new java.awt.Font("Quark", 0, 21)); // NOI18N
         EmailTextField.setText("kz_noey");
         EmailTextField.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         getContentPane().add(EmailTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 530, 320, 40));
@@ -293,9 +292,6 @@ public class ViewProfile extends JFrame {
 
         logOut.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         getContentPane().add(logOut, new org.netbeans.lib.awtextra.AbsoluteConstraints(970, 70, 40, 20));
-
-        เส้นขีดเฉยๆ.setText("______________________________________________________________________________________________________________________________________________________");
-        getContentPane().add(เส้นขีดเฉยๆ, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 590, 900, -1));
 
         blackground.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/page.jpg"))); // NOI18N
         blackground.setText("jLabel1");
@@ -625,7 +621,6 @@ public class ViewProfile extends JFrame {
     private javax.swing.JPanel boxphoto;
     private javax.swing.JLabel logOut;
     private javax.swing.JButton logout;
-    private javax.swing.JLabel เส้นขีดเฉยๆ;
     private javax.swing.JLabel แพ้ยาอะไร;
     private javax.swing.JLabel แพ้อาหาอะไร;
     // End of variables declaration//GEN-END:variables
