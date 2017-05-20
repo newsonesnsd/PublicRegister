@@ -17,6 +17,8 @@ import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import publicregistergroup.controller.ConnectionBuilder;
 import publicregistergroup.model.*;
+import static publicregistergroup.view.LoginHomepage.con;
+import static publicregistergroup.view.LoginHomepage.search;
 import static publicregistergroup.view.ViewProfile.con;
 
 /**
@@ -467,6 +469,11 @@ public class Homepage extends javax.swing.JFrame {
         chooseClub.setText("Choose club");
         chooseClub.setBorder(null);
         chooseClub.setBorderPainted(false);
+        chooseClub.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                chooseClubActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -520,18 +527,20 @@ public class Homepage extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void BottonsearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BottonsearchActionPerformed
-        search = searchclubTextField.getText();
+          search = searchclubTextField.getText();
         String club = "";
         try {
 
             String sql = "SELECT * FROM clubs where club_name LIKE '%" + search + "%'";
             PreparedStatement pre = con.prepareStatement(sql);
+//            pre.setString(1, "%"+search+"%");
             ResultSet res = pre.executeQuery();
             while (res.next()) {
                 club = res.getString("club_name");
                 System.out.println(club + " clubname");
             }
-             allClubs.setModel(new javax.swing.AbstractListModel<String>() {
+
+            allClubs.setModel(new javax.swing.AbstractListModel<String>() {
                 ArrayList<String> strings = Clubs.getAllSearch();
                 @Override
                 public int getSize() {
@@ -550,14 +559,6 @@ public class Homepage extends javax.swing.JFrame {
 
         } catch (SQLException ex) {
             ex.printStackTrace();
-        }
-        if (search.equals(club)) {
-            JOptionPane frame = new JOptionPane();
-            JOptionPane.showMessageDialog(frame, "Search success", "Search club", JOptionPane.PLAIN_MESSAGE);
-            
-        } else {
-            JOptionPane frame = new JOptionPane();
-            JOptionPane.showMessageDialog(frame, "Failed club name", "Search club", JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_BottonsearchActionPerformed
 
@@ -585,6 +586,14 @@ public class Homepage extends javax.swing.JFrame {
     private void searchclubTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchclubTextFieldActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_searchclubTextFieldActionPerformed
+
+    private void chooseClubActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chooseClubActionPerformed
+        clubIndex = allClubs.getSelectedIndex();
+        
+        ViewClubBeforeLogin viewc = new ViewClubBeforeLogin();
+        this.setVisible(false);
+        viewc.setVisible(true);
+    }//GEN-LAST:event_chooseClubActionPerformed
 
     /**
      * @param args the command line arguments
