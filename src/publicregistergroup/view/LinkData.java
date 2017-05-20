@@ -38,7 +38,6 @@ public class LinkData extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        UsernameID = new javax.swing.JLabel();
         Box1 = new javax.swing.JPanel();
         changeprofilebotton = new javax.swing.JButton();
         Box2 = new javax.swing.JPanel();
@@ -47,15 +46,14 @@ public class LinkData extends javax.swing.JFrame {
         clubbotton = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         Backbotton = new javax.swing.JButton();
+        back = new javax.swing.JLabel();
+        ShowID = new javax.swing.JLabel();
+        Id = new javax.swing.JLabel();
         blackground = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        UsernameID.setFont(new java.awt.Font("Kanit", 0, 24)); // NOI18N
-        getContentPane().add(UsernameID, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 30, 220, 30));
-        UsernameID.setText(stdID+"");
 
         Box1.setBackground(new java.awt.Color(77, 77, 77));
         Box1.setBorder(javax.swing.BorderFactory.createMatteBorder(3, 3, 3, 3, new java.awt.Color(205, 77, 40)));
@@ -161,15 +159,37 @@ public class LinkData extends javax.swing.JFrame {
         getContentPane().add(Box3, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 490, 480, 90));
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 640, 400, 40));
 
-        Backbotton.setText("Back");
+        Backbotton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/back-arrow-to-first-track.png"))); // NOI18N
+        Backbotton.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                BackbottonMouseMoved(evt);
+            }
+        });
+        Backbotton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                BackbottonMouseExited(evt);
+            }
+        });
         Backbotton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BackbottonActionPerformed(evt);
             }
         });
-        getContentPane().add(Backbotton, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 100, 110, 50));
+        getContentPane().add(Backbotton, new org.netbeans.lib.awtextra.AbsoluteConstraints(930, 50, 40, 32));
 
-        blackground.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/pagenoserach.jpg"))); // NOI18N
+        back.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        getContentPane().add(back, new org.netbeans.lib.awtextra.AbsoluteConstraints(930, 80, 40, 20));
+
+        ShowID.setFont(new java.awt.Font("Quark", 1, 18)); // NOI18N
+        ShowID.setText("59130500005");
+        getContentPane().add(ShowID, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 11, 140, 40));
+        ShowID.setText(stdID+"");
+
+        Id.setFont(new java.awt.Font("Quark", 1, 19)); // NOI18N
+        Id.setText("ID :");
+        getContentPane().add(Id, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 17, -1, 30));
+
+        blackground.setIcon(new javax.swing.ImageIcon("C:\\Users\\kz_no\\Desktop\\ProjectPublicRegister\\src\\Images\\pagenoserach.jpg")); // NOI18N
         blackground.setText("jLabel1");
         blackground.setPreferredSize(new java.awt.Dimension(1024, 768));
         getContentPane().add(blackground, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
@@ -194,6 +214,14 @@ public class LinkData extends javax.swing.JFrame {
         this.setVisible(false);
         profile.setVisible(true);
     }//GEN-LAST:event_changeprofilebottonActionPerformed
+
+    private void BackbottonMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BackbottonMouseMoved
+        back.setText("back");
+    }//GEN-LAST:event_BackbottonMouseMoved
+
+    private void BackbottonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BackbottonMouseExited
+        back.setText("");
+    }//GEN-LAST:event_BackbottonMouseExited
 
     private void BackbottonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BackbottonActionPerformed
         this.setVisible(false);
@@ -242,7 +270,9 @@ public class LinkData extends javax.swing.JFrame {
     private javax.swing.JPanel Box1;
     private javax.swing.JPanel Box2;
     private javax.swing.JPanel Box3;
-    private javax.swing.JLabel UsernameID;
+    private javax.swing.JLabel Id;
+    private javax.swing.JLabel ShowID;
+    private javax.swing.JLabel back;
     private javax.swing.JLabel blackground;
     private javax.swing.JButton changeprofilebotton;
     private javax.swing.JButton checkclubbotton;
