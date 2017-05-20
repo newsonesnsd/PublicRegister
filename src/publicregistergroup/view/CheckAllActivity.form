@@ -211,9 +211,14 @@
           </Layout>
           <SubComponents>
             <Component class="javax.swing.JLabel" name="jLabel4">
+              <Properties>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/Images/RegisteredClubs.png"/>
+                </Property>
+              </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                  <AbsoluteConstraints x="-70" y="0" width="540" height="-1"/>
+                  <AbsoluteConstraints x="-70" y="0" width="540" height="290"/>
                 </Constraint>
               </Constraints>
             </Component>
@@ -332,9 +337,14 @@
               </Constraints>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel3">
+              <Properties>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/Images/bgRegisteredClubs.png"/>
+                </Property>
+              </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                  <AbsoluteConstraints x="-70" y="0" width="540" height="-1"/>
+                  <AbsoluteConstraints x="-70" y="0" width="540" height="290"/>
                 </Constraint>
               </Constraints>
             </Component>

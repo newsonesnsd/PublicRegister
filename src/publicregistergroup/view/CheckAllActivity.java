@@ -186,7 +186,9 @@ public class CheckAllActivity extends javax.swing.JFrame {
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(-70, 0, 540, -1));
+
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/RegisteredClubs.png"))); // NOI18N
+        jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(-70, 0, 540, 290));
 
         Clubname.setFont(new java.awt.Font("Quark", 1, 24)); // NOI18N
         Clubname.setText("ชมรมอาสาพัฒนาชุมชน");
@@ -224,7 +226,9 @@ public class CheckAllActivity extends javax.swing.JFrame {
         jButton1.setBorder(null);
         jButton1.setBorderPainted(false);
         jPanel2.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 230, 80, 30));
-        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(-70, 0, 540, -1));
+
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/bgRegisteredClubs.png"))); // NOI18N
+        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(-70, 0, 540, 290));
 
         formList.setRightComponent(jPanel2);
 
