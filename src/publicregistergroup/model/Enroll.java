@@ -11,8 +11,10 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.util.Calendar;
-import java.util.Date;
+import java.sql.Timestamp;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+//import java.util.Date;
 import publicregistergroup.controller.ConnectionBuilder;
 import publicregistergroup.view.Login;
 import publicregistergroup.view.ViewRegist;
@@ -26,8 +28,8 @@ public class Enroll {
     private static int enroll_id;
     private static int club_id = ViewRegist.getClub_id();
     private static long std_id = Login.getStdId();
-    private static Date create_at;
-    private static Calendar update_at = Calendar.getInstance();
+    private static Timestamp create_at;
+    private static Timestamp update_at;
     private static int countId = getCountId();
     
     private static int getCountId() {
@@ -46,26 +48,65 @@ public class Enroll {
         return countId+1;
     }
     
-    public static void enrollClub() {
+    private static boolean isEnroll() {
+        boolean status = false;
         try {
-            String sql = "INSERT INTO enroll (enroll_id, club_id, std_id, create_at, update_at) VALUES (?, ?, ?, ?, ?);";
+            String sql = "SELECT create_at FROM enroll WHERE enroll_id = ?";
             PreparedStatement pre = con.prepareStatement(sql);
-            pre.setInt(1, getCountId());
-            pre.setInt(2, club_id);
-            pre.setLong(3, std_id);
-            pre.setDate(4, new java.sql.Date(new Date().getTime()));
-            pre.setDate(5, new java.sql.Date(new Date().getTime()));
-            pre.executeUpdate();
-            
+            pre.setLong(1, std_id);
+            ResultSet res = pre.executeQuery();
+            if (res.next()) {
+                status = true;
+            }
         } 
         catch (SQLException ex) {
-            System.out.println(ex + "/n" + ex.getMessage());
+            System.out.println(ex + "\n" + ex.getMessage());
             ex.printStackTrace();
         }
-        
+        return status;
+    }
+    
+    public static void enrollClub() {
+        create_at = new Timestamp(System.currentTimeMillis());
+        update_at = new Timestamp(System.currentTimeMillis());
+        if (isEnroll()) {
+            try {
+                String sql = "INSERT INTO enroll (enroll_id, club_id, std_id, create_at) VALUES (?, ?, ?, ?);";
+                PreparedStatement pre = con.prepareStatement(sql);
+                pre.setInt(1, getCountId());
+                pre.setInt(2, club_id);
+                pre.setLong(3, std_id);
+                pre.setTimestamp(4, create_at);
+                pre.executeUpdate();
+
+            } 
+            catch (SQLException ex) {
+                System.out.println(ex + "/n" + ex.getMessage());
+                ex.printStackTrace();
+            }
+        }
+        else {
+            try {
+                String sql = "INSERT INTO enroll (enroll_id, club_id, std_id, update_at) VALUES (?, ?, ?, ?);";
+                PreparedStatement pre = con.prepareStatement(sql);
+                pre.setInt(1, getCountId());
+                pre.setInt(2, club_id);
+                pre.setLong(3, std_id);
+                pre.setTimestamp(4, update_at);
+                pre.executeUpdate();
+
+            } 
+            catch (SQLException ex) {
+                System.out.println(ex + "/n" + ex.getMessage());
+                ex.printStackTrace();
+            }
+        }
+               
     }
     
     public static void main(String[] args) {
         enrollClub();
     }
+    
+    
 }
