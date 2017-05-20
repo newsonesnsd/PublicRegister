@@ -60,7 +60,7 @@ public class LinkData extends javax.swing.JFrame {
                 searchTextFieldActionPerformed(evt);
             }
         });
-        getContentPane().add(searchTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(13, 91, 261, 22));
+        getContentPane().add(searchTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(17, 88, 264, 27));
 
         Bottonsearch.setFont(new java.awt.Font("Kanit", 0, 13)); // NOI18N
         Bottonsearch.setText("OK");
@@ -72,7 +72,7 @@ public class LinkData extends javax.swing.JFrame {
                 BottonsearchActionPerformed(evt);
             }
         });
-        getContentPane().add(Bottonsearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 90, 80, 25));
+        getContentPane().add(Bottonsearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(284, 87, 84, 27));
 
         UsernameID.setFont(new java.awt.Font("Kanit", 0, 24)); // NOI18N
         getContentPane().add(UsernameID, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 40, 220, 30));
@@ -187,11 +187,12 @@ public class LinkData extends javax.swing.JFrame {
                 BackbottonActionPerformed(evt);
             }
         });
-        getContentPane().add(Backbotton, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 140, 150, 60));
+        getContentPane().add(Backbotton, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 20, 110, 50));
 
-        blackground.setIcon(new javax.swing.ImageIcon("/Users/taloey/Desktop/PublicRegister/src/Images/page.jpg")); // NOI18N
+        blackground.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/page.jpg"))); // NOI18N
         blackground.setText("jLabel1");
-        getContentPane().add(blackground, new org.netbeans.lib.awtextra.AbsoluteConstraints(-5, 0, 1030, 770));
+        blackground.setPreferredSize(new java.awt.Dimension(1024, 768));
+        getContentPane().add(blackground, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
