@@ -57,8 +57,6 @@ public class ViewClub extends javax.swing.JFrame {
         Clubname = new javax.swing.JLabel();
         Club = new javax.swing.JLabel();
         Registclubbotton = new javax.swing.JButton();
-        SearchclubTextField = new javax.swing.JTextField();
-        Bottonsearch = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         AddDescription = new javax.swing.JLabel();
         jlbClubId = new javax.swing.JLabel();
@@ -104,23 +102,6 @@ public class ViewClub extends javax.swing.JFrame {
             }
         });
         getContentPane().add(Registclubbotton, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 630, 130, 30));
-
-        SearchclubTextField.setFont(new java.awt.Font("Kanit", 0, 13)); // NOI18N
-        SearchclubTextField.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                SearchclubTextFieldActionPerformed(evt);
-            }
-        });
-        getContentPane().add(SearchclubTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(17, 88, 264, 27));
-        SearchclubTextField.getAccessibleContext().setAccessibleDescription("");
-
-        Bottonsearch.setText("OK");
-        Bottonsearch.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BottonsearchActionPerformed(evt);
-            }
-        });
-        getContentPane().add(Bottonsearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(284, 87, 84, 27));
 
         jLabel2.setText("____________________________________________________________________________________________________________________");
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 280, -1, -1));
@@ -177,7 +158,7 @@ public class ViewClub extends javax.swing.JFrame {
         getContentPane().add(Id, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 17, -1, 30));
 
         blackground.setFont(new java.awt.Font("Quark", 0, 19)); // NOI18N
-        blackground.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/page.jpg"))); // NOI18N
+        blackground.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/pagenoserach.jpg"))); // NOI18N
         blackground.setText("jLabel1");
         getContentPane().add(blackground, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1020, 770));
 
@@ -189,40 +170,6 @@ public class ViewClub extends javax.swing.JFrame {
         this.setVisible(true);
         edit.setVisible(true);
     }//GEN-LAST:event_RegistclubbottonActionPerformed
-
-    private void SearchclubTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SearchclubTextFieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_SearchclubTextFieldActionPerformed
-
-    private void BottonsearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BottonsearchActionPerformed
-        search = SearchclubTextField.getText();
-        String club = "";
-        try {
-
-            String sql = "SELECT * FROM clubs where club_name LIKE '%" + search + "%'";
-            PreparedStatement pre = con.prepareStatement(sql);
-//            pre.setString(1, "%"+search+"%");
-            ResultSet res = pre.executeQuery();
-            if (res.next()) {
-                club = res.getString("club_name");
-                System.out.println(club + " clubname");
-            }
-
-        } catch (SQLException ex) {
-            ex.printStackTrace();
-        }
-        if (search.equals(club)) {
-            JOptionPane frame = new JOptionPane();
-            JOptionPane.showMessageDialog(frame, "Search success", "Search club", JOptionPane.PLAIN_MESSAGE);
-            // = allClubs.getSelectedIndex();
-            ViewClubFromSearch view = new ViewClubFromSearch();
-            this.setVisible(false);
-            view.setVisible(true);
-        } else {
-            JOptionPane frame = new JOptionPane();
-            JOptionPane.showMessageDialog(frame, "Failed club name", "Search club", JOptionPane.ERROR_MESSAGE);
-        }
-    }//GEN-LAST:event_BottonsearchActionPerformed
 
     private void RegistclubbottonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_RegistclubbottonMouseClicked
 
@@ -289,13 +236,11 @@ public class ViewClub extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel AddDescription;
     private javax.swing.JButton Backbotton;
-    private javax.swing.JButton Bottonsearch;
     private javax.swing.JLabel Club;
     private javax.swing.JLabel Clubname;
     private javax.swing.JLabel Id;
     private javax.swing.JLabel Picture;
     private javax.swing.JButton Registclubbotton;
-    private javax.swing.JTextField SearchclubTextField;
     private javax.swing.JLabel ShowID;
     private javax.swing.JLabel blackground;
     private javax.swing.JLabel jLabel2;
