@@ -8,7 +8,6 @@ package publicregistergroup.model;
 import java.sql.*;
 import java.sql.Statement;
 import java.util.ArrayList;
-import java.util.Arrays;
 import publicregistergroup.controller.ConnectionBuilder;
 //import publicregistergroup.view.ViewClub;
 
