@@ -13,10 +13,9 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.Calendar;
 import java.util.Date;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import publicregistergroup.controller.ConnectionBuilder;
 import publicregistergroup.view.Login;
+import publicregistergroup.view.ViewRegist;
 
 /**
  *
@@ -25,8 +24,8 @@ import publicregistergroup.view.Login;
 public class Enroll {
     static Connection con = ConnectionBuilder.getConnection();
     private static int enroll_id;
-    private static int club_id = 48;
-    private static long std_id = 59130500004L;//Login.getStdId();
+    private static int club_id = ViewRegist.getClub_id();
+    private static long std_id = Login.getStdId();
     private static Date create_at;
     private static Calendar update_at = Calendar.getInstance();
     private static int countId = getCountId();
