@@ -18,6 +18,8 @@ import static publicregistergroup.view.ViewProfile.con;
 public class LinkData extends javax.swing.JFrame {
 
     private String search;
+     private final long std_id = Login.getStdId();
+     private long stdID = Login.getStdId();
 
     /**
      * Creates new form Uploadphoto
@@ -75,7 +77,8 @@ public class LinkData extends javax.swing.JFrame {
         getContentPane().add(Bottonsearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(284, 87, 84, 27));
 
         UsernameID.setFont(new java.awt.Font("Kanit", 0, 24)); // NOI18N
-        getContentPane().add(UsernameID, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 40, 220, 30));
+        getContentPane().add(UsernameID, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 30, 220, 30));
+        UsernameID.setText(stdID+"");
 
         Box1.setBackground(new java.awt.Color(77, 77, 77));
         Box1.setBorder(javax.swing.BorderFactory.createMatteBorder(3, 3, 3, 3, new java.awt.Color(205, 77, 40)));
@@ -187,7 +190,7 @@ public class LinkData extends javax.swing.JFrame {
                 BackbottonActionPerformed(evt);
             }
         });
-        getContentPane().add(Backbotton, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 20, 110, 50));
+        getContentPane().add(Backbotton, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 100, 110, 50));
 
         blackground.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/page.jpg"))); // NOI18N
         blackground.setText("jLabel1");
