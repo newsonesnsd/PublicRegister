@@ -123,7 +123,6 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Quark" size="18" style="0"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Kittiya Yuthasastrkosol"/>
       </Properties>
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="AnsName.setText(Students.getStd_name(stdID));"/>
@@ -152,7 +151,6 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Quark" size="16" style="0"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="090-7700443"/>
       </Properties>
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="AnsTelephone.setText(Students.getStd_tel(stdID));&#xd;&#xa;"/>
@@ -181,7 +179,6 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Quark" size="18" style="0"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Noey Kittiya"/>
       </Properties>
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="AnsFacebook.setText(Students.getStd_facebook(stdID));&#xd;&#xa;"/>
@@ -210,7 +207,6 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Quark" size="18" style="0"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="-"/>
       </Properties>
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="AnsMedicine.setText(Students.getStd_medicine(stdID));&#xd;&#xa;"/>
@@ -239,7 +235,6 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Quark" size="18" style="0"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="-"/>
       </Properties>
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="AnsFood.setText(Students.getStd_food(stdID));"/>
@@ -271,7 +266,6 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Quark" size="18" style="0"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="kz_noey@hotmail.com"/>
       </Properties>
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="AnsEmail.setText(Students.getStd_email(stdID));"/>
@@ -300,7 +294,6 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Quark" size="15" style="0"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="59130500005"/>
       </Properties>
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="ShowID.setText(stdID+&quot;&quot;);"/>
