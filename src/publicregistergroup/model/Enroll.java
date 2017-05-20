@@ -67,7 +67,7 @@ public class Enroll {
     public static void enrollClub() {
         create_at = new Timestamp(System.currentTimeMillis());
         update_at = new Timestamp(System.currentTimeMillis());
-        if (isEnroll()) {
+        if (!isEnroll()) {
             try {
                 String sql = "INSERT INTO enroll (enroll_id, club_id, std_id, create_at) VALUES (?, ?, ?, ?);";
                 PreparedStatement pre = con.prepareStatement(sql);
