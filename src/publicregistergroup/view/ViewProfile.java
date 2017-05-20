@@ -352,7 +352,7 @@ public class ViewProfile extends JFrame {
         FileNameExtensionFilter filter = new FileNameExtensionFilter("JPEG file", new String[]{"jpg", "jpeg", "png"});
         fileOpen.setFileFilter(filter);
         fileOpen.addChoosableFileFilter(filter);
-        result = fileOpen.showOpenDialog(null);
+        result = fileOpen.showDialog(null,"Choose Image");
         File selecFile = fileOpen.getSelectedFile();
         if (selecFile == null) {
             System.out.println(" ");
