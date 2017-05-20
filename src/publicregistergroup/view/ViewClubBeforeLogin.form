@@ -42,7 +42,7 @@
         </Property>
       </Properties>
       <AuxValues>
-        <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="Picture.setIcon(new ImageIcon((new ImageIcon(&quot;src/Images/&quot;+(Clubs.getClub_pic(club_id))).getImage().getScaledInstance(395,335,Image.SCALE_SMOOTH))));"/>
+        <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="Picture.setIcon(new ImageIcon((new ImageIcon(&quot;src/Images/&quot;+(Clubs.getClub_pic(club_id))).getImage().getScaledInstance(355,315,Image.SCALE_SMOOTH))));"/>
       </AuxValues>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">

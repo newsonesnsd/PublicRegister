@@ -14,16 +14,12 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.sql.*;
-import java.util.*;
-import java.util.logging.*;
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.filechooser.FileNameExtensionFilter;
 import publicregistergroup.controller.ConnectionBuilder;
-import static publicregistergroup.view.ViewProfile.con;
-import publicregistergroup.model.Students;
 import publicregistergroup.model.Clubs;
 
 /**
@@ -35,7 +31,7 @@ public class EditClub extends JFrame {
      private String nameclub,detailclub;
      private String path,abPath;
      private String search;
-     private long std_id = Login.getStdId();
+     private static long std_id = Login.getStdId();
     
     /**
      * Creates new form Uploadphoto
@@ -217,7 +213,7 @@ public class EditClub extends JFrame {
 
     private void savebottonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_savebottonActionPerformed
         InputStream filepic = null;
-        
+//        detailclub = detailArea.getText();
            try{
             String sql = "SELECT std_role FROM students WHERE std_id = ?";
             PreparedStatement pre = con.prepareStatement(sql);
@@ -229,19 +225,31 @@ public class EditClub extends JFrame {
                 std_role = res.getString("std_role");
                 club_id = Integer.parseInt(std_role);
                 detailclub = detailArea.getText();
-                sql = "UPDATE clubs SET club_description=? WHERE club_id=?";
+                sql = "UPDATE clubs SET club_description= ? WHERE club_id=?";
                 PreparedStatement pre2 = con.prepareStatement(sql);
-                pre.setString(1, detailclub);
-                pre2.setLong(2, std_id);   
-       
+                pre2.setString(1, detailclub);
+                pre2.setInt(2, club_id);   
+                pre2.executeUpdate();
 //            pre.setString(1, detailclub);
-//            pre.setLong(2, std_id);
+//           pre.setLong(2, std_id);
             //System.out.println("2");
-            pre2.executeUpdate();
+       /*          sql = "SELECT club_picture FROM clubs WHERE club_id = ?";
+                PreparedStatement pre2 = con.prepareStatement(sql);
+                pre2.setInt(1, club_id);
+                ResultSet rs = pre2.executeQuery();
+                if(rs.next()) {
+//                    detailclub =rs.getString("club_picture");
+                    sql = "UPDATE clubs SET club_description= ? WHERE club_id=?";
+                    PreparedStatement pre3 = con.prepareStatement(sql);
+                    pre.setString(1, detailclub);
+                    pre2.setInt(2, club_id); 
+                    pre2.executeUpdate();
+                }*/
             System.out.println("Yes");
             }
         } catch (SQLException ex) {
                 System.out.println(ex);
+                ex.printStackTrace();
         }
         if(abPath == null){
             System.out.println("");
@@ -249,16 +257,28 @@ public class EditClub extends JFrame {
             
         
         try {
+        
+        
     
             filepic = new FileInputStream(abPath);
-            String sql = "UPDATE clubs SET club_picture=? WHERE club_id=?";
-                PreparedStatement pre = con.prepareStatement(sql);
-                pre.setString(1, path);
-                pre.setLong(2, std_id);
-                pre.executeUpdate();
-            OutputStream ops = null;
-            try {
-                
+            String sql = "SELECT std_role FROM students WHERE std_id = ?";
+            PreparedStatement pre = con.prepareStatement(sql);
+            pre.setLong(1, std_id);
+            ResultSet res = pre.executeQuery();
+            int club_id =0;
+            String std_role=null;
+            while (res.next()) {
+                std_role = res.getString("std_role");
+                club_id = Integer.parseInt(std_role);
+                detailclub = detailArea.getText();
+                sql = "UPDATE clubs SET club_picture= ? WHERE club_id=?";
+                PreparedStatement pre2 = con.prepareStatement(sql);
+                pre2.setString(1, path);
+                pre2.setInt(2, club_id);   
+                pre2.executeUpdate();
+//            OutputStream ops = null;
+            }try {
+                OutputStream ops = null;
                 //System.out.println("asdada");
                 System.out.println("Path :" + "/Users/taloey/Desktop/PublicRegister/src/Images/" + path);
                 ops = new FileOutputStream(new File("src/Images/" + path));

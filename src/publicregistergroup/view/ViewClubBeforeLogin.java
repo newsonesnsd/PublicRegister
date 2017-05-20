@@ -92,7 +92,7 @@ public class ViewClubBeforeLogin extends javax.swing.JFrame {
         Picture.setText("      PIC");
         Picture.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         getContentPane().add(Picture, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 320, 360, 320));
-        Picture.setIcon(new ImageIcon((new ImageIcon("src/Images/"+(Clubs.getClub_pic(club_id))).getImage().getScaledInstance(395,335,Image.SCALE_SMOOTH))));
+        Picture.setIcon(new ImageIcon((new ImageIcon("src/Images/"+(Clubs.getClub_pic(club_id))).getImage().getScaledInstance(355,315,Image.SCALE_SMOOTH))));
 
         Clubname.setFont(new java.awt.Font("Quark", 1, 36)); // NOI18N
         getContentPane().add(Clubname, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 200, 660, 80));
