@@ -12,6 +12,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.sql.Timestamp;
+import java.util.ArrayList;
 import publicregistergroup.controller.ConnectionBuilder;
 import publicregistergroup.view.Login;
 import publicregistergroup.view.ViewRegist;
@@ -24,7 +25,8 @@ public class Enroll {
     static Connection con = ConnectionBuilder.getConnection();
     private static int enroll_id;
     private static int club_id = ViewRegist.getClub_id();
-    private static long std_id = Login.getStdId();
+//    private static long std_id = Login.getStdId();
+    private static long std_id = 59130500011L;
     private static Timestamp create_at;
     private static Timestamp update_at;
     private static int countId = getCountId();
@@ -111,12 +113,13 @@ public class Enroll {
             pre.setInt(1, club_id);
             ResultSet res = pre.executeQuery();
             while(res.next()) {
-                System.out.println(res.getLong("s.std_id"));
-                System.out.println(res.getString("std_name"));
-                System.out.println(res.getString("std_faculty"));
-                System.out.println(res.getString("std_department"));
-                System.out.println(res.getString("std_email"));
-                System.out.println(res.getString("std_tel"));
+                System.out.println("Student ID: " + res.getLong("s.std_id"));
+                System.out.println("Student Name: "+res.getString("std_name"));
+                System.out.println("Student Faculty: " + res.getString("std_faculty"));
+                System.out.println("Student Department" + res.getString("std_department"));
+                System.out.println("Student Email: " + res.getString("std_email"));
+                System.out.println("Student Telephone: " + res.getString("std_tel"));
+                System.out.println("---------------------------------");
             }
             
             
@@ -129,22 +132,50 @@ public class Enroll {
     
     public static void getStudentEnroll() {
         try {
-            String sql = "select * FROM clubs c join enroll t on s.club_id and t.std_id = ?";
+            String sql = "SELECT c.club_name "
+                    + "FROM clubs c JOIN enroll e on c.club_id = e.club_id "
+                    + "WHERE e.std_id = ?";
             PreparedStatement pre = con.prepareStatement(sql);
             pre.setLong(1, std_id);
             ResultSet res = pre.executeQuery();
             while(res.next()) {
-                System.out.println(res.getLong("s.std_id"));
-            }
-            
-            
+//                System.out.println(res.getLong("c.club_id"));
+                System.out.println(res.getString("c.club_name"));
+//                System.out.println(res.getString("c.club_dessciption"));
+            } 
         } 
         catch (SQLException ex) {
             System.out.println(ex + "\n" + ex.getMessage() + "\n" + ex.getSQLState()); 
             ex.printStackTrace();
         }   
     }
-
+    
+    public static ArrayList<String> getAllStudentsEnroll() {
+        ArrayList<String> str = new ArrayList<>();
+        try {
+            String sql = "SELECT c.club_name "
+                    + "FROM clubs c JOIN enroll e on c.club_id = e.club_id "
+                    + "WHERE e.std_id = ?";
+            PreparedStatement pre = con.prepareStatement(sql);
+            pre.setLong(1, std_id);
+            ResultSet res = pre.executeQuery();
+            while(res.next()) {
+//                System.out.println(res.getLong("c.club_id"));
+                str.add(res.getString("c.club_name"));
+//                System.out.println(res.getString("c.club_dessciption"));
+            } 
+        } 
+        catch (SQLException ex) {
+            System.out.println(ex + "\n" + ex.getMessage() + "\n" + ex.getSQLState()); 
+            ex.printStackTrace();
+        }   
+        return str;
+    }
+    
+    public static void main(String[] args) {
+        System.out.println(getAllStudentsEnroll());
+    }
+    
     
     
 }
