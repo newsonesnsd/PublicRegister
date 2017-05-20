@@ -19,7 +19,7 @@ public class Clubs {
     static Connection con = ConnectionBuilder.getConnection();
     private static int club_id;
     private static String club_name;
-    private static String club_description;
+    //private static String club_description;
     private static String club_picture;
     private static String club_pict;
     private static String club_desc;
