@@ -325,17 +325,18 @@ public class EditProfile extends JFrame {
 
     private void UploadBottonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UploadBottonActionPerformed
         JFileChooser fileOpen = new JFileChooser();
-        fileOpen.showDialog(null, "Choose Image");
-        fileOpen.setAcceptAllFileFilterUsed(false);
-        fileOpen.addChoosableFileFilter(new FileNameExtensionFilter(".jpg", "jpg"));
-        fileOpen.addChoosableFileFilter(new FileNameExtensionFilter(".gif", "gif"));
-        fileOpen.addChoosableFileFilter(new FileNameExtensionFilter(".png", "png"));
+        FileNameExtensionFilter filter = new FileNameExtensionFilter("JPEG file", ".jpg", ".jpeg");
+        fileOpen.setAcceptAllFileFilterUsed(true);
         int result = fileOpen.showDialog(null, "Choose Image");
         File selecFile = fileOpen.getSelectedFile();
-        abPath = selecFile.getAbsolutePath();
-        path = selecFile.getName();
-        ImageS.setIcon(new ImageIcon((new ImageIcon(abPath).getImage().getScaledInstance(395, 335, Image.SCALE_SMOOTH))));
-        System.out.println(path);
+        if (selecFile == null) {
+            System.out.println(" ");
+        } else {
+            abPath = selecFile.getAbsolutePath();
+            path = selecFile.getName();
+            ImageS.setIcon(new ImageIcon((new ImageIcon(abPath).getImage().getScaledInstance(395, 335, Image.SCALE_SMOOTH))));
+            System.out.println(path);
+        }
 
     }//GEN-LAST:event_UploadBottonActionPerformed
 

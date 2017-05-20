@@ -29,6 +29,7 @@ public class ViewProfile extends JFrame {
     private String path, abPath;
     private String search;
     private long stdID = Login.getStdId();
+    private int result;
 
     /**
      * Creates new form Uploadphoto
@@ -307,23 +308,7 @@ public class ViewProfile extends JFrame {
             JOptionPane frame = new JOptionPane();
             JOptionPane.showMessageDialog(frame, "Failed club name", "Search club", JOptionPane.ERROR_MESSAGE);
         }
-        /*if (search == club) {
-            JOptionPane frame = new JOptionPane();
-            JOptionPane.showMessageDialog(frame,"Search success","Search club",JOptionPane.PLAIN_MESSAGE);
-             // = allClubs.getSelectedIndex();
-             ViewClub view = new ViewClub();
-            this.setVisible(false);
-             view.setVisible(true);
-        }
-        else {
-            JOptionPane frame = new JOptionPane();
-            JOptionPane.showMessageDialog(frame,"Failed club name","Search club",JOptionPane.ERROR_MESSAGE);
-        }*/
- /*clubIndex = allClubs.getSelectedIndex();
-        //System.out.println(clubIndex);
-        ViewClub view = new ViewClub();
-        this.setVisible(false);
-        view.setVisible(true);*/
+
     }//GEN-LAST:event_BottonsearchActionPerformed
 
     private void NameTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NameTextFieldActionPerformed
@@ -355,16 +340,18 @@ public class ViewProfile extends JFrame {
 
     private void UploadBottonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UploadBottonActionPerformed
         JFileChooser fileOpen = new JFileChooser();
-        fileOpen.showDialog(null, "Choose Image");
-        fileOpen.setAcceptAllFileFilterUsed(true);
-        fileOpen.addChoosableFileFilter(new FileNameExtensionFilter(".jpg", ".png" ));
-        int result = fileOpen.showDialog(null, "Choose Image");
+        FileNameExtensionFilter filter = new FileNameExtensionFilter( ".jpg", ".jpeg" , ".png");
+        fileOpen.addChoosableFileFilter(filter);
+        result = fileOpen.showDialog(null, "Choose Image");
         File selecFile = fileOpen.getSelectedFile();
-        abPath = selecFile.getAbsolutePath();
-        path = selecFile.getName();
-        ImageS.setIcon(new ImageIcon((new ImageIcon(abPath).getImage().getScaledInstance(395, 335, Image.SCALE_SMOOTH))));
-        System.out.println(path);
-
+        if (selecFile == null) {
+            System.out.println(" ");
+        } else {
+            abPath = selecFile.getAbsolutePath();
+            path = selecFile.getName();
+            ImageS.setIcon(new ImageIcon((new ImageIcon(abPath).getImage().getScaledInstance(395, 335, Image.SCALE_SMOOTH))));
+            System.out.println(path);
+        }
     }//GEN-LAST:event_UploadBottonActionPerformed
 
     private void SubmitbottonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SubmitbottonActionPerformed

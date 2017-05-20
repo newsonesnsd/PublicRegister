@@ -202,18 +202,19 @@ public class EditClub extends JFrame {
     }//GEN-LAST:event_BottonsearchActionPerformed
 
     private void uploadbottonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_uploadbottonActionPerformed
-        JFileChooser fileOpen = new JFileChooser();
-        fileOpen.showDialog(null, "Choose Image");
-        fileOpen.setAcceptAllFileFilterUsed(false);
-        fileOpen.addChoosableFileFilter(new FileNameExtensionFilter(".jpg", "jpg"));
-        fileOpen.addChoosableFileFilter(new FileNameExtensionFilter(".gif", "gif"));
-        fileOpen.addChoosableFileFilter(new FileNameExtensionFilter(".png", "png"));
+       JFileChooser fileOpen = new JFileChooser();
+        FileNameExtensionFilter filter = new FileNameExtensionFilter("JPEG file", ".jpg", ".jpeg");
+        fileOpen.setAcceptAllFileFilterUsed(true);
         int result = fileOpen.showDialog(null, "Choose Image");
         File selecFile = fileOpen.getSelectedFile();
-        path = selecFile.getName();
-        abPath = selecFile.getAbsolutePath();
-        Uploadphotos.setIcon(new ImageIcon((new ImageIcon(abPath).getImage().getScaledInstance(436, 366, Image.SCALE_SMOOTH))));
-
+        if (selecFile == null) {
+            System.out.println(" ");
+        } else {
+            abPath = selecFile.getAbsolutePath();
+            path = selecFile.getName();
+            Uploadphotos.setIcon(new ImageIcon((new ImageIcon(abPath).getImage().getScaledInstance(395, 335, Image.SCALE_SMOOTH))));
+            System.out.println(path);
+        }
     }//GEN-LAST:event_uploadbottonActionPerformed
 
     private void savebottonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_savebottonActionPerformed
