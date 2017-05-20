@@ -135,10 +135,10 @@ public class Users {
           
     }
     
-    public static void main(String[] args) {
-        Scanner input = new Scanner(System.in);
-        System.out.println("ENTER");
-        long inputUsername = input.nextLong();
-        getUsers(inputUsername);
-    }
+//    public static void main(String[] args) {
+//        Scanner input = new Scanner(System.in);
+//        System.out.println("ENTER");
+//        long inputUsername = input.nextLong();
+//        getUsers(inputUsername);
+//    }
 }
