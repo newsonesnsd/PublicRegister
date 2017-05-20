@@ -527,10 +527,26 @@ public class Homepage extends javax.swing.JFrame {
             String sql = "SELECT * FROM clubs where club_name LIKE '%" + search + "%'";
             PreparedStatement pre = con.prepareStatement(sql);
             ResultSet res = pre.executeQuery();
-            if (res.next()) {
+            while (res.next()) {
                 club = res.getString("club_name");
                 System.out.println(club + " clubname");
             }
+             allClubs.setModel(new javax.swing.AbstractListModel<String>() {
+                ArrayList<String> strings = Clubs.getAllSearch();
+                @Override
+                public int getSize() {
+
+                    return strings.size();
+                }
+
+                @Override
+                public String getElementAt(int i) {
+                    return strings.get(i);
+                }
+            });
+
+            jPanel1.setOpaque(false);
+            jPanel2.setOpaque(false);
 
         } catch (SQLException ex) {
             ex.printStackTrace();
