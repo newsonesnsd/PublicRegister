@@ -25,8 +25,7 @@ public class Enroll {
     static Connection con = ConnectionBuilder.getConnection();
     private static int enroll_id;
     private static int club_id = ViewRegist.getClub_id();
-//    private static long std_id = Login.getStdId();
-    private static long std_id = 59130500011L;
+    private static long std_id = Login.getStdId();
     private static Timestamp create_at;
     private static Timestamp update_at;
     private static int countId = getCountId();

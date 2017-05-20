@@ -12,6 +12,7 @@ import javax.swing.DefaultListModel;
 import javax.swing.*;
 import publicregistergroup.controller.ConnectionBuilder;
 import publicregistergroup.model.Clubs;
+import publicregistergroup.model.Enroll;
 import publicregistergroup.model.Students;
 
 /**
@@ -30,7 +31,6 @@ public class CheckAllActivity extends javax.swing.JFrame {
     private int club_id = Clubs.getClub_id(getClubIndex());
 
     public static int getClubIndex() {
-        
         return clubIndex +1;
     }
 
@@ -43,7 +43,7 @@ public class CheckAllActivity extends javax.swing.JFrame {
         initComponents();
         setLocationRelativeTo(null);
         listJoinClubs.setModel(new javax.swing.AbstractListModel<String>() {
-            ArrayList<String> strings = Clubs.getAllClubs();
+            ArrayList<String> strings = Enroll.getAllStudentsEnroll();
 
             @Override
             public int getSize() {
@@ -151,11 +151,6 @@ public class CheckAllActivity extends javax.swing.JFrame {
         formList.setDividerSize(2);
 
         listJoinClubs.setBackground(new java.awt.Color(253, 219, 160));
-        listJoinClubs.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
-            public int getSize() { return strings.length; }
-            public String getElementAt(int i) { return strings[i]; }
-        });
         listJoinClubs.setOpaque(false);
         listJoinClubs.setSelectionBackground(new java.awt.Color(247, 103, 63));
         listJoinClubs.addAncestorListener(new javax.swing.event.AncestorListener() {
