@@ -147,13 +147,18 @@ public class EditClub extends JFrame {
         getContentPane().add(NameClub, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 40, 290, 40));
         NameClub.setText(Clubs.getClub_nameEdit(std_id));
 
+        jButton2.setBackground(new java.awt.Color(213, 186, 55));
+        jButton2.setFont(new java.awt.Font("Quark", 0, 24)); // NOI18N
+        jButton2.setForeground(new java.awt.Color(240, 240, 240));
         jButton2.setText("Export");
+        jButton2.setBorder(null);
+        jButton2.setBorderPainted(false);
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 140, -1, -1));
+        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 580, 130, 40));
 
         blackground.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/pagenoserach.jpg"))); // NOI18N
         blackground.setText("jLabel1");
