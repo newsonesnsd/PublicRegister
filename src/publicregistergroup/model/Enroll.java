@@ -6,11 +6,17 @@
 package publicregistergroup.model;
 
 
+import java.io.BufferedInputStream;
 import java.io.BufferedOutputStream;
+import java.io.DataInputStream;
 import java.io.DataOutputStream;
+import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.ObjectOutputStream;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -110,8 +116,11 @@ public class Enroll {
                
     }
     
-    public static ArrayList<String> getClubRegister() {
-        ArrayList<String> clubRegis = new ArrayList<>();
+    /*
+    * List All Student Enrolled Club
+    */
+    public static String getClubRegister(){
+        ArrayList<String> regis = new ArrayList<>();
         try {
             String sql = "SELECT s.std_id, s.std_name , s.std_faculty , s.std_department , s.std_email , s.std_tel "
                     + "FROM enroll e JOIN students s on e.std_id = s.std_id "
@@ -120,21 +129,23 @@ public class Enroll {
             pre.setInt(1, club_id);
             ResultSet res = pre.executeQuery();
             while(res.next()) {
-                clubRegis.add("Student ID: " + res.getLong("s.std_id"));
-                clubRegis.add("Student Name: "+res.getString("std_name"));
-                clubRegis.add("Student Faculty: " + res.getString("std_faculty"));
-                clubRegis.add("Student Department" + res.getString("std_department"));
-                clubRegis.add("Student Email: " + res.getString("std_email"));
-                clubRegis.add("Student Telephone: " + res.getString("std_tel"));
-                clubRegis.add("---------------------------------");
+                regis.add("Student ID: " + res.getLong("s.std_id") + "\n"
+                            + "Student Name: "+res.getString("std_name") + "\n"
+                            + "Student Faculty: " + res.getString("std_faculty") + "\n"  
+                            + "Student Department: " + res.getString("std_department") + "\n"
+                            + "Student Email: " + res.getString("std_email") + "\n"
+                            + "Student Telephone: " + res.getString("std_tel") + "\n"
+                            + "---------------------------------" + "\n"); 
             }
-            con.close();
+            
             
         } 
         catch (SQLException ex) {
             System.out.println(ex + "\n" + ex.getMessage() + "\n" + ex.getSQLState()); 
             ex.printStackTrace();
         }
+        String clubRegis = regis.toString();
+        clubRegis = clubRegis.replaceAll(", ", "").replace("[", "").replace("]", "").trim();
         return clubRegis;
     }
     
@@ -143,26 +154,23 @@ public class Enroll {
      */
     public static void getFileClubRegister() {
         try {
-            FileOutputStream fos = new FileOutputStream("ClubRegister.txt", true);
-            BufferedOutputStream bos = new BufferedOutputStream(fos);
-            DataOutputStream dos = new DataOutputStream(bos);
-            int totalRegis = getClubRegister().size();
-            for(int i = 0; i < totalRegis; i++) {
-                dos.writeUTF(getClubRegister().get(i));
-            }
+            DataOutputStream dos = new DataOutputStream(new FileOutputStream("ClubRegistered.txt"));
+            dos.writeUTF(getClubRegister());
             System.out.println("Finished write file");
-            fos.close();
-            bos.close();
-            dos.close();
         }
         catch (FileNotFoundException e) {
             System.out.println(e + "\n" + e.getMessage());
             e.printStackTrace();
         }
-        catch (IOException e) {
-            System.out.println(e + "\n" + e.getMessage());
+//        catch (IOException e) {
+//            System.out.println(e + "\n" + e.getMessage());
+//            e.printStackTrace();
+//        }
+        catch (Exception e) {
+            System.out.println(e.getMessage());
             e.printStackTrace();
-        }
+        } 
+        
         
     }
     
@@ -209,7 +217,7 @@ public class Enroll {
     }
     
     public static void main(String[] args) {
-        System.out.println(getAllStudentsEnroll());
+        getClubRegister();
     }
     
     
