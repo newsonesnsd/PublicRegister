@@ -43,6 +43,8 @@ public class Homepage extends javax.swing.JFrame {
     public Homepage() {
         initComponents();
         setLocationRelativeTo(null);
+        
+        
         allClubs.setModel(new javax.swing.AbstractListModel<String>() {
             ArrayList<String> strings = Clubs.getAllClubs();
 
@@ -527,7 +529,7 @@ public class Homepage extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void BottonsearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BottonsearchActionPerformed
-          search = searchclubTextField.getText();
+        search = searchclubTextField.getText();
         String club = "";
         try {
 
@@ -539,9 +541,9 @@ public class Homepage extends javax.swing.JFrame {
                 club = res.getString("club_name");
                 System.out.println(club + " clubname");
             }
-
             allClubs.setModel(new javax.swing.AbstractListModel<String>() {
                 ArrayList<String> strings = Clubs.getAllSearch();
+
                 @Override
                 public int getSize() {
 
@@ -589,7 +591,7 @@ public class Homepage extends javax.swing.JFrame {
 
     private void chooseClubActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chooseClubActionPerformed
         clubIndex = allClubs.getSelectedIndex();
-        
+
         ViewClubBeforeLogin viewc = new ViewClubBeforeLogin();
         this.setVisible(false);
         viewc.setVisible(true);

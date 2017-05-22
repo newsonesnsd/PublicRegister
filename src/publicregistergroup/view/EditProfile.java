@@ -278,14 +278,16 @@ public class EditProfile extends JFrame {
         fileOpen.setFileFilter(filter);
         fileOpen.addChoosableFileFilter(filter);
         int result = fileOpen.showDialog(null, "Choose Image");
-        File selecFile = fileOpen.getSelectedFile();
-        if (selecFile == null) {
-            System.out.println(" ");
-        } else {
-            abPath = selecFile.getAbsolutePath();
-            path = selecFile.getName();
-            ImageS.setIcon(new ImageIcon((new ImageIcon(abPath).getImage().getScaledInstance(395, 335, Image.SCALE_SMOOTH))));
-            System.out.println(path);
+        if (result == JFileChooser.APPROVE_OPTION) {
+            File selecFile = fileOpen.getSelectedFile();
+            if (selecFile == null) {
+                System.out.println(" ");
+            } else {
+                abPath = selecFile.getAbsolutePath();
+                path = selecFile.getName();
+                ImageS.setIcon(new ImageIcon((new ImageIcon(abPath).getImage().getScaledInstance(395, 335, Image.SCALE_SMOOTH))));
+                System.out.println(path);
+            }
         }
 
     }//GEN-LAST:event_UploadBottonActionPerformed

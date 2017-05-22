@@ -299,6 +299,7 @@ public class ViewProfile extends JFrame {
         fileOpen.setFileFilter(filter);
         fileOpen.addChoosableFileFilter(filter);
         result = fileOpen.showDialog(null,"Choose Image");
+        if (result == JFileChooser.APPROVE_OPTION){
         File selecFile = fileOpen.getSelectedFile();
         if (selecFile == null) {
             System.out.println(" ");
@@ -307,6 +308,7 @@ public class ViewProfile extends JFrame {
             path = selecFile.getName();
             ImageS.setIcon(new ImageIcon((new ImageIcon(abPath).getImage().getScaledInstance(398, 338, Image.SCALE_SMOOTH))));
             System.out.println(path);
+        }
         }
     }//GEN-LAST:event_UploadBottonActionPerformed
 
@@ -343,7 +345,7 @@ public class ViewProfile extends JFrame {
             ex.printStackTrace();
         }
 
-        System.out.println("บบรรดทัด 409");
+        //System.out.println("บบรรดทัด 409");
 
         if (abPath == null) {
             System.out.println("");
