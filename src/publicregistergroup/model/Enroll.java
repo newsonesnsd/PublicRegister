@@ -6,17 +6,9 @@
 package publicregistergroup.model;
 
 
-import java.io.BufferedInputStream;
-import java.io.BufferedOutputStream;
-import java.io.DataInputStream;
 import java.io.DataOutputStream;
-import java.io.File;
-import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.ObjectOutputStream;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -24,8 +16,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.sql.Timestamp;
 import java.util.ArrayList;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 import publicregistergroup.controller.ConnectionBuilder;
 import publicregistergroup.view.Login;
 import publicregistergroup.view.ViewRegist;
@@ -156,16 +147,14 @@ public class Enroll {
         try {
             DataOutputStream dos = new DataOutputStream(new FileOutputStream("ClubRegistered.txt"));
             dos.writeUTF(getClubRegister());
-            System.out.println("Finished write file");
+            JOptionPane alertFinishExportFile = new JOptionPane();
+            JOptionPane.showMessageDialog(alertFinishExportFile, "Export Complete");
+            dos.close();
         }
         catch (FileNotFoundException e) {
             System.out.println(e + "\n" + e.getMessage());
             e.printStackTrace();
         }
-//        catch (IOException e) {
-//            System.out.println(e + "\n" + e.getMessage());
-//            e.printStackTrace();
-//        }
         catch (Exception e) {
             System.out.println(e.getMessage());
             e.printStackTrace();

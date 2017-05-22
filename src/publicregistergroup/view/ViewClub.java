@@ -151,7 +151,7 @@ public class ViewClub extends javax.swing.JFrame {
         ShowID.setFont(new java.awt.Font("Quark", 1, 18)); // NOI18N
         ShowID.setText("59130500005");
         getContentPane().add(ShowID, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 11, 140, 40));
-        ShowID.setText(club_id+"");
+        ShowID.setText(Login.getStdId()+"");
 
         Id.setFont(new java.awt.Font("Quark", 1, 19)); // NOI18N
         Id.setText("ID :");
