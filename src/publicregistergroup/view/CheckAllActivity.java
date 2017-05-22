@@ -97,7 +97,6 @@ public class CheckAllActivity extends javax.swing.JFrame {
         jlbClubId = new javax.swing.JLabel();
         AddName = new javax.swing.JLabel();
         AddDescription = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
         blackground = new javax.swing.JLabel();
 
@@ -219,13 +218,6 @@ public class CheckAllActivity extends javax.swing.JFrame {
         AddDescription.setVerticalAlignment(javax.swing.SwingConstants.TOP);
         jPanel2.add(AddDescription, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 130, 120, 80));
         AddDescription.setText(clubDescription);
-
-        jButton1.setBackground(new java.awt.Color(255, 63, 57));
-        jButton1.setFont(new java.awt.Font("Quark", 0, 12)); // NOI18N
-        jButton1.setText("UNJOIN");
-        jButton1.setBorder(null);
-        jButton1.setBorderPainted(false);
-        jPanel2.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 230, 80, 30));
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/bgRegisteredClubs.png"))); // NOI18N
         jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(-70, 0, 540, 290));
@@ -352,7 +344,6 @@ public class CheckAllActivity extends javax.swing.JFrame {
     private javax.swing.JButton backbotton;
     private javax.swing.JLabel blackground;
     private javax.swing.JSplitPane formList;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel25;
     private javax.swing.JLabel jLabel3;
