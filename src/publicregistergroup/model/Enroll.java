@@ -6,6 +6,11 @@
 package publicregistergroup.model;
 
 
+import java.io.BufferedOutputStream;
+import java.io.DataOutputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -13,6 +18,8 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.sql.Timestamp;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import publicregistergroup.controller.ConnectionBuilder;
 import publicregistergroup.view.Login;
 import publicregistergroup.view.ViewRegist;
@@ -103,7 +110,8 @@ public class Enroll {
                
     }
     
-    public static void getClubRegister() {
+    public static ArrayList<String> getClubRegister() {
+        ArrayList<String> clubRegis = new ArrayList<>();
         try {
             String sql = "SELECT s.std_id, s.std_name , s.std_faculty , s.std_department , s.std_email , s.std_tel "
                     + "FROM enroll e JOIN students s on e.std_id = s.std_id "
@@ -112,21 +120,50 @@ public class Enroll {
             pre.setInt(1, club_id);
             ResultSet res = pre.executeQuery();
             while(res.next()) {
-                System.out.println("Student ID: " + res.getLong("s.std_id"));
-                System.out.println("Student Name: "+res.getString("std_name"));
-                System.out.println("Student Faculty: " + res.getString("std_faculty"));
-                System.out.println("Student Department" + res.getString("std_department"));
-                System.out.println("Student Email: " + res.getString("std_email"));
-                System.out.println("Student Telephone: " + res.getString("std_tel"));
-                System.out.println("---------------------------------");
+                clubRegis.add("Student ID: " + res.getLong("s.std_id"));
+                clubRegis.add("Student Name: "+res.getString("std_name"));
+                clubRegis.add("Student Faculty: " + res.getString("std_faculty"));
+                clubRegis.add("Student Department" + res.getString("std_department"));
+                clubRegis.add("Student Email: " + res.getString("std_email"));
+                clubRegis.add("Student Telephone: " + res.getString("std_tel"));
+                clubRegis.add("---------------------------------");
             }
-            
+            con.close();
             
         } 
         catch (SQLException ex) {
             System.out.println(ex + "\n" + ex.getMessage() + "\n" + ex.getSQLState()); 
             ex.printStackTrace();
-        }      
+        }
+        return clubRegis;
+    }
+    
+    /**
+     * Export All Student enrolled club
+     */
+    public static void getFileClubRegister() {
+        try {
+            FileOutputStream fos = new FileOutputStream("ClubRegister.txt", true);
+            BufferedOutputStream bos = new BufferedOutputStream(fos);
+            DataOutputStream dos = new DataOutputStream(bos);
+            int totalRegis = getClubRegister().size();
+            for(int i = 0; i < totalRegis; i++) {
+                dos.writeUTF(getClubRegister().get(i));
+            }
+            System.out.println("Finished write file");
+            fos.close();
+            bos.close();
+            dos.close();
+        }
+        catch (FileNotFoundException e) {
+            System.out.println(e + "\n" + e.getMessage());
+            e.printStackTrace();
+        }
+        catch (IOException e) {
+            System.out.println(e + "\n" + e.getMessage());
+            e.printStackTrace();
+        }
+        
     }
     
     public static void getStudentEnroll() {
